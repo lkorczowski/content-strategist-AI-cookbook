@@ -24,7 +24,7 @@ Playbook cards with links and versions: [playbooks/](playbooks/). What comes nex
 
 Pick the way your assistant works.
 
-**Claude (claude.ai, desktop and mobile).** Download the zip of a skill from the [latest release](https://github.com/lkorczowski/content-strategist-AI-cookbook/releases/latest) and upload it in the Skills section of Claude's settings (code execution must be on). The zip contains one folder with SKILL.md at its root.
+**Claude (claude.ai, desktop and mobile).** Upload a skill as a zip in the Skills section of Claude's settings (code execution must be on). The zip contains one folder, named like the skill, with SKILL.md inside. Get it from the [releases](https://github.com/lkorczowski/content-strategist-AI-cookbook/releases) page, or download this repository (Code > Download ZIP) and zip the skill folder you want.
 
 **Claude Code.** Add this repository as a plugin marketplace, then install the playbook you need:
 
