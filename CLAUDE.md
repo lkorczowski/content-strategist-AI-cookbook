@@ -14,7 +14,7 @@ The public method layer of Dr. Louis Korczowski's short-form content work: skill
 - Paths of a private machine (/Users/...), private repo paths, private routine prompts.
 - Text copied from a third party (prompts shown in someone's video, book passages). Write the method in your own words and credit the idea with a link.
 
-Before every push: `python3 scripts/check_skills.py` and `python3 scripts/leak_scan.py --denylist <path to the private denylist>`. Both must report zero problems.
+Before every push: `python3 scripts/check_skills.py` and `python3 scripts/leak_scan.py --denylist <path to the private denylist>`. Both must report zero problems. Install the pre-push hook once per clone: `COOKBOOK_DENYLIST=<path> bash scripts/install_hooks.sh`. CI runs the skill checks and the generic scan on every push.
 
 ## One source of truth per artifact
 

@@ -28,6 +28,12 @@ GENERIC = [
     ("phone number", r"(\+33|\+1)[ .-]?\(?\d{1,3}\)?[ .-]?\d{2,4}[ .-]?\d{2,4}[ .-]?\d{2,4}"),
     ("email address", r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
     ("local machine path", r"/Users/[A-Za-z0-9_-]+/"),
+    ("Stripe or Google API key", r"(sk_(live|test)_[A-Za-z0-9]{10,}|AIza[0-9A-Za-z_-]{35})"),
+    ("Airtable personal access token", r"\bpat[A-Za-z0-9]{14}\.[a-f0-9]{64}\b"),
+    ("French phone number", r"(?<![\d.])0[1-9](?:[ .-]?\d{2}){4}(?![\d.])"),
+    ("private claude.ai artifact link", r"claude\.ai/(code/)?artifact/[A-Za-z0-9-]{10,}"),
+    ("analytics or ads id", r"\b(G-[A-Z0-9]{10}|AW-\d{9,11})\b"),
+    ("WordPress admin link", r"wp-admin/post\.php\?post=\d+"),
 ]
 ALLOWED_EMAILS = {"noreply@anthropic.com"}
 
