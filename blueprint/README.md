@@ -39,7 +39,7 @@ PRIVATE instance   your company repo: knowledge base, routines, data, skills   (
   archive/<date>-<subject>/       everything replaced, never deleted in place
 ```
 
-Templates for every file above are in templates/.
+Templates for every file above are in templates/, plus templates/PROJECT-INSTRUCTIONS.md for the assistant's project instructions. The shared memory between routine runs is described in [annotation-loop.md](annotation-loop.md).
 
 ## Seven rules that keep the system healthy
 
