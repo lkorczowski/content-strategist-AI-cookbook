@@ -14,49 +14,86 @@
       "description": "Make every short video teach the next one: video post-mortem, format dice review and monthly learning session.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/video-post-mortem", "./skills/format-dice-review", "./skills/content-learning-session"]
+      "skills": [
+        "./skills/video-post-mortem",
+        "./skills/format-dice-review",
+        "./skills/content-learning-session"
+      ]
+    },
+    {
+      "name": "comment-section",
+      "description": "Plan comment traps that spread an idea, read live comment sections and draft disclosed founder comments.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/comment-section-coach"
+      ]
+    },
+    {
+      "name": "organic-to-paid",
+      "description": "Turn proven organic short-form videos into ad creatives and test them against the current best ad.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/organic-to-paid"
+      ]
     },
     {
       "name": "creative-led-growth",
       "description": "Coach a founder through creative-led growth: one channel, one hour a day, packaging and share rate.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/creative-led-growth-coach"]
+      "skills": [
+        "./skills/creative-led-growth-coach"
+      ]
     },
     {
       "name": "creator-programs",
       "description": "Design, run and audit a creator program paid on performance.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/performance-creator-program"]
+      "skills": [
+        "./skills/performance-creator-program"
+      ]
     },
     {
       "name": "x-launch-playbook",
       "description": "Plan a launch week on X judged on business numbers.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/x-launch-week"]
+      "skills": [
+        "./skills/x-launch-week"
+      ]
     },
     {
       "name": "tradespeople-video",
       "description": "One video per job and an AI morning routine for tradespeople, with scripts, setup and admin processes.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/trades-video-coach", "./skills/trades-ai-setup", "./skills/trades-morning-routine", "./skills/trades-admin-process"]
+      "skills": [
+        "./skills/trades-video-coach",
+        "./skills/trades-ai-setup",
+        "./skills/trades-morning-routine",
+        "./skills/trades-admin-process"
+      ]
     },
     {
       "name": "format-library",
       "description": "Pick, script and read twelve short-form formats for founders.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/format-library-coach"]
+      "skills": [
+        "./skills/format-library-coach"
+      ]
     },
     {
       "name": "content-os",
       "description": "Set up a private AI content operating system in a company from the public blueprint.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/content-os-setup"]
+      "skills": [
+        "./skills/content-os-setup"
+      ]
     }
   ]
 }

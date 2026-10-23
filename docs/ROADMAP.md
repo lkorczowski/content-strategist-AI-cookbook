@@ -4,7 +4,7 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 
 ## v1.0 · shipped 2026-10-24
 
-- 12 skills: the Content Testing Loop (3), companions of the four pages already on statur.co (7), the Format Library (1), the content OS blueprint (1).
+- 14 skills: the Content Testing Loop (3), companions of the four pages already on statur.co (7), two statur.co notes (2), the Format Library (1), the content OS blueprint (1).
 - Blueprint of a private AI content OS with templates (knowledge base, project instructions, routine prompt, feedback file, skills registry, git sync for macOS) and the human annotation loop.
 - Plugin marketplace file (one plugin per playbook), checks (skill format, private data scan), zip builder.
 

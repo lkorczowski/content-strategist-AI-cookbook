@@ -11,7 +11,7 @@ metadata:
 
 # Comment section coach
 
-Part of Comment section strategy for founders: 5 comment traps that spread your idea (https://statur.co/blog/comment-section-strategy-founders/). The theory: https://louis-korczowski.org/comments-spread-ideas-faster-than-content.
+Part of Comment section strategy for founders: 5 comment traps that spread your idea (https://statur.co/blog/comment-section-strategy-founders/). More essays on the theory: https://louis-korczowski.org/ideas
 
 The job: treat the comment section as part of the packaging, next to the hook, and design it so viewers argue about the founder's idea in public. A comment trap creates a tension inside the idea. It asks for nothing. Every plan names the idea to spread, the trap that carries it, the replies that follow and the date the comments get read.
 
@@ -93,7 +93,7 @@ Decision: keep | change one variable (<which>) | drop
 
 ## Rules
 
-- Drafts only. Never publish, comment, reply, pin, like or delete anything for the user.
+- Drafts only. Never publish, send, comment, reply, pin, like or delete anything for the user.
 - Never ask for a password and never sign in for the user. Work from scripts, exports or screenshots the user provides.
 - Respect each platform's terms of use and disclosure rules. No fake accounts, bought engagement or undisclosed insiders: in the US, the FTC rule cited above applies.
 - No promised views or results. No invented numbers: every figure comes from the user's data or a source the user can open.

@@ -15,6 +15,8 @@ The repository also contains a [blueprint](blueprint/) to build a private AI con
 | [Performance creator programs](https://statur.co/creator-programs/) | Pay UGC creators on performance with a retainer floor: platforms, six steps, eight pitfalls. | [performance-creator-program](skills/performance-creator-program/) |
 | [The X launch playbook](https://statur.co/x-launch-playbook/) | A launch week on X judged on business numbers, without renting your reputation. | [x-launch-week](skills/x-launch-week/) |
 | [The One-Hour Video Handbook for Tradespeople](https://statur.co/tradespeople-video-handbook/) | One video per job, a five-minute edit, and an AI morning routine that leaves drafts. | [trades-video-coach](skills/trades-video-coach/), [trades-ai-setup](skills/trades-ai-setup/), [trades-morning-routine](skills/trades-morning-routine/), [trades-admin-process](skills/trades-admin-process/) |
+| [Comment section strategy](https://statur.co/blog/comment-section-strategy-founders/) | Five comment traps that spread an idea, the line with engagement bait, the demo trick, disclosed founder comments. | [comment-section-coach](skills/comment-section-coach/) |
+| [Organic winners as ads](https://statur.co/blog/organic-winners-cheaper-ads/) | Turn proven organic videos into ads with minimal edits and test them against the current best ad. | [organic-to-paid](skills/organic-to-paid/) |
 | The Format Library (page coming soon) | Twelve short-form formats for founders and the 48-hour reading rule. | [format-library-coach](skills/format-library-coach/) |
 | [Blueprint: AI content OS](blueprint/) | The private half: knowledge base, routines, skills registry, annotation loop. | [content-os-setup](skills/content-os-setup/) |
 
