@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-24 · v1.0.1
+
+- video-post-mortem 1.0.1 and content-learning-session 1.0.1: credit for the public workflow of Angus Sewell that shaped their structure, two rules reworded. Playbook card of The Content Testing Loop: full credit and essay link.
+
 ## 2026-10-24 · v1.0
 
 - First public release of the cookbook: 14 skills.

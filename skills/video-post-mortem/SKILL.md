@@ -4,7 +4,7 @@ description: Compare short-form videos passage by passage (retention curve, spok
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.0.1"
   playbook: https://statur.co/content-testing-loop/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -12,6 +12,8 @@ metadata:
 # Video post-mortem
 
 Part of The Content Testing Loop (https://statur.co/content-testing-loop/). Read https://statur.co/content-testing-loop.md for the full method and its sources when you can open links.
+
+Credit: the structure of this skill (the early-data rule, the worst reliable passage, KEEP, CHANGE and CUT with speculative changes labelled as tests, the trial-reel A/B test) comes from a public workflow shared by Angus Sewell (https://www.tiktok.com/@angusthenontechnical/video/7699512206605421838). The instructions are written from scratch.
 
 The job: find the passage that lost viewers, read what was said and shown at that moment, propose one precise edit, and say how sure you are. One video compared with nothing teaches nothing. Every judgment is made against the creator's own archive.
 
@@ -31,8 +33,8 @@ For the comparison set: 10 to 20 earlier videos from the same account, same plat
 
 ## Evidence rules
 
-1. Maturity gate. A video is early data until it is at least 7 days old, has passed 1,000 views and its numbers carry a reading date. Early videos get a description, never a verdict.
-2. Own archive only. Compare with the creator's comparable videos. Industry averages are context, never the yardstick.
+1. Maturity gate. A video is early data until it is at least 7 days old, has passed 1,000 views and its numbers carry a reading date. Describe early videos and keep the verdict for later.
+2. Own archive only. Compare with the creator's comparable videos. Industry averages are context only.
 3. Keep the signals apart. Retention says whether people stayed. Saves say they want to come back. Shares say they want someone else to see it. Comments and follows are separate again. Never merge them into one score.
 4. Passage loss. For each window of 1 to 3 seconds, compute the drop in percent still watching, then compare it with the usual drop of the comparison set in the same window. The first 2 seconds always lose the most: judge them against the comparison set, never against the rest of the video.
 5. Archive test. An explanation counts as supported only when the same pattern shows up in at least two other videos and you looked for counterexamples. Otherwise it is a hunch, and you write the word hunch.

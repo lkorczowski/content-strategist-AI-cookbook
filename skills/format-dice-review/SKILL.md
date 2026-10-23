@@ -12,7 +12,7 @@ metadata:
 
 # Format dice review
 
-Part of The Content Testing Loop (https://statur.co/content-testing-loop/). The theory: https://statur.co/method/ and https://louis-korczowski.org/board-game-theory-viral-short-form-video/.
+Part of The Content Testing Loop (https://statur.co/content-testing-loop/). The theory: https://statur.co/method/ and https://louis-korczowski.org/board-game-theory-viral-short-form-video.
 
 A video is a throw and a format is the die. One throw tells you almost nothing. A format is good when it lands high on average with a small spread. This review judges dice, never single throws, and sits above the video post-mortem: the post-mortem fixes a video, the dice review decides which formats get produced next.
 

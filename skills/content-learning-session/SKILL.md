@@ -4,7 +4,7 @@ description: Run a monthly learning session over a creator's or founder's whole 
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.0.1"
   playbook: https://statur.co/content-testing-loop/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -12,6 +12,8 @@ metadata:
 # Content learning session
 
 Part of The Content Testing Loop (https://statur.co/content-testing-loop/). Read https://statur.co/content-testing-loop.md for the full method and its sources when you can open links.
+
+Credit: the structure of this skill (re-test saved lessons first, examples and counterexamples, REFUTED lines kept in the ledger, a coaching brief at the end) comes from a public workflow shared by Angus Sewell (https://www.tiktok.com/@angusthenontechnical/video/7699512206605421838). The instructions are written from scratch.
 
 A post-mortem explains one video. A learning session decides what the whole archive has proven. Its output is a ledger of lessons with their evidence, and a short list of tests for next month. Run it once a month, or after every 20 new videos.
 
