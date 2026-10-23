@@ -1,0 +1,62 @@
+{
+  "name": "content-strategist-ai-cookbook",
+  "owner": {
+    "name": "Dr. Louis Korczowski",
+    "url": "https://statur.co"
+  },
+  "metadata": {
+    "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "content-testing-loop",
+      "description": "Make every short video teach the next one: video post-mortem, format dice review and monthly learning session.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/video-post-mortem", "./skills/format-dice-review", "./skills/content-learning-session"]
+    },
+    {
+      "name": "creative-led-growth",
+      "description": "Coach a founder through creative-led growth: one channel, one hour a day, packaging and share rate.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/creative-led-growth-coach"]
+    },
+    {
+      "name": "creator-programs",
+      "description": "Design, run and audit a creator program paid on performance.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/performance-creator-program"]
+    },
+    {
+      "name": "x-launch-playbook",
+      "description": "Plan a launch week on X judged on business numbers.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/x-launch-week"]
+    },
+    {
+      "name": "tradespeople-video",
+      "description": "One video per job and an AI morning routine for tradespeople, with scripts, setup and admin processes.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/trades-video-coach", "./skills/trades-ai-setup", "./skills/trades-morning-routine", "./skills/trades-admin-process"]
+    },
+    {
+      "name": "format-library",
+      "description": "Pick, script and read twelve short-form formats for founders.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/format-library-coach"]
+    },
+    {
+      "name": "content-os",
+      "description": "Set up a private AI content operating system in a company from the public blueprint.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/content-os-setup"]
+    }
+  ]
+}

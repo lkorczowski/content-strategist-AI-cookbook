@@ -1,0 +1,2 @@
+video_id,platform,publish_date,read_date,days_live,distribution,format,hook_type,length_s,views,likes,comments,saves,shares,new_followers,avg_watch_s,ret_3s_pct,ret_10s_pct,ret_end_pct,transcript_file,notes
+EXAMPLE-001,tiktok,2026-10-01,2026-10-09,8,main_feed,myth_vs_data,claim,58,12400,610,22,180,95,40,21.5,68,47,18,transcripts/EXAMPLE-001.txt,example row: replace with your data

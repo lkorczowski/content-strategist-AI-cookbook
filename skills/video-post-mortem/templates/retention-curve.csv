@@ -1,0 +1,4 @@
+video_id,second,pct_remaining,spoken,on_screen
+EXAMPLE-001,0,100,"Most founders read the wrong number.","WRONG NUMBER"
+EXAMPLE-001,1,86,"",""
+EXAMPLE-001,2,74,"It is the share rate.",""

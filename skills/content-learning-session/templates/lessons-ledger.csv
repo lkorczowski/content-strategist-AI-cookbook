@@ -1,0 +1,2 @@
+lesson_id,lesson,scope_platform,scope_format,status,examples,counterexamples,first_seen,last_checked,next_test
+L001,"A number in the first 2 seconds lifts 3-second retention",tiktok,all,hunch,"EXAMPLE-001;EXAMPLE-007","EXAMPLE-004",2026-10-01,2026-10-24,"Same script with and without the number on screen"

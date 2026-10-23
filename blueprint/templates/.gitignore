@@ -1,0 +1,8 @@
+.DS_Store
+**/.secrets/
+*.token
+*.pat
+.git-credentials
+routines/data/transcripts/
+routines/data/*_cache.csv
+*.bak
