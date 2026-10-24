@@ -8,6 +8,10 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 - Blueprint of a private AI content OS with templates (knowledge base, project instructions, routine prompt, feedback file, skills registry, git sync for macOS) and the human annotation loop.
 - Plugin marketplace file (one plugin per playbook), checks (skill format, private data scan), zip builder.
 
+## v1.1 · shipped 2026-10-24
+
+- STATUR clipping playbook: statur-clipping, clip-plan, clip-edit and clip-review, with scripts, references and the review page template.
+
 ## v1.1 · next
 
 | Item | Deliverable | Done when |
@@ -32,6 +36,8 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 | Authority before the crash | Skill from the essay on AI SaaS renewals: a 90-day authority plan for AI founders |
 | Local search for trades | English skill for a Google Business Profile routine (posts, reviews, keywords) |
 | Blueprint: browser methods | Reference of reliable methods for spreadsheets, documents and meeting transcripts through a browser, within each tool's terms |
+| Clipping 1.1 | Cut boundaries snapped to the quietest 10 ms near each word edge (word timestamps sit on an 80 ms grid), a crop per speaker for split screens, an audiogram style for audio-only sources |
+| Clipping sample case | A short public sample recording in skills/statur-clipping/ with its expected plan and spec, so the chain can be tested end to end in minutes |
 
 ## v2
 

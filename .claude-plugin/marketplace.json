@@ -21,6 +21,18 @@
       ]
     },
     {
+      "name": "statur-clipping",
+      "description": "Turn lives, webinars, long videos or a Google Drive folder into ready-to-post vertical clips: transcription, clip plan, edit, quality check and review page.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-clipping",
+        "./skills/clip-plan",
+        "./skills/clip-edit",
+        "./skills/clip-review"
+      ]
+    },
+    {
       "name": "comment-section",
       "description": "Plan comment traps that spread an idea, read live comment sections and draft disclosed founder comments.",
       "source": "./",

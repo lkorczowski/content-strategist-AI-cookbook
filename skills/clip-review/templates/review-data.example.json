@@ -1,0 +1,101 @@
+{
+ "lang": "en",
+ "start": "C03_v1",
+ "live": {
+  "code": "WEB01",
+  "title": "Pricing Q&A webinar",
+  "date": "2026-10-20",
+  "duration": 3725
+ },
+ "clips": [
+  {
+   "id": "C03",
+   "v": 1,
+   "title": "Why a founder should never discount on the first call",
+   "dur": 74.2,
+   "fps": 25,
+   "src": "C03_v1_review.mp4",
+   "poster": "C03_v1_poster.jpg",
+   "hook": "Why I never discount on a first sales call",
+   "why": "The objection heard on most sales calls, answered with a story.",
+   "objective": {
+    "stage": "BOFU",
+    "goals": [
+     "conversion"
+    ]
+   },
+   "format": "The objection",
+   "score": {
+    "H": 4,
+    "C": 5,
+    "V": 4,
+    "P": 4,
+    "D": 4,
+    "F": 5,
+    "Total": 37.5
+   },
+   "caption": "The discount you give on the first call is the price you keep forever.",
+   "hashtags": [
+    "#founders",
+    "#saas",
+    "#sales"
+   ],
+   "pinned": "Did a first-call discount ever pay off for you?",
+   "edit": "3 passages, 2 cuts, cold open on the rule",
+   "check": [
+    "Cut at 0:41: the restart 'so, so' should be gone"
+   ],
+   "master": "WEB01_C03_v1_pricing-objection.mp4",
+   "segments": [
+    {
+     "s": 2412.4,
+     "e": 2416.1,
+     "label": "Cold open: the rule"
+    },
+    {
+     "s": 2380.2,
+     "e": 2411.9,
+     "label": "The question, restated"
+    },
+    {
+     "s": 2416.1,
+     "e": 2455.6,
+     "label": "The story and the payoff"
+    }
+   ]
+  }
+ ],
+ "plan": [
+  {
+   "id": "C03",
+   "title": "Why a founder should never discount on the first call",
+   "dur": 74,
+   "stage": "BOFU",
+   "format": "The objection",
+   "passages": [
+    [
+     2380.2,
+     2455.6
+    ]
+   ],
+   "total": 37.5,
+   "hook": "Why I never discount on a first sales call"
+  },
+  {
+   "id": "C07",
+   "title": "I rewrote our onboarding email live",
+   "dur": 95,
+   "stage": "MOFU",
+   "format": "Teardown",
+   "passages": [
+    [
+     1210.0,
+     1305.0
+    ]
+   ],
+   "total": 33.0,
+   "hook": "I rewrote our onboarding email live",
+   "flag": "Check every figure against the context file"
+  }
+ ]
+}
