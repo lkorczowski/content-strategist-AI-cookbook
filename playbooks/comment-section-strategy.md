@@ -13,4 +13,4 @@ Five comment traps that spread an idea faster than the video, the line between a
 
 ## Related
 
-- [TikTok account farms](tiktok-account-farms.md): why planted "what app is this?" comments are the first step to drop in an account network, and the demo trick that replaces them.
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): why planted "what app is this?" comments are the first step to drop in an account network, and the demo trick that replaces them.

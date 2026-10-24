@@ -14,4 +14,4 @@ Paying UGC creators on ad performance or sales, with a retainer floor: the platf
 
 ## Related
 
-- [TikTok account farms](tiktok-account-farms.md): the same logic applied to people who post brand content from accounts the brand pays for, with disclosure.
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): the same logic applied to people who post brand content from accounts the brand pays for, with disclosure.

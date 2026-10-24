@@ -1,17 +1,17 @@
 ---
 name: account-network-coach
-description: Plan, run and audit a multi-account short-form system on TikTok and Instagram (what the industry calls account farms, slideshow farms or human posting networks) without fake personas or seeded comments. Decide whether a network fits the product, scout proven photo-slideshow formats, run a fair 40-post volume test across two accounts, convert with honest proof, scale with real people and visible disclosure, and judge on installs and revenue. Use when a founder asks how to manage multiple TikTok accounts, whether account farms work, how to test slideshow formats at volume, or how to review a posting-network vendor.
+description: TikTok slideshow app marketing on several accounts. Plan, run and audit a multi-account short-form system on TikTok and Instagram (what the industry calls account farms, slideshow farms or human posting networks) without fake personas or seeded comments. Decide whether a network fits the product, scout proven photo-slideshow formats, run a fair 40-post volume test across two accounts, convert with honest proof, scale with real people and visible disclosure, and judge on installs and revenue. Use when a founder asks how to market an app with TikTok slideshows, how to manage multiple TikTok accounts, whether account farms work, how to test slideshow formats at volume, or how to review a posting-network vendor.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
   version: "1.0"
-  playbook: https://statur.co/tiktok-account-farms/
+  playbook: https://statur.co/tiktok-slideshow-app-marketing/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
 # Account network coach
 
-Part of TikTok account farms: the account network playbook (https://statur.co/tiktok-account-farms/). Read https://statur.co/tiktok-account-farms.md for the full method and its sources when you can open links. The theory: https://louis-korczowski.org/manage-1000-tiktok-accounts-solo
+Part of TikTok slideshow app marketing: the account network playbook (https://statur.co/tiktok-slideshow-app-marketing/). Read https://statur.co/tiktok-slideshow-app-marketing.md for the full method and its sources when you can open links. The theory: https://louis-korczowski.org/tiktok-account-farms
 
 The job: help a founder use the part of the account-network playbook that is a real method (format testing at volume, one person creating, several people publishing) and drop the part that is a disguise (fake customers, planted comments, tricks to hide that accounts are linked). Every account in the network says who runs it. Every format is judged on mature data. The network is judged on installs, signups and revenue.
 

@@ -25,4 +25,4 @@ Triggered by a public workflow shared by Angus Sewell (Angus the Nontechnical, T
 
 ## Related
 
-- [TikTok account farms](tiktok-account-farms.md): the testing loop at volume, with 40 posts per format on two accounts, read inside each account.
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): the testing loop at volume, with 40 posts per format on two accounts, read inside each account.

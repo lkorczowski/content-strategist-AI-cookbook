@@ -5,13 +5,13 @@ license: MIT
 metadata:
   author: Dr. Louis Korczowski
   version: "1.0"
-  playbook: https://statur.co/tiktok-account-farms/
+  playbook: https://statur.co/tiktok-slideshow-app-marketing/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
 # Slideshow maker
 
-Part of TikTok account farms: the account network playbook (https://statur.co/tiktok-account-farms/). Works for any playbook that needs carousel images.
+Part of TikTok slideshow app marketing: the account network playbook (https://statur.co/tiktok-slideshow-app-marketing/). Works for any playbook that needs carousel images.
 
 The job: turn one format (the structure of a slideshow that already works) into many posts. The assistant writes the slide texts in a CSV, the script renders every slide in one command, and the user reviews the contact sheets and publishes by hand or through their own scheduler.
 
