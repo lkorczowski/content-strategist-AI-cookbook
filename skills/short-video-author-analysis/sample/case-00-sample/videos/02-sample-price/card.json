@@ -1,0 +1,24 @@
+{
+ "group": "recent",
+ "topic": "Sample video B: we raised our price and got more customers (invented)",
+ "hook": "H-CONTRA",
+ "end": "E-CALLBACK",
+ "turn_t": "00:23",
+ "one_line": "A contradiction hook, the old page as setup, the viewer's guess, one customer line, a turn on the price as a signal, and a callback ending.",
+ "signature_moves": [
+  "contradiction hook",
+  "voiced first reading",
+  "customer quote as turn",
+  "callback last line"
+ ],
+ "scores": {
+  "CUR": 14,
+  "WEA": 9,
+  "CLA": 15,
+  "HUM": 12,
+  "EMO": 10,
+  "AUT": 10,
+  "PAY": 13,
+  "VOI": 12
+ }
+}

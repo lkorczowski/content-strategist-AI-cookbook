@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-24 · v1.2
+
+- New playbook: Video Script Structure (https://statur.co/video-script-structure/, page coming soon), with four skills: video-story-analysis 1.0.0 (nine-tier sentence map of a long video, story sheet, structure diagram, replication seed), story-replication 1.0.0 (word budget, beat map, self-map, parity and fact-check), short-video-author-analysis 1.0.0 (one creator across about twenty short videos, templates, medians, author sheet) and short-story-replication 1.0.0 (short talking-head script from one template, with sub-skills for the turn, the hook, the last line and voice adaptation). Acquisition uses only transcripts a platform shows to viewers, files the user owns or a local transcription, within each platform's terms. Examples are invented.
+
 ## 2026-10-24 · v1.1.2
 
 - statur-clipping 1.0.2 and clip-edit 1.0.1: the root of EXPORTS keeps only the latest version of each clip; render_all.py moves older versions to EXPORTS/archives/ (--keep-old to disable), and a dropped clip goes to archives/ too.

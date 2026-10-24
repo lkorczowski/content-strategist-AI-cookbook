@@ -33,6 +33,18 @@
       ]
     },
     {
+      "name": "video-script-structure",
+      "description": "Map the story structure of long or short videos sentence by sentence, then write scripts on your own subject that replay it, with parity and fact checks.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/video-story-analysis",
+        "./skills/story-replication",
+        "./skills/short-video-author-analysis",
+        "./skills/short-story-replication"
+      ]
+    },
+    {
       "name": "comment-section",
       "description": "Plan comment traps that spread an idea, read live comment sections and draft disclosed founder comments.",
       "source": "./",

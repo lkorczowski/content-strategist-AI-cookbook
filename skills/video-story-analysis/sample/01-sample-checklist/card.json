@@ -1,0 +1,24 @@
+{
+ "group": "top",
+ "topic": "Sample video A: why we deleted our onboarding checklist (invented)",
+ "hook": "H-CONFESS",
+ "end": "E-CALLBACK",
+ "turn_t": "00:26",
+ "one_line": "A confession hook, the viewer's sensible first reading, one observed scene, a turn on what the checklist really measured, and a callback ending.",
+ "signature_moves": [
+  "confession hook",
+  "voiced first reading",
+  "observed scene as proof",
+  "callback last line"
+ ],
+ "scores": {
+  "CUR": 13,
+  "WEA": 10,
+  "CLA": 15,
+  "HUM": 11,
+  "EMO": 11,
+  "AUT": 11,
+  "PAY": 14,
+  "VOI": 12
+ }
+}

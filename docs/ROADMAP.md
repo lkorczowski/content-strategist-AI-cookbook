@@ -12,6 +12,10 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 
 - STATUR clipping playbook: statur-clipping, clip-plan, clip-edit and clip-review, with scripts, references and the review page template.
 
+## v1.2 · shipped 2026-10-24
+
+- Video Script Structure playbook: video-story-analysis, story-replication, short-video-author-analysis and short-story-replication. The statur.co page follows after a filmed test of two scripts written with the skills.
+
 ## v1.1 · next
 
 | Item | Deliverable | Done when |
@@ -19,8 +23,8 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 | First GitHub release | v1.0.0 release with one zip per skill (scripts/build_zips.py) | Every zip uploads in Claude and the skill triggers on a test prompt |
 | Repository settings | Description, topics, website link, social preview image (1280x640) | Visible on the repository page |
 | Format Library page | Page live on statur.co, card and skill URLs resolve | No 404 from the card or the skill |
-| Short-video storytelling playbook | Skills short-video-author-analysis and short-story-replication, guide page on statur.co | Skills pass checks; no third-party quote or private link; acquisition works from transcripts the user provides or exports |
-| Long-video storytelling playbook | Skills video-story-analysis and story-replication with their scripts and a small sample case | Same, plus scripts run on the sample in the skill folder |
+| Video Script Structure page | Page live on statur.co/video-script-structure/ with the filmed test, card and skill URLs resolve | No 404 from the card or the skills |
+| Storytelling sample case | A small invented sample (units, blocks, loops) in skills/video-story-analysis/ and skills/short-video-author-analysis/ | analyze.py, aggregate_author.py and parity scripts run on it |
 | Hook stacking | Generic skill hook-stacking: titles, hooks and subject lines with at least three hooks, invented examples | Passes checks; no real client in examples |
 | Landing page audit | Generic page audit for founder sites: hero, conversion, navigation, SEO and AI search, copy that sounds generated | Passes checks; public references only |
 | Video to essay | Turn a talk, a rant or a video transcript into an independent essay with a fact-check step | Passes checks; independence test included |
