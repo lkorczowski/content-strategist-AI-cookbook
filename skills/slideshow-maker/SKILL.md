@@ -5,13 +5,13 @@ license: MIT
 metadata:
   author: Dr. Louis Korczowski
   version: "1.0"
-  playbook: https://statur.co/PLAYBOOK_SLUG/
+  playbook: https://statur.co/tiktok-account-farms/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
 # Slideshow maker
 
-Part of PLAYBOOK_TITLE (https://statur.co/PLAYBOOK_SLUG/). Works for any playbook that needs carousel images.
+Part of TikTok account farms: the account network playbook (https://statur.co/tiktok-account-farms/). Works for any playbook that needs carousel images.
 
 The job: turn one format (the structure of a slideshow that already works) into many posts. The assistant writes the slide texts in a CSV, the script renders every slide in one command, and the user reviews the contact sheets and publishes by hand or through their own scheduler.
 
@@ -27,7 +27,7 @@ If the workspace has a company context file (kb/01_BRAND.md from the blueprint, 
 
 ## Steps
 
-1. Write the format card: number of slides, the job of each slide (hook, items, payoff, call to action), the maximum words per slide (8 to 15 reads in about two seconds), and which slide changes between variants.
+1. Write the format card: number of slides, the job of each slide (hook, items, payoff, call to action), the maximum words per slide (8 to 15 words keeps a slide readable at a glance), and which slide changes between variants.
 2. Write the variants in a CSV, one row per slide: post_id, slide, text, image, bg, position. Use templates/slideshow-spec.csv as the model. Name posts by format and variant (habits-hook-a-01) so the video log can group them later.
 3. Change one variable at a time. For a format test, keep slides 2 to the end fixed and test the hook, then the last slide.
 4. Check every line before rendering. First-person claims must be true for the account that will post them. Numbers, ratings and results must come from the user's data or a source they can open.
@@ -47,7 +47,11 @@ Python 3.9 or later and Pillow (`pip install Pillow`). No network access needed.
 
 ## Platform notes
 
-PLATFORM_NOTES
+Checked on 2026-10-24. Platforms change their limits: check again before a large batch.
+- TikTok: the Content Posting API accepts photo posts of up to 35 images, in JPEG or WebP, up to 1080p and 20 MB per image (https://developers.tiktok.com/doc/content-posting-api-media-transfer-guide, https://developers.tiktok.com/doc/content-posting-api-reference-photo-post). Keep the default --format jpg, or use webp, when slides go through an API or a scheduler.
+- TikTok's commercial content setting applies to photo posts too: "Your brand" for a brand's own promotion, "Branded content" for a paid partner (https://developers.tiktok.com/doc/content-sharing-guidelines).
+- Instagram: a carousel holds up to 20 images or videos. The publishing API accepts JPEG only and crops every image to the first image's aspect ratio (https://developers.facebook.com/docs/instagram-platform/content-publishing). Render a whole carousel at one size, 1080x1350 for 4:5.
+- LinkedIn: post the PDF made with --pdf as a document.
 
 ## Rules
 

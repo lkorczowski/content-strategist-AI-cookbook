@@ -5,13 +5,13 @@ license: MIT
 metadata:
   author: Dr. Louis Korczowski
   version: "1.0"
-  playbook: https://statur.co/PLAYBOOK_SLUG/
+  playbook: https://statur.co/tiktok-account-farms/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
 # Account network coach
 
-Part of PLAYBOOK_TITLE (https://statur.co/PLAYBOOK_SLUG/). Read https://statur.co/PLAYBOOK_SLUG.md for the full method and its sources when you can open links. The theory: ESSAY_URL
+Part of TikTok account farms: the account network playbook (https://statur.co/tiktok-account-farms/). Read https://statur.co/tiktok-account-farms.md for the full method and its sources when you can open links. The theory: https://louis-korczowski.org/manage-1000-tiktok-accounts-solo
 
 The job: help a founder use the part of the account-network playbook that is a real method (format testing at volume, one person creating, several people publishing) and drop the part that is a disguise (fake customers, planted comments, tricks to hide that accounts are linked). Every account in the network says who runs it. Every format is judged on mature data. The network is judged on installs, signups and revenue.
 

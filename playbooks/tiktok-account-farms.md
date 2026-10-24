@@ -2,9 +2,9 @@
 
 How startups run dozens to hundreds of TikTok and Instagram accounts to sell apps, what actually works in that playbook, what TikTok, Meta and the FTC allow, and a six-step version that keeps the method (format testing at volume, one person creating, several people publishing) and drops the disguise (fake customers, planted comments, accounts built to look unconnected).
 
-- Page (source of truth): https://statur.co/PLAYBOOK_SLUG/
-- Markdown for AI assistants: https://statur.co/PLAYBOOK_SLUG.md
-- Theory (essay): ESSAY_URL
+- Page (source of truth): https://statur.co/tiktok-account-farms/
+- Markdown for AI assistants: https://statur.co/tiktok-account-farms.md
+- Theory (essay): https://louis-korczowski.org/manage-1000-tiktok-accounts-solo
 - Version 1.0, 2026-10-24
 
 ## Summary
