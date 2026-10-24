@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-24 · v1.0.2
+
+- New playbook: TikTok account farms (statur.co/tiktok-account-farms), with two skills: account-network-coach 1.0 (fit, format scouting, two-account volume test, conversion without planted comments, scaling with labelled people, vendor audit) and slideshow-maker 1.0 (Python renderer for TikTok and Instagram slideshows and LinkedIn PDF carousels, with a CSV template). Credit to the public video by Miles Feldstein (X, 2026-10-23) in the playbook card.
+- trades-morning-routine 1.1: the carousel step points to slideshow-maker to render the images.
+- Playbook cards of creator programs, comment section strategy, the Content Testing Loop and the X launch playbook: a Related line to the new playbook. Tradespeople card: slideshow-maker as companion skill.
+
 ## 2026-10-24 · v1.0.1
 
 - video-post-mortem 1.0.1 and content-learning-session 1.0.1: credit for the public workflow of Angus Sewell that shaped their structure, two rules reworded. Playbook card of The Content Testing Loop: full credit and essay link.

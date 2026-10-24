@@ -4,7 +4,7 @@ description: Run the daily 7am routine from The One-Hour Video Handbook for Trad
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.1"
   playbook: https://statur.co/tradespeople-video-handbook/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -34,7 +34,7 @@ Run by hand: ask once for the profile items that are missing, or for the video l
 3. Check the website. Look for an existing page about this job and this town. Covered: plan an article that adds the new case and links to that page. Missing: plan a new article for the service and the town.
 4. Website article. Title with the service and the town. 300 to 600 words, plain words, in the order Problem, Agitation, Solution as told in the video. Facts only from the transcript and the profile. Contact line at the end. Save it as a DRAFT on the website. If drafts cannot be saved, paste the article in the brief.
 5. Post texts. One text per app (for example Facebook, Instagram, LinkedIn), 80 to 150 words, in the user's tone, contact line at the end. Remind the user to upload the clean video file in each app by hand, without another app's watermark.
-6. Carousel. 5 to 7 slides: the customer's question, the problem, why it mattered, the result, the delay given in the video, the contact. Give the slide text and one image idea per slide (frames from the video, or the before and after photos the user already has). Create the images if the assistant can, and attach or link them.
+6. Carousel. 5 to 7 slides: the customer's question, the problem, why it mattered, the result, the delay given in the video, the contact. Give the slide text and one image idea per slide (frames from the video, or the before and after photos the user already has). Create the images if the assistant can (the skill slideshow-maker renders the slides from a CSV of texts and the user's photos with one Python command), and attach or link them.
 7. Morning brief. Create an email DRAFT titled "Morning brief <date>" in the user's inbox, in this order: what to post today, links to the drafts, the texts ready to paste, the carousel, then "Needs you" (expired sign-ins, facts to confirm, questions).
 8. Log. Save the run date and the videos processed. Read any feedback the user left (a reply to yesterday's brief, notes in the instructions) and apply it from the next run.
 

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "1.0.0"
+    "version": "1.0.2"
   },
   "plugins": [
     {
@@ -18,6 +18,16 @@
         "./skills/video-post-mortem",
         "./skills/format-dice-review",
         "./skills/content-learning-session"
+      ]
+    },
+    {
+      "name": "tiktok-account-farms",
+      "description": "Plan, test and audit a multi-account TikTok and Instagram system without fake personas, and render slideshows at volume.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/account-network-coach",
+        "./skills/slideshow-maker"
       ]
     },
     {

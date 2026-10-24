@@ -14,3 +14,5 @@ Twelve recipes for electricians, plumbers, installers and builders: one video pe
 | [trades-ai-setup](../skills/trades-ai-setup/) | One-time install: channel and website audit, the 7am task, a first test. |
 | [trades-morning-routine](../skills/trades-morning-routine/) | Every morning: article draft, post texts and carousel left as drafts. |
 | [trades-admin-process](../skills/trades-admin-process/) | One-page processes for quotes, invoices and reminders, with your assistant. |
+
+Companion skill from another playbook: [slideshow-maker](../skills/slideshow-maker/) renders the carousel images of the morning routine from the slide texts and your own job photos.

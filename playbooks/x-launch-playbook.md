@@ -11,3 +11,7 @@ How paid distribution networks sell launches on X, what X's rules and the FTC al
 | Skill | Use it for |
 |---|---|
 | [x-launch-week](../skills/x-launch-week/) | Plan a six-step launch week on X without renting your reputation, and judge it on business numbers. |
+
+## Related
+
+- [TikTok account farms](tiktok-account-farms.md): the TikTok and Instagram cousin of paid launch networks, with the rules on disclosure and fake engagement.

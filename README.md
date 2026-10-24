@@ -11,6 +11,7 @@ The repository also contains a [blueprint](blueprint/) to build a private AI con
 | Playbook | What it does | Skills |
 |---|---|---|
 | [The Content Testing Loop](https://statur.co/content-testing-loop/) | Make every short video teach the next one: video log, 7-day rule, passage-by-passage post-mortems, KEEP / CHANGE / CUT edits, format review, monthly lessons ledger. | [video-post-mortem](skills/video-post-mortem/), [format-dice-review](skills/format-dice-review/), [content-learning-session](skills/content-learning-session/) |
+| [TikTok account farms](https://statur.co/tiktok-account-farms/) | Run several TikTok and Instagram accounts the honest way: scout proven slideshow formats, test 40 posts on two accounts, convert with real proof, scale with labelled people, judge on customers. | [account-network-coach](skills/account-network-coach/), [slideshow-maker](skills/slideshow-maker/) |
 | [The Creative-Led Growth Handbook](https://statur.co/creative-led-growth/) | One primary channel, one hour of founder time a day for five to ten pieces, packaging, share rate first. | [creative-led-growth-coach](skills/creative-led-growth-coach/) |
 | [Performance creator programs](https://statur.co/creator-programs/) | Pay UGC creators on performance with a retainer floor: platforms, six steps, eight pitfalls. | [performance-creator-program](skills/performance-creator-program/) |
 | [The X launch playbook](https://statur.co/x-launch-playbook/) | A launch week on X judged on business numbers, without renting your reputation. | [x-launch-week](skills/x-launch-week/) |
