@@ -1,0 +1,27 @@
+{
+ "id": "C03",
+ "version": 1,
+ "slug": "pricing-objection",
+ "title": "Why a founder should never discount on the first call",
+ "hook": {"text": "Why I never discount|on a first sales call", "dur": 3.2, "size": 90},
+ "segments": [
+  {"s": 2412.40, "e": 2416.10, "label": "cold open: the rule", "screen": "The rule"},
+  {"s": 2380.20, "e": 2411.90, "label": "the question from the chat, restated", "screen": "The question"},
+  {"s": 2416.10, "e": 2455.60, "label": "the story and the payoff", "screen": "What happened"}
+ ],
+ "cut": [[2395.10, 2397.80], [2430.25, 2431.00]],
+ "fix": [
+  {"s": 2381.00, "e": 2381.30, "text": "SaaS"},
+  {"s": 2440.55, "e": 2440.70, "text": "MRR,"},
+  {"s": 2447.10, "e": 2447.25, "text": ""}
+ ],
+ "frame": {"fps": 25, "crop_y": 0.6, "face_y": 0.75},
+ "captions": {"y": 0.75},
+ "objective": {"stage": "BOFU", "goals": ["conversion"], "why": "The objection heard on most sales calls."},
+ "format": "The objection",
+ "caption": "The discount you give on the first call is the price you keep forever.",
+ "hashtags": ["#founders", "#saas", "#sales"],
+ "pinned": "Did a first-call discount ever pay off for you?",
+ "check": ["Cut at 0:41: the restart 'so, so' should be gone"],
+ "changelog": ["v1: first edit from the clip plan."]
+}

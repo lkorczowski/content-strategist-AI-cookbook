@@ -11,6 +11,7 @@ The repository also contains a [blueprint](blueprint/) to build a private AI con
 | Playbook | What it does | Skills |
 |---|---|---|
 | [The Content Testing Loop](https://statur.co/content-testing-loop/) | Make every short video teach the next one: video log, 7-day rule, passage-by-passage post-mortems, KEEP / CHANGE / CUT edits, format review, monthly lessons ledger. | [video-post-mortem](skills/video-post-mortem/), [format-dice-review](skills/format-dice-review/), [content-learning-session](skills/content-learning-session/) |
+| [STATUR clipping](https://statur.co/clipping/) | Turn lives, webinars, long YouTube videos or a Google Drive folder into ready-to-post vertical clips, in French or English: local transcription, clip plan, edit with captions and a moving watermark, quality check, review page with timecoded notes. | [statur-clipping](skills/statur-clipping/), [clip-plan](skills/clip-plan/), [clip-edit](skills/clip-edit/), [clip-review](skills/clip-review/) |
 | [The Creative-Led Growth Handbook](https://statur.co/creative-led-growth/) | One primary channel, one hour of founder time a day for five to ten pieces, packaging, share rate first. | [creative-led-growth-coach](skills/creative-led-growth-coach/) |
 | [Performance creator programs](https://statur.co/creator-programs/) | Pay UGC creators on performance with a retainer floor: platforms, six steps, eight pitfalls. | [performance-creator-program](skills/performance-creator-program/) |
 | [The X launch playbook](https://statur.co/x-launch-playbook/) | A launch week on X judged on business numbers, without renting your reputation. | [x-launch-week](skills/x-launch-week/) |
@@ -56,7 +57,7 @@ Or copy a skill folder into `.agents/skills/` (shared path), `.claude/skills/` (
 
 ## How this repository is organized
 
-- skills/: one folder per skill, Agent Skills format (SKILL.md, plus templates/ when the skill needs a table to fill).
+- skills/: one folder per skill, Agent Skills format (SKILL.md, plus templates/, references/ and scripts/ when the skill needs them).
 - playbooks/: short cards that link each page, its markdown version, its essay and its skills. The page on statur.co is the source of truth for the text.
 - blueprint/: how to build a private AI content OS, with templates.
 - scripts/: checks run before every change (skill format, private data scan) and the zip builder for releases.
