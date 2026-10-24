@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.1"
+  version: "1.0.2"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -74,7 +74,7 @@ Audio-only sources (a podcast without video) transcribe and plan fine. The edit 
 4. Plan. Use the clip-plan skill: topic map, candidates of 60 seconds or more, hard gates, six scores, funnel stage. Show the plan as one table and let the user pick. Then write the spec of the best clip (format: references/spec.md).
 5. Edit. Use the clip-edit skill: `clip_render.py` for one clip, `render_all.py` for a batch, then `qa_clip.py` on every master.
 6. Review. Use the clip-review skill: a private page with the review copies, timecoded notes and a verdict per clip. Turn each note into a spec change, render the next version, answer the note.
-7. Deliver. Masters in `EXPORTS LIVE01` named `LIVE01_C01_v2_slug.mp4` with their `.srt`, and per clip a brief: title, caption, hashtags, pinned comment. The user posts.
+7. Deliver. Masters in `EXPORTS LIVE01` named `LIVE01_C01_v2_slug.mp4` with their `.srt`, and per clip a brief: title, caption, hashtags, pinned comment. The root of `EXPORTS LIVE01` holds only the latest version of each clip, the one ready to post: when a new version is exported, render_all.py moves the older ones to `EXPORTS LIVE01/archives/` (moved, never deleted). A clip the user drops goes to `archives/` too, meaning it will not be used without changes. The user posts.
 
 For the first test, stop after one clip and its review. Edit the others only after the user has seen that one.
 

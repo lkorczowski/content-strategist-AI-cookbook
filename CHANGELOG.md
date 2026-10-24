@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-24 · v1.1.2
+
+- statur-clipping 1.0.2 and clip-edit 1.0.1: the root of EXPORTS keeps only the latest version of each clip; render_all.py moves older versions to EXPORTS/archives/ (--keep-old to disable), and a dropped clip goes to archives/ too.
+
 ## 2026-10-24 · v1.1.1
 
 - statur-clipping 1.0.1 (references/sources.md: YouTube archive, replay audio and file size worded as their sources say) and clip-plan 1.0.1 (one overstatement removed), after the independent fact-check of statur.co/clipping 1.1.
