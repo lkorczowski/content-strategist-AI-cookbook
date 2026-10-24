@@ -32,21 +32,23 @@ One clip:
 
 ```
 python3 clip_render.py --source RUSH.mp4 --words words.json --spec C01.json --out "TRAVAIL LIVE01/C01_v1" \
-  --sync sync.json --fonts FONTS_DIR --review --tmp /tmp/clips [--budget 150] [--watermark "yourbrand.com"]
+  --sync sync.json --audio audio16k.flac --fonts FONTS_DIR --review --tmp /tmp/clips [--budget 150] [--watermark "yourbrand.com"]
 ```
 
 A batch, with masters copied to EXPORTS and clips skipped when their spec has not changed:
 
 ```
 python3 render_all.py --project "$HOME/Clips/2026-10-24 LIVE01 Title" --code LIVE01 --source RUSH.mp4 --words words.json \
-  --sync sync.json --fonts FONTS_DIR --tmp /tmp/clips [--budget 150] specs/C01.json specs/C05.json ...
+  --sync sync.json --audio audio16k.flac --fonts FONTS_DIR --tmp /tmp/clips [--budget 150] specs/C01.json specs/C05.json ...
 ```
 
 Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_out.json` (the words the edit keeps, on the clip's timeline), `cutlist.json`, `render_report.json` (cut map, loudness), `review/C01_v1_review.mp4` (under 19.3 MiB) and a poster. render_all.py also writes `EXPORTS LIVE01/LIVE01_C01_v1_slug.mp4` and its `.srt`. On a machine that stops long commands, keep `--budget` and re-run until it prints DONE or ALL_DONE.
 
 ## Edit style "simple" (default)
 
-- Plays the spec's passages in the given order. Removes pauses longer than 0.30 s between words (padding 0.06 s before, 0.12 s after, never reaching into a removed word) and the words listed in `cut`.
+- Plays the spec's passages in the given order. Removes pauses longer than 0.30 s between words (padding 0.06 s before, 0.12 s after, never reaching into a removed word) and every `cut` range, exactly: nothing inside a cut range is kept, whatever the word timestamps say.
+- With `--audio audio16k.flac`, each cut-in moves back to the real speech onset found on the waveform: speech recognition often places a word's start 50 to 150 ms late.
+- Audio pieces are counted in samples to match the video frames exactly, so a clip of 40 pieces keeps lip sync on replays with jittery audio timestamps.
 - Every other piece gets a 1.10 punch-in toward the face point, so jump cuts read as intended. 12 ms audio fades on every cut.
 - Captions: 3 words or 18 characters per line, active word in the accent color, white text, dark outline, at 70 to 75% of the height, built only from the words kept in the edit.
 - Hook box: the first 3 seconds, top of the frame, one sentence on two lines at most.

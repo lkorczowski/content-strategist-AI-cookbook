@@ -49,7 +49,7 @@ Needs ffmpeg with libass and Python 3.10 or newer. Installs sherpa-onnx and nump
 | Source | How the file arrives | Watch out |
 |---|---|---|
 | Your own recording (OBS, TikTok LIVE Studio, StreamYard or Riverside local tracks, Zoom local recording) | a local path | best quality: make it the default for every live that matters |
-| A live replay on the platform | the platform's own download: TikTok LIVE Center, YouTube Studio, Facebook, Instagram archive, Twitch Video Producer | replays expire (about 30 days on TikTok and Facebook) and come back at about 720p; always run the sync check |
+| A live replay on the platform | the platform's own download: TikTok LIVE Center, YouTube Studio, Facebook, Instagram archive, Twitch Video Producer | replays expire (about 30 days on TikTok and Facebook); TikTok and YouTube Studio downloads come back at 720p or less; always run the sync check |
 | A long YouTube video | the original upload file first; YouTube Studio download (MP4 at 720p or 360p) or Google Takeout for your own channel | a third-party downloader sits outside YouTube's terms: only for videos the user owns or has written permission for, after they confirm |
 | A Google Drive file | the Google Drive for desktop path (no size limit), or a link shared as "anyone with the link" | private client footage: ask the owner, never change its sharing to make a download work |
 | A Google Drive folder | the Drive for desktop folder, a shared folder link, or rclone with the user's own Google client ID | becomes a queue: one project per video |

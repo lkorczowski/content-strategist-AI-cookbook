@@ -41,10 +41,44 @@ def probe(path):
             "dur": float(j["format"]["duration"]), "has_audio": a is not None}
 
 # ---------------------------------------------------------------- cut list
-def keep_intervals(words, spec):
+def speech_onset(audio, lo, s0):
+    """Start of the speech burst that holds s0, searched back to lo on the transcript audio (16 kHz).
+    ASR word starts often land 50 to 150 ms after the real onset (a plosive, a soft first syllable).
+    Returns None when no silence separates the word from what comes before (connected speech)."""
+    if not audio or s0 - lo < 0.03:
+        return None
+    r = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-ss", f"{lo:.3f}", "-i", audio, "-t", f"{s0 + 0.12 - lo:.3f}",
+                        "-ac", "1", "-ar", "16000", "-f", "s16le", "-"], capture_output=True)
+    raw = r.stdout
+    n = len(raw) // 2
+    if n < 480:
+        return None
+    vals = memoryview(raw).cast("h")
+    hop = 160                       # 10 ms frames
+    db = []
+    for i in range(0, n - hop + 1, hop):
+        acc = 0
+        for v in vals[i:i + hop]:
+            acc += v * v
+        db.append(10 * math.log10(acc / hop + 1e-9) - 90.3)
+    k0 = min(len(db) - 1, int((s0 - lo) / 0.01))
+    floor, peak = min(db), max(db[k0:]) if db[k0:] else max(db)
+    if peak - floor < 15:
+        return None
+    th = floor + 0.25 * (peak - floor)
+    j = k0
+    while j >= 0 and db[j] >= th:
+        j -= 1
+    if j < 0:
+        return None
+    return lo + (j + 1) * 0.01
+
+def keep_intervals(words, spec, audio=None):
     """Kept intervals [src_s, src_e, segment_index], in the order of spec["segments"].
     A run of words breaks on a pause longer than min_gap or when a removed word sits in between.
-    Padding never reaches into a neighbouring word, so a removed word never bleeds into the cut."""
+    Padding never reaches into a neighbouring word, so a removed word never bleeds into the cut.
+    A cut is an exact time range: whatever the word timestamps say, nothing inside [a, b] is kept
+    (ASR word boundaries can be 50 to 100 ms off; a cut placed on the waveform wins)."""
     sil = {"min_gap": 0.30, "pad_in": 0.06, "pad_out": 0.12, "max_keep_gap": 0.20, "bleed": 0.02}
     sil.update(spec.get("silence", {}))
     cuts = [(float(c[0]), float(c[1])) for c in spec.get("cut", [])]
@@ -76,12 +110,31 @@ def keep_intervals(words, spec):
             prev_e = words[i0 - 1]["e"] if i0 > 0 else -1e9
             next_s = words[i1 + 1]["s"] if i1 + 1 < n else 1e9
             a = max(S, s0 - sil["pad_in"], min(prev_e, s0) - sil["bleed"])
+            lo = max(S, min(prev_e, s0) - sil["bleed"], s0 - 0.30)
+            on = speech_onset(audio, lo, s0)
+            if on is not None:
+                a = min(a, max(lo, on - 0.02))
             b = min(E, e1 + sil["pad_out"], max(next_s, e1) + sil["bleed"])
             if ivs and ivs[-1][3] + 1 == i0 and a - ivs[-1][1] <= sil["max_keep_gap"]:
                 ivs[-1][1] = max(ivs[-1][1], b); ivs[-1][3] = i1
             else:
                 ivs.append([a, b, i0, i1])
-        out.extend([round(a, 3), round(b, 3), k] for a, b, _, _ in ivs if b - a >= 0.12)
+        frags = []
+        for a, b, _, _ in ivs:
+            parts = [(a, b)]
+            for ca, cb in cuts:
+                nxt = []
+                for x, y in parts:
+                    if cb <= x or ca >= y:
+                        nxt.append((x, y))
+                    else:
+                        if ca > x:
+                            nxt.append((x, ca))
+                        if cb < y:
+                            nxt.append((cb, y))
+                parts = nxt
+            frags.extend(parts)
+        out.extend([round(a, 3), round(b, 3), k] for a, b in frags if b - a >= 0.12)
     keep_intervals.kept = kept
     return out
 
@@ -341,6 +394,7 @@ def main():
     ap.add_argument("--force", action="store_true", help="re-render everything")
     ap.add_argument("--plan-only", action="store_true", help="write the cut list, captions and words, then stop (no video)")
     ap.add_argument("--watermark", default=None, help="watermark text (creator handle or domain); the spec's watermark.text wins; 'none' disables")
+    ap.add_argument("--audio", default=None, help="transcript audio (audio16k.flac): moves each cut-in back to the real speech onset")
     ap.add_argument("--sync", default=None, help="sync map from sync_check.py (or a constant offset in seconds) when the transcript audio does not follow the video's timeline")
     a = ap.parse_args()
     t_start = time.time()
@@ -364,9 +418,9 @@ def main():
     zm = {"enabled": True, "factor": 1.10}; zm.update(spec.get("zoom", {}))
 
     os.makedirs(a.out, exist_ok=True)
-    ivs = keep_intervals(words, spec)
+    ivs = keep_intervals(words, spec, a.audio)
     kept_words = keep_intervals.kept
-    fp = hashlib.sha1(json.dumps([[iv[:2] for iv in ivs], fr, zm, PREROLL, info["w"], info["h"], str(a.sync), 2], sort_keys=True).encode()).hexdigest()[:10]
+    fp = hashlib.sha1(json.dumps([[iv[:2] for iv in ivs], fr, zm, PREROLL, info["w"], info["h"], str(a.sync), 3], sort_keys=True).encode()).hexdigest()[:10]
     tmp = os.path.join(a.tmp or os.path.join(a.out, "_tmp"), f"{spec.get('id', 'clip')}_v{spec.get('version', 1)}_{fp}")
     if a.force:
         shutil.rmtree(tmp, ignore_errors=True)
@@ -378,15 +432,23 @@ def main():
     # audio (48 kHz) and video stay aligned across the concat
     to_media = load_sync(a.sync)
     words_out, mapping, o = [], [], 0.0
+    captioned = set()
     for i, (s, e, k) in enumerate(ivs):
         e = round(s + max(1, round((e - s) * FPS)) / FPS, 4)
         ms_ = to_media(s)
         mapping.append({"src_s": s, "src_e": e, "media_s": round(ms_, 4), "out_s": round(o, 4), "out_e": round(o + e - s, 4), "seg": k,
                         "zoom": zm["factor"] if (zm["enabled"] and i % 2 == 1) else 1.0})
+        # a kept word is captioned in the piece that holds most of it; ASR start and end times can be a
+        # little off, so a word that runs past the piece (a cut placed on the waveform) is still shown,
+        # clamped to the piece, while a word that only grazes the piece is not
         for wi, w in enumerate(words):
-            if wi in kept_words and not w.get("hide") and w["s"] >= s - 0.01 and w["e"] <= e + 0.05:
-                words_out.append({"w": w["w"], "s": round(max(0, w["s"] - s) + o, 3),
-                                  "e": round(min(e, w["e"]) - s + o, 3)})
+            ov = min(e, w["e"]) - max(s, w["s"])
+            if (wi in kept_words and (wi, k) not in captioned and not w.get("hide")
+                    and ov >= min(0.12, 0.5 * max(w["e"] - w["s"], 0.02))):
+                captioned.add((wi, k))
+                ws_ = max(0.0, w["s"] - s)
+                words_out.append({"w": w["w"], "s": round(ws_ + o, 3),
+                                  "e": round(max(ws_ + 0.04, min(e, w["e"]) - s) + o, 3)})
         o += e - s
     total = o
 
@@ -418,10 +480,14 @@ def main():
         pre = min(PREROLL, start)
         nfr = max(1, round(dur * FPS))
         sp = round(pre * FPS)          # after the fps filter, one pts unit is one frame
+        ns = round(nfr * 48000 / FPS)  # audio samples of the piece: exactly the length of its video
+        # audio: the start is found on timestamps, the length is counted in samples. Live replays carry
+        # jittery audio timestamps, so a duration measured on timestamps gives pieces a few ms too long
+        # or too short, and the error adds up over the concat (up to 0.1 s of lip-sync drift on a 1 min clip)
         fc = (f"[0:v]fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
               f"crop={cw}:{ch}:{cx}:{cy},scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[v];"
-              f"[0:a]atrim=start={pre:.4f}:duration={dur:.4f},asetpts=PTS-STARTPTS,aresample=48000,"
-              f"aformat=sample_fmts=s16:channel_layouts=stereo,apad=whole_dur={dur:.4f},atrim=duration={dur:.4f},"
+              f"[0:a]atrim=start={pre:.4f}:duration={dur + 0.25:.4f},asetpts=PTS-STARTPTS,aresample=48000,asetpts=N/SR/TB,"
+              f"aformat=sample_fmts=s16:channel_layouts=stereo,apad=whole_len={ns},atrim=end_sample={ns},"
               f"afade=t=in:st=0:d={fade:.3f},afade=t=out:st={max(0, dur - fade):.4f}:d={fade:.3f}[a]")
         cmd = ["ffmpeg", "-nostdin", "-y", "-v", "error", "-ss", f"{start - pre:.4f}", "-i", a.source,
                "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "ultrafast",

@@ -4,7 +4,7 @@ Newest first. One line per change: date, what changed, version.
 
 ## 2026-10-24 · v1.1
 
-- New playbook: STATUR clipping (https://statur.co/clipping/), with four skills: statur-clipping 1.0 (sources: live replays, long YouTube videos, Google Drive files and folders, local files and folders; install, queue, watermark, routine; every script), clip-plan 1.0 (with the clip rubric), clip-edit 1.0 and clip-review 1.0 (review page template with a local mode, page builder). Built from a real run on a 1:40 TikTok live.
+- New playbook: STATUR clipping (https://statur.co/clipping/), with four skills: statur-clipping 1.0 (sources: live replays, long YouTube videos, Google Drive files and folders, local files and folders; install, queue, watermark, routine; every script), clip-plan 1.0 (with the clip rubric), clip-edit 1.0 (renderer with exact cut ranges, cut-ins moved back to the speech onset with --audio, audio counted in samples against lip-sync drift) and clip-review 1.0 (review page template with a local mode, page builder). Built from a real run on a 1:40 TikTok live.
 
 ## 2026-10-24 · v1.0.1
 

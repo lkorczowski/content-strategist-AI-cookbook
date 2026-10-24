@@ -7,7 +7,7 @@ since its last successful export.
 
 Usage:
   render_all.py --project "2026-10-24 LIVE01 Title" --code LIVE01 --source RUSH --words words.json
-                [--sync sync.json] [--fonts DIR] [--tmp /tmp/clips] [--budget 150] SPEC [SPEC ...]
+                [--sync sync.json] [--audio audio16k.flac] [--fonts DIR] [--tmp /tmp/clips] [--budget 150] SPEC [SPEC ...]
 Outputs: TRAVAIL <code>/<id>_v<version>/ (master, captions, review copy) and
          EXPORTS <code>/<code>_<id>_v<version>_<slug>.mp4 + .srt
 """
@@ -19,6 +19,7 @@ def main():
     ap.add_argument("--project", required=True); ap.add_argument("--code", required=True)
     ap.add_argument("--source", required=True); ap.add_argument("--words", required=True)
     ap.add_argument("--sync", default=None); ap.add_argument("--fonts", default=os.path.join(HERE, "..", "fonts"))
+    ap.add_argument("--audio", default=None, help="transcript audio (audio16k.flac): each cut-in moves back to the real speech onset")
     ap.add_argument("--tmp", default="/tmp/clips"); ap.add_argument("--budget", type=float, default=0)
     ap.add_argument("--watermark", default=None, help="default watermark text for every clip (a spec's own text wins)")
     ap.add_argument("--keep-temp", action="store_true", help="keep the rendered pieces (faster re-renders, more disk)")
@@ -49,6 +50,8 @@ def main():
                "--spec", sp, "--out", out, "--fonts", a.fonts, "--review", "--tmp", a.tmp]
         if a.sync:
             cmd += ["--sync", a.sync]
+        if a.audio:
+            cmd += ["--audio", a.audio]
         if a.watermark:
             cmd += ["--watermark", a.watermark]
         if a.keep_temp:

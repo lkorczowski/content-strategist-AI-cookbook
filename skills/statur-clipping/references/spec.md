@@ -10,7 +10,7 @@ One JSON file per clip version. clip-plan writes it, clip-edit renders it, clip-
 | `title` | Working title, for the review page. |
 | `hook` | `{"text": "...", "dur": 3.2, "size": 90}`. One natural sentence of ten words or fewer, in the speaker's voice, shown in a box at the top for `dur` seconds. `|` forces a line break. Optional: `y` (0.15), `box`, `text_color`, `font`, `margin`, `pad`, `max_chars` (0 = wrap only on `|`). |
 | `segments` | Passages in play order: `{"s": 3612.5, "e": 3619.0, "label": "the claim", "screen": "Part 1/3"}`. Chronological or not: a cold open is a short segment placed first and removed from the later one with `cut`. `label` is for humans; `screen` shows a chapter label at the top (consecutive segments with the same `screen` share it; groups longer than 15 s show it for 4 s). |
-| `cut` | `[[s, e], ...]`: words whose middle falls inside a range are removed from the audio, the picture and the captions. |
+| `cut` | `[[s, e], ...]`: an exact time range, removed from the audio and the picture whatever the word timestamps say; words whose middle falls inside it leave the captions. |
 | `fix` | Caption corrections: `{"s": 3713.3, "e": 3713.6, "text": "coût"}` replaces the words that START inside [s, e) with the text, timed over the same span. A fix never changes the audio. An empty text hides the words from the captions and keeps them in the clip. To remove audio, use `cut`. |
 | `changelog` | One line per version: what changed and why. Shown on the review page. |
 
