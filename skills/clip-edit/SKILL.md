@@ -1,10 +1,10 @@
 ---
 name: clip-edit
-description: Render a planned clip from a long recording with ffmpeg and no editing software. Cut list from word timestamps, silence trimming, cold open, alternating punch-in on jump cuts, 9:16 crop, word-by-word burned captions with the active word highlighted, opening hook box, chapter labels, a small moving watermark, two-pass loudness normalization, an H.264 master at any length and resolution up to 4K, a light review copy, then a quality check that transcribes the clip again. Use when a clip spec exists (from clip-plan) and the user wants the edited file, a batch of clips, or a simple repeatable edit style for lives, webinars and long videos.
+description: Render a planned clip from one or several long recordings with ffmpeg and no editing software. Cut list from word timestamps, silence trimming, cold open, alternating punch-in on jump cuts, a 9:16 crop or a composed layout (screen share on top, camera bubble in a circle, call thumbnail in a rounded box, blurred background), word-by-word burned captions with the active word highlighted, opening hook box, chapter labels, a small moving watermark, loudness leveled across sources and normalized in two passes, an H.264 master at any length and resolution up to 4K, a light review copy, then a quality check that transcribes the clip again. Use when a clip spec exists (from clip-plan) and the user wants the edited file, a batch of clips, a mix of several recordings, or a simple repeatable edit style for lives, webinars, calls, screen recordings and long videos.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.1"
+  version: "1.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -42,6 +42,13 @@ python3 render_all.py --project "$HOME/Clips/2026-10-24 LIVE01 Title" --code LIV
   --sync sync.json --audio audio16k.flac --fonts FONTS_DIR --tmp /tmp/clips [--budget 150] specs/C01.json specs/C05.json ...
 ```
 
+A mix of several recordings, or a project with one folder for several recordings: the spec lists its `sources` (paths relative to the project folder), and no `--source` or `--words` is needed:
+
+```
+python3 clip_render.py --spec "TRAVAIL WEB01/specs/C02_v1.json" --root "$HOME/Clips/2026-10-25 WEB01 Title" --out "TRAVAIL WEB01/C02_v1" --fonts FONTS_DIR --review --tmp /tmp/clips
+python3 render_all.py --project "$HOME/Clips/2026-10-25 WEB01 Title" --code WEB01 --fonts FONTS_DIR --tmp /tmp/clips --budget 150 specs/C0*_v1.json
+```
+
 Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_out.json` (the words the edit keeps, on the clip's timeline), `cutlist.json`, `render_report.json` (cut map, loudness), `review/C01_v1_review.mp4` (under 19.3 MiB) and a poster. render_all.py also writes `EXPORTS LIVE01/LIVE01_C01_v1_slug.mp4` and its `.srt`, and moves older versions of that clip to `EXPORTS LIVE01/archives/`, so the root holds only the version ready to post (`--keep-old` disables it). On a machine that stops long commands, keep `--budget` and re-run until it prints DONE or ALL_DONE.
 
 ## Edit style "simple" (default)
@@ -57,7 +64,16 @@ Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_ou
 - Audio: high-pass 70 Hz, light compression, two-pass loudness normalization to -14 LUFS with a -1.5 dB true peak.
 - Master: H.264 CRF 17 at the spec's size and frame rate, any length, 4K when the source allows it. Render where the footage is: a master never travels through a chat tool.
 
-Next styles, not in this version: B-roll from a stock library, motion design with a programmatic tool (check the license threshold of each tool for companies), a crop per speaker for split screens.
+## Layouts for screen shares, camera bubbles and calls
+
+A source or a segment can take a composed layout instead of the 9:16 crop (fields: `../statur-clipping/references/spec.md`). Three that worked on real recordings:
+- `face`: the camera bubble of a screen recording (Loom) enlarged in a circle over a blurred copy of the screen, captions at 0.75. For talking.
+- `react`: the video on screen (the one being analyzed) in the top half, captions in the middle, the bubble below. For moments where the screen matters.
+- `meet`: the speaker's call thumbnail enlarged in a rounded box over its own blurred copy, captions at 0.70. The only clean option when the speaker recorded their own call window; it stays soft.
+
+Measure each rectangle on a frame of the recording, render five seconds with `--plan-only` off, look at three frames, then render the clip. Alternate two layouts of the same source (face, then react) to cover a jump cut instead of the punch-in.
+
+Next styles, not in this version: B-roll from a stock library, motion design with a programmatic tool (check the license threshold of each tool for companies), automatic speaker detection in calls.
 
 ## Quality check (always, before review)
 

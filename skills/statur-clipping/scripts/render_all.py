@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Render every clip spec of a live, one after the other, and copy each master to EXPORTS.
+"""Render every clip spec of a project, one after the other, and copy each master to EXPORTS.
 
 Resumable: run it again until it prints ALL_DONE (machines that cap command time stop it midway;
 each clip_render.py run resumes where it stopped). A clip is skipped when its spec has not changed
 since its last successful export.
 
 Usage:
-  render_all.py --project "2026-10-24 LIVE01 Title" --code LIVE01 --source RUSH --words words.json
-                [--sync sync.json] [--audio audio16k.flac] [--fonts DIR] [--tmp /tmp/clips] [--budget 150] SPEC [SPEC ...]
+  one recording:  render_all.py --project "2026-10-24 LIVE01 Title" --code LIVE01 --source RUSH --words words.json
+                  [--sync sync.json] [--audio audio16k.flac] [--fonts DIR] [--tmp /tmp/clips] [--budget 150] SPEC [SPEC ...]
+  several:        render_all.py --project "2026-10-25 WEB01 Title" --code WEB01 [--fonts DIR] [--budget 150] SPEC [SPEC ...]
+                  (each spec lists its "sources" with paths relative to the project folder)
 Outputs: TRAVAIL <code>/<id>_v<version>/ (master, captions, review copy) and
          EXPORTS <code>/<code>_<id>_v<version>_<slug>.mp4 + .srt
 The root of EXPORTS keeps only the newest version of each clip: older versions (.mp4 and .srt) move to
@@ -39,7 +41,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", required=True); ap.add_argument("--code", required=True)
-    ap.add_argument("--source", required=True); ap.add_argument("--words", required=True)
+    ap.add_argument("--source", default=None); ap.add_argument("--words", default=None)
     ap.add_argument("--sync", default=None); ap.add_argument("--fonts", default=os.path.join(HERE, "..", "fonts"))
     ap.add_argument("--audio", default=None, help="transcript audio (audio16k.flac): each cut-in moves back to the real speech onset")
     ap.add_argument("--tmp", default="/tmp/clips"); ap.add_argument("--budget", type=float, default=0)
@@ -52,12 +54,27 @@ def main():
     work = os.path.join(a.project, f"TRAVAIL {a.code}"); exports = os.path.join(a.project, f"EXPORTS {a.code}")
     os.makedirs(exports, exist_ok=True)
     pending = 0
-    words = json.load(open(a.words))
+    cache = {}
+    def words_of(path):
+        if path not in cache:
+            cache[path] = json.load(open(path))
+        return cache[path]
     for sp in a.specs:
         spec = json.load(open(sp))
         # the hash covers the spec and only the words inside its passages: refining another passage
         # of the transcript does not re-render this clip
-        used = [w for w in words if any(float(g["s"]) - 1 <= w["s"] <= float(g["e"]) + 1 for g in spec["segments"])]
+        if spec.get("sources"):
+            used = []
+            default = spec.get("default_src") or next(iter(spec["sources"]))
+            for sid, src in spec["sources"].items():
+                wp = src["words"] if os.path.isabs(src["words"]) else os.path.join(a.project, src["words"])
+                segs = [g for g in spec["segments"] if g.get("src", default) == sid]
+                if segs:
+                    used.append([sid] + [w for w in words_of(wp) if any(float(g["s"]) - 1 <= w["s"] <= float(g["e"]) + 1 for g in segs)])
+        else:
+            if not a.source or not a.words:
+                raise SystemExit(f"{sp}: give --source and --words, or list the recordings in the spec's \"sources\"")
+            used = [w for w in words_of(a.words) if any(float(g["s"]) - 1 <= w["s"] <= float(g["e"]) + 1 for g in spec["segments"])]
         sha = hashlib.sha1(open(sp, "rb").read() + json.dumps(used, sort_keys=True).encode()
                            + str(a.watermark).encode() + open(os.path.join(HERE, "clip_render.py"), "rb").read()).hexdigest()[:12]
         cid, v = spec.get("id", "clip"), spec.get("version", 1)
@@ -69,8 +86,10 @@ def main():
         left = a.budget - (time.time() - t0) if a.budget else 0
         if a.budget and left < 20:
             pending += 1; print(json.dumps({"clip": f"{cid}_v{v}", "status": "WAITING"})); continue
-        cmd = [sys.executable, os.path.join(HERE, "clip_render.py"), "--source", a.source, "--words", a.words,
-               "--spec", sp, "--out", out, "--fonts", a.fonts, "--review", "--tmp", a.tmp]
+        cmd = [sys.executable, os.path.join(HERE, "clip_render.py"), "--spec", sp, "--root", a.project,
+               "--out", out, "--fonts", a.fonts, "--review", "--tmp", a.tmp]
+        if not spec.get("sources"):
+            cmd += ["--source", a.source, "--words", a.words]
         if a.sync:
             cmd += ["--sync", a.sync]
         if a.audio:

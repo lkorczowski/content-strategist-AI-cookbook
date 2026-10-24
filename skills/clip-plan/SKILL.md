@@ -1,10 +1,10 @@
 ---
 name: clip-plan
-description: Read the full transcript of a live, a webinar, a podcast or a long video and plan the clips worth editing. Builds a topic map with viewer questions and scattered answers, scores every candidate of 60 seconds or more on hook, clarity, value, payoff, delivery and fit after hard gates, gives each one a funnel stage (TOFU, MOFU, BOFU), goals and a format, then writes the edit spec of each chosen clip. Use after transcribing a long recording, or when someone asks which moments of a live, a webinar or a video should become clips.
+description: Read the full transcript of a live, a webinar, a call, a podcast or a long video, or of several recordings on one subject, and plan the clips worth editing. Builds a topic map with viewer questions and scattered answers, scores every candidate of 60 seconds or more on hook, clarity, value, payoff, delivery and fit after hard gates, gives each one a funnel stage (TOFU, MOFU, BOFU), goals and a format, proposes a series and mixes across recordings, then writes the edit spec of each chosen clip. Works on the platform's own transcript before the video is downloaded. Use after transcribing a long recording, or when someone asks which moments of a live, a webinar, a call or a video should become clips.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.1"
+  version: "1.0.2"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -27,6 +27,18 @@ Part of the clipping playbook (https://statur.co/clipping/). Scripts live in the
 4. Score with references/rubric.md. Apply the hard gates first.
 5. Check each candidate against the context file: numbers allowed, client names allowed, prices allowed, claims the speaker can defend, third parties named on air.
 6. Rank. Show the plan to the user as one table, then write the spec of the first clip. After the user's review of that clip, write the specs of the others.
+
+## Several recordings on one subject
+
+Read every recording, then map the topics across them: the same idea told in two sessions, an example in one and the method in another. Two kinds of clips come out:
+- a series: the best standalone passage of each recording;
+- a mix: one clip that strings passages of several recordings (a supercut). Keep one idea per mix, open with the strongest line wherever it comes from, and keep numbers consistent: two sessions can quote different figures for the same thing, so use one passage or cut the figures.
+
+Check the picture before choosing: a passage where the speaker is only a thumbnail (their own call window) makes an audio-led clip. Note the layout of each segment in the plan.
+
+## Planning on the platform's transcript
+
+Loom, YouTube and TikTok show a transcript in the page. Plan on it before the download: same method, same gates. Write each segment with the first and last words as read there (`from`, `to`) and each cut with the words to remove (`text`). Its times are per phrase and its words are approximate: after the local transcription of the chosen windows, `snap_segments.py` moves every edge onto the word timestamps.
 
 ## Before writing a spec: clean the words of each passage
 

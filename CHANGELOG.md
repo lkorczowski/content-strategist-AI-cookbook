@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-25 · v1.2
+
+- statur-clipping 1.1.0, clip-edit 1.1.0, clip-plan 1.0.2: several recordings in one clip or one project (spec `sources`, segment `src`, cuts per source, loudness leveled across sources), composed layouts for screen recordings and calls (camera bubble in a circle, screen share on top, call thumbnail in a rounded box, blurred background, caption height per layout), correction of stretched downloads (sample aspect ratio, `size`), planning on the platform's own transcript before the download (`snap_segments.py`), local transcription of chosen windows only (`transcribe.py --ranges`, `--append`), `prep_source.sh` with `SRCID`, a mix spec template, and the traps of the second real run (Loom, Google Meet). Built from three Loom recordings mixed into five clips.
+
 ## 2026-10-24 · v1.1.2
 
 - statur-clipping 1.0.2 and clip-edit 1.0.1: the root of EXPORTS keeps only the latest version of each clip; render_all.py moves older versions to EXPORTS/archives/ (--keep-old to disable), and a dropped clip goes to archives/ too.
