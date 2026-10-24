@@ -4,7 +4,7 @@ description: Read the full transcript of a live, a webinar, a podcast or a long 
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.0.1"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -21,7 +21,7 @@ Part of the clipping playbook (https://statur.co/clipping/). Scripts live in the
 
 ## Method
 
-1. Read everything, block by block. Never sample: the best answer is often in the last 20 minutes, and a question asked at minute 12 can be answered at minute 47.
+1. Read everything, block by block. Never sample: a strong answer can sit in the last 20 minutes, and a question asked at minute 12 can be answered at minute 47.
 2. Topic map: one line per topic with its time ranges, in order of appearance. Mark viewer questions (who asked is never shown), stories, numbers, strong claims, jokes and noise (greetings, gifts, trolls, reading names, technical fixes).
 3. Candidates: every passage that can stand alone for 60 seconds or more. Stitch the scattered parts of one answer. Overlaps are allowed: a long answer can give a deep dive and a short cut with another hook, and the same question asked to several guests makes a supercut.
 4. Score with references/rubric.md. Apply the hard gates first.

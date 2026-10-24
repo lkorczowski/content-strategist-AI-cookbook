@@ -6,21 +6,21 @@ Order of preference for every source: the user's own recording, then the platfor
 
 ## Your own recording
 
-Record locally while you stream: OBS Studio, TikTok LIVE Studio, the local recordings of StreamYard or Riverside (one track per person when offered), the local recording of Zoom. You get the resolution you streamed and clean audio. A 1:40 vertical live at 960x1920 weighed about 2.7 GB on our first run.
+Record locally while you stream: OBS Studio, TikTok LIVE Studio, the local recordings of StreamYard or Riverside (one track per person when offered), the local recording of Zoom. You get the resolution you streamed and clean audio. For scale: our 1:40 vertical replay at 960x1920 weighed about 2.7 GB.
 
 ## Live replays on the platforms
 
 | Platform | Where the replay is | How long it stays | Quality |
 |---|---|---|---|
 | TikTok LIVE | LIVE Center, Replays, then download | about 30 days, visible to the creator only ([TSL Agency, Oct 2026](https://tslagency.co.uk/can-you-rewatch-tiktok-lives-replays-explained-for-sellers/)) | 720p offered on our test of 2026-10-24, after a server preparation that can take more than an hour for a long live |
-| YouTube Live | the archive is a regular video: YouTube Studio, Content, Live | permanent for streams under 12 hours ([YouTube Help](https://support.google.com/youtube/answer/6247592?hl=en)) | Studio download: MP4 at 720p or 360p ([YouTube Help](https://support.google.com/youtube/answer/56100?hl=en)) |
+| YouTube Live | the archive is a regular video: YouTube Studio, Content, Live | archived automatically as a regular video for streams under 12 hours, no expiry stated ([YouTube Help](https://support.google.com/youtube/answer/6247592?hl=en)) | Studio download: MP4 at 720p or 360p ([YouTube Help](https://support.google.com/youtube/answer/56100?hl=en)) |
 | Facebook Live | your Page or profile: download one by one or in bulk, or transfer to Dropbox or Google Drive | 30 days for lives since 2025-02-19 ([Meta](https://about.fb.com/news/2025/02/updating-our-facebook-live-video-storage-policy/)) | not documented |
 | Instagram Live | the live archive in the app; turn on archiving before going live | sources disagree; Instagram lets you share the replay as a reel ([Instagram Help](https://help.instagram.com/562982737951475)) | not documented |
 | LinkedIn Live | the recording of the streaming tool you used (StreamYard, Restream, OBS) | the replay stays as a post | no native download documented |
 | Twitch | Creator Dashboard, Content, Video Producer, your past broadcast; "Store past broadcasts" must be on in Stream Settings | past broadcasts expire after 7, 14 or 60 days depending on the account ([Streamlabs](https://streamlabs.com/content-hub/post/how-to-watch-old-twitch-streams)) | the broadcast quality |
 | Zoom, webinar platforms | the local recording folder, or the cloud recording download of the platform | the platform's retention settings | the recording settings |
 
-Download replays the same week. A replay usually starts its audio late: on our TikTok replay, the audio started 1.71 s after the video and drifted 0.19 s over 100 minutes. The sync check finds it in seconds.
+Download replays the same week. A replay can start its audio late: on our TikTok replay, the audio started 1.71 s after the video and drifted 0.19 s over 100 minutes. The sync check finds it in seconds.
 
 ## Long YouTube videos
 

@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.0.1"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---

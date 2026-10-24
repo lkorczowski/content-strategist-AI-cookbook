@@ -5,13 +5,13 @@ Turn a live, a webinar, a long video or a folder of recordings into ready-to-pos
 - Page (human version, source of truth): https://statur.co/clipping/
 - Markdown for AI assistants: https://statur.co/clipping.md
 - The story behind it (essay on louis-korczowski.org): coming soon
-- Version 1.0, 2026-10-24
+- Version 1.1, 2026-10-24 (page); skills statur-clipping 1.0.1, clip-plan 1.0.1, clip-edit 1.0, clip-review 1.0
 
 ## Summary
 
 Get the file: your own recording first, then the platform's replay download, a long YouTube video of your own, a Google Drive file or a whole Drive folder. Transcribe it on your computer with word timestamps (NVIDIA Parakeet v3 through sherpa-onnx, no GPU, no API key), and check that the transcript lines up with the video before any cut. Read the whole transcript with your AI, map the topics, stitch scattered answers, apply hard gates and score every candidate of 60 seconds or more. Write each edit as a short spec and render it where the footage lives, at any length and up to 4K, with word-by-word captions, a one-sentence hook and a small moving watermark. Transcribe every clip again to catch bad cuts. Review on a private page with notes at the exact frame, render the next version, and file the masters with one naming rule. The agent prepares drafts and never posts.
 
-Built from a real run on a 1:40 TikTok live of October 24, 2026: 17 clip candidates, 10 clips of one to two minutes.
+Built from a real run on a 1:40 TikTok live of October 24, 2026: 17 clip candidates (14 scored), 10 clips of one to two minutes.
 
 ## Skills
 
