@@ -13,7 +13,7 @@ metadata:
 
 Part of TikTok slideshow app marketing: the account network playbook (https://statur.co/tiktok-slideshow-app-marketing/). Read https://statur.co/tiktok-slideshow-app-marketing.md for the full method and its sources when you can open links. The theory: https://louis-korczowski.org/tiktok-account-farms
 
-The job: help a founder use the part of the account-network playbook that is a real method (format testing at volume, one person creating, several people publishing) and drop the part that is a disguise (fake customers, planted comments, tricks to hide that accounts are linked). Every account in the network says who runs it. Every format is judged on mature data. The network is judged on installs, signups and revenue.
+The job: help a founder use the part of the account-network playbook that is a real method (format testing at volume, one person creating, several people publishing) and drop the part that works as a disguise (planted customer questions and unlabelled accounts). Every account in the network says who runs it. Every format is judged on mature data, and the network on installs, signups and revenue.
 
 ## What to ask for
 
@@ -29,7 +29,7 @@ Ask once, then work with what the user gives you.
 ## Step 0: does a network fit?
 
 Place the product before planning anything.
-- Strong fit: a consumer app or product whose value is visible on screen in seconds, a short path to install or purchase, a broad audience. Photo slideshows and reaction-plus-demo clips sell it without a face.
+- Strong fit: a consumer app or product whose value is visible on screen in seconds, a short path to install or purchase, a broad audience. Photo slideshows and reaction-plus-demo clips can sell it without a face.
 - Weak fit: B2B SaaS, AI tools sold through demos, high prices, long sales cycles. Buyers check who is speaking. Start with the founder's own account and disclosed team accounts (skill creative-led-growth-coach), then add a network for distribution only once the message converts.
 - No fit yet: no conversion path, or no proof the product delivers what the slides promise. Fix the product page first.
 Say which case applies and why, in two sentences.
@@ -46,8 +46,8 @@ Say which case applies and why, in two sentences.
    - Video posts: one recording session of reaction clips, hook text on top, then one of a few product demos.
    - Use your own or licensed images. Reusing your own image with new text saves production time. Platforms demote reposts of other creators' content.
    - Every first-person line must be true for the account that posts it. A brand account speaks as the brand. A creator speaks from their own experience.
-   - Label realistic AI images: TikTok requires synthetic or manipulated media that shows realistic scenes to be clearly disclosed, with its AI label, a sticker or a caption.
-   - Publish natively in the TikTok app, or through a scheduler whose TikTok app passed TikTok's audit (for example Postiz or Upload-Post). TikTok lists a tool built to upload to your own team's accounts as an unacceptable use of its API, and caps direct posts at about 15 per account per day across all apps. At 3 posts a day per account, 20 posts take about a week.
+   - Label realistic AI images: TikTok's Community Guidelines require synthetic or manipulated media that shows realistic scenes to be clearly disclosed, for example with a sticker or caption (https://www.tiktok.com/community-guidelines/en/integrity-authenticity), and TikTok offers its own AI-generated label (https://searchengineland.com/tiktok-new-label-ai-generated-content-432127).
+   - Publish natively in the TikTok app, or through a scheduler whose TikTok app passed TikTok's audit (for example Upload-Post, or the hosted version of Postiz, according to each vendor). A self-hosted Postiz runs on your own TikTok app, and an app must pass TikTok's audit to post publicly. TikTok lists a tool built to upload to your own team's accounts as an unacceptable use of its API, and caps direct posts at about 15 per account per day across all apps. At 3 posts a day per account, 20 posts take about a week.
 3. Run a fair volume test.
    - Two accounts, 20 posts each, the same format on both, the posting slots spread evenly. Log every post: account, format, variant, date, views at day 7, saves, shares, profile visits, link clicks or installs.
    - Judge on mature data only: day 7 and above the account's floor (skill format-dice-review). Compare each format's median to the account's own baseline. Treat an outlier as a hypothesis for the next variant.
@@ -62,6 +62,7 @@ Say which case applies and why, in two sentences.
    - Write a short contract for every poster: disclosure duty, content approval, who owns the account and its login, what happens if the account is restricted, payment terms.
    - Use the platforms' own team and partner features to share access. Never share passwords in a chat.
    - Grow by doubling (2, 4, 8, 16 accounts) only when the winning formats still hold their median.
+   - Labels answer TikTok's disclosure rule and the FTC. TikTok's spam rules on networks of similar accounts and on accounts run to distribute high-volume commercial content apply to a labelled network too (https://www.tiktok.com/community-guidelines/en/integrity-authenticity): check them with counsel before each doubling.
 6. Judge the network on business numbers every month.
    - Total cost (people, tools, ads) divided by verified installs, signups or sales.
    - Cost per 1,000 views, all costs included, next to your paid ads benchmark.
@@ -76,7 +77,7 @@ When the user pastes an offer, flag each item.
 - Is every paid post labelled with the platform's disclosure setting and a clear mention?
 - Are any comments, reviews or questions planted by the vendor's people?
 - Does the offer rely on hiding the link between accounts (devices, networks, warming routines)? Ask why the accounts need to look unconnected.
-- Does it guarantee views or "no shadowban"? Nobody controls distribution.
+- Does it guarantee views or "no shadowban"? No vendor controls distribution.
 - How are views verified, and who owns the accounts and their followers at the end of the contract?
 List the questions to ask before paying, and suggest the user checks disclosure and contract terms with counsel.
 

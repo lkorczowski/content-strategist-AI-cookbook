@@ -59,6 +59,6 @@ Checked on 2026-10-24. Platforms change their limits: check again before a large
 - Drafts only. Never publish, schedule or upload anything for the user.
 - Never ask for a password and never sign in for the user.
 - Respect each platform's terms of use: the user's own or licensed images only, no reposts of other creators' content, and the paid partnership label when someone is paid to post.
-- Label realistic AI images: TikTok requires synthetic or manipulated media that shows realistic scenes to be clearly disclosed, with its AI label, a sticker or a caption.
+- Label realistic AI images: TikTok's Community Guidelines require synthetic or manipulated media that shows realistic scenes to be clearly disclosed, for example with a sticker or caption (https://www.tiktok.com/community-guidelines/en/integrity-authenticity), and TikTok offers its own AI-generated label (https://searchengineland.com/tiktok-new-label-ai-generated-content-432127).
 - No fake testimonials, fake reviews, invented ratings or results on a slide.
 - No promised views or results. No invented numbers: every figure on a slide comes from the user's data or a source the user can open.

@@ -1,6 +1,6 @@
 # TikTok slideshow app marketing: the account network playbook
 
-How startups market apps with TikTok and Instagram photo slideshows posted from dozens to hundreds of accounts (what the industry calls account farms), what actually works in that playbook, what TikTok, Meta and the FTC allow, and a six-step version that keeps the method (format testing at volume, one person creating, several people publishing) and drops the disguise (fake customers, planted comments, accounts built to look unconnected).
+How startups market apps with TikTok and Instagram photo slideshows posted from dozens to hundreds of accounts (what the industry calls account farms), what actually works in that playbook, what TikTok, Meta and the FTC allow, and a six-step version that keeps the method (format testing at volume, one person creating, several people publishing) and drops what works as a disguise (planted customer questions and unlabelled accounts).
 
 - Page (source of truth): https://statur.co/tiktok-slideshow-app-marketing/
 - Markdown for AI assistants: https://statur.co/tiktok-slideshow-app-marketing.md
@@ -23,11 +23,11 @@ Companion skills from other playbooks: [format-dice-review](../skills/format-dic
 ## Tools we checked (2026-10-24)
 
 - [Larry](https://clawhub.ai/olliewazza/skills/larry), Oliver Henry's slideshow agent (MIT-0): a reference workflow for slideshows on one account. Before reusing it, render 1080x1920 JPEG, label photorealistic AI images, and keep API keys out of plain-text config files.
-- [Postiz](https://github.com/gitroomhq/postiz-app) (AGPL-3.0) and [Upload-Post MCP](https://github.com/Upload-Post/upload-post-mcp) (MIT): publish photo posts through TikTok apps that passed TikTok's audit, with APIs and MCP servers.
-- [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT): hook formulas, App Store optimization and A/B test design that pair well with these skills.
-- Avoid: fleets of look-alike accounts, proxies, antidetect browsers, device farms and warm-up bots. They match TikTok's definition of spam.
+- [Postiz](https://github.com/gitroomhq/postiz-app) (AGPL-3.0) and [Upload-Post MCP](https://github.com/Upload-Post/upload-post-mcp) (MIT): publish photo posts with APIs and MCP servers. Public TikTok posts need an app that passed TikTok's audit: Upload-Post's, or the hosted Postiz. A self-hosted Postiz uses your own app, which posts privately until TikTok audits it.
+- [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT): copywriting, App Store optimization and A/B test design skills that pair well with these.
+- Avoid: fleets of look-alike accounts, device farms and warm-up bots. They match TikTok's definition of spam (accounts operated in bulk or through unauthorized automation, https://www.tiktok.com/community-guidelines/en/integrity-authenticity). Proxies and antidetect browsers exist to hide the links between accounts.
 - Read every third-party skill and its scripts before installing: in February 2026 researchers found 341 malicious skills among 2,857 audited on ClawHub ([The Hacker News](https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html)).
 
 ## Credit
 
-Triggered by a public video by Miles Feldstein, co-founder of Human Post (X, 2026-10-23): https://x.com/MilesFeldstein/status/2113676914279755947. From his protocol we kept the reference bar (photo slideshows above 25,000 views in the last three months), the test size (40 posts, two accounts, 20 posts each), the separation of the person who creates from the people who post, and the App Store proof slide. We changed the winner rule (median against each account's baseline instead of outliers or a fixed 2,000-view bar), replaced planted comments with the demo trick, and replaced accounts built to look unconnected with labelled accounts and disclosed creators. The skills are written from scratch, in our own words.
+Triggered by a public video by Miles Feldstein, co-founder of Human Post (X, 2026-10-23): https://x.com/MilesFeldstein/status/2113676914279755947. From his protocol we kept the reference bar (photo slideshows above 25,000 views in the last three months), the test size (40 posts, two accounts, 20 posts each), the separation of the person who creates from the people who post, and the App Store proof slide. We changed the winner rule (median against each account's baseline instead of outliers or a fixed 2,000-view bar), replaced planted comments with the demo trick, and replaced separate, unlabelled accounts with labelled accounts and disclosed creators. The skills are written from scratch, in our own words.
