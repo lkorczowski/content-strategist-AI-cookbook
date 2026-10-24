@@ -20,6 +20,14 @@ Check the fit first: networks sell products whose value shows on screen in secon
 
 Companion skills from other playbooks: [format-dice-review](../skills/format-dice-review/) to judge the formats, [comment-section-coach](../skills/comment-section-coach/) for the demo trick and replies, [performance-creator-program](../skills/performance-creator-program/) to pay creators who post from their own accounts, [organic-to-paid](../skills/organic-to-paid/) to turn the winners into ads.
 
+## Tools we checked (2026-10-24)
+
+- [Larry](https://clawhub.ai/olliewazza/skills/larry), Oliver Henry's slideshow agent (MIT-0): a reference workflow for slideshows on one account. Before reusing it, render 1080x1920 JPEG, label photorealistic AI images, and keep API keys out of plain-text config files.
+- [Postiz](https://github.com/gitroomhq/postiz-app) (AGPL-3.0) and [Upload-Post MCP](https://github.com/Upload-Post/upload-post-mcp) (MIT): publish photo posts through TikTok apps that passed TikTok's audit, with APIs and MCP servers.
+- [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT): hook formulas, App Store optimization and A/B test design that pair well with these skills.
+- Avoid: fleets of look-alike accounts, proxies, antidetect browsers, device farms and warm-up bots. They match TikTok's definition of spam.
+- Read every third-party skill and its scripts before installing: in February 2026 researchers found 341 malicious skills among 2,857 audited on ClawHub ([The Hacker News](https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html)).
+
 ## Credit
 
 Triggered by a public video by Miles Feldstein, co-founder of Human Post (X, 2026-10-23): https://x.com/MilesFeldstein/status/2113676914279755947. From his protocol we kept the reference bar (photo slideshows above 25,000 views in the last three months), the test size (40 posts, two accounts, 20 posts each), the separation of the person who creates from the people who post, and the App Store proof slide. We changed the winner rule (median against each account's baseline instead of outliers or a fixed 2,000-view bar), replaced planted comments with the demo trick, and replaced accounts built to look unconnected with labelled accounts and disclosed creators. The skills are written from scratch, in our own words.

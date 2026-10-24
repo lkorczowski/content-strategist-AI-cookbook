@@ -51,12 +51,14 @@ Checked on 2026-10-24. Platforms change their limits: check again before a large
 - TikTok: the Content Posting API accepts photo posts of up to 35 images, in JPEG or WebP, up to 1080p and 20 MB per image (https://developers.tiktok.com/doc/content-posting-api-media-transfer-guide, https://developers.tiktok.com/doc/content-posting-api-reference-photo-post). Keep the default --format jpg, or use webp, when slides go through an API or a scheduler.
 - TikTok's commercial content setting applies to photo posts too: "Your brand" for a brand's own promotion, "Branded content" for a paid partner (https://developers.tiktok.com/doc/content-sharing-guidelines).
 - Instagram: a carousel holds up to 20 images or videos. The publishing API accepts JPEG only and crops every image to the first image's aspect ratio (https://developers.facebook.com/docs/instagram-platform/content-publishing). Render a whole carousel at one size, 1080x1350 for 4:5.
+- TikTok's API cannot choose a trending sound. To add one, send the post to the creator's TikTok inbox (upload mode) and finish it in the app.
 - LinkedIn: post the PDF made with --pdf as a document.
 
 ## Rules
 
 - Drafts only. Never publish, schedule or upload anything for the user.
 - Never ask for a password and never sign in for the user.
-- Respect each platform's terms of use: the user's own or licensed images only, no reposts of other creators' content, an AI-generated label where the platform asks for one, and the paid partnership label when someone is paid to post.
+- Respect each platform's terms of use: the user's own or licensed images only, no reposts of other creators' content, and the paid partnership label when someone is paid to post.
+- Label realistic AI images: TikTok requires synthetic or manipulated media that shows realistic scenes to be clearly disclosed, with its AI label, a sticker or a caption.
 - No fake testimonials, fake reviews, invented ratings or results on a slide.
 - No promised views or results. No invented numbers: every figure on a slide comes from the user's data or a source the user can open.

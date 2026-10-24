@@ -46,6 +46,8 @@ Say which case applies and why, in two sentences.
    - Video posts: one recording session of reaction clips, hook text on top, then one of a few product demos.
    - Use your own or licensed images. Reusing your own image with new text saves production time. Platforms demote reposts of other creators' content.
    - Every first-person line must be true for the account that posts it. A brand account speaks as the brand. A creator speaks from their own experience.
+   - Label realistic AI images: TikTok requires synthetic or manipulated media that shows realistic scenes to be clearly disclosed, with its AI label, a sticker or a caption.
+   - Publish natively in the TikTok app, or through a scheduler whose TikTok app passed TikTok's audit (for example Postiz or Upload-Post). TikTok lists a tool built to upload to your own team's accounts as an unacceptable use of its API, and caps direct posts at about 15 per account per day across all apps. At 3 posts a day per account, 20 posts take about a week.
 3. Run a fair volume test.
    - Two accounts, 20 posts each, the same format on both, the posting slots spread evenly. Log every post: account, format, variant, date, views at day 7, saves, shares, profile visits, link clicks or installs.
    - Judge on mature data only: day 7 and above the account's floor (skill format-dice-review). Compare each format's median to the account's own baseline. Treat an outlier as a hypothesis for the next variant.
