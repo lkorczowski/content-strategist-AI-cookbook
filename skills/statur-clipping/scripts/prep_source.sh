@@ -4,6 +4,9 @@
 # contact sheets of the picture.
 # Usage: prep_source.sh SOURCE_FILE PROJECT_DIR CODE [STEP]
 #   STEP = all (default) | rush | audio | sheets   (run the steps one by one on machines that cap command time)
+#   SRCID=V2 environment variable: several recordings in one project (a series, a mix). The file becomes
+#     RUSHS CODE/CODE_V2_source.ext and its work files go to TRAVAIL CODE/V2/.
+#   SHEET_EVERY=30 environment variable: seconds between two frames of the contact sheets.
 #   MODE=copy (default) | link | move   environment variable, how the source enters RUSHS.
 #     copy: the original stays where it is (APFS and reflink file systems copy instantly).
 #     link: a symbolic link, no extra disk space; the original must stay in place.
@@ -11,11 +14,15 @@
 #           (Google Drive, Dropbox, OneDrive): it would disappear from the cloud for everyone.
 # Creates PROJECT_DIR/RUSHS CODE, TRAVAIL CODE (work files) and EXPORTS CODE (masters).
 set -euo pipefail
-SRC="$1"; PROJ="$2"; CODE="$3"; STEP="${4:-all}"; MODE="${MODE:-copy}"
+SRC="$1"; PROJ="$2"; CODE="$3"; STEP="${4:-all}"; MODE="${MODE:-copy}"; SRCID="${SRCID:-}"; EVERY="${SHEET_EVERY:-30}"
 RUSH="$PROJ/RUSHS $CODE"; WORK="$PROJ/TRAVAIL $CODE"
-mkdir -p "$RUSH" "$WORK/sheets" "$PROJ/EXPORTS $CODE"
 EXT="${SRC##*.}"; EXT="$(printf '%s' "$EXT" | tr '[:upper:]' '[:lower:]')"
-DEST="$RUSH/${CODE}_source.${EXT}"
+if [ -n "$SRCID" ]; then
+  DEST="$RUSH/${CODE}_${SRCID}_source.${EXT}"; WORK="$WORK/$SRCID"
+else
+  DEST="$RUSH/${CODE}_source.${EXT}"
+fi
+mkdir -p "$RUSH" "$WORK/sheets" "$PROJ/EXPORTS $CODE"
 
 if [ "$STEP" = all ] || [ "$STEP" = rush ]; then
   if [ ! -e "$DEST" ]; then
@@ -38,13 +45,13 @@ fi
 
 if [ "$STEP" = all ] || [ "$STEP" = sheets ]; then
   if ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 "$DEST" | grep -q video; then
-    # contact sheets: one frame every 30 s, 10 x 5 tiles. Each frame is decoded with a 5 s pre-roll
+    # contact sheets: one frame every $EVERY s (30 by default), 10 x 5 tiles. Each frame is decoded with a 5 s pre-roll
     # (live recordings have long keyframe intervals: a direct seek gives grey frames).
     DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$DEST" | cut -d. -f1)
     TMPD=$(mktemp -d)
     i=0
-    START=15; if [ "$DUR" -lt 30 ]; then START=$((DUR / 2)); fi
-    for ((t=START; t<DUR; t+=30)); do
+    START=$((EVERY / 2)); if [ "$DUR" -lt "$EVERY" ]; then START=$((DUR / 2)); fi
+    for ((t=START; t<DUR; t+=EVERY)); do
       s=$((t > 5 ? t - 5 : 0)); p=$((t - s))
       ffmpeg -nostdin -y -v error -ss "$s" -i "$DEST" -ss "$p" -frames:v 1 -vf "scale=180:-2" -q:v 4 "$TMPD/f_$(printf %04d $i).jpg" || true
       i=$((i + 1))

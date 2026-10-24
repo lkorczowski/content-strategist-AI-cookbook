@@ -5,7 +5,7 @@ Turn a live, a webinar, a long video or a folder of recordings into ready-to-pos
 - Page (human version, source of truth): https://statur.co/clipping/
 - Markdown for AI assistants: https://statur.co/clipping.md
 - The story behind it (essay on louis-korczowski.org): coming soon
-- Version 1.2, 2026-10-24 (page); skills statur-clipping 1.0.2, clip-plan 1.0.1, clip-edit 1.0.1, clip-review 1.0
+- Version 1.2, 2026-10-24 (page); skills statur-clipping 1.1.0, clip-plan 1.0.2, clip-edit 1.1.0, clip-review 1.0
 
 ## Summary
 
@@ -17,7 +17,7 @@ Built from a real run on a 1:40 TikTok live of October 24, 2026: 17 clip candida
 
 | Skill | Use it for |
 |---|---|
-| [statur-clipping](../skills/statur-clipping/) | The whole chain for one recording or a batch: permissions, sources (lives, YouTube, Google Drive, local), install, transcription, sync check, queue, watermark, delivery and the weekly routine. Holds every script. |
+| [statur-clipping](../skills/statur-clipping/) | The whole chain for one recording, a batch or a mix: permissions, sources (lives, calls, Loom, YouTube, Google Drive, local), install, transcription, sync check, queue, layouts, watermark, delivery and the weekly routine. Holds every script. |
 | [clip-plan](../skills/clip-plan/) | Read the full transcript, map the topics, score every candidate with the hard gates and six scores, write the edit spec. |
 | [clip-edit](../skills/clip-edit/) | Render a spec into a master and a review copy: cuts, captions, hook, labels, watermark, loudness, then the quality check. |
 | [clip-review](../skills/clip-review/) | Review page with timecoded notes, verdicts and plan votes, as a Claude artifact or a local page, and the loop to the next version. |
