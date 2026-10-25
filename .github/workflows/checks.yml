@@ -13,5 +13,7 @@ jobs:
           python-version: "3.12"
       - name: Skill format
         run: python3 scripts/check_skills.py
+      - name: Format Library cards and index
+        run: python3 skills/format-library-coach/scripts/library.py check
       - name: Generic leak scan
         run: python3 scripts/leak_scan.py

@@ -22,7 +22,7 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 |---|---|---|
 | First GitHub release | v1.0.0 release with one zip per skill (scripts/build_zips.py) | Every zip uploads in Claude and the skill triggers on a test prompt |
 | Repository settings | Description, topics, website link, social preview image (1280x640) | Visible on the repository page |
-| Format Library page | Page live on statur.co, card and skill URLs resolve | No 404 from the card or the skill |
+| Format Library page | Page on statur.co rendered at build from skills/format-library-coach/library/index.json (filters by tag, one section per card), card and skill URLs resolve | No 404 from the card or the skill; the page shows the same count as index.json |
 | Video Script Structure page | Page live on statur.co/video-script-structure/ with the filmed test, card and skill URLs resolve | No 404 from the card or the skills |
 | Storytelling sample case | A small invented sample (units, blocks, loops) in skills/video-story-analysis/ and skills/short-video-author-analysis/ | analyze.py, aggregate_author.py and parity scripts run on it |
 | Hook stacking | Generic skill hook-stacking: titles, hooks and subject lines with at least three hooks, invented examples | Passes checks; no real client in examples |

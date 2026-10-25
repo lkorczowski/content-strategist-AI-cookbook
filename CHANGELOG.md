@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## Unreleased · Format Library 0.1 (branch format-library-v2)
+
+- format-library-coach 2.0: The Format Library becomes a library of 134 format cards (one file per format in skills/format-library-coach/library/formats/), tagged on four dimensions (funnel, value, structure, setup) with a controlled taxonomy (references/taxonomy.json, 3 + 7 + 41 + 24 tags) and a naming rule. New modes: find, plan a starter deck, script, invent an original format, document a format, sort a collection of saved videos, read the results. New tool scripts/library.py (build, check, lint, find, suggest, similar, new, gaps) with --private for a private library of cards. New references: private-card-template.md (with observed results per format) and collection-import.md. The twelve formats of version 1.0 are all kept as cards. CI checks the cards and the generated index.
+
 ## 2026-10-24 · v1.2
 
 - New playbook: Video Script Structure (https://statur.co/video-script-structure/, page coming soon), with four skills: video-story-analysis 1.0.0 (nine-tier sentence map of a long video, story sheet, structure diagram, replication seed), story-replication 1.0.0 (word budget, beat map, self-map, parity and fact-check), short-video-author-analysis 1.0.0 (one creator across about twenty short videos, templates, medians, author sheet) and short-story-replication 1.0.0 (short talking-head script from one template, with sub-skills for the turn, the hook, the last line and voice adaptation). Acquisition uses only transcripts a platform shows to viewers, files the user owns or a local transcription, within each platform's terms. Examples are invented.

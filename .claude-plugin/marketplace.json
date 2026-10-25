@@ -103,7 +103,7 @@
     },
     {
       "name": "format-library",
-      "description": "Pick, script and read twelve short-form formats for founders.",
+      "description": "A library of short-form video formats tagged by funnel, value, structure and setup: find, plan, script, name and document formats.",
       "source": "./",
       "strict": false,
       "skills": [
