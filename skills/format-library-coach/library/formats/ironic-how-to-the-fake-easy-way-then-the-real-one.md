@@ -44,7 +44,7 @@ The exaggerated perfect routine makes viewers laugh at advice they already feel 
 ## Watch out
 
 - Keep the irony obvious. Viewers who miss it will take the perfect routine as real advice.
-- Mock the advice, never the people who struggle with it.
+- Aim the jokes at the advice. Viewers who struggle with it should feel understood.
 - On health, money or legal topics, keep the final method general and safe.
 
 ## Examples
@@ -60,5 +60,5 @@ Write an "ironic how-to" script for [company], which helps [audience] with [task
 3. Write the turn and the messy real version most people live.
 4. Write the simple method that works in 2 or 3 steps; mention [product] at most once, only if it is part of the method.
 5. Add shot notes: delivery tone, cuts, text on screen for each step.
-Rules: obvious irony, mock the advice and never the viewer, no invented numbers, total length 60 to 120 seconds.
+Rules: obvious irony, jokes aimed at the advice, empathy for the viewer, no invented numbers, total length 60 to 120 seconds.
 ```

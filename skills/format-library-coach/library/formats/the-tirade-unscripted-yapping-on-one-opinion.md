@@ -29,7 +29,7 @@ The founder holds the phone on the front camera, in a car or while walking, and 
 
 ## Make it yours
 
-Pick the topic you rant about to your cofounder after customer calls. Hit record before you lose the energy. A founder of a B2B onboarding tool yaps about why most product tours get skipped. A founder of an AI writing assistant for marketers yaps about why their audience gets bored of its own content long before customers do. A founder of a fintech for freelancers yaps about the day they realized invoicing was the real problem. You need a strong opinion and a few real examples.
+Pick the topic you rant about to your cofounder after customer calls. Hit record before you lose the energy. A founder of a B2B onboarding tool yaps about why most product tours get skipped. A founder of a fintech for freelancers yaps about the day they realized invoicing was the real problem.
 
 ## Variations
 

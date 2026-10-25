@@ -58,5 +58,5 @@ Write "the last one doing it by hand" skit for [company], whose product [product
 1. Give the character a job title in the style "one of the last remaining artisanal [manual task] people".
 2. Write the monologue: self-introduction, 4 to 6 proud details of the craft that show the pain, 2 dismissive lines about the new way, the final proud line, and a closing card mentioning [product].
 3. Add shot notes (setting, props, costume).
-Rules: mock the task and never real workers, disclose any sponsorship, accurate product claims.
+Rules: mock the task and leave real workers out of the target, disclose any sponsorship, accurate product claims.
 ```

@@ -1,6 +1,6 @@
 ---
 id: F021
-name: "Money talk: what it really cost"
+name: Money talk: what it really cost
 aka: what it really cost, the real price, budget breakdown
 funnel: MOFU
 value: educational, surprising

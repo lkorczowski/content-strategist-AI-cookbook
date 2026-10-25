@@ -1,6 +1,6 @@
 ---
 id: F012
-name: "Industry insider alert: what nobody tells you"
+name: Industry insider alert: what nobody tells you
 aka: insider alert, what nobody tells you, industry secret
 funnel: TOFU
 value: shocking, social-currency

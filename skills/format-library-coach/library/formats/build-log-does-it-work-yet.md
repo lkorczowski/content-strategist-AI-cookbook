@@ -1,6 +1,6 @@
 ---
 id: F018
-name: "Build log: does it work yet?"
+name: Build log: does it work yet?
 aka: build log, building in public, test of the day
 funnel: TOFU, MOFU
 value: surprising

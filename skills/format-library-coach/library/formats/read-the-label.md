@@ -49,7 +49,7 @@ The deadpan comments make the viewer laugh at the panic around harmless items, a
 
 ## Examples
 
-- [@dr.matthewnagra, 259k views (read 2026-10-25)](https://www.tiktok.com/@dr.matthewnagra/video/7667265002209889544): reads a plant-based meat label, "It starts with water. Spooky. Pea protein, frightening"; look at the deadpan delivery on harmless ingredients.
+- [@dr.matthewnagra, 259k views (read 2026-10-25)](https://www.tiktok.com/@dr.matthewnagra/video/7667265002209889544): reads what is inside Beyond Meat, "It starts with water. Spooky. Pea protein, frightening"; look at the deadpan delivery on harmless ingredients.
 
 ## For your AI
 

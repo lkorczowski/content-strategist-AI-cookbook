@@ -1,6 +1,6 @@
 ---
 id: F017
-name: "Open product decision: option A or option B"
+name: Open product decision: option A or option B
 aka: behind the build, option A or option B, why we are waiting
 funnel: MOFU, BOFU
 value: educational

@@ -59,5 +59,5 @@ Script a "respectful debunk" video for [company], expert in [field], speaking to
 1. List 5 popular claims in [field] that are wrong or misleading and that [audience] has likely heard.
 2. For the best one, write: the opening (claim shown, then "Let's check this"), 2 or 3 points each with the evidence to show on screen and its source, the strongest correction, and the closing one-sentence truth.
 3. Add a line acknowledging what the original claim gets right, if anything.
-Rules: attack the claim and never the person, a visible source for every point, credit the original creator, no invented numbers.
+Rules: attack the claim and leave the person out of it, a visible source for every point, credit the original creator, no invented numbers.
 ```

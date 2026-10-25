@@ -1,6 +1,6 @@
 ---
 id: F020
-name: "Bad news: we are closing (or this is the last batch)"
+name: Bad news: we are closing (or this is the last batch)
 aka: we have bad news, closing announcement, last batch
 funnel: BOFU
 value: emotional, shocking
