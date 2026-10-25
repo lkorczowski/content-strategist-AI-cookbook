@@ -10,7 +10,7 @@ origin: original
 founder_on_camera: optional
 effort: medium
 length: 30-90 s
-status: draft
+status: tested
 added: 2026-10-25
 ---
 

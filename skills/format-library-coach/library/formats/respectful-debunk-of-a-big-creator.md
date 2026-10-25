@@ -10,7 +10,7 @@ origin: mimetic
 founder_on_camera: optional
 effort: low
 length: 60-180 s
-status: draft
+status: tested
 added: 2026-10-25
 ---
 
