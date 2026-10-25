@@ -1,0 +1,497 @@
+{
+ "version": "0.1",
+ "updated": "2026-10-25",
+ "dimensions": {
+  "funnel": {
+   "question": "Where in the buying journey does this format work best?",
+   "tags": [
+    {
+     "id": "TOFU",
+     "label": "TOFU",
+     "fr": "TOFU, haut de tunnel",
+     "def": "Reaches people who do not know you yet: broad topic, curiosity, entertainment."
+    },
+    {
+     "id": "MOFU",
+     "label": "MOFU",
+     "fr": "MOFU, milieu de tunnel",
+     "def": "Builds trust in your expertise, your method or your taste."
+    },
+    {
+     "id": "BOFU",
+     "label": "BOFU",
+     "fr": "BOFU, bas de tunnel",
+     "def": "Moves people to act: product, demo, proof, objection, offer."
+    }
+   ]
+  },
+  "value": {
+   "question": "Why do people watch it to the end and share it?",
+   "tags": [
+    {
+     "id": "educational",
+     "label": "Educational",
+     "fr": "Éducative",
+     "def": "The viewer learns something they can use or repeat."
+    },
+    {
+     "id": "humour",
+     "label": "Humour",
+     "fr": "Humour",
+     "def": "The viewer laughs."
+    },
+    {
+     "id": "surprising",
+     "label": "Surprising",
+     "fr": "Surprenante",
+     "def": "An unexpected fact, twist or reveal resets attention."
+    },
+    {
+     "id": "shocking",
+     "label": "Shocking",
+     "fr": "Choquante",
+     "def": "Strong, provocative or transgressive: controversy, taboo, rage bait. Use with care."
+    },
+    {
+     "id": "social-currency",
+     "label": "Social currency",
+     "fr": "Social money",
+     "def": "Sharing it makes the sharer look smart, early or part of a group (Jonah Berger, Contagious, 2013)."
+    },
+    {
+     "id": "emotional",
+     "label": "Emotional",
+     "fr": "Émotion",
+     "def": "Moves the viewer: pride, awe, sadness, inspiration. Proposed in v0.1, to validate."
+    },
+    {
+     "id": "relatable",
+     "label": "Relatable",
+     "fr": "Identification",
+     "def": "The viewer recognizes themselves or someone they know (\"that is so me\") and tags a friend. Proposed in v0.1, to validate."
+    }
+   ]
+  },
+  "structure": {
+   "question": "What happens on screen, in order? The narrative skeleton.",
+   "tags": [
+    {
+     "id": "founder-story",
+     "label": "Founder story",
+     "fr": "Histoire du fondateur",
+     "def": "One moment from the founder's path that explains why the company exists."
+    },
+    {
+     "id": "story",
+     "label": "Story",
+     "fr": "Histoire",
+     "def": "Someone else's story told with a setup, a turn and a payoff (a company, a historical figure, a customer)."
+    },
+    {
+     "id": "storytime",
+     "label": "Storytime",
+     "fr": "Storytime",
+     "def": "A personal anecdote told to camera, often a confession or a mishap."
+    },
+    {
+     "id": "reaction",
+     "label": "Reaction",
+     "fr": "Vidéo de réaction",
+     "def": "The creator reacts to another video, post or piece of news and adds a point of view."
+    },
+    {
+     "id": "comment-reply",
+     "label": "Comment reply",
+     "fr": "Réponse à un commentaire",
+     "def": "A full video that answers one comment shown on screen."
+    },
+    {
+     "id": "demo",
+     "label": "Demo",
+     "fr": "Démo",
+     "def": "The product or a tool is shown working on a real task."
+    },
+    {
+     "id": "tutorial",
+     "label": "Tutorial",
+     "fr": "Tutoriel",
+     "def": "Step-by-step instructions the viewer can follow."
+    },
+    {
+     "id": "explainer",
+     "label": "Explainer",
+     "fr": "Explication",
+     "def": "One concept, mechanism or question explained simply."
+    },
+    {
+     "id": "myth-vs-data",
+     "label": "Myth vs data",
+     "fr": "Mythe contre données",
+     "def": "A common belief, then the evidence that breaks it (debunk)."
+    },
+    {
+     "id": "hot-take",
+     "label": "Hot take",
+     "fr": "Prise de position",
+     "def": "A strong opinion defended in under a minute."
+    },
+    {
+     "id": "list",
+     "label": "List",
+     "fr": "Liste",
+     "def": "N tips, N mistakes, N reasons, delivered one by one."
+    },
+    {
+     "id": "tier-list",
+     "label": "Tier list",
+     "fr": "Tier list",
+     "def": "Items ranked or rated from best to worst (tiers, grades, 0 to 10), one reason each."
+    },
+    {
+     "id": "teardown",
+     "label": "Teardown",
+     "fr": "Analyse (teardown)",
+     "def": "A public example or a real case (a page, an ad, a launch, a video, a customer's setup) taken apart to show what works."
+    },
+    {
+     "id": "news",
+     "label": "News",
+     "fr": "Actualité",
+     "def": "One piece of news explained quickly, with what it changes."
+    },
+    {
+     "id": "prediction",
+     "label": "Prediction",
+     "fr": "Prédiction",
+     "def": "A dated bet about the future, with the signals behind it."
+    },
+    {
+     "id": "before-after",
+     "label": "Before and after",
+     "fr": "Avant / après",
+     "def": "A transformation shown in two states."
+    },
+    {
+     "id": "challenge-series",
+     "label": "Challenge or series",
+     "fr": "Défi ou série",
+     "def": "Day X of Y, a recurring challenge or a numbered series that brings viewers back."
+    },
+    {
+     "id": "prank",
+     "label": "Prank",
+     "fr": "Prank",
+     "def": "A staged surprise on real people, revealed at the end."
+    },
+    {
+     "id": "stunt",
+     "label": "Stunt",
+     "fr": "Coup d'éclat",
+     "def": "A public action staged to be talked about: a flash mob, a namesake, an outrageous announcement."
+    },
+    {
+     "id": "social-experiment",
+     "label": "Social experiment",
+     "fr": "Expérience sociale",
+     "def": "A test run on real people to see how they react."
+    },
+    {
+     "id": "experiment",
+     "label": "Experiment",
+     "fr": "Expérience",
+     "def": "A test run on products, objects or yourself to see what happens: which one is faster, does it survive, does the routine work."
+    },
+    {
+     "id": "street-interview",
+     "label": "Street interview",
+     "fr": "Micro-trottoir",
+     "def": "Questions asked to strangers on the street."
+    },
+    {
+     "id": "interview",
+     "label": "Interview",
+     "fr": "Interview",
+     "def": "A question and answer with a guest, on camera."
+    },
+    {
+     "id": "podcast-clip",
+     "label": "Podcast clip",
+     "fr": "Extrait de podcast",
+     "def": "The strongest moment of a long conversation, cut as a short."
+    },
+    {
+     "id": "skit",
+     "label": "Skit",
+     "fr": "Sketch",
+     "def": "A short scripted scene with roles, often a POV or an office situation."
+    },
+    {
+     "id": "day-in-the-life",
+     "label": "Day in the life",
+     "fr": "Une journée avec",
+     "def": "A day or a moment of work followed from the inside."
+    },
+    {
+     "id": "behind-the-scenes",
+     "label": "Behind the scenes",
+     "fr": "Coulisses",
+     "def": "How something is made, from the inside."
+    },
+    {
+     "id": "build-in-public",
+     "label": "Build in public",
+     "fr": "Build in public",
+     "def": "A real decision, metric or step of the company, shared while it happens."
+    },
+    {
+     "id": "objection",
+     "label": "Objection",
+     "fr": "Objection",
+     "def": "A buyer objection answered on camera."
+    },
+    {
+     "id": "quiz",
+     "label": "Quiz",
+     "fr": "Quiz ou devinette",
+     "def": "A question, riddle or guess the viewer answers before the reveal."
+    },
+    {
+     "id": "versus",
+     "label": "Versus",
+     "fr": "Versus",
+     "def": "Two options compared, sometimes blind, with a verdict."
+    },
+    {
+     "id": "trend",
+     "label": "Trend",
+     "fr": "Trend",
+     "def": "A platform trend, sound or meme reused with your topic."
+    },
+    {
+     "id": "testimonial",
+     "label": "Testimonial",
+     "fr": "Témoignage",
+     "def": "A customer or user tells what changed for them."
+    },
+    {
+     "id": "review",
+     "label": "Review",
+     "fr": "Test produit",
+     "def": "A product tried and judged, with a verdict."
+    },
+    {
+     "id": "unboxing",
+     "label": "Unboxing",
+     "fr": "Unboxing",
+     "def": "A product opened and discovered on camera."
+    },
+    {
+     "id": "announcement",
+     "label": "Announcement",
+     "fr": "Annonce",
+     "def": "A launch, a teaser or an event, presented as news."
+    },
+    {
+     "id": "giveaway",
+     "label": "Giveaway",
+     "fr": "Jeu concours",
+     "def": "A prize hidden in the comments, the product or the video, found by the audience."
+    },
+    {
+     "id": "process",
+     "label": "Process",
+     "fr": "Process",
+     "def": "A making-of or a satisfying process shown step by step."
+    },
+    {
+     "id": "song",
+     "label": "Song",
+     "fr": "Chanson",
+     "def": "An original song or a parody carries the message."
+    },
+    {
+     "id": "debate",
+     "label": "Debate",
+     "fr": "Débat",
+     "def": "Two or more people argue a question on camera."
+    },
+    {
+     "id": "challenge-the-expert",
+     "label": "Expert test",
+     "fr": "Test d'expert",
+     "def": "An expert faces a test, a game or a rival and must prove it live."
+    }
+   ]
+  },
+  "setup": {
+   "question": "How is it shot and edited?",
+   "tags": [
+    {
+     "id": "facecam",
+     "label": "Facecam",
+     "fr": "Facecam",
+     "def": "One person talks to the camera, framed and edited."
+    },
+    {
+     "id": "yapping",
+     "label": "Yapping",
+     "fr": "Yapping (la tirade)",
+     "def": "A raw, unscripted, high-energy monologue to the front camera, often in a car or while walking, few cuts."
+    },
+    {
+     "id": "greenscreen",
+     "label": "Greenscreen",
+     "fr": "Greenscreen",
+     "def": "The speaker in front of an image, article, post or chart used as background."
+    },
+    {
+     "id": "motion-design",
+     "label": "Motion design",
+     "fr": "Motion design",
+     "def": "Animated graphics, charts or text carry the explanation."
+    },
+    {
+     "id": "b-roll",
+     "label": "B-roll",
+     "fr": "B-roll",
+     "def": "Footage of places, products or actions that illustrates the voice."
+    },
+    {
+     "id": "voice-over",
+     "label": "Voice-over",
+     "fr": "Voix off",
+     "def": "A voice heard over footage, the speaker not on screen."
+    },
+    {
+     "id": "screen-recording",
+     "label": "Screen recording",
+     "fr": "Screen recording",
+     "def": "A computer or phone screen recorded, with or without a face in the corner."
+    },
+    {
+     "id": "text-only",
+     "label": "Text only",
+     "fr": "Texte seul",
+     "def": "Text on screen carries the content: slideshow, photo carousel, text on a still."
+    },
+    {
+     "id": "pov",
+     "label": "POV camera",
+     "fr": "Caméra POV",
+     "def": "First-person footage: glasses, chest or head camera."
+    },
+    {
+     "id": "street",
+     "label": "Street",
+     "fr": "Rue",
+     "def": "Shot outdoors with strangers or in public places."
+    },
+    {
+     "id": "studio",
+     "label": "Studio",
+     "fr": "Studio",
+     "def": "A set with two or more cameras: podcast table, interview set."
+    },
+    {
+     "id": "duet-stitch",
+     "label": "Duet or stitch",
+     "fr": "Duo ou stitch",
+     "def": "The platform's own tools to answer or react to another video."
+    },
+    {
+     "id": "split-screen",
+     "label": "Split screen",
+     "fr": "Écran partagé",
+     "def": "Two videos side by side or stacked."
+    },
+    {
+     "id": "cinematic",
+     "label": "Cinematic",
+     "fr": "Cinématique",
+     "def": "Film-like shots, lighting and music edit."
+    },
+    {
+     "id": "walk-and-talk",
+     "label": "Walk and talk",
+     "fr": "Marche et parle",
+     "def": "The speaker walks while talking, the place changes behind them."
+    },
+    {
+     "id": "whiteboard",
+     "label": "Whiteboard",
+     "fr": "Tableau",
+     "def": "Drawing on a board, a tablet or paper while explaining."
+    },
+    {
+     "id": "animation",
+     "label": "Animation",
+     "fr": "Animation",
+     "def": "2D, 3D or AI-generated images and characters."
+    },
+    {
+     "id": "ugc-style",
+     "label": "UGC style",
+     "fr": "Style UGC",
+     "def": "A creator films a product at home, phone in hand, like a customer would."
+    },
+    {
+     "id": "two-shot",
+     "label": "Two-shot",
+     "fr": "Plan à deux",
+     "def": "Two people in frame talking to each other."
+    },
+    {
+     "id": "multi-role",
+     "label": "Multi-role",
+     "fr": "Plusieurs rôles",
+     "def": "One person plays several characters, cut together."
+    },
+    {
+     "id": "phone-call",
+     "label": "Phone call",
+     "fr": "Appel",
+     "def": "A phone or video call acted or shown on camera, often on speaker in an office."
+    },
+    {
+     "id": "live-clip",
+     "label": "Live clip",
+     "fr": "Extrait de live",
+     "def": "A moment cut from a livestream or a webinar."
+    },
+    {
+     "id": "on-site",
+     "label": "On site",
+     "fr": "Sur le terrain",
+     "def": "Shot where the work happens: factory, shop, kitchen, office, workshop."
+    },
+    {
+     "id": "archive",
+     "label": "Archive footage",
+     "fr": "Images d'archive",
+     "def": "Historical images, film clips or third-party footage, used within platform rules."
+    }
+   ]
+  }
+ },
+ "fields": {
+  "origin": {
+   "mimetic": "Copies a shape that already performs on the platform.",
+   "original": "Built around one person, place or product, hard to copy."
+  },
+  "founder_on_camera": {
+   "yes": "The founder must be on camera.",
+   "no": "Works without the founder's face.",
+   "optional": "Works both ways."
+  },
+  "effort": {
+   "low": "Phone, under 30 minutes from idea to export.",
+   "medium": "Half a day: script, shoot, edit.",
+   "high": "Crew, actors, locations or heavy edit."
+  },
+  "status": {
+   "draft": "Described from public examples.",
+   "tested": "Shot at least once in a real program.",
+   "proven": "Kept after a format review on mature data."
+  }
+ }
+}
