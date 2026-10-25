@@ -56,7 +56,7 @@ Reaching a high level is a small badge, and commenting it gives the viewer socia
 ```
 Write a "Level-up quiz" video for [company], whose audience is [audience].
 1. Pick the topic: [terms, tools, errors, references] that [audience] knows.
-2. Build 8 levels of 3 items each, from items 90 percent of the audience knows to items only experts know. Explain in one line why each level is harder.
+2. Build 8 levels of 3 items each, from items almost everyone knows to items only experts know. Explain in one line why each level is harder.
 3. Give the on-screen rule (under 12 words), the timing per level, and shot notes (text-only background or facecam host).
 4. End with the call to comment the level reached.
 Rules: steady difficulty, every item real and correctly spelled, text instead of third-party logos when rights are unclear, 45 to 75 seconds.

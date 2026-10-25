@@ -43,7 +43,7 @@ The surprise in the first second resets attention and borrows the energy of a re
 
 ## Watch out
 
-- This is an ad. Disclose it as branded content with the platform's paid partnership label and follow consumer law on hidden advertising.
+- This is an ad. Disclose it as branded content with the platform's paid partnership label, follow consumer law on hidden advertising, and never present the actors as ordinary shoppers who found it by chance.
 - Get the store's permission before filming inside, and keep other shoppers out of frame or ask their consent.
 - Overacting kills it. If the surprise feels fake, cut to the reasons faster.
 

@@ -49,7 +49,7 @@ The contradiction between the words and the face surprises, and viewers who know
 
 ## Examples
 
-- [@regiemediabelge, 312k views (read 2026-10-25)](https://www.tiktok.com/@regiemediabelge/video/7618310173316140320): employees answer "Yes, I love it" with the crying filter on; watch how fast the cuts come.
+- [@regiemediabelge, 312k views (read 2026-10-25)](https://www.tiktok.com/@regiemediabelge/video/7618310173316140320): "Do you like working here? Yes, I love it" with the crying filter; watch how the answer and the filter contradict each other.
 
 ## For your AI
 

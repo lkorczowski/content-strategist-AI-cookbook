@@ -49,7 +49,7 @@ The music and the crowd shots let viewers feel the event before they attend, and
 
 ## Examples
 
-- [Les vaillants banquets, Instagram (numbers not re-checked)](https://www.instagram.com/reel/CyWEV0bsSQu/): a festive banquet trailer; look at how the past edition sells the next one.
+- [Les vaillants banquets, Instagram (numbers not re-checked)](https://www.instagram.com/reel/CyWEV0bsSQu/): a festive banquet trailer; look at how an event is sold with a trailer cut.
 - [Le Canon Français, Instagram (numbers not re-checked)](https://www.instagram.com/reel/CpS0kSoLTBU/): an event ad cut as a trailer.
 
 ## For your AI

@@ -39,7 +39,7 @@ You write the thoughts your buyers have every day and never say out loud, and yo
 
 ## Why it works
 
-Recognizing yourself in a line takes one second, and people tag the friend or colleague who lives it too. The short length makes people watch it again, which tells the platform the video holds attention.
+Recognizing yourself in a line takes one second, and people tag the friend or colleague who lives it too. The short length and the loop invite a second watch.
 
 ## Watch out
 

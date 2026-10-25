@@ -49,7 +49,7 @@ Each slide is a small open loop, and the promise on slide one keeps people swipi
 
 ## Examples
 
-- [@katetolo, 193k views (read 2026-10-25)](https://www.tiktok.com/@katetolo/video/7684704918170602765): "I scanned my face daily for 40 days", the timeline variation; look at how the first slide promises the result.
+- [@katetolo, 193k views (read 2026-10-25)](https://www.tiktok.com/@katetolo/video/7684704918170602765): "I scanned my face daily for 40 days", the timeline variation; look at how the promise of a daily record pulls you through the slides.
 - [@sideramedia, 706k views (read 2026-10-25)](https://www.tiktok.com/@sideramedia/video/7669473185489882400): a total solar eclipse explained in 7 slides.
 - [@peerjuelich, 883k views (read 2026-10-25)](https://www.tiktok.com/@peerjuelich/video/7601081578038512928): business lessons in 17 slides, the long list variation.
 

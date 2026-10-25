@@ -49,7 +49,7 @@ The first-person view puts the viewer inside the trick, and the open question "w
 
 ## Examples
 
-- [@sourgrape02, 1.9M views (read 2026-10-25)](https://www.tiktok.com/@sourgrape02/video/7700292988437581069): a chess game against a stranger played with smart glasses; watch how the glasses' view is cut in before the opponent reacts.
+- [@sourgrape02, 1.9M views (read 2026-10-25)](https://www.tiktok.com/@sourgrape02/video/7700292988437581069): titled "Ragebaiting a French guy in chess", with smart glasses and cheating hashtags; look at how the title sets the prank in a few words.
 - [@cinemotionrobotics, 254k views (read 2026-10-25)](https://www.tiktok.com/@cinemotionrobotics/video/7497782127321222402): the device-versus-pro variation, smart glasses compared with a cinema camera on a set.
 
 ## For your AI

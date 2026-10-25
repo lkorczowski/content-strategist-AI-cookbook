@@ -49,7 +49,7 @@ A single question opens a gap the viewer wants to close by hearing every answer,
 
 ## Examples
 
-- [@versojobs, 36k views (read 2026-10-25)](https://www.tiktok.com/@versojobs/video/7675590090617392414): one startup question asked to many people; notice how the question about underrated startups invites strong, specific answers.
+- [@versojobs, 36k views (read 2026-10-25)](https://www.tiktok.com/@versojobs/video/7675590090617392414): "What's one startup that you think is criminally underrated right now?"; notice how one sharp question frames every answer.
 - [@soufiane.haloui (numbers not re-checked)](https://www.tiktok.com/@soufiane.haloui/video/7229352389852024090): the field variation, a question about what bothers people at the gym asked inside a gym.
 
 ## For your AI

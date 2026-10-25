@@ -49,7 +49,7 @@ Viewers make their own guess before the reveal, so they stay to see if they were
 
 ## Examples
 
-- [@cococookingfr (numbers not re-checked)](https://www.tiktok.com/@cococookingfr/video/7444196615008587030): a "cheese or not cheese?" taste challenge; notice how a three-word question sets up the whole test.
+- [@cococookingfr (numbers not re-checked)](https://www.tiktok.com/@cococookingfr/video/7444196615008587030): a "cheese or not cheese?" taste challenge; notice how one short question sets up the whole test.
 
 ## For your AI
 

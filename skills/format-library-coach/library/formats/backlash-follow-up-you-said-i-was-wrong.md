@@ -39,7 +39,7 @@ You need a first video that people argued with. Then you film the follow-up with
 
 ## Why it works
 
-A public disagreement is a story with two sides, and viewers who saw the first video want to know how it ends (Zeigarnik 1927). A creator who admits a mistake on camera is rare enough to be worth sharing. Second videos on a heated topic often draw more attention than the first.
+A public disagreement is a story with two sides, and viewers who saw the first video want to know how it ends (Zeigarnik 1927). A creator who admits a mistake on camera is rare enough to be worth sharing. A second video on a heated topic can reach people who missed the first.
 
 ## Watch out
 

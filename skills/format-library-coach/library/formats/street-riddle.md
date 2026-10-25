@@ -49,7 +49,7 @@ The riddle opens a gap the viewer wants to close, and each wrong answer stretche
 
 ## Examples
 
-- [@clubbr_officiel, 2.5M views (read 2026-10-25)](https://www.tiktok.com/@clubbr_officiel/video/7585678290631888150): an age riddle built on the legal drinking age; notice how short the question is and how quickly a wrong answer comes.
+- [@clubbr_officiel, 2.5M views (read 2026-10-25)](https://www.tiktok.com/@clubbr_officiel/video/7585678290631888150): "The legal drinking age is 18 and you've been allowed to drink for 5 years. How old are you?"; notice how short the riddle is.
 
 ## For your AI
 

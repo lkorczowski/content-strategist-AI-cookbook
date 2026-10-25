@@ -49,7 +49,7 @@ Viewers recognize their current level and the level of people they know, which m
 
 ## Examples
 
-- [@badhackss, 592k views (read 2026-10-25)](https://www.tiktok.com/@badhackss/video/7672426540621106464): a badminton ranking from your first day to the top, with what you bring to each tournament; see how the gear makes each level instantly visible.
+- [@badhackss, 592k views (read 2026-10-25)](https://www.tiktok.com/@badhackss/video/7672426540621106464): a badminton ranking from your first day to the top, with what you bring to each tournament; see how what you bring marks each level.
 
 ## For your AI
 

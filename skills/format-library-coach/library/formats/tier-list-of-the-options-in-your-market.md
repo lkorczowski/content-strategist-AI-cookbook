@@ -49,7 +49,7 @@ Viewers check whether their own choice ranks high, and the surprising placements
 
 ## Examples
 
-- [@alexander_dahlgren_jawad, 1.2M views (read 2026-10-25)](https://www.tiktok.com/@alexander_dahlgren_jawad/video/7655737938759748894): a designer batch-shoots eight rankings in one morning, tier lists and cheap versus chic; watch how one session feeds many videos.
+- [@alexander_dahlgren_jawad, 1.2M views (read 2026-10-25)](https://www.tiktok.com/@alexander_dahlgren_jawad/video/7655737938759748894): a designer batch-shoots rankings ("Eight videos in one morning. Tier lists. Tacky lists. Cheap versus chic"); watch how one session feeds many videos.
 - [@royalgossip.jack, 59.3M views (read 2026-10-25)](https://www.tiktok.com/@royalgossip.jack/video/7568783526515019039): rankings of a celebrity's most controversial outfits, the pop culture variation.
 - [@biohacking.fr, 17k views (read 2026-10-25)](https://www.tiktok.com/@biohacking.fr/video/7693470879480581409): a tier list as a photo carousel.
 

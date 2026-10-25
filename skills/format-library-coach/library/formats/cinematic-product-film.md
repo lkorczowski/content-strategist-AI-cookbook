@@ -29,7 +29,7 @@ A short film made with film-grade shots, lighting and music, with very few words
 
 ## Make it yours
 
-Software is hard to film, so you film what it changes or the moment it is used. A robot or device can be filmed directly. For an app, you film the person, the place and the screen as one scene. Examples: an AI hardware startup filming its device at sunrise like a car launch, a design tool filming a designer's hands and the screen in a dark studio, a fintech app filming the one second a payment lands on a shop counter. The entry's note applies: this format is expensive, so test cheaper formats first and keep it for a launch.
+Software is hard to film, so you film what it changes or the moment it is used. A robot or device can be filmed directly. For an app, you film the person, the place and the screen as one scene. Examples: an AI hardware startup filming its device at sunrise like a car launch, a design tool filming a designer's hands and the screen in a dark studio, a fintech app filming the one second a payment lands on a shop counter. This format is expensive, so test cheaper formats first and keep it for a launch.
 
 ## Variations
 

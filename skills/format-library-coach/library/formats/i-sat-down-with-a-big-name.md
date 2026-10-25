@@ -29,7 +29,7 @@ The video opens with "I sat down with [famous person]" and drops the most surpri
 
 ## Make it yours
 
-You interview people your buyers want to hear from, and you cut the strongest moment as a short. The guest does not have to be famous to everyone, only to your market. Examples: an AI security founder interviewing a well-known CISO, a fintech founder sitting with an investor known in the field, a vertical SaaS founder interviewing the most respected expert of the industry they serve. The entry also suggests interviewing a customer or an investor.
+You interview people your buyers want to hear from, and you cut the strongest moment as a short. The guest does not have to be famous to everyone, only to your market. Examples: an AI security founder interviewing a well-known CISO, a fintech founder sitting with an investor known in the field, a vertical SaaS founder interviewing the most respected expert of the industry they serve. A well-known customer or investor works too.
 
 ## Variations
 

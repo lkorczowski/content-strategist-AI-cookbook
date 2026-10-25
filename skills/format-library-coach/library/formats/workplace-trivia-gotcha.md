@@ -49,7 +49,7 @@ The bet creates a question the viewer wants to settle before the colleague does 
 
 ## Examples
 
-- [@westlocklibrary, 11.4M views (read 2026-10-25)](https://www.tiktok.com/@westlocklibrary/video/7618057952565480724): a library bets that two books have the exact same number of pages; watch how the proof is shown on the spot.
+- [@westlocklibrary, 11.4M views (read 2026-10-25)](https://www.tiktok.com/@westlocklibrary/video/7618057952565480724): a library asks "Did you know these two books have the exact same number of pages?"; watch how one odd fact about the shelves carries the clip.
 
 ## For your AI
 

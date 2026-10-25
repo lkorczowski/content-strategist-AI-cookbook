@@ -33,7 +33,7 @@ For software, the test is a real task with a stopwatch or a score. An AI transcr
 
 ## Variations
 
-- Escalation: raise the difficulty each round until only one contender is left, like the blower test at increasing distance.
+- Escalation: raise the difficulty each round until only one contender is left.
 - Viewer pick: viewers choose the contenders in the comments, you test them in the next video.
 - Old versus new: your product today against your first version.
 
@@ -50,7 +50,7 @@ The question "which one wins?" opens a gap that only the result closes, and each
 ## Examples
 
 - [@tassaro_tom, 244k views (read 2026-10-25)](https://www.tiktok.com/@tassaro_tom/video/7652365355687447840): a speed experiment between several bikes; notice how the opening frames it as an experiment.
-- [@tech_labo_, 720k views (read 2026-10-25)](https://www.tiktok.com/@tech_labo_/video/7616321430090681622): a power test of cordless blowers where only one holds at 10 meters; the escalating distance does the work.
+- [@tech_labo_, 720k views (read 2026-10-25)](https://www.tiktok.com/@tech_labo_/video/7616321430090681622): a power test of a cordless blower ("only one resisted, and we're at 10 meters"); the elimination is the payoff.
 
 ## For your AI
 

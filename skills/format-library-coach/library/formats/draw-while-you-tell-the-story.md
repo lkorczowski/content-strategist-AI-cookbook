@@ -49,7 +49,7 @@ Each new stroke is a small promise of what comes next, so the viewer waits to se
 
 ## Examples
 
-- [@vagabondartist, 2.8M views (read 2026-10-25)](https://www.tiktok.com/@vagabondartist/video/7624654812776369439): a drawn story ("Two men knew that the space shuttle Challenger was going to explode"); the first sentence states the stakes before anything is drawn in detail.
+- [@vagabondartist, 2.8M views (read 2026-10-25)](https://www.tiktok.com/@vagabondartist/video/7624654812776369439): a drawn story ("Two men knew that the space shuttle Challenger was going to explode"); the first sentence states the stakes.
 
 ## For your AI
 

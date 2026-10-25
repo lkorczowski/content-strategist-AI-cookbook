@@ -29,7 +29,7 @@ The video shows an operation nobody usually sees, filmed where it happens. A few
 
 ## Make it yours
 
-Every company has an operation customers never see. You pick the one with the most impressive numbers and film it on site. For a software company, the "site" can be the data center, the support floor during an outage or the night a migration runs. Examples: an AI data labeling company showing how many people review one dataset and for how long, a logistics SaaS filming the warehouse that uses it at peak season, a cybersecurity startup showing the night of a large incident response. The entry notes this works well for B2B and institutions.
+Every company has an operation customers never see. You pick the one with the most impressive numbers and film it on site. For a software company, the "site" can be the data center, the support floor during an outage or the night a migration runs. Examples: an AI data labeling company showing how many people review one dataset and for how long, a logistics SaaS filming the warehouse that uses it at peak season, a cybersecurity startup showing the night of a large incident response. The format suits B2B companies and institutions.
 
 ## Variations
 

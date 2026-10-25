@@ -49,7 +49,7 @@ The famous name gives the viewer a reason to care, and the open question "can a 
 
 ## Examples
 
-- [@tiboinshape, 3.1M views (read 2026-10-25)](https://www.tiktok.com/@tiboinshape/video/7671619002061425953): a creator tests an actor's workout for a superhero role; notice how the famous role sets the stakes in the first line.
+- [@tiboinshape, 3.1M views (read 2026-10-25)](https://www.tiktok.com/@tiboinshape/video/7671619002061425953): a creator tests an actor's workout for a superhero role; notice how the famous role gives the test its stakes.
 - [@_bryan_johnson_, 2.5M views (read 2026-10-25)](https://www.tiktok.com/@_bryan_johnson_/video/7678421981083077902): the series variation, "can unc dunk (episode 1)", a 48-year-old training to dunk.
 
 ## For your AI

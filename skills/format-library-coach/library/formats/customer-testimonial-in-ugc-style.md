@@ -49,7 +49,7 @@ A real person describing a real problem triggers recognition in people who have 
 
 ## Examples
 
-- [One Peak Creative, Facebook ad (numbers not re-checked)](https://www.facebook.com/share/v/3ZSnaPa1hLyKDukY/): a client testimony ad about going from zero to millions of views; look at how the client tells the before and after in their own words.
+- [One Peak Creative, Facebook ad (numbers not re-checked)](https://www.facebook.com/share/v/3ZSnaPa1hLyKDukY/): a client testimony ad about going from zero to millions of views; look at how the claimed before and after frames the whole ad.
 
 ## For your AI
 

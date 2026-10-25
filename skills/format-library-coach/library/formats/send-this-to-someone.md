@@ -39,7 +39,7 @@ Find the person your buyer needs to convince or work with, and write the list fo
 
 ## Why it works
 
-The video gives the viewer a reason and a target to share it, and sending it says something about the sender, which is social currency (Berger 2013). Private shares often travel further than likes, because each one starts a conversation.
+The video gives the viewer a reason and a target to share it, and sending it says something about the sender, which is social currency (Berger 2013). Each private share starts a conversation between two people.
 
 ## Watch out
 

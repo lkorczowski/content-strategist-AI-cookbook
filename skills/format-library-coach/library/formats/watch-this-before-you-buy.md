@@ -33,7 +33,7 @@ Your buyers compare tools before they sign. You become the guide who helps them 
 
 ## Variations
 
-- Long form on YouTube, then three short cuts on TikTok, one per mistake (as the entry notes for the examples).
+- Long form on YouTube, then three short cuts on TikTok, one per mistake.
 - Install version: the same category shown through a full setup tutorial (see the second example).
 - Checklist only: a 30-second version that only gives the list.
 
@@ -49,7 +49,7 @@ People about to spend money look for help, so the video meets them at the moment
 
 ## Examples
 
-- [Fix This Build That, YouTube (numbers not re-checked)](https://youtu.be/LdpvCepML-E): "Watch this before buying LEDs"; look at how each mistake is shown on a real build.
+- [Fix This Build That, YouTube (numbers not re-checked)](https://youtu.be/LdpvCepML-E): "Watch this before buying LEDs"; look at how the title speaks to people about to buy.
 - [Burke BunchTV, YouTube (numbers not re-checked)](https://youtu.be/t3GG6NGCCJY): an install tutorial for the same category, the install variation.
 
 ## For your AI

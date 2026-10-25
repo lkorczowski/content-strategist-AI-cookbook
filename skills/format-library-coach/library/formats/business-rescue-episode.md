@@ -49,7 +49,7 @@ The rescue follows a full story arc with a person who has a lot at stake, which 
 
 ## Examples
 
-- [Kitchen rescue show episode, YouTube (numbers not re-checked)](https://youtu.be/8xIoBZSr1_o): a full French episode of a kitchen rescue show; look at the structure from diagnosis to return visit.
+- [Kitchen rescue show episode, YouTube (numbers not re-checked)](https://youtu.be/8xIoBZSr1_o): a full French episode of a kitchen rescue show; look at how a full episode is structured before you cut it into shorts.
 
 ## For your AI
 
