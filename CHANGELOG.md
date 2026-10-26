@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-26 · v1.5
+
+- New playbook: Scale Meta ads without cost inflation (https://statur.co/scale-meta-ads/), with the skill meta-ads-scaling-coach 1.0.0: diagnosis (creative, offer, page), one purchase campaign, live ads sized to the budget, creative test lane, partnership ad share, offers and statics, weekly 7-day read, monthly contribution after ad spend, limited-time sale lane. US rules, France and EU end note. docs/ARCHITECTURE.md section 8: paid row added.
+
 ## 2026-10-26 · v1.4
 
 - Video Script Structure 1.1: video-story-analysis, story-replication, short-video-author-analysis and short-story-replication 1.1.0. New reference story-ladder.md (five levels mapped to the nine tiers, credited to Kallaway) and new scripts/rhythm.py (share of short sentences, longest run of long sentences, runs to fix; the short-sentence trick credited to ginyboi and Kallaway). Analysis skills place videos and templates on the ladder; replication skills plan one move per rung and check rhythm before and after the self-map.

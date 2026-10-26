@@ -126,6 +126,7 @@ The skills form one loop. Each step has one owner; the next step reads what the 
 | Make | video-story-analysis, short-video-author-analysis, story-replication, short-story-replication | Map how a winning video holds attention, then write a script on the same beats | winners (own or watched) | story sheets, scripts | collect metrics |
 | Make | statur-clipping, clip-plan, clip-edit, clip-review | Turn a long recording into clips | the account's winning formats and hooks | clips, specs, review pages | collect metrics |
 | Make | organic-to-paid | Move organic winners into ads and test them | winners with saves and shares | ad test plan | collect metrics |
+| Decide (paid) | meta-ads-scaling-coach | Diagnose a Meta account and run it: structure, live ads per budget, test lane, partnership share, offers and statics, weekly and monthly reads | ad exports or a read-only Meta connector, store numbers | diagnosis, structure plan, test plan, weekly and monthly tables | launch or edit ads, recruit creators (performance-creator-program), pick organic winners (organic-to-paid) |
 
 Short names used on statur.co and in talks: "format library" = format-library-coach; "storytelling OS" = the four Video Script Structure skills; "clipping" = the four STATUR clipping skills; "social analytics" = statur-social-analytics.
 

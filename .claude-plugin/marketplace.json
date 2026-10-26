@@ -127,6 +127,17 @@
       "skills": [
         "./skills/content-os-setup"
       ]
+    },
+    {
+      "name": "scale-meta-ads",
+      "description": "Scale Meta ads without cost inflation: diagnosis, one purchase campaign, live ads sized to the budget, test lane, partnership ads, offers and statics, weekly and monthly reads.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/meta-ads-scaling-coach",
+        "./skills/organic-to-paid",
+        "./skills/performance-creator-program"
+      ]
     }
   ]
 }
