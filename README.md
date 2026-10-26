@@ -11,6 +11,7 @@ The repository also contains a [blueprint](blueprint/) to build a private AI con
 | Playbook | What it does | Skills |
 |---|---|---|
 | [The Content Testing Loop](https://statur.co/content-testing-loop/) | Make every short video teach the next one: video log, 7-day rule, passage-by-passage post-mortems, KEEP / CHANGE / CUT edits, format review, monthly lessons ledger. | [video-post-mortem](skills/video-post-mortem/), [format-dice-review](skills/format-dice-review/), [content-learning-session](skills/content-learning-session/) |
+| [STATUR social analytics](https://statur.co/blog/own-your-social-media-analytics/) | Own your short-form analytics without a paid tool: views, retention, audience and daily stats in plain files in your repo, a watchlist, proof screenshots, SQL your AI can run. Feeds the Content Testing Loop, the Format Library, clipping and scripts. | [statur-social-analytics](skills/statur-social-analytics/) |
 | Video Script Structure (page coming soon) | Script founder videos people finish, from 2 minutes to 40: map any video sentence by sentence on nine tiers, name a creator's templates across twenty short videos, then write your own script on the same beats and check parity before you film. | [video-story-analysis](skills/video-story-analysis/), [story-replication](skills/story-replication/), [short-video-author-analysis](skills/short-video-author-analysis/), [short-story-replication](skills/short-story-replication/) |
 | [STATUR clipping](https://statur.co/clipping/) | Turn lives, webinars, long YouTube videos or a Google Drive folder into ready-to-post vertical clips, in French or English: local transcription, clip plan, edit with captions and a moving watermark, quality check, review page with timecoded notes. | [statur-clipping](skills/statur-clipping/), [clip-plan](skills/clip-plan/), [clip-edit](skills/clip-edit/), [clip-review](skills/clip-review/) |
 | [The Creative-Led Growth Handbook](https://statur.co/creative-led-growth/) | One primary channel, one hour of founder time a day for five to ten pieces, packaging, share rate first. | [creative-led-growth-coach](skills/creative-led-growth-coach/) |
@@ -62,7 +63,7 @@ Or copy a skill folder into `.agents/skills/` (shared path), `.claude/skills/` (
 - playbooks/: short cards that link each page, its markdown version, its essay and its skills. The page on statur.co is the source of truth for the text.
 - blueprint/: how to build a private AI content OS, with templates.
 - scripts/: checks run before every change (skill format, private data scan) and the zip builder for releases.
-- docs/: [architecture and responsibilities](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md).
+- docs/: [architecture and responsibilities](docs/ARCHITECTURE.md) (section 8: which skill does what), [roadmap](docs/ROADMAP.md).
 
 ## Author
 

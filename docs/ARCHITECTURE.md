@@ -1,6 +1,6 @@
 # Architecture and responsibilities
 
-Version 1.0, 2026-10-24. Read this before changing the structure of this repository, of a site that links to it, or of a private instance built from it. Written for humans and for coding agents (Claude Code, Codex, Cursor).
+Version 1.1, 2026-10-26 (section 8 added). Read this before changing the structure of this repository, of a site that links to it, or of a private instance built from it. Written for humans and for coding agents (Claude Code, Codex, Cursor).
 
 ## 1. The system in one picture
 
@@ -102,7 +102,45 @@ docs/ARCHITECTURE.md         this file
 docs/ROADMAP.md              what comes next
 ```
 
-## 8. Checks before every push
+## 8. Skill responsibilities: one job per skill
+
+The skills form one loop. Each step has one owner; the next step reads what the previous one wrote instead of asking the user again.
+
+```
+  MEASURE              DIAGNOSE              DECIDE                    MAKE
+  statur-social-   ->  video-post-mortem ->  format-dice-review   ->   format-library-coach (pick, script)
+  analytics            (one video)           (keep, change, drop)      video-script-structure skills (write)
+  (collect, store,                           content-learning-         statur-clipping (cut long recordings)
+   query, proof)                             session (monthly)         organic-to-paid (winners into ads)
+        ^                                                                       |
+        +-------------------------------- published videos ---------------------+
+```
+
+| Step | Skill | Single responsibility | Reads | Writes | Never |
+|---|---|---|---|---|---|
+| Measure | statur-social-analytics | Collect metrics of owned, client and watched accounts; store every reading; answer data questions; keep proof screenshots | platforms (API, export, the user's own analytics screen, public pages) | accounts.csv, raw/, analytics.db, TOTALS.md, proof/ | decides what to post |
+| Diagnose | video-post-mortem | Explain one video passage by passage, KEEP / CHANGE / CUT | video_log, retention | post-mortem notes, test plan | collects data, judges a format |
+| Decide | format-dice-review | Keep, change one variable or drop each format on mature data | dice table, video_log | format decisions, next production plan | scripts videos |
+| Decide | content-learning-session | Monthly ledger of lessons with evidence, next three tests | video_log (whole history), post-mortems | lessons ledger, coaching brief | judges a single video |
+| Make | format-library-coach | Find, plan and script formats; name the format of a video | the library, winners | formats.csv lines, scripts | keeps or kills a format (that is format-dice-review) |
+| Make | video-story-analysis, short-video-author-analysis, story-replication, short-story-replication | Map how a winning video holds attention, then write a script on the same beats | winners (own or watched) | story sheets, scripts | collect metrics |
+| Make | statur-clipping, clip-plan, clip-edit, clip-review | Turn a long recording into clips | the account's winning formats and hooks | clips, specs, review pages | collect metrics |
+| Make | organic-to-paid | Move organic winners into ads and test them | winners with saves and shares | ad test plan | collect metrics |
+
+Short names used on statur.co and in talks: "format library" = format-library-coach; "storytelling OS" = the four Video Script Structure skills; "clipping" = the four STATUR clipping skills; "social analytics" = statur-social-analytics.
+
+Shared definitions (one owner each, used by every skill):
+
+| Definition | Value | Owner |
+|---|---|---|
+| Video log columns | the `video_log` view of statur-social-analytics; templates/video-log.csv in video-post-mortem is the manual fallback with the same columns | statur-social-analytics (references/schema.md) |
+| Early signal | a reading at 48 hours, used to boost, reply in comments or test an ad; never a verdict | format-dice-review |
+| Mature data | at least 7 days live and 1,000 views (or the account's usual floor if smaller); the only data a verdict uses | format-dice-review |
+| Viral line | 100,000 views at day 7 by default, set per account | statur-social-analytics |
+
+Known overlap to remove: format-library-coach 1.0 also asks to decide after 48 hours which formats to keep. Version 2.0 (pull request #3) drops it; until it merges, format-dice-review is the decider.
+
+## 9. Checks before every push
 
 1. `python3 scripts/check_skills.py` reports zero problems.
 2. `python3 scripts/leak_scan.py --denylist <private denylist>` reports zero hits.

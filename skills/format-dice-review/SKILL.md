@@ -4,7 +4,7 @@ description: Review short-form video formats as dice (the dice system by Dr. Lou
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0"
+  version: "1.0.1"
   playbook: https://statur.co/content-testing-loop/
   method: https://statur.co/method/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
@@ -19,6 +19,8 @@ A video is a throw and a format is the die. One throw tells you almost nothing. 
 ## What to ask for
 
 If the workspace has a company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md), read it first and ask only for what is missing.
+
+If the workspace has an analytics base built with statur-social-analytics (a folder with accounts.csv, raw/ and analytics.db, usually content/analytics/), run `python3 scripts/analytics.py dice <dir>` from that skill and read the `video_log` view instead of asking for numbers. That skill owns collection and the data schema; this one only reads it.
 
 - One row per video: format name, platform, publish date, reading date, views, saves, shares, retention at 3 s and 10 s (the columns of video-log.csv in the video-post-mortem skill).
 - For each format: how many videos were planned before judging it, and the result agreed for it (the target), if any.

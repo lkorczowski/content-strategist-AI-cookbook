@@ -1,0 +1,3 @@
+key,owner,platform,handle,relation,access,route,window_start,window_end,attribution,publish,notes
+me-tiktok,Example founder,tiktok,examplefounder,own,owner,studio,,,full,named,invented sample
+watch-1,Example competitor,tiktok,examplecompetitor,watch,none,public,,,none,none,invented sample

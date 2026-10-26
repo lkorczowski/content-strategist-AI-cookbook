@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-26 · v1.3
+
+- New playbook: STATUR social analytics (https://statur.co/blog/own-your-social-media-analytics/), with the skill statur-social-analytics 1.0.0: analytics base in plain files (accounts.csv, raw collections, proof screenshots), collection routes ranked from official APIs to screenshots, analytics.py (init, build into SQLite, sql, dice, winners, export-log, TOTALS.md), proof.py (blurred copies), ready SQL questions and an invented sample.
+- docs/ARCHITECTURE.md 1.1: section 8, one job per skill (measure, diagnose, decide, make), shared definitions (video log columns, early signal at 48 hours, mature data at 7 days, viral line) and the known overlap of format-library-coach 1.0.
+- video-post-mortem 1.0.2, format-dice-review 1.0.1, content-learning-session 1.0.2: read the analytics base when it exists instead of asking for numbers.
+
 ## 2026-10-24 · v1.2
 
 - New playbook: Video Script Structure (https://statur.co/video-script-structure/, page coming soon), with four skills: video-story-analysis 1.0.0 (nine-tier sentence map of a long video, story sheet, structure diagram, replication seed), story-replication 1.0.0 (word budget, beat map, self-map, parity and fact-check), short-video-author-analysis 1.0.0 (one creator across about twenty short videos, templates, medians, author sheet) and short-story-replication 1.0.0 (short talking-head script from one template, with sub-skills for the turn, the hook, the last line and voice adaptation). Acquisition uses only transcripts a platform shows to viewers, files the user owns or a local transcription, within each platform's terms. Examples are invented.

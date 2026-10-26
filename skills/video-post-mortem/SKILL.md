@@ -4,7 +4,7 @@ description: Compare short-form videos passage by passage (retention curve, spok
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.1"
+  version: "1.0.2"
   playbook: https://statur.co/content-testing-loop/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -20,6 +20,8 @@ The job: find the passage that lost viewers, read what was said and shown at tha
 ## What to ask for
 
 If the workspace has a company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md), read it first and ask only for what is missing.
+
+If the workspace has an analytics base built with statur-social-analytics (a folder with accounts.csv, raw/ and analytics.db, usually content/analytics/), run `python3 scripts/analytics.py export-log <dir>` from that skill and read the retention rows of the video in analytics.db instead of asking for numbers. That skill owns collection and the data schema; this one only reads it.
 
 Ask once, then work with what the user gives you. Accept a pasted table, a CSV (use templates/video-log.csv as the expected shape) or screenshots of the analytics screen.
 

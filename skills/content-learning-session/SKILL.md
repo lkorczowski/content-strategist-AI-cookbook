@@ -4,7 +4,7 @@ description: Run a monthly learning session over a creator's or founder's whole 
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.1"
+  version: "1.0.2"
   playbook: https://statur.co/content-testing-loop/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -20,6 +20,8 @@ A post-mortem explains one video. A learning session decides what the whole arch
 ## What to ask for
 
 If the workspace has a company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md), read it first and ask only for what is missing.
+
+If the workspace has an analytics base built with statur-social-analytics (a folder with accounts.csv, raw/ and analytics.db, usually content/analytics/), read the `video_log` view over the whole history (`export-log` writes it as video-log.csv) instead of asking for numbers. That skill owns collection and the data schema; this one only reads it.
 
 - The history: one row per video with these columns (the same as video-log.csv in the video-post-mortem skill): video_id, platform, publish_date, read_date, days_live, distribution (main_feed, test, ad), format, hook_type, length_s, views, likes, comments, saves, shares, new_followers, avg_watch_s, ret_3s_pct, ret_10s_pct, ret_end_pct, notes.
 - The current lessons ledger (templates/lessons-ledger.csv). Empty is fine for a first session.

@@ -16,6 +16,10 @@ Version 1.0, 2026-10-24. Each item names its deliverable and the check that says
 
 - Video Script Structure playbook: video-story-analysis, story-replication, short-video-author-analysis and short-story-replication. The statur.co page follows after a filmed test of two scripts written with the skills.
 
+## v1.3 · shipped 2026-10-26
+
+- STATUR social analytics: statur-social-analytics (collect, store, query, proof), skill responsibilities in docs/ARCHITECTURE.md section 8. The "Data schemas" item of v2 is partly covered by references/schema.md of this skill.
+
 ## v1.1 · next
 
 | Item | Deliverable | Done when |

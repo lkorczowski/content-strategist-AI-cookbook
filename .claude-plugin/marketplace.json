@@ -21,6 +21,15 @@
       ]
     },
     {
+      "name": "social-analytics",
+      "description": "Own your short-form analytics: collect views, retention and audience from TikTok, Instagram, Facebook and YouTube into plain files your AI can query, watch competitor accounts and keep proof screenshots.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-social-analytics"
+      ]
+    },
+    {
       "name": "statur-clipping",
       "description": "Turn lives, webinars, long videos or a Google Drive folder into ready-to-post vertical clips: transcription, clip plan, edit, quality check and review page.",
       "source": "./",
