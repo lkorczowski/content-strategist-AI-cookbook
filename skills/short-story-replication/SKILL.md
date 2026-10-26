@@ -4,7 +4,7 @@ description: Take an author Fiche and its short seed (from short-video-author-an
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -52,11 +52,15 @@ Start writing once all five have a fact id or are marked as the creator's opinio
 ### Step 3 · Plan the beats
 Copy the template's beats and shares into `01-plan.md`, convert shares to seconds and words at the target pace, and place every loop: a hook loop opened in the first 3 seconds and closed by the last line, plus one or two micro loops per minute.
 
+Then plan one move per rung of the story ladder (`references/story-ladder.md`): the facts, one misdirection inside the body, the stakes in the viewer's words, the loop plan, one signature move of the target creator.
+
 ### Step 4 · Write
 Spoken style, one idea per sentence, sentences under 25 words except one long accumulation in the build. Respect the target voice. When the author's signature figure clashes with it, use the affirmative equivalent from `subskills/voice-adaptation.md`. Example: a reversal built on two opposed halves clashes with a voice that bans negation-based framing.
 
+Rhythm: a short sentence (five words or fewer) after one or two long ones resets the ear, and the flat answer right after a turn is the strongest place for it. Run `python3 -I scripts/rhythm.py 02-script.md` and break every run of three long sentences, unless it is a deliberate accumulation.
+
 ### Step 5 · Self-map and parity
-Turn the script into timed units: `python3 -I scripts/script_units.py 02-script.md work/ <author_wpm>`. Write those sentences as a transcript with cue times (a `duration_s:` header line, then one line per sentence, `[mm:ss.s] text`), then run `python3 -I scripts/short_units.py work/transcript.txt selfmap`. Tag the units with the author analysis method (blocks, map, loops, card), run `python3 -I scripts/analyze.py selfmap <runtime_s>`, and compare with the template's videos: `python3 -I scripts/parity_short.py <author_case_dir> selfmap <video prefixes of the template>`. Check the hook loop row by hand from `03-loops.md`.
+Turn the script into timed units: `python3 -I scripts/script_units.py 02-script.md work/ <author_wpm>`. Write those sentences as a transcript with cue times (a `duration_s:` header line, then one line per sentence, `[mm:ss.s] text`), then run `python3 -I scripts/short_units.py work/transcript.txt selfmap`. Tag the units with the author analysis method (blocks, map, loops, card), run `python3 -I scripts/analyze.py selfmap <runtime_s>`, and compare with the template's videos: `python3 -I scripts/parity_short.py <author_case_dir> selfmap <video prefixes of the template>`. Check the hook loop row by hand from `03-loops.md`. Run `python3 -I scripts/rhythm.py selfmap/work/units-asr.tsv` on the script and on the template's videos, and compare the share of short sentences and the longest run of long ones. Then read the script on the story ladder: every rung from 1 to 4 must pass.
 
 | Metric | Tolerance |
 |---|---|

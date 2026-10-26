@@ -4,7 +4,7 @@ description: Take a Fiche and its seed (from video-story-analysis) and write a c
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -77,7 +77,7 @@ For each lesson block, read the seed's purpose and moves, and keep the role of e
 ### Step 4 · Draft block by block
 Write `03-script.md` in the target voice. Production cues on their own lines: `[CLIP | ...]`, `[CARD | ...]`, `[MEME | emotion]`, `[B-ROLL | ...]`, `[RETELLING]`, `[TITLE CARD | ...]`, `[CUT TO BLACK]` (sub-skill `clip-beats`). Fact ids at the end of each factual sentence `[F07]`.
 
-Rhythm targets come from the seed's rhythm rules and the source stats: spoken words per joke, per new loop and per thread switch. Hold them (sub-skills `write-transitions`, `figures-cookbook`). Rule of thumb: at least half of sentence-initial links are but or therefore.
+Rhythm targets come from the seed's rhythm rules and the source stats: spoken words per joke, per new loop and per thread switch. Hold them (sub-skills `write-transitions`, `figures-cookbook`). Rule of thumb: at least half of sentence-initial links are but or therefore. Sentence rhythm: break every run of three long sentences with a short one (five words or fewer), unless the run is a deliberate accumulation; check each pass with `python3 -I scripts/rhythm.py 03-script.md`. Plan one move per rung of the story ladder for each lesson section (`references/story-ladder.md`): a lesson block with hooks and loops but no stakes keeps the viewer curious and indifferent.
 
 Draft in passes of about a quarter of the blocks. After each pass, re-read the loop ledger and check that every open loop is still pending or closed where planned, and count words per block with `python3 -I scripts/script_units.py 03-script.md work/ <source_wpm>`. A first draft written from the beat map tends to run short, mostly in the lesson blocks and the crisis. Expand with real facts (a second example, a counter-case, a callback), never with filler.
 

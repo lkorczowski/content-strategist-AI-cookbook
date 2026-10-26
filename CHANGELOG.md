@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-26 · v1.4
+
+- Video Script Structure 1.1: video-story-analysis, story-replication, short-video-author-analysis and short-story-replication 1.1.0. New reference story-ladder.md (five levels mapped to the nine tiers, credited to Kallaway) and new scripts/rhythm.py (share of short sentences, longest run of long sentences, runs to fix; the short-sentence trick credited to ginyboi and Kallaway). Analysis skills place videos and templates on the ladder; replication skills plan one move per rung and check rhythm before and after the self-map.
+
 ## 2026-10-26 · v1.3
 
 - New playbook: STATUR social analytics (https://statur.co/blog/own-your-social-media-analytics/), with the skill statur-social-analytics 1.0.0: analytics base in plain files (accounts.csv, raw collections, proof screenshots), collection routes ranked from official APIs to screenshots, analytics.py (init, build into SQLite, sql, dice, winners, export-log, TOTALS.md), proof.py (blurred copies), ready SQL questions and an invented sample.

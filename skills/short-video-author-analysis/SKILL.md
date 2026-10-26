@@ -4,7 +4,7 @@ description: Map the storytelling of one creator across about 20 short videos (T
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -86,6 +86,8 @@ Split the other videos into 3 to 5 sets of similar size, counted in units rather
 
 ### Step 5 · Aggregate
 `python3 -I scripts/aggregate_author.py <case_dir>` writes `10-author-grammar.md` and `work/author.json`: per-video table, medians for all, top 10 and recent 10, beat skeletons and core skeletons (first occurrence of each beat, in order), length classes, median share of each beat, hook and ending counts, figures and mechanisms by number of videos, recurring 3-to-5-word phrases, score means and ranges.
+
+Add the rhythm of each video with `python3 -I scripts/rhythm.py videos/<folder>/work/units-asr.tsv` (share of short sentences, longest run of long ones) and report the medians next to the others. Place each template on the story ladder (`references/story-ladder.md`) in `11-templates.md`: the level it reaches and the rung its weakest videos miss.
 
 ### Step 6 · Name the templates, write the seed
 Read the core skeletons by length class and name 2 to 4 templates in `11-templates.md` (name, skeleton, share of videos, median beat shares, when the author uses it, one example video). Give each template a plain name that says its shape, for example "the assumption to knock down" or "the mystery with a solution".

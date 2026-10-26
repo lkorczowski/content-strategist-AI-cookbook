@@ -4,7 +4,7 @@ description: Map the storytelling of a long video (YouTube, TikTok, podcast) sen
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -106,7 +106,7 @@ Rules that keep a map consistent:
 
 ## Step 6 · Metrics
 
-`python3 -I scripts/analyze.py <case_dir> <runtime_s>` writes `04-stats.md`, `work/stats.json` and the tension and loop-load curves. Read it against the map: the longest stretch without a story unit, blocks with low tension and no host thread, the causal-link ratio. Every number you put in the Fiche comes from this file.
+`python3 -I scripts/analyze.py <case_dir> <runtime_s>` writes `04-stats.md`, `work/stats.json` and the tension and loop-load curves. Read it against the map: the longest stretch without a story unit, blocks with low tension and no host thread, the causal-link ratio. Every number you put in the Fiche comes from this file. Add the sentence rhythm with `python3 -I scripts/rhythm.py work/units-asr.tsv`: share of short sentences, longest run of long ones, runs to fix.
 
 ## Step 7 · Graph
 
@@ -115,6 +115,8 @@ Rules that keep a map consistent:
 ## Step 8 · Scores
 
 Eight core abilities out of 20 (Curiosity, Weave, Clarity, Authority, Voice, Humor, Emotion, Payoff) with the role-playing modifier. Use the anchors in `references/scoring.md` and write one evidence line per score with the numbers from stats. Add the creator's own axes as weighted mixes of the core scores (`custom_axes_example` in the JSON); take the goals from the company context file when there is one. Also fill class, background, alignment (a one-line joke grounded in data), the one-sentence formula, 8 to 12 feats (how and where), equipment (assets the format needs), flaws and audience signals.
+
+Then place the video on the story ladder (`references/story-ladder.md`): the highest level whose check passes with all levels below it, one evidence line per rung, and the next rung as the first improvement.
 
 ## Step 9 · Seed
 
