@@ -3,7 +3,7 @@
 Own your short-form analytics: views, retention, audience and daily account stats from TikTok, Instagram, Facebook and YouTube, kept in plain files in your own repository and queried by your AI, without a paid tracking tool.
 
 - Page (human version, source of truth): https://statur.co/blog/own-your-social-media-analytics/
-- Markdown for AI assistants: https://statur.co/blog/own-your-social-media-analytics.md (when the blog twin is published; read the page meanwhile)
+- Markdown for AI assistants: the skill folder below (blog posts have no markdown twin yet)
 - Version 1.0, 2026-10-26; skill statur-social-analytics 1.0.0
 
 ## Summary
