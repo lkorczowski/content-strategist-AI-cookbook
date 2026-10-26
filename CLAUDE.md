@@ -24,7 +24,7 @@ Before every push: `python3 scripts/check_skills.py` and `python3 scripts/leak_s
 
 ## Conventions
 
-- Skill folder name = frontmatter name, lowercase and hyphens. Frontmatter: name, description (what it does and when to use it), license MIT, metadata author, version, playbook URL.
+- Skill folder name = frontmatter name, lowercase and hyphens, always prefixed statur-. Main skill of a playbook: statur-<playbook>. Sub-skill: statur-<object>-<action>. Plugins: statur-<playbook> or statur-<role>. Frontmatter: name, description (what it does and when to use it), license MIT, metadata author, version, playbook URL.
 - Every skill ends with a "## Rules" section: drafts only, no passwords, no promised views or results, no invented numbers, respect platform terms.
 - English, short sentences, no em dash, no emoji.
 - Any change to a skill: bump metadata.version, add a CHANGELOG.md line, update the playbook card and, if the version changed, the HANDBOOKS registry on statur.co (src/lib/hbkit.ts in the site repo).

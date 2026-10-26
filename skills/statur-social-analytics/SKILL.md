@@ -4,7 +4,7 @@ description: Build and run your own short-form analytics base in plain files tha
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "2.0.0"
   playbook: https://statur.co/blog/own-your-social-media-analytics/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -54,13 +54,13 @@ This skill measures. Each decision belongs to one other skill, which reads this 
 
 | Question | Skill | What it reads here |
 |---|---|---|
-| Why did this video lose people, and how to re-edit it? | video-post-mortem | `export-log` output, the video's retention rows |
-| Which formats do I keep, change or drop? | format-dice-review | the `dice` table and `video_log` with the format column |
-| What has my history taught me this month? | content-learning-session | `video_log` over the whole history |
-| Which format is this winner, and what do I script next? | format-library-coach | winners and their captions; it writes the format into formats.csv |
-| Which moments of my live or long video become clips? | statur-clipping, clip-plan | the winning formats and hooks of the account |
-| How do I write a script that replays a winner's structure? | video-story-analysis, short-video-author-analysis, story-replication, short-story-replication | the winners list (own or watched) as the videos to analyse |
-| Which organic winners go into ads? | organic-to-paid | the winners list with saves and shares |
+| Why did this video lose people, and how to re-edit it? | statur-video-post-mortem | `export-log` output, the video's retention rows |
+| Which formats do I keep, change or drop? | statur-format-review | the `dice` table and `video_log` with the format column |
+| What has my history taught me this month? | statur-content-learning | `video_log` over the whole history |
+| Which format is this winner, and what do I script next? | statur-format-library | winners and their captions; it writes the format into formats.csv |
+| Which moments of my live or long video become clips? | statur-clipping, statur-clip-plan | the winning formats and hooks of the account |
+| How do I write a script that replays a winner's structure? | statur-story-analysis, statur-author-analysis, statur-story-replication, statur-short-story-replication | the winners list (own or watched) as the videos to analyse |
+| Which organic winners go into ads? | statur-organic-to-paid | the winners list with saves and shares |
 
 Install the others from the same repository. A private instance may add its own collectors in a separately named private skill that extends this one; it never forks it.
 

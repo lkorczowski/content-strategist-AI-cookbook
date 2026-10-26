@@ -9,4 +9,4 @@ Twelve short-form video formats for SaaS and AI founders, six built around the f
 
 | Skill | Use it for |
 |---|---|
-| [format-library-coach](../skills/format-library-coach/) | Pick, script and read the twelve formats, then decide which to keep, change or drop. |
+| [statur-format-library](../skills/statur-format-library/) | Pick, script and read the twelve formats, then decide which to keep, change or drop. |

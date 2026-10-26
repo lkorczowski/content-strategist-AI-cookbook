@@ -9,4 +9,4 @@ How to build the private half of an AI content system inside a company: knowledg
 
 | Skill | Use it for |
 |---|---|
-| [content-os-setup](../skills/content-os-setup/) | Walk a team through the setup, from the sources-of-truth map to the first routine. |
+| [statur-content-os-setup](../skills/statur-content-os-setup/) | Walk a team through the setup, from the sources-of-truth map to the first routine. |

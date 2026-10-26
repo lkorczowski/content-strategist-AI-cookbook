@@ -10,4 +10,4 @@ One primary channel, one hour of founder time a day for five to ten pieces, pack
 
 | Skill | Use it for |
 |---|---|
-| [creative-led-growth-coach](../skills/creative-led-growth-coach/) | Plan, package and read a founder's one-hour daily content routine with the eight chapters. |
+| [statur-creative-led-growth](../skills/statur-creative-led-growth/) | Plan, package and read a founder's one-hour daily content routine with the eight chapters. |

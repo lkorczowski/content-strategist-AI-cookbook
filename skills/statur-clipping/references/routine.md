@@ -6,9 +6,9 @@ Switch it on only after one recording went through the whole chain with the user
 
 1. **Collect.** Scan the inbox folders the user granted (for example `~/Clips/_inbox` and a Google Drive for desktop folder such as `My Drive/Lives`) with `fetch_source.py --root ~/Clips`. New files become queue items. Remind the user of replays that expire within 7 days and are not downloaded yet (from the list of platforms in the context file).
 2. **Prepare.** For each new item, oldest replay deadline first: `prep_source.sh`, `transcribe.py`, `sync_check.py`. Update the item's status after each step, so a stopped run resumes.
-3. **Plan.** For each transcribed item, run the clip-plan method and write `TRAVAIL <code>/plan.md` (the table) and the specs of the top clips. How many: the context file says (default 3). Never more than the user can review in one sitting.
+3. **Plan.** For each transcribed item, run the statur-clip-plan method and write `TRAVAIL <code>/plan.md` (the table) and the specs of the top clips. How many: the context file says (default 3). Never more than the user can review in one sitting.
 4. **Render.** `render_all.py` on those specs, then `qa_clip.py` on every master. A clip under 95% of planned words heard back, or off the loudness target, is marked "to check" with the reason.
-5. **Review.** Publish one review page per recording (clip-review skill) and prepare a short message for the user: recording, number of clips, link, what to check. Leave the message as a draft or a notification; never post the clips.
+5. **Review.** Publish one review page per recording (statur-clip-review skill) and prepare a short message for the user: recording, number of clips, link, what to check. Leave the message as a draft or a notification; never post the clips.
 6. **Log.** Append one line per item to `~/Clips/routine.log`: date, item, status, clips rendered, problems.
 
 The run stops and reports, without guessing, when: a source cannot be read, the sync check cannot be resolved, the disk has less than 3 times the size of the source free, or a gate of the plan fails for every candidate.

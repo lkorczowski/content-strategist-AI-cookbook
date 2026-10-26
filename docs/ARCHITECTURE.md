@@ -1,6 +1,12 @@
 # Architecture and responsibilities
 
-Version 1.1, 2026-10-26 (section 8 added). Read this before changing the structure of this repository, of a site that links to it, or of a private instance built from it. Written for humans and for coding agents (Claude Code, Codex, Cursor).
+Version 2.0, 2026-10-26 (section 8 added; section 0 naming and statur- prefix, cookbook v2.0.0). Read this before changing the structure of this repository, of a site that links to it, or of a private instance built from it. Written for humans and for coding agents (Claude Code, Codex, Cursor).
+
+## 0. Names: the lab and the instances
+
+Public skills are the output of a marketing lab, STATUR: generic methods, tested on real accounts, published here under the statur- prefix. A private instance (Louis's own, or one per client) is where those methods run with a company's tone, ideas, nuances, taste, proofs and data. Its private skills extend public ones by name and carry the instance's own prefix. Running the public skills inside an instance is what builds the instance's knowledge base over time; a lesson that holds across several cases comes back here as a new version of the generic skill, without the company's data.
+
+Naming rules: main skill of a playbook = statur-<playbook>; sub-skill = statur-<object>-<action>; plugin = statur-<playbook> or statur-<role>. Renames of 2026-10-26: CHANGELOG v2.0.0 and scripts/rename_skills.py.
 
 ## 1. The system in one picture
 
@@ -40,7 +46,7 @@ One artifact, one owner. Every other place links to the owner and never holds a 
 | Page version and changelog note | statur.co src/lib/hbkit.ts (HANDBOOKS) | the page footer, the markdown twin | maintained twice: the skill version lives here, the page version lives there |
 | Essay (theory, story) | louis-korczowski.org (WordPress) | statur.co "theory behind it" link, playbook card | rewritten on statur.co |
 | Playbook card (summary, links, skills list) | this repo, playbooks/<slug>.md | README catalog, Claude Code marketplace | containing client data |
-| Blueprint (structure of a private instance) | this repo, blueprint/ | content-os-setup skill, every private instance | containing a real company's data |
+| Blueprint (structure of a private instance) | this repo, blueprint/ | statur-content-os-setup skill, every private instance | containing a real company's data |
 | Brand, offer, prices, proofs, voice of Louis | Louis's private instance, kb/01 | Louis's private skills, routines, site copy decisions | appearing in this repo |
 | Routines, their prompts and their state | the private instance that runs them | that instance only | published (they contain ids and personal data) |
 | Leak denylist (client names, ids, prices) | each private instance | scripts/leak_scan.py --denylist <private path> | committed here |
@@ -107,39 +113,39 @@ docs/ROADMAP.md              what comes next
 The skills form one loop. Each step has one owner; the next step reads what the previous one wrote instead of asking the user again.
 
 ```
-  MEASURE              DIAGNOSE              DECIDE                    MAKE
-  statur-social-   ->  video-post-mortem ->  format-dice-review   ->   format-library-coach (pick, script)
-  analytics            (one video)           (keep, change, drop)      video-script-structure skills (write)
-  (collect, store,                           content-learning-         statur-clipping (cut long recordings)
-   query, proof)                             session (monthly)         organic-to-paid (winners into ads)
-        ^                                                                       |
-        +-------------------------------- published videos ---------------------+
+  MEASURE                     DIAGNOSE                    DECIDE                       MAKE
+  statur-social-analytics ->  statur-video-post-mortem -> statur-format-review     ->  statur-format-library (pick, script)
+  (collect, store,            (one video)                 (keep, change, drop)         storytelling skills (write)
+   query, proof)                                          statur-content-learning      statur-clipping (cut long recordings)
+                                                          (monthly)                    statur-organic-to-paid (winners into ads)
+        ^                                                                                      |
+        +---------------------------------------- published videos ----------------------------+
 ```
 
 | Step | Skill | Single responsibility | Reads | Writes | Never |
 |---|---|---|---|---|---|
 | Measure | statur-social-analytics | Collect metrics of owned, client and watched accounts; store every reading; answer data questions; keep proof screenshots | platforms (API, export, the user's own analytics screen, public pages) | accounts.csv, raw/, analytics.db, TOTALS.md, proof/ | decides what to post |
-| Diagnose | video-post-mortem | Explain one video passage by passage, KEEP / CHANGE / CUT | video_log, retention | post-mortem notes, test plan | collects data, judges a format |
-| Decide | format-dice-review | Keep, change one variable or drop each format on mature data | dice table, video_log | format decisions, next production plan | scripts videos |
-| Decide | content-learning-session | Monthly ledger of lessons with evidence, next three tests | video_log (whole history), post-mortems | lessons ledger, coaching brief | judges a single video |
-| Make | format-library-coach | Find, plan and script formats; name the format of a video | the library, winners | formats.csv lines, scripts | keeps or kills a format (that is format-dice-review) |
-| Make | video-story-analysis, short-video-author-analysis, story-replication, short-story-replication | Map how a winning video holds attention, then write a script on the same beats | winners (own or watched) | story sheets, scripts | collect metrics |
-| Make | statur-clipping, clip-plan, clip-edit, clip-review | Turn a long recording into clips | the account's winning formats and hooks | clips, specs, review pages | collect metrics |
-| Make | organic-to-paid | Move organic winners into ads and test them | winners with saves and shares | ad test plan | collect metrics |
-| Decide (paid) | meta-ads-scaling-coach | Diagnose a Meta account and run it: structure, live ads per budget, test lane, partnership share, offers and statics, weekly and monthly reads | ad exports or a read-only Meta connector, store numbers | diagnosis, structure plan, test plan, weekly and monthly tables | launch or edit ads, recruit creators (performance-creator-program), pick organic winners (organic-to-paid) |
+| Diagnose | statur-video-post-mortem | Explain one video passage by passage, KEEP / CHANGE / CUT | video_log, retention | post-mortem notes, test plan | collects data, judges a format |
+| Decide | statur-format-review | Keep, change one variable or drop each format on mature data | dice table, video_log | format decisions, next production plan | scripts videos |
+| Decide | statur-content-learning | Monthly ledger of lessons with evidence, next three tests | video_log (whole history), post-mortems | lessons ledger, coaching brief | judges a single video |
+| Make | statur-format-library | Find, plan and script formats; name the format of a video | the library, winners | formats.csv lines, scripts | keeps or kills a format (that is statur-format-review) |
+| Make | statur-story-analysis, statur-author-analysis, statur-story-replication, statur-short-story-replication | Map how a winning video holds attention, then write a script on the same beats | winners (own or watched) | story sheets, scripts | collect metrics |
+| Make | statur-clipping, statur-clip-plan, statur-clip-edit, statur-clip-review | Turn a long recording into clips | the account's winning formats and hooks | clips, specs, review pages | collect metrics |
+| Make | statur-organic-to-paid | Move organic winners into ads and test them | winners with saves and shares | ad test plan | collect metrics |
+| Decide (paid) | statur-meta-ads-scaling | Diagnose a Meta account and run it: structure, live ads per budget, test lane, partnership share, offers and statics, weekly and monthly reads | ad exports or a read-only Meta connector, store numbers | diagnosis, structure plan, test plan, weekly and monthly tables | launch or edit ads, recruit creators (statur-creator-program), pick organic winners (statur-organic-to-paid) |
 
-Short names used on statur.co and in talks: "format library" = format-library-coach; "storytelling OS" = the four Video Script Structure skills; "clipping" = the four STATUR clipping skills; "social analytics" = statur-social-analytics.
+Short names used on statur.co and in talks: "format library" = statur-format-library; "storytelling OS" = the four Video Script Structure skills; "clipping" = the four STATUR clipping skills; "social analytics" = statur-social-analytics.
 
 Shared definitions (one owner each, used by every skill):
 
 | Definition | Value | Owner |
 |---|---|---|
-| Video log columns | the `video_log` view of statur-social-analytics; templates/video-log.csv in video-post-mortem is the manual fallback with the same columns | statur-social-analytics (references/schema.md) |
-| Early signal | a reading at 48 hours, used to boost, reply in comments or test an ad; never a verdict | format-dice-review |
-| Mature data | at least 7 days live and 1,000 views (or the account's usual floor if smaller); the only data a verdict uses | format-dice-review |
+| Video log columns | the `video_log` view of statur-social-analytics; templates/video-log.csv in statur-video-post-mortem is the manual fallback with the same columns | statur-social-analytics (references/schema.md) |
+| Early signal | a reading at 48 hours, used to boost, reply in comments or test an ad; never a verdict | statur-format-review |
+| Mature data | at least 7 days live and 1,000 views (or the account's usual floor if smaller); the only data a verdict uses | statur-format-review |
 | Viral line | 100,000 views at day 7 by default, set per account | statur-social-analytics |
 
-Known overlap to remove: format-library-coach 1.0 also asks to decide after 48 hours which formats to keep. Version 2.0 (pull request #3) drops it; until it merges, format-dice-review is the decider.
+Known overlap to remove: statur-format-library 1.0 also asks to decide after 48 hours which formats to keep. Version 2.0 (pull request #3) drops it; until it merges, statur-format-review is the decider.
 
 ## 9. Checks before every push
 

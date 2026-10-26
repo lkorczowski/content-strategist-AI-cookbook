@@ -60,7 +60,7 @@ Templates for every file above are in templates/, plus templates/PROJECT-INSTRUC
 5. Connect the human annotation loop: where the digest lands, how the human answers.
 6. Add the content testing loop (playbooks/content-testing-loop.md) once videos are published every week.
 
-The skill content-os-setup walks an assistant through these steps with the team.
+The skill statur-content-os-setup walks an assistant through these steps with the team.
 
 ## Promote a private skill to the public cookbook
 

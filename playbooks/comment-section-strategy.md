@@ -9,4 +9,4 @@ Five comment traps that spread an idea faster than the video, the line between a
 
 | Skill | Use it for |
 |---|---|
-| [comment-section-coach](../skills/comment-section-coach/) | Plan the comment trap of a video, the pinned comment and replies, read a live comment section, draft disclosed founder comments. |
+| [statur-comment-section](../skills/statur-comment-section/) | Plan the comment trap of a video, the pinned comment and replies, read a live comment section, draft disclosed founder comments. |

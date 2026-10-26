@@ -5,7 +5,7 @@ Make every short video teach the next one, with an AI assistant reading your ana
 - Page (human version, source of truth): https://statur.co/content-testing-loop/
 - Markdown for AI assistants: https://statur.co/content-testing-loop.md
 - Theory (essay): https://louis-korczowski.org/david-ogilvy-tiktok-analytics-ai-content-testing
-- Version 1.0, 2026-10-24 (page); skills video-post-mortem 1.0.2, format-dice-review 1.0.1, content-learning-session 1.0.2
+- Version 1.0, 2026-10-24 (page); skills statur-video-post-mortem 1.0.2, statur-format-review 1.0.1, statur-content-learning 1.0.2
 
 ## Summary
 
@@ -15,12 +15,12 @@ Log every video in one table and read it on day 7. Mature data only: before 7 da
 
 | Skill | Use it for |
 |---|---|
-| [video-post-mortem](../skills/video-post-mortem/) | One video against your comparable videos, KEEP / CHANGE / CUT edit plan, test plan. Templates: video log and retention curve CSV. |
-| [format-dice-review](../skills/format-dice-review/) | Weekly or monthly format review: median, range, keep, change one variable, drop, next production day. |
-| [content-learning-session](../skills/content-learning-session/) | Monthly learning session, lessons ledger CSV, next three tests, coaching brief. |
+| [statur-video-post-mortem](../skills/statur-video-post-mortem/) | One video against your comparable videos, KEEP / CHANGE / CUT edit plan, test plan. Templates: video log and retention curve CSV. |
+| [statur-format-review](../skills/statur-format-review/) | Weekly or monthly format review: median, range, keep, change one variable, drop, next production day. |
+| [statur-content-learning](../skills/statur-content-learning/) | Monthly learning session, lessons ledger CSV, next three tests, coaching brief. |
 
 The numbers come from [statur-social-analytics](../skills/statur-social-analytics/) when the workspace has an analytics base: the three skills read its video log instead of asking for a table.
 
 ## Credit
 
-Triggered by a public workflow shared by Angus Sewell (Angus the Nontechnical, TikTok, 2026-10-22): https://www.tiktok.com/@angusthenontechnical/video/7699512206605421838. The structure of the post-mortem and learning skills comes from his system: the early-data rule, the worst reliable passage, KEEP, CHANGE and CUT with speculative changes labelled as tests, the trial-reel A/B test, and a learning session that re-tests saved lessons first, keeps REFUTED lines and ends with a coaching brief. The skills and prompts here are written from scratch, in our own words, and add the format review of the dice system (format-dice-review).
+Triggered by a public workflow shared by Angus Sewell (Angus the Nontechnical, TikTok, 2026-10-22): https://www.tiktok.com/@angusthenontechnical/video/7699512206605421838. The structure of the post-mortem and learning skills comes from his system: the early-data rule, the worst reliable passage, KEEP, CHANGE and CUT with speculative changes labelled as tests, the trial-reel A/B test, and a learning session that re-tests saved lessons first, keeps REFUTED lines and ends with a coaching brief. The skills and prompts here are written from scratch, in our own words, and add the format review of the dice system (statur-format-review).

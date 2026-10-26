@@ -4,7 +4,7 @@ One purchase campaign fed by three engines: organic content that finds hooks, a 
 
 - Page (human version, source of truth): https://statur.co/scale-meta-ads/
 - Markdown for AI assistants: https://statur.co/scale-meta-ads.md
-- Version 1.0, 2026-10-26; skill meta-ads-scaling-coach 1.0.0
+- Version 1.0, 2026-10-26; skill statur-meta-ads-scaling 1.0.0
 
 ## Summary
 
@@ -14,10 +14,10 @@ Name the bottleneck first: the creative or the offer. Keep one campaign optimize
 
 | Skill | Use it for |
 |---|---|
-| [meta-ads-scaling-coach](../skills/meta-ads-scaling-coach/) | Diagnose the account, consolidate the structure, size live ads, plan the test lane, partnership ad share, offers and statics, weekly and monthly reads, sale lanes. |
-| [organic-to-paid](../skills/organic-to-paid/) | Turn organic winners into ads (recipe 05). |
-| [performance-creator-program](../skills/performance-creator-program/) | Recruit, pay and coach the creator squad (recipe 07). |
-| [creative-led-growth-coach](../skills/creative-led-growth-coach/) | Run the organic engine (recipe 06). |
+| [statur-meta-ads-scaling](../skills/statur-meta-ads-scaling/) | Diagnose the account, consolidate the structure, size live ads, plan the test lane, partnership ad share, offers and statics, weekly and monthly reads, sale lanes. |
+| [statur-organic-to-paid](../skills/statur-organic-to-paid/) | Turn organic winners into ads (recipe 05). |
+| [statur-creator-program](../skills/statur-creator-program/) | Recruit, pay and coach the creator squad (recipe 07). |
+| [statur-creative-led-growth](../skills/statur-creative-led-growth/) | Run the organic engine (recipe 06). |
 
 ## Coming next
 

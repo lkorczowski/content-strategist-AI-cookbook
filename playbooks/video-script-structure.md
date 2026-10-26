@@ -14,10 +14,10 @@ Retention is written before it is shot. Cut a video into sentences and tag each 
 
 | Skill | Use it for |
 |---|---|
-| [video-story-analysis](../skills/video-story-analysis/) | Map one long video sentence by sentence and get a story sheet with scores, a structure diagram and a replication seed. |
-| [story-replication](../skills/story-replication/) | Write a long script on a new subject that replays the source structure, with a word budget, a beat map, a self-map, a parity check and a fact-check. |
-| [short-video-author-analysis](../skills/short-video-author-analysis/) | Map about twenty short videos of one creator, name their templates and get an author sheet with medians and a seed. |
-| [short-story-replication](../skills/short-story-replication/) | Write a 1 to 7 minute talking-head script on a new subject from one template, in your own voice, then check parity. |
+| [statur-story-analysis](../skills/statur-story-analysis/) | Map one long video sentence by sentence and get a story sheet with scores, a structure diagram and a replication seed. |
+| [statur-story-replication](../skills/statur-story-replication/) | Write a long script on a new subject that replays the source structure, with a word budget, a beat map, a self-map, a parity check and a fact-check. |
+| [statur-author-analysis](../skills/statur-author-analysis/) | Map about twenty short videos of one creator, name their templates and get an author sheet with medians and a seed. |
+| [statur-short-story-replication](../skills/statur-short-story-replication/) | Write a 1 to 7 minute talking-head script on a new subject from one template, in your own voice, then check parity. |
 
 ## Credit
 

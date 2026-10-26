@@ -12,8 +12,8 @@ Standard library only (Python 3.9+).
   python3 analytics.py winners <dir> [--account KEY] [--n 10]
                                                         mature videos ranked against their own format's median
   python3 analytics.py export-log <dir> [--account KEY] [--out FILE]
-                                                        video log in the shape video-post-mortem and
-                                                        content-learning-session read
+                                                        video log in the shape statur-video-post-mortem and
+                                                        statur-content-learning read
 
 Folder layout (see references/schema.md):
   accounts.csv                     one row per account you track or watch (the only file you edit by hand)

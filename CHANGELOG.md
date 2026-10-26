@@ -2,6 +2,37 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-26 · v2.0.0
+
+- Breaking: every public skill now starts with statur-. Folder, frontmatter name and links renamed, every skill at version 2.0.0. Old paths keep a README-only folder that points to the new name until 2027-01-31 (no SKILL.md, so no tool loads them). Renames:
+  - video-post-mortem -> statur-video-post-mortem
+  - format-dice-review -> statur-format-review
+  - content-learning-session -> statur-content-learning
+  - video-story-analysis -> statur-story-analysis
+  - story-replication -> statur-story-replication
+  - short-video-author-analysis -> statur-author-analysis
+  - short-story-replication -> statur-short-story-replication
+  - clip-plan -> statur-clip-plan
+  - clip-edit -> statur-clip-edit
+  - clip-review -> statur-clip-review
+  - creative-led-growth-coach -> statur-creative-led-growth
+  - performance-creator-program -> statur-creator-program
+  - organic-to-paid -> statur-organic-to-paid
+  - format-library-coach -> statur-format-library
+  - comment-section-coach -> statur-comment-section
+  - x-launch-week -> statur-x-launch
+  - trades-video-coach -> statur-trades-video
+  - trades-ai-setup -> statur-trades-setup
+  - trades-morning-routine -> statur-trades-morning-routine
+  - trades-admin-process -> statur-trades-admin
+  - content-os-setup -> statur-content-os-setup
+  - meta-ads-scaling-coach -> statur-meta-ads-scaling
+  - statur-clipping and statur-social-analytics keep their names.
+  - On unmerged branches: account-network-coach -> statur-account-networks, slideshow-maker -> statur-slideshow-maker.
+- Plugins renamed statur-<playbook> (statur-content-testing-loop, statur-storytelling, statur-tradespeople...) and two role bundles added: statur-content-strategist and statur-creative-strategist. Marketplace version 2.0.0.
+- scripts/rename_skills.py: the same rename for any branch or private instance (idempotent).
+- README: naming section. CLAUDE.md: naming convention.
+
 ## 2026-10-26 · v1.5
 
 - New playbook: Scale Meta ads without cost inflation (https://statur.co/scale-meta-ads/), with the skill meta-ads-scaling-coach 1.0.0: diagnosis (creative, offer, page), one purchase campaign, live ads sized to the budget, creative test lane, partnership ad share, offers and statics, weekly 7-day read, monthly contribution after ad spend, limited-time sale lane. US rules, France and EU end note. docs/ARCHITECTURE.md section 8: paid row added.

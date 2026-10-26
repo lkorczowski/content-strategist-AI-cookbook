@@ -1,6 +1,6 @@
 # The clip spec
 
-One JSON file per clip version. clip-plan writes it, clip-edit renders it, clip-review changes it. Times are seconds on the transcript timeline (the times of words.json). Example: templates/clip-spec.example.json.
+One JSON file per clip version. statur-clip-plan writes it, statur-clip-edit renders it, statur-clip-review changes it. Times are seconds on the transcript timeline (the times of words.json). Example: templates/clip-spec.example.json.
 
 ## Content
 

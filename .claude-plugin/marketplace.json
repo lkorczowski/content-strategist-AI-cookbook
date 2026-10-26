@@ -6,22 +6,22 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "1.0.0"
+    "version": "2.0.0"
   },
   "plugins": [
     {
-      "name": "content-testing-loop",
+      "name": "statur-content-testing-loop",
       "description": "Make every short video teach the next one: video post-mortem, format dice review and monthly learning session.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/video-post-mortem",
-        "./skills/format-dice-review",
-        "./skills/content-learning-session"
+        "./skills/statur-video-post-mortem",
+        "./skills/statur-format-review",
+        "./skills/statur-content-learning"
       ]
     },
     {
-      "name": "social-analytics",
+      "name": "statur-social-analytics",
       "description": "Own your short-form analytics: collect views, retention and audience from TikTok, Instagram, Facebook and YouTube into plain files your AI can query, watch competitor accounts and keep proof screenshots.",
       "source": "./",
       "strict": false,
@@ -36,107 +36,141 @@
       "strict": false,
       "skills": [
         "./skills/statur-clipping",
-        "./skills/clip-plan",
-        "./skills/clip-edit",
-        "./skills/clip-review"
+        "./skills/statur-clip-plan",
+        "./skills/statur-clip-edit",
+        "./skills/statur-clip-review"
       ]
     },
     {
-      "name": "video-script-structure",
+      "name": "statur-storytelling",
       "description": "Map the story structure of long or short videos sentence by sentence, then write scripts on your own subject that replay it, with parity and fact checks.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/video-story-analysis",
-        "./skills/story-replication",
-        "./skills/short-video-author-analysis",
-        "./skills/short-story-replication"
+        "./skills/statur-story-analysis",
+        "./skills/statur-story-replication",
+        "./skills/statur-author-analysis",
+        "./skills/statur-short-story-replication"
       ]
     },
     {
-      "name": "comment-section",
+      "name": "statur-comment-section",
       "description": "Plan comment traps that spread an idea, read live comment sections and draft disclosed founder comments.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/comment-section-coach"
+        "./skills/statur-comment-section"
       ]
     },
     {
-      "name": "organic-to-paid",
+      "name": "statur-organic-to-paid",
       "description": "Turn proven organic short-form videos into ad creatives and test them against the current best ad.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/organic-to-paid"
+        "./skills/statur-organic-to-paid"
       ]
     },
     {
-      "name": "creative-led-growth",
+      "name": "statur-creative-led-growth",
       "description": "Coach a founder through creative-led growth: one channel, one hour a day, packaging and share rate.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/creative-led-growth-coach"
+        "./skills/statur-creative-led-growth"
       ]
     },
     {
-      "name": "creator-programs",
+      "name": "statur-creator-programs",
       "description": "Design, run and audit a creator program paid on performance.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/performance-creator-program"
+        "./skills/statur-creator-program"
       ]
     },
     {
-      "name": "x-launch-playbook",
+      "name": "statur-x-launch",
       "description": "Plan a launch week on X judged on business numbers.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/x-launch-week"
+        "./skills/statur-x-launch"
       ]
     },
     {
-      "name": "tradespeople-video",
+      "name": "statur-tradespeople",
       "description": "One video per job and an AI morning routine for tradespeople, with scripts, setup and admin processes.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/trades-video-coach",
-        "./skills/trades-ai-setup",
-        "./skills/trades-morning-routine",
-        "./skills/trades-admin-process"
+        "./skills/statur-trades-video",
+        "./skills/statur-trades-setup",
+        "./skills/statur-trades-morning-routine",
+        "./skills/statur-trades-admin"
       ]
     },
     {
-      "name": "format-library",
+      "name": "statur-format-library",
       "description": "Pick, script and read twelve short-form formats for founders.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/format-library-coach"
+        "./skills/statur-format-library"
       ]
     },
     {
-      "name": "content-os",
+      "name": "statur-content-os",
       "description": "Set up a private AI content operating system in a company from the public blueprint.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/content-os-setup"
+        "./skills/statur-content-os-setup"
       ]
     },
     {
-      "name": "scale-meta-ads",
+      "name": "statur-scale-meta-ads",
       "description": "Scale Meta ads without cost inflation: diagnosis, one purchase campaign, live ads sized to the budget, test lane, partnership ads, offers and statics, weekly and monthly reads.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/meta-ads-scaling-coach",
-        "./skills/organic-to-paid",
-        "./skills/performance-creator-program"
+        "./skills/statur-meta-ads-scaling",
+        "./skills/statur-organic-to-paid",
+        "./skills/statur-creator-program"
+      ]
+    },
+    {
+      "name": "statur-content-strategist",
+      "description": "Role bundle for a short-form content strategist: organic routine, testing loop, analytics, formats, storytelling, clipping and comments.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-creative-led-growth",
+        "./skills/statur-video-post-mortem",
+        "./skills/statur-format-review",
+        "./skills/statur-content-learning",
+        "./skills/statur-social-analytics",
+        "./skills/statur-format-library",
+        "./skills/statur-story-analysis",
+        "./skills/statur-story-replication",
+        "./skills/statur-author-analysis",
+        "./skills/statur-short-story-replication",
+        "./skills/statur-clipping",
+        "./skills/statur-clip-plan",
+        "./skills/statur-clip-edit",
+        "./skills/statur-clip-review",
+        "./skills/statur-comment-section"
+      ]
+    },
+    {
+      "name": "statur-creative-strategist",
+      "description": "Role bundle for a creative strategist on paid social: Meta ads scaling, organic winners into ads and the creator program paid on results.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-meta-ads-scaling",
+        "./skills/statur-organic-to-paid",
+        "./skills/statur-creator-program"
       ]
     }
   ]

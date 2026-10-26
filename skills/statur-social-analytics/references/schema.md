@@ -48,5 +48,5 @@ Put the folder in a private git repository (the blueprint's `content/analytics/`
 - `videos`: the latest reading of each video, with `days_live` computed from the reading date.
 - `daily`, `retention`, `audience`: the latest reading of each row.
 - `raw_videos`: every reading, so you can follow a video from day 1 to day 30.
-- `video_log`: the exact columns of `video-log.csv` read by video-post-mortem, format-dice-review and content-learning-session.
+- `video_log`: the exact columns of `video-log.csv` read by statur-video-post-mortem, statur-format-review and statur-content-learning.
 - `formats`, `accounts`: the two hand-made files.

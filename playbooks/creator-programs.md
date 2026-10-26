@@ -10,4 +10,4 @@ Paying UGC creators on ad performance or sales, with a retainer floor: the platf
 
 | Skill | Use it for |
 |---|---|
-| [performance-creator-program](../skills/performance-creator-program/) | Design, run and audit a creator program paid on performance, step by step, with the eight pitfalls. |
+| [statur-creator-program](../skills/statur-creator-program/) | Design, run and audit a creator program paid on performance, step by step, with the eight pitfalls. |

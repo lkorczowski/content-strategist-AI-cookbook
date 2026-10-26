@@ -10,7 +10,7 @@ Twelve recipes for electricians, plumbers, installers and builders: one video pe
 
 | Skill | Use it for |
 |---|---|
-| [trades-video-coach](../skills/trades-video-coach/) | Video ideas, scripts and feedback that follow the recipes. |
-| [trades-ai-setup](../skills/trades-ai-setup/) | One-time install: channel and website audit, the 7am task, a first test. |
-| [trades-morning-routine](../skills/trades-morning-routine/) | Every morning: article draft, post texts and carousel left as drafts. |
-| [trades-admin-process](../skills/trades-admin-process/) | One-page processes for quotes, invoices and reminders, with your assistant. |
+| [statur-trades-video](../skills/statur-trades-video/) | Video ideas, scripts and feedback that follow the recipes. |
+| [statur-trades-setup](../skills/statur-trades-setup/) | One-time install: channel and website audit, the 7am task, a first test. |
+| [statur-trades-morning-routine](../skills/statur-trades-morning-routine/) | Every morning: article draft, post texts and carousel left as drafts. |
+| [statur-trades-admin](../skills/statur-trades-admin/) | One-page processes for quotes, invoices and reminders, with your assistant. |

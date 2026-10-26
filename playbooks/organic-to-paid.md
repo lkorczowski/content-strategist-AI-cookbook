@@ -9,4 +9,4 @@ Organic videos are free tests. The winners become the cheapest ad creatives: sho
 
 | Skill | Use it for |
 |---|---|
-| [organic-to-paid](../skills/organic-to-paid/) | Shortlist organic winners, check they fit paid, plan minimal edits and the ad test. |
+| [statur-organic-to-paid](../skills/statur-organic-to-paid/) | Shortlist organic winners, check they fit paid, plan minimal edits and the ad test. |

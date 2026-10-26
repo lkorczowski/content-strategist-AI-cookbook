@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.2"
+  version: "2.0.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -15,7 +15,7 @@ Part of the clipping playbook (https://statur.co/clipping/). Read https://statur
 
 The job: one long recording in, a batch of clips ready to post out, the same day. The user records or points to the files, decides which clips to make, reviews them and posts them. The agent does the hours in between.
 
-Companion skills in the same plugin: clip-plan (choose the moments), clip-edit (render a clip), clip-review (review page and notes). All scripts live in this skill's scripts/ folder.
+Companion skills in the same plugin: statur-clip-plan (choose the moments), statur-clip-edit (render a clip), statur-clip-review (review page and notes). All scripts live in this skill's scripts/ folder.
 
 ## 0. Read the company context first
 
@@ -71,9 +71,9 @@ Audio-only sources (a podcast without video) transcribe and plan fine. The edit 
    `bash scripts/prep_source.sh FILE "~/Clips/<project>" LIVE01` copies the source into `RUSHS LIVE01`, writes `TRAVAIL LIVE01/source_probe.json`, the transcription audio `audio16k.flac` on the video's timeline and contact sheets, and creates `EXPORTS LIVE01`. `MODE=link` saves disk space for big files.
 2. Transcribe. `python3 scripts/transcribe.py "TRAVAIL LIVE01/audio16k.flac" "TRAVAIL LIVE01/asr"` writes words.json (one start and end time per word), a readable transcript and subtitles. Speed: about 15 minutes for 100 minutes of audio on 2 cloud vCPUs.
 3. Sync check. `python3 scripts/sync_check.py "RUSHS LIVE01/LIVE01_source.mp4" "TRAVAIL LIVE01/audio16k.flac" --out "TRAVAIL LIVE01/sync.json"`. Exit 0: in sync. Exit 2: pass `--sync sync.json` to every render. One unchecked offset moves every cut.
-4. Plan. Use the clip-plan skill: topic map, candidates of 60 seconds or more, hard gates, six scores, funnel stage. Show the plan as one table and let the user pick. Then write the spec of the best clip (format: references/spec.md).
-5. Edit. Use the clip-edit skill: `clip_render.py` for one clip, `render_all.py` for a batch, then `qa_clip.py` on every master.
-6. Review. Use the clip-review skill: a private page with the review copies, timecoded notes and a verdict per clip. Turn each note into a spec change, render the next version, answer the note.
+4. Plan. Use the statur-clip-plan skill: topic map, candidates of 60 seconds or more, hard gates, six scores, funnel stage. Show the plan as one table and let the user pick. Then write the spec of the best clip (format: references/spec.md).
+5. Edit. Use the statur-clip-edit skill: `clip_render.py` for one clip, `render_all.py` for a batch, then `qa_clip.py` on every master.
+6. Review. Use the statur-clip-review skill: a private page with the review copies, timecoded notes and a verdict per clip. Turn each note into a spec change, render the next version, answer the note.
 7. Deliver. Masters in `EXPORTS LIVE01` named `LIVE01_C01_v2_slug.mp4` with their `.srt`, and per clip a brief: title, caption, hashtags, pinned comment. The root of `EXPORTS LIVE01` holds only the latest version of each clip, the one ready to post: when a new version is exported, render_all.py moves the older ones to `EXPORTS LIVE01/archives/` (moved, never deleted). A clip the user drops goes to `archives/` too, meaning it will not be used without changes. The user posts.
 
 For the first test, stop after one clip and its review. Edit the others only after the user has seen that one.
