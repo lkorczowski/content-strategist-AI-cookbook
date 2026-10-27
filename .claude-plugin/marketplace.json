@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.0.0"
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -171,6 +171,15 @@
         "./skills/statur-meta-ads-scaling",
         "./skills/statur-organic-to-paid",
         "./skills/statur-creator-program"
+      ]
+    },
+    {
+      "name": "statur-idea-war-map",
+      "description": "Map the ideas fighting in an online controversy: implied ideas read from images and videos, contested concepts, camps, third parties, quote duels and an Elo rating per idea.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-idea-war-map"
       ]
     }
   ]
