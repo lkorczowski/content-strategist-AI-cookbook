@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-27 · v2.1.0
+
+- New skill statur-idea-war-map 1.0.0 and playbook card how-ideas-go-viral: map the ideas of an online controversy (implied ideas, concepts, camps, third parties, quote duels, Elo). Worked example: the French vs Japanese war on X, October 2026.
+
 ## 2026-10-26 · v2.0.0
 
 - Breaking: every public skill now starts with statur-. Folder, frontmatter name and links renamed, every skill at version 2.0.0. Old paths keep a README-only folder that points to the new name until 2027-01-31 (no SKILL.md, so no tool loads them). Renames:
