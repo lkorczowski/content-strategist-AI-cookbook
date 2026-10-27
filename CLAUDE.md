@@ -16,6 +16,10 @@ The public method layer of Dr. Louis Korczowski's short-form content work: skill
 
 Before every push: `python3 scripts/check_skills.py` and `python3 scripts/leak_scan.py --denylist <path to the private denylist>`. Both must report zero problems. Install the pre-push hook once per clone: `COOKBOOK_DENYLIST=<path> bash scripts/install_hooks.sh`. CI runs the skill checks and the generic scan on every push.
 
+## Git
+
+- GitHub main is the source of truth. Agents work on a branch (agent/<machine>/<yyyymmdd>-<task>) and open a pull request; nobody pushes to main directly. A private instance may add its own rule for machines and clones.
+
 ## One source of truth per artifact
 
 - A skill lives only in skills/<name>/. Never copy it into a site or into a private repo: link to it, or install it from here.
