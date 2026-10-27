@@ -23,7 +23,7 @@ The repository also contains a [blueprint](blueprint/) to build a private AI con
 | [Scale Meta ads without cost inflation](https://statur.co/scale-meta-ads/) | The creative strategist handbook: one purchase campaign fed by organic winners, creators paid on results run as partnership ads, offers and statics; live ads sized to the budget, a test lane, weekly and monthly reads. | [statur-meta-ads-scaling](skills/statur-meta-ads-scaling/) |
 | [Organic winners as ads](https://statur.co/blog/organic-winners-cheaper-ads/) | Turn proven organic videos into ads with minimal edits and test them against the current best ad. | [statur-organic-to-paid](skills/statur-organic-to-paid/) |
 | The Format Library (page coming soon) | Twelve short-form formats for founders and the 48-hour reading rule. | [statur-format-library](skills/statur-format-library/) |
-| [Blueprint: AI content OS](blueprint/) | The private half: knowledge base, routines, skills registry, annotation loop. | [statur-content-os-setup](skills/statur-content-os-setup/) |
+| [Blueprint: AI content OS](blueprint/) | The private half: knowledge base, routines, skills registry, annotation loop. Client start in ChatGPT or Claude: a one-line project instruction that points to [blueprint/START.md](blueprint/START.md), the operating manual that runs the onboarding. | [statur-content-os-setup](skills/statur-content-os-setup/) |
 
 Playbook cards with links and versions: [playbooks/](playbooks/). What comes next: [docs/ROADMAP.md](docs/ROADMAP.md).
 

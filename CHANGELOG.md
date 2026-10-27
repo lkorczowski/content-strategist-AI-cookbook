@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-27 · v2.3.0
+
+- blueprint/START.md 1.0: public operating manual for client projects in ChatGPT or Claude. A one-line project instruction points to it. "Start EVEREST OS" runs the onboarding: brief, pre-onboarding checklist, intake interview, knowledge base files, email draft to the advisor. Every later conversation starts from STATE.md with its CRITICAL and BLOCKED items. New template blueprint/templates/STATE.md.
+
 ## 2026-10-27 · v2.1.0
 
 - New skill statur-idea-war-map 1.0.0 and playbook card how-ideas-go-viral: map the ideas of an online controversy (implied ideas, concepts, camps, third parties, quote duels, Elo). Worked example: the French vs Japanese war on X, October 2026.
