@@ -26,7 +26,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/statur-social-analytics"
+        "./skills/statur-social-analytics",
+        "./skills/statur-share-social-media"
       ]
     },
     {
@@ -150,6 +151,7 @@
         "./skills/statur-format-review",
         "./skills/statur-content-learning",
         "./skills/statur-social-analytics",
+        "./skills/statur-share-social-media",
         "./skills/statur-format-library",
         "./skills/statur-story-analysis",
         "./skills/statur-story-replication",
