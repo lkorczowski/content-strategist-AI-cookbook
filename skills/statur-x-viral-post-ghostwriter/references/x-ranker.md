@@ -16,7 +16,7 @@ The file says it mirrors "config feature-switch defaults", so X can change any v
 | Predicted action | Weight |
 |---|---|
 | Copy the post's link (share via copy link) | 20.0 |
-| Reply | 5.0, plus a 15.0 boost when author and replier follow each other |
+| Reply | 5.0, plus a 15.0 boost when the post is an original post (not a reply, not a repost) and its author and the viewer follow each other |
 | Quote | 5.0 |
 | Share via DM | 5.0 |
 | Follow the author | 4.0 |
@@ -36,11 +36,12 @@ The file also notes that the baseline probability of a report is more than 1,000
 
 ## What it means for a writer
 
-- A post earns reach when it makes people reply, quote, follow or send the link to someone. A like is worth about an eighth of a reply.
+- A post earns reach when it makes people reply, quote, follow or send the link to someone. The like weight (0.66) is the smallest of these.
 - A profile click earns nothing in ranking. A business still needs it, so measure it yourself (statur-social-analytics).
-- Conversations with people who follow you back weigh the most: the reply boost for mutual follows is three times the base reply weight.
-- One "not interested" costs about as much as 80 likes. Bait that annoys the wrong reader costs reach.
-- Opening a link carries a small weight (0.2). The common advice to put the link in the first reply comes from practitioners, not from this file.
+- The reply weight rises to 20 on original posts shown to mutual follows (replies and reposts are excluded, xai-value-model/inputs.rs, bidirectional_boost_eligible). Followers who follow you back are what makes your own posts weigh more. A reply you post under someone else's post gets the base weight: its value is that the right readers see you and follow you.
+- A predicted "not interested" carries a large negative weight (-52.272). Bait that annoys the wrong reader costs reach.
+- Never convert weights into counts ("one report cancels N likes"): the file itself says this reading is incorrect, because the weights multiply predicted probabilities.
+- Opening a link carries a small weight (0.2). The common advice to put the link in the first reply comes from practitioners. The file has no weight for it.
 
 ## The 2023 code, for comparison
 

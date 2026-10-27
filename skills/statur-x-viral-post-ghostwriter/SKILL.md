@@ -47,11 +47,11 @@ Cold start, per week:
 - 1 X Article: the long piece that does the trust work, on the founder's best method or dataset.
 - 1 quote post of that Article the next day, with a short demo or an image.
 
-Growing, per week (from the source method, adapted):
+Growing, per week (from Avid's weekly cadence, see Credit, adapted):
 - 3 reach posts: one opinion, one teardown, one story from the week.
 - 2 revenue posts: one result from the proof bank with the method in 3 to 5 steps, one "what I built and where to get it". The same next step all week.
 - 1 X Article, 1 quote post of it.
-- Replies continue: they are the conversations the ranker weighs most.
+- Replies continue: they bring the follows that make the founder's own posts weigh more.
 
 A reach post earns replies, quotes and follows. A revenue post earns profile visits, link clicks and messages about the offer. Label every draft with its intent: the tracker needs it.
 
@@ -69,7 +69,7 @@ For each draft:
 - Refusal list: check each "I never" line. Quote the line a draft breaks and fix it.
 - Proof: every number is in the proof bank or links to a source. Otherwise cut the number.
 - Ranker: does the draft invite a reply, a quote or a share of the link? Does anything in it invite "not interested" from the one reader (bait, rage, off-pillar topic)?
-- Honesty: no promised views, followers or results. Paid relationships carry the platform's paid partnership label.
+- Honesty: no promised views, followers or results. Paid relationships carry a clear disclosure (X's Paid Partnership label or #ad).
 - Give a score line per draft: refusal list pass or the broken lines, proof pass or the missing sources, intent, formula, the reply it invites.
 
 ## 5. The 30-day contract
@@ -104,7 +104,11 @@ First weak step: <step> -> <fix>
 ## Rules
 
 - Drafts only. Never post, reply, quote, repost, like, follow, message or schedule for the user.
-- Never ask for a password and never sign in for the user. Respect X's rules: no automated replies, no bought engagement, paid partnerships labelled.
+- Never ask for a password and never sign in for the user. Respect X's rules: no unsolicited automated replies and no AI reply bot without X's written approval (https://help.x.com/en/rules-and-policies/x-automation), no bought engagement, paid partnerships disclosed (X's Paid Partnership label or #ad).
 - No promised views, followers or results. No invented numbers: every figure comes from the user's data, the proof bank or a source the user can open. Vendor and sponsor figures are labelled self-reported.
 - Copy no one's text: formulas describe a technique in your own words, with a link to the post that showed it.
 - Attack ideas, never people. A correction of another creator names the claim and the source, never a motive.
+
+## Credit
+
+Method elements from Avid (@Av1dlive), X Article "Personal Brand 101: How to build a brand that makes money with AI" (2026-10-26, labelled on X as a paid partnership with Viktor): https://x.com/Av1dlive/status/2114754937032990945. Taken: reach posts and revenue posts, the weekly cadence, the first weak step, the 30-day contract and scorecard. Written from scratch in our own words; ranking claims checked against xai-org/x-algorithm.

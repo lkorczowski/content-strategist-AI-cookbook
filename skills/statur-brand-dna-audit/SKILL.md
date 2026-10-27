@@ -86,3 +86,7 @@ Then a short audit note: the three biggest gaps between the written voice and th
 - No invented numbers: the proof bank holds only figures with a source. No promised views or results.
 - Evidence first: every rule links to the post or document behind it. Quote the founder's words, never a third party's text.
 - Personal or sensitive details seen in posts (health, family, private lives of others) stay out of the brand DNA.
+
+## Credit
+
+Method elements from Avid (@Av1dlive), X Article "Personal Brand 101: How to build a brand that makes money with AI" (2026-10-26, labelled on X as a paid partnership with Viktor): https://x.com/Av1dlive/status/2114754937032990945. Taken: the refusal list of "I never" lines, the voice mix in percentages with a rubric, pillars from buyer beliefs, the one reader, the one outcome, the proof bank. Written from scratch in our own words; ranking claims checked against xai-org/x-algorithm.

@@ -57,3 +57,7 @@ The formula file (templates/hook-formulas.md), then a short note: the 3 formulas
 - Copy no one's text. Describe a technique in your own words, quote at most a few words to name it, and link the post.
 - No invented numbers: every count has its reading date and the hours since posting. A post's claimed result is a claim until checked.
 - Attack ideas, never people.
+
+## Credit
+
+Method elements from Avid (@Av1dlive), X Article "Personal Brand 101: How to build a brand that makes money with AI" (2026-10-26, labelled on X as a paid partnership with Viktor): https://x.com/Av1dlive/status/2114754937032990945. Taken: the hook forensics idea and the formula file, from his Grok bot post https://x.com/Av1dlive/status/2114813307790266739. Written from scratch in our own words; ranking claims checked against xai-org/x-algorithm.
