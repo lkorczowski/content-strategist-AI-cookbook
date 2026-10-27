@@ -4,7 +4,7 @@ description: Plan and review a startup launch week on X in six steps (champion l
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/x-launch-playbook/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -29,7 +29,7 @@ Ask once, then work with what the user gives you.
 ## Background the assistant should know
 
 - Herding: one early positive signal makes the next ones more likely (Muchnik, Aral, Taylor, Science 2013, https://cris.huji.ac.il/en/publications/social-influence-bias-a-randomized-experiment/). This is why paid launch networks work for a day.
-- X ranks For You with a Grok-based model whose code was published. Third-party analyses say early replies, dwell time and DM shares open reach, while mutes and reports close it, and posts with external links get less reach (https://ppc.land/x-exposes-algorithm-secrets/).
+- X ranks For You with a Grok-based model whose code is public (https://github.com/xai-org/x-algorithm). Its default weights favour copies of the post's link (20.0), replies (5.0, plus 15.0 between accounts that follow each other), quotes and DM shares (5.0) and follows (4.0), and punish "not interested", mutes and reports. A profile click weighs 0.0. Full table, date and caveats: references/x-ranker.md of statur-x-viral-post-ghostwriter (https://github.com/lkorczowski/content-strategist-AI-cookbook/tree/main/skills/statur-x-viral-post-ghostwriter). That a link in the main post loses reach is a practitioner reading (https://ppc.land/x-exposes-algorithm-secrets/), not a weight in the file.
 - The median half-life of a post on X is about 80 minutes (Pfeffer, Matter, Sargsyan, https://arxiv.org/abs/2302.09654).
 - Views per like is a heuristic for spotting amplified launches. Vendor research on a small sample found a much higher ratio for launches it judged amplified (https://forkoff.xyz/research/state-of-launch-videos-2026). Treat it as a clue to check against demos, customers and the founder's posts in the following weeks.
 
@@ -91,6 +91,10 @@ Paid partners: <creator or agency | own post with Paid Partnership label? | acco
 Follow-up plan: <week 1 to 4 | format | asset ready before T0?> | LinkedIn on day 2
 Day 14 reading: <signups | activation | demos | inbound | followers kept> -> <decision>
 ```
+
+## After the launch week
+
+The weekly posting rhythm, the founder's voice and the replies routine belong to statur-x-viral-post-ghostwriter. Hand over the launch's Article, demo and champion list to it on day 14.
 
 ## Rules
 

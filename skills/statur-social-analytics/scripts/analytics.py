@@ -19,7 +19,7 @@ Folder layout (see references/schema.md):
   accounts.csv                     one row per account you track or watch (the only file you edit by hand)
   formats.csv                      video_id -> format, hook_type (filled with the format review)
   raw/YYYY-MM-DD_<platform>_<handle>_<kind>.csv   one file per collection, never edited afterwards
-       kind = videos | daily | retention | audience
+       kind = videos | daily | retention | audience | posts
   proof/<platform>_<handle>/<video_id>_<tab>_<YYYY-MM-DD>.png    analytics screenshots
 """
 import csv
@@ -36,13 +36,17 @@ KINDS = {
     'daily': ['date', 'views', 'profile_views', 'likes', 'comments', 'shares', 'followers', 'reached'],
     'retention': ['video_id', 'second', 'pct_remaining'],
     'audience': ['video_id', 'dimension', 'label', 'pct'],
+    'posts': ['post_id', 'posted', 'type', 'in_reply_to', 'views', 'replies', 'likes', 'reposts', 'quotes', 'bookmarks',
+              'shares', 'profile_visits', 'link_clicks', 'new_follows', 'text', 'url'],
 }
 ACCOUNTS = ['key', 'owner', 'platform', 'handle', 'relation', 'access', 'route', 'window_start', 'window_end',
             'attribution', 'publish', 'notes']
 FORMATS = ['video_id', 'format', 'hook_type', 'notes']
+POST_LABELS = ['post_id', 'pillar', 'voice_mode', 'intent', 'formula', 'notes']
 NUM = {'length_s', 'views', 'likes', 'comments', 'shares', 'saves', 'new_followers', 'avg_watch_s', 'ret_3s_pct',
-       'ret_10s_pct', 'ret_end_pct', 'views_d7', 'profile_views', 'followers', 'reached', 'second', 'pct_remaining', 'pct'}
-RAW_RE = re.compile(r'^(\d{4}-\d{2}-\d{2})_([a-z]+)_(.+)_(videos|daily|retention|audience)\.csv$')
+       'ret_10s_pct', 'ret_end_pct', 'views_d7', 'profile_views', 'followers', 'reached', 'second', 'pct_remaining', 'pct',
+       'replies', 'reposts', 'quotes', 'bookmarks', 'profile_visits', 'link_clicks', 'new_follows'}
+RAW_RE = re.compile(r'^(\d{4}-\d{2}-\d{2})_([a-z]+)_(.+)_(videos|daily|retention|audience|posts)\.csv$')
 
 
 def num(x):
@@ -80,7 +84,8 @@ def init(d):
         ['watch-1', 'A creator I study', 'tiktok', 'somecreator', 'watch', 'none', 'public', '', '', 'none', 'none', 'watchlist: never counted in my totals'],
     ])
     write_csv(os.path.join(d, 'formats.csv'), FORMATS)
-    print(f'initialized {d}: accounts.csv, formats.csv, raw/, proof/')
+    write_csv(os.path.join(d, 'post_labels.csv'), POST_LABELS)
+    print(f'initialized {d}: accounts.csv, formats.csv, post_labels.csv, raw/, proof/')
 
 
 def read_csv(path):
@@ -120,6 +125,10 @@ def build(d, quiet=False):
     fpath = os.path.join(d, 'formats.csv')
     if os.path.exists(fpath):
         c.executemany(f'INSERT INTO formats VALUES ({",".join("?" * len(FORMATS))})', [[r.get(k, '') for k in FORMATS] for r in read_csv(fpath)])
+    c.execute(f'CREATE TABLE post_labels ({", ".join(f + " TEXT" for f in POST_LABELS)})')
+    lpath = os.path.join(d, 'post_labels.csv')
+    if os.path.exists(lpath):
+        c.executemany(f'INSERT INTO post_labels VALUES ({",".join("?" * len(POST_LABELS))})', [[r.get(k, '') for k in POST_LABELS] for r in read_csv(lpath)])
     # latest reading of each video, of each day, of each retention curve
     c.executescript('''
     CREATE VIEW videos AS
@@ -140,13 +149,23 @@ def build(d, quiet=False):
              f.format, f.hook_type, v.length_s, v.views, v.likes, v.comments, v.saves, v.shares, v.new_followers,
              v.avg_watch_s, v.ret_3s_pct, v.ret_10s_pct, v.ret_end_pct, '' AS transcript_file, v.caption AS notes, v.account
       FROM videos v LEFT JOIN formats f ON f.video_id = v.video_id;
+    CREATE VIEW posts AS
+      SELECT p.*, CAST(julianday(p.read_date) - julianday(p.posted) AS INTEGER) AS days_live
+      FROM raw_posts p
+      WHERE p.read_date = (SELECT MAX(read_date) FROM raw_posts x WHERE x.account = p.account AND x.post_id = p.post_id);
+    CREATE VIEW post_log AS
+      SELECT p.account, p.platform, p.post_id, p.posted, p.read_date, p.days_live, p.type, p.in_reply_to,
+             l.pillar, l.voice_mode, l.intent, l.formula, p.views, p.replies, p.likes, p.reposts, p.quotes, p.bookmarks,
+             p.shares, p.profile_visits, p.link_clicks, p.new_follows, p.url
+      FROM posts p LEFT JOIN post_labels l ON l.post_id = p.post_id;
     ''')
     con.commit()
     totals(con, d)
     n = c.execute('SELECT COUNT(*) FROM videos').fetchone()[0]
+    npost = c.execute('SELECT COUNT(*) FROM posts').fetchone()[0]
     con.close()
     if not quiet:
-        print(f'built {db_path}: {n} videos' + (f'; skipped files with an unknown name: {", ".join(skipped)}' if skipped else ''))
+        print(f'built {db_path}: {n} videos, {npost} posts' + (f'; skipped files with an unknown name: {", ".join(skipped)}' if skipped else ''))
 
 
 def totals(con, d):

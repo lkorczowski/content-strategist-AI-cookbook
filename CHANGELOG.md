@@ -2,6 +2,15 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-27 · v2.2.0
+
+- New playbook card x-ghostwriter (The X Ghostwriter Handbook, https://statur.co/x-ghostwriter/) and three skills: statur-x-viral-post-ghostwriter 1.0.0 (drafts and score lines for X posts, replies, quotes and Articles, weekly mix, cold-start mode, 30-day contract and scorecard, references/x-ranker.md as the single owner of X ranking facts), statur-brand-dna-audit 1.0.0 (refusal list, voice mix, pillars from buyer beliefs, one reader, one outcome, proof bank, written from evidence) and statur-hook-forensics 1.0.0 (case files and hook formula file for text posts and X Articles). Built from Avid's paid-partnership X Article of 2026-10-26, checked against X's published code, tested on a 20-follower account.
+- statur-social-analytics 2.1.0: kind `posts` for X and LinkedIn, post_labels.csv, views `posts` and `post_log`, X route notes (analytics locked under 50 followers, UTM for link clicks, date from the post id).
+- statur-x-launch 2.1.0: ranking facts now cite X's published weights through references/x-ranker.md; hand-over to statur-x-viral-post-ghostwriter after day 14.
+- Blueprint 01_BRAND.md: brand DNA slots (one reader, one outcome, pillars, proof bank, refusal list, voice mix). ARCHITECTURE section 8: rows and shared definitions for the X skills.
+- Plugin statur-x-ghostwriter; statur-content-strategist gains the three new skills. Marketplace 2.2.0.
+- .gitattributes: LF line endings in every clone.
+
 ## 2026-10-27 · v2.1.0
 
 - New skill statur-idea-war-map 1.0.0 and playbook card how-ideas-go-viral: map the ideas of an online controversy (implied ideas, concepts, camps, third parties, quote duels, Elo). Worked example: the French vs Japanese war on X, October 2026.

@@ -1,10 +1,10 @@
 ---
 name: statur-social-analytics
-description: Build and run your own short-form analytics base in plain files that your AI can query, without a paid tracking tool. Collect views, retention, audience and daily account stats from TikTok, Instagram, Facebook and YouTube (official APIs, native exports, or the analytics screens you already see in your browser), keep every reading in git, watch competitor accounts, keep proof screenshots of your viral videos, and answer questions in SQL (which formats win, which videos crossed 100k at day 7, how a month compares). Use when someone wants to track their own short-form metrics, monitor accounts, count total views across accounts, keep analytics screenshots, or feed their format review, post-mortems and clip plans with real data.
+description: Build and run your own short-form analytics base in plain files that your AI can query, without a paid tracking tool. Collect views, retention, audience and daily account stats from TikTok, Instagram, Facebook and YouTube, and per-post counts from X and LinkedIn (official APIs, native exports, or the analytics screens you already see in your browser), keep every reading in git, watch competitor accounts, keep proof screenshots of your viral videos, and answer questions in SQL (which formats win, which videos crossed 100k at day 7, how a month compares). Use when someone wants to track their own short-form metrics, monitor accounts, count total views across accounts, keep analytics screenshots, or feed their format review, post-mortems and clip plans with real data.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/blog/own-your-social-media-analytics/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -28,7 +28,7 @@ Look for a company context file (kb/01_BRAND.md from the blueprint, or .agents/p
 
 ## 2. Collect
 
-One collection = one raw file, named `YYYY-MM-DD_<platform>_<handle>_<kind>.csv`, kind `videos`, `daily`, `retention` or `audience`. Columns: references/schema.md. Never edit a raw file afterwards: the next reading is a new file, and the database keeps the latest reading of each video while the raw table keeps the whole history.
+One collection = one raw file, named `YYYY-MM-DD_<platform>_<handle>_<kind>.csv`, kind `videos`, `daily`, `retention`, `audience` or `posts` (text posts on X and LinkedIn, references/routes.md). Columns: references/schema.md. Never edit a raw file afterwards: the next reading is a new file, and the database keeps the latest reading of each video while the raw table keeps the whole history.
 
 - First pull per owned account: every video, 365 days of daily stats where the platform shows them, and for each video above the viral line, its first 7 days, retention and audience.
 - Then weekly: the last 14 days of daily stats and the videos of the last 30 days. Daily granularity does not need a daily run when the platform returns the history day by day.
@@ -61,6 +61,7 @@ This skill measures. Each decision belongs to one other skill, which reads this 
 | Which moments of my live or long video become clips? | statur-clipping, statur-clip-plan | the winning formats and hooks of the account |
 | How do I write a script that replays a winner's structure? | statur-story-analysis, statur-author-analysis, statur-story-replication, statur-short-story-replication | the winners list (own or watched) as the videos to analyse |
 | Which organic winners go into ads? | statur-organic-to-paid | the winners list with saves and shares |
+| What do I post on X this week, and did last month move the business? | statur-x-viral-post-ghostwriter | `post_log`: posts with pillar, intent and formula, profile visits, link clicks, follows |
 
 Install the others from the same repository. A private instance may add its own collectors in a separately named private skill that extends this one; it never forks it.
 

@@ -31,6 +31,13 @@ Public view counts are shown on profile grids (TikTok, Instagram reels tab, YouT
 
 Dates: a TikTok video id holds its publish time (the id shifted right by 32 bits is a Unix timestamp). An Instagram shortcode decodes to a media id whose top bits hold the time in milliseconds since August 24, 2011 (the id shifted right by 23 bits, plus 1314220021721). Both let you date a video from its link alone.
 
+## X and other text platforms (kind posts)
+
+- X shows per-post analytics (impressions, engagements, profile visits, link clicks, follows) in its analytics screen, and an export where the account has access. On 2026-10-27 the screen of a 20-follower account read "Detailed engagement metrics become available once you reach 50 followers": below that, read the public counts shown on each post (views, replies, reposts, likes, bookmarks) at a human pace, one reading per week.
+- A post id on X holds its time: the id shifted right by 22 bits, plus 1288834974657, is a Unix time in milliseconds.
+- Profile visits and link clicks carry no ranking weight on X but matter for the business. When the screen does not show them, tag every link with UTM parameters (utm_source=x, utm_content=<post id>) and read the clicks in your site analytics.
+- Write one file per reading: `YYYY-MM-DD_x_<handle>_posts.csv`. Label posts (pillar, voice mode, intent reach or revenue, formula) in post_labels.csv: the writing skills fill it.
+
 ## 5. Screenshots (route: manual)
 
 The fallback that always works, and the proof you will want anyway. For every video above your viral line at day 7, keep two screenshots: the overview (views, watch time, completion, new followers) and the audience tab. Name them `<video_id>_<tab>_<YYYY-MM-DD>.png` in `proof/<platform>_<handle>/`. `scripts/proof.py` writes a blurred copy for public use.
