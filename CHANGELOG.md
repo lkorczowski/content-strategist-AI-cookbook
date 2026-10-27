@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-27 · v2.4.0
+
+- New skill statur-share-social-media 1.0.0 (STATUR social analytics): give a content advisor access to Instagram, Facebook Page, TikTok, YouTube and LinkedIn analytics with the least access, without a password in plain text (Meta business portfolio invite, password manager share for personal TikTok accounts, YouTube Viewer role).
+
 ## 2026-10-27 · v2.3.0
 
 - blueprint/START.md 1.0: public operating manual for client projects in ChatGPT or Claude. A one-line project instruction points to it. "Start EVEREST OS" runs the onboarding: brief, pre-onboarding checklist, intake interview, knowledge base files, email draft to the advisor. Every later conversation starts from STATE.md with its CRITICAL and BLOCKED items. New template blueprint/templates/STATE.md.
