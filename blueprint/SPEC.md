@@ -108,6 +108,7 @@ These are facts about the tools, not choices. Each was observed on the date give
 | C07 | Files an assistant writes in a ChatGPT or Claude project conversation are not added to the project's knowledge. | At level 0, STATE.md and kb files are re-uploaded by hand. |
 | C08 | A Claude cloud scheduled task whose stored prompt names the repo attached it, read the rules file and pushed a test branch with no human, in under a minute. | Level 3 routines can run in the cloud. Creating the task still needs C05. |
 | C09 | `git clone --depth 1` implies `--single-branch`: the clone fetches only the default branch (git documentation). | Before branching, add the fetch refspec `+refs/heads/*:refs/remotes/origin/*`, or a pushed branch has no remote ref and checks report false "unpushed commit" alerts. Judge whether a branch is merged on full history. |
+| C10 | In a Claude cloud session, the git proxy accepts branch pushes but refuses tag pushes and branch deletions. A pull request merged by a local merge pushed to main shows as closed, not merged, so the repository setting that deletes head branches on merge does not fire. | Merge through the platform. Tag and delete from a computer with its own credentials. |
 
 ## 7. Acceptance tests
 
