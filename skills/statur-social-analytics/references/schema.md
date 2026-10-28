@@ -8,6 +8,7 @@ Plain CSV files are the source of truth. `scripts/analytics.py build` turns them
 analytics/
   accounts.csv        one row per account you track or watch (the only file you edit by hand)
   formats.csv         video_id -> format, hook_type (written during the format review)
+  post_labels.csv     post_id -> pillar, voice_mode, intent (reach or revenue), formula (written by the writing skills)
   raw/                one file per collection, named YYYY-MM-DD_<platform>_<handle>_<kind>.csv, never edited
   proof/              analytics screenshots, <platform>_<handle>/<video_id>_<tab>_<YYYY-MM-DD>.png
   proof_anon/         blurred copies safe to show in public
@@ -43,10 +44,14 @@ Put the folder in a private git repository (the blueprint's `content/analytics/`
 
 `audience`: video_id, dimension (age, gender, country, traffic), label, pct. Leave video_id empty for account-level audience.
 
+`posts` (X, LinkedIn and other text posts): post_id, posted, type (post, reply, self_reply, quote, thread, article), in_reply_to (handle of the post answered), views, replies, likes, reposts, quotes, bookmarks, shares, profile_visits, link_clicks, new_follows, text, url. Leave a column empty when the platform does not show it: an empty cell means unknown, never zero.
+
 ## Views in analytics.db
 
 - `videos`: the latest reading of each video, with `days_live` computed from the reading date.
 - `daily`, `retention`, `audience`: the latest reading of each row.
 - `raw_videos`: every reading, so you can follow a video from day 1 to day 30.
 - `video_log`: the exact columns of `video-log.csv` read by statur-video-post-mortem, statur-format-review and statur-content-learning.
-- `formats`, `accounts`: the two hand-made files.
+- `posts`: the latest reading of each text post, with `days_live`.
+- `post_log`: posts joined with post_labels.csv, read by statur-x-viral-post-ghostwriter.
+- `formats`, `accounts`, `post_labels`: the hand-made files.

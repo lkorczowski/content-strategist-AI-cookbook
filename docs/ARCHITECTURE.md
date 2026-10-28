@@ -133,6 +133,10 @@ The skills form one loop. Each step has one owner; the next step reads what the 
 | Make | statur-clipping, statur-clip-plan, statur-clip-edit, statur-clip-review | Turn a long recording into clips | the account's winning formats and hooks | clips, specs, review pages | collect metrics |
 | Make | statur-organic-to-paid | Move organic winners into ads and test them | winners with saves and shares | ad test plan | collect metrics |
 | Decide (paid) | statur-meta-ads-scaling | Diagnose a Meta account and run it: structure, live ads per budget, test lane, partnership share, offers and statics, weekly and monthly reads | ad exports or a read-only Meta connector, store numbers | diagnosis, structure plan, test plan, weekly and monthly tables | launch or edit ads, recruit creators (statur-creator-program), pick organic winners (statur-organic-to-paid) |
+| Define | statur-brand-dna-audit | Write and audit the brand DNA from evidence: refusal list, voice mix, pillars from buyer beliefs, one reader, one outcome, proof bank | the founder's posts, transcripts, offer, buyer questions | the brand DNA sections of kb/01_BRAND.md (proposed, the founder validates) | drafts posts, collects metrics |
+| Study | statur-hook-forensics | Read viral text posts and X Articles case by case and keep the hook formula file | public posts with their counts | case files, formula table | drafts the founder's posts, maps a controversy (statur-idea-war-map) |
+| Make (X) | statur-x-viral-post-ghostwriter | Draft and score X posts, replies, quotes and Articles; weekly mix; cold-start mode; 30-day goal and scorecard; owner of X ranking facts (references/x-ranker.md) | brand DNA, formula file, post_log | drafts with a score line, reply targets, scorecard | posts or replies for the user, collects metrics, plans a launch week (statur-x-launch) |
+| Launch (X) | statur-x-launch | One launch week on X judged on business numbers | launch asset, champions, offers | launch plan, contract review | runs the weekly X rhythm after day 14 (statur-x-viral-post-ghostwriter) |
 
 Short names used on statur.co and in talks: "format library" = statur-format-library; "storytelling OS" = the four Video Script Structure skills; "clipping" = the four STATUR clipping skills; "social analytics" = statur-social-analytics.
 
@@ -140,6 +144,9 @@ Shared definitions (one owner each, used by every skill):
 
 | Definition | Value | Owner |
 |---|---|---|
+| Post log columns (X, LinkedIn) | the `post_log` view of statur-social-analytics: posts joined with post_labels.csv (pillar, voice mode, intent, formula) | statur-social-analytics (references/schema.md) |
+| X ranking weights | references/x-ranker.md, dated, primary source only | statur-x-viral-post-ghostwriter |
+| Brand DNA (refusal list, voice mix, pillars, one reader, one outcome, proof bank) | sections 03, 07 and 08 of kb/01_BRAND.md | statur-brand-dna-audit |
 | Video log columns | the `video_log` view of statur-social-analytics; templates/video-log.csv in statur-video-post-mortem is the manual fallback with the same columns | statur-social-analytics (references/schema.md) |
 | Early signal | a reading at 48 hours, used to boost, reply in comments or test an ad; never a verdict | statur-format-review |
 | Mature data | at least 7 days live and 1,000 views (or the account's usual floor if smaller); the only data a verdict uses | statur-format-review |

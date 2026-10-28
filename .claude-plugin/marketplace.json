@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.1.0"
+    "version": "2.5.0"
   },
   "plugins": [
     {
@@ -100,6 +100,18 @@
       ]
     },
     {
+      "name": "statur-x-ghostwriter",
+      "description": "The X Ghostwriter Handbook: brand DNA from evidence, hook forensics, X ranker weights, reply routine for cold accounts, 30-day goal and scorecard.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-x-viral-post-ghostwriter",
+        "./skills/statur-brand-dna-audit",
+        "./skills/statur-hook-forensics",
+        "./skills/statur-social-analytics"
+      ]
+    },
+    {
       "name": "statur-tradespeople",
       "description": "One video per job and an AI morning routine for tradespeople, with scripts, setup and admin processes.",
       "source": "./",
@@ -161,7 +173,10 @@
         "./skills/statur-clip-plan",
         "./skills/statur-clip-edit",
         "./skills/statur-clip-review",
-        "./skills/statur-comment-section"
+        "./skills/statur-comment-section",
+        "./skills/statur-x-viral-post-ghostwriter",
+        "./skills/statur-brand-dna-audit",
+        "./skills/statur-hook-forensics"
       ]
     },
     {

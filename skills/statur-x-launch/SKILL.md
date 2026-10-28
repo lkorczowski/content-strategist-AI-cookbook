@@ -4,7 +4,7 @@ description: Plan and review a startup launch week on X in six steps (champion l
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/x-launch-playbook/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -29,7 +29,7 @@ Ask once, then work with what the user gives you.
 ## Background the assistant should know
 
 - Herding: one early positive signal makes the next ones more likely (Muchnik, Aral, Taylor, Science 2013, https://cris.huji.ac.il/en/publications/social-influence-bias-a-randomized-experiment/). This is why paid launch networks work for a day.
-- X ranks For You with a Grok-based model whose code was published. Third-party analyses say early replies, dwell time and DM shares open reach, while mutes and reports close it, and posts with external links get less reach (https://ppc.land/x-exposes-algorithm-secrets/).
+- X ranks For You with a Grok-based model whose code is public (https://github.com/xai-org/x-algorithm). Its default weights favour copies of the post's link (20.0), replies (5.0, plus 15.0 on original posts shown to mutual follows), quotes and DM shares (5.0) and follows (4.0), and punish "not interested", mutes and reports. A profile click weighs 0.0. Full table, date and caveats: references/x-ranker.md of statur-x-viral-post-ghostwriter (https://github.com/lkorczowski/content-strategist-AI-cookbook/tree/main/skills/statur-x-viral-post-ghostwriter). That a link in the main post loses reach is a practitioner reading (https://ppc.land/x-exposes-algorithm-secrets/). The file has no weight for it.
 - The median half-life of a post on X is about 80 minutes (Pfeffer, Matter, Sargsyan, https://arxiv.org/abs/2302.09654).
 - Views per like is a heuristic for spotting amplified launches. Vendor research on a small sample found a much higher ratio for launches it judged amplified (https://forkoff.xyz/research/state-of-launch-videos-2026). Treat it as a clue to check against demos, customers and the founder's posts in the following weeks.
 
@@ -49,7 +49,7 @@ Ask once, then work with what the user gives you.
    - Launch Tuesday to Thursday, early morning Pacific time, for a US audience.
 4. Pay creators for their own labelled posts. Never pay for reposts.
    - X bans buying engagement, reposts included, and paying others to inflate metrics (https://help.x.com/rules-and-policies/platform-manipulation, https://help.x.com/en/rules-and-policies/authenticity).
-   - A creator paid to make their own post is allowed with X's Paid Partnership label (https://help.x.com/en/rules-and-policies/paid-partnerships-policy). It is an endorsement under the FTC Endorsement Guides (https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking).
+   - A creator paid to make their own post is allowed with a clear disclosure, such as X's Paid Partnership label or #ad (https://help.x.com/en/rules-and-policies/paid-partnerships-policy). It is an endorsement under the FTC Endorsement Guides (https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking).
    - Knowingly buying fake followers or views for a commercial purpose is banned by the FTC 2024 rule (https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials). In France, law 2023-451 requires "publicité" or "collaboration commerciale" on paid influence (https://www.actu-juridique.fr/ntic-numerique-medias-presse/la-loi-n-2023-451-du-9-juin-2023-pour-une-utilisation-plus-securisee-des-reseaux-sociaux/).
    - Write the disclosure duty into every agency and creator contract. Ask the agency for the list of accounts before paying. Refuse guaranteed views from accounts nobody can name. Anonymous accounts are a hard no.
 5. Prepare four weeks of follow-up before T0.
@@ -91,6 +91,10 @@ Paid partners: <creator or agency | own post with Paid Partnership label? | acco
 Follow-up plan: <week 1 to 4 | format | asset ready before T0?> | LinkedIn on day 2
 Day 14 reading: <signups | activation | demos | inbound | followers kept> -> <decision>
 ```
+
+## After the launch week
+
+The weekly posting rhythm, the founder's voice and the replies routine belong to statur-x-viral-post-ghostwriter. Hand over the launch's Article, demo and champion list to it on day 14.
 
 ## Rules
 
