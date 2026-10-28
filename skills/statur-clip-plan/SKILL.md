@@ -4,7 +4,7 @@ description: Read the full transcript of a live, a webinar, a podcast or a long 
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -64,6 +64,10 @@ Then place segment boundaries in pauses, list the words to remove (`cut`) and th
 - `screen` shows a chapter label at the top (consecutive segments with the same label share it); long groups show it for 4 seconds.
 - Every field and its default: `../statur-clipping/references/spec.md`.
 - Dry-run every spec with `clip_render.py --plan-only` and read the captions before any render.
+
+## Captions in another language than the speech
+
+When the user wants captions in another language (for example English captions on a French live), translate phrase by phrase: one `fix` per phrase, where a phrase never crosses a pause of 0.30 s or more, a `cut` or a segment boundary. Fixes are applied to the words before the silence trimming, so a translated phrase that spans a pause would change the audio edit. Check it: the cut list of the translated version must equal the one of the original version (`cutlist.json`, `pieces`). Keep the meaning, shorten when the reading would run behind the voice, add nothing. The hook and chapter labels go in the same language.
 
 ## Hooks
 

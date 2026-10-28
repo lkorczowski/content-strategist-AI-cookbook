@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.1"
+  version: "2.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -26,14 +26,21 @@ What the plan and the edit need from it, ask once for what is missing:
 - Numbers allowed in public, names that must never appear, the price policy.
 - Clip length floor (default 60 seconds), language of the captions, caption font and colors, watermark text.
 
-## 1. Permissions: ask first, say exactly what to click
+## 1. Setup: ask for everything in one message, before any work
 
-- One working folder, for example `Clips` in the user's home. Claude desktop app: "+" next to the message box, then "Add folder". Claude Code: start it in that folder, or `/add-dir` the folder.
-- The Downloads folder only if a browser download lands there, and the Google Drive for desktop folder only if a source lives in Drive. Ask for each one, one time, with the reason.
+An agent cannot grant itself access to folders, apps or schedules, and a night run has nobody to approve a prompt. So the first message of a new setup lists every access the chain needs, with the exact clicks, and the user does them once. After that, no run asks for anything.
+
+1. **Working folder** (for example `Clips` in the home folder). Claude desktop app: "+" next to the message box, then "Add folder". Claude Code: start in that folder, or `/add-dir`.
+2. **Downloads folder**: browsers save live replays there. Same "Add folder". Without it the replay stays out of reach; moving it by hand or with the file manager breaks as soon as the screen locks.
+3. **Browser**: the browser extension (Claude in Chrome) installed in the browser where the user is signed in to the platforms (TikTok LIVE Center, YouTube Studio), on the computer that holds the working folder. When the extension runs on several computers, write the device id of the right one in a machine file at the root of the working folder (references/pitfalls.md).
+4. **Google Drive for desktop folder**, only when sources live in Drive.
+5. **Tools**: ffmpeg and Python 3.10 or newer; the agent installs the rest (section 2).
+6. **The routine**: the user approves the scheduled task once, with the working folder and Downloads attached to it (references/routine.md). The computer stays on with the browser open at run time.
+
+Then, for every run:
 - Platforms: the user signs in in their own browser. Never ask for a password, never copy cookies or tokens.
 - Never delete the user's files. Temporary files go to a temp folder outside synced folders, and the agent removes only what it created.
-- Live replays downloaded by the browser land in Downloads: connect that folder once at setup, next to the working folder. An agent cannot grant itself folder access, and a scheduled run has no one to approve it.
-- Never move a file out of a synced folder (Google Drive, Dropbox, OneDrive): it disappears from the cloud for everyone. Copy it.
+- Copy replays from Downloads into the working folder; never move a file out of a synced folder (Google Drive, Dropbox, OneDrive): it disappears from the cloud for everyone.
 - Some sandboxes stop a command after a few minutes or forbid deletions in connected folders: use `--budget` on the render scripts and re-run until they print DONE.
 
 ## 2. Install once

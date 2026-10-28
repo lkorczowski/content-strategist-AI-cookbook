@@ -5,7 +5,7 @@ Turn a live, a webinar, a long video or a folder of recordings into ready-to-pos
 - Page (human version, source of truth): https://statur.co/clipping/
 - Markdown for AI assistants: https://statur.co/clipping.md
 - The story behind it (essay on louis-korczowski.org): coming soon
-- Version 1.2, 2026-10-24 (page); skills statur-clipping 2.0.1, statur-clip-plan 2.0.0, statur-clip-edit 2.0.0, statur-clip-review 2.0.0
+- Version 1.2, 2026-10-24 (page); skills statur-clipping 2.1.0, statur-clip-plan 2.1.0, statur-clip-edit 2.0.0, statur-clip-review 2.1.0
 
 ## Summary
 
