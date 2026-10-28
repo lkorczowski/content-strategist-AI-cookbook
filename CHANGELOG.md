@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.6.0
+
+- blueprint/SPEC.md 1.0: specification of EVEREST OS (goal, nine principles, stores, orchestrators, adoption levels, feature catalog, edge cases, dated platform constraints, acceptance tests T01 to T14). Instances keep their status table in their own repo and link here.
+
 ## 2026-10-28 · v2.5.0
 
 - New playbook card x-ghostwriter (The X Ghostwriter Handbook, https://statur.co/x-ghostwriter/) and three skills: statur-x-viral-post-ghostwriter 1.0.0 (drafts and score lines for X posts, replies, quotes and Articles, weekly mix, cold-start mode, 30-day contract and scorecard, references/x-ranker.md as the single owner of X ranking facts), statur-brand-dna-audit 1.0.0 (refusal list, voice mix, pillars from buyer beliefs, one reader, one outcome, proof bank, written from evidence) and statur-hook-forensics 1.0.0 (case files and hook formula file for text posts and X Articles). Built from Avid's paid-partnership X Article of 2026-10-26, checked against X's published code, tested on a 20-follower account.
