@@ -5,7 +5,7 @@
 #  - uncommitted changes: fetch only, no pull (nothing is overwritten)
 #  - git lock present (.git/*.lock, e.g. left by an agent session): repo skipped and reported
 #  - behind origin: pull --ff-only; diverged: pull --rebase, clean abort on conflict
-#  - ahead of origin: push
+#  - ahead of origin: push, except on main (reported, never pushed: main only takes pull requests)
 #  - any problem: one log line + a macOS notification
 set -u
 DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -52,7 +52,9 @@ while IFS= read -r line || [ -n "$line" ]; do
     fi
   fi
   ahead="$($GIT rev-list --count '@{u}..HEAD')"
-  if [ "$ahead" -gt 0 ]; then
+  if [ "$ahead" -gt 0 ] && [ "$branch" = "main" ]; then
+    problem "$name" "$ahead local commit(s) on main: not pushed, main only takes pull requests"
+  elif [ "$ahead" -gt 0 ]; then
     if out="$($GIT push --quiet 2>&1)"; then log "push $name ($branch) $ahead commit(s)"
     else problem "$name" "push refused: ${out:0:120}"; fi
   fi
