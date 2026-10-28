@@ -42,6 +42,18 @@ def keyed_value(keys, t, field, default):
 def in_ranges(t, rs):
     return any(a <= t < b for a, b in rs)
 
+def edge_mask(W, H, F, sides):
+    """Soft ramps (smoothstep, F px) on the given sides of the source frame. Used when the speaker is scaled or
+    moved on a keyed background: the plate ends at the frame edge, so a shoulder or a hand would otherwise end
+    on a hard straight line inside the picture."""
+    x = np.ones(W, np.float32); y = np.ones(H, np.float32)
+    r = np.linspace(0.0, 1.0, F, dtype=np.float32); r = r * r * (3 - 2 * r)
+    if "l" in sides: x[:F] = np.minimum(x[:F], r)
+    if "r" in sides: x[-F:] = np.minimum(x[-F:], r[::-1])
+    if "t" in sides: y[:F] = np.minimum(y[:F], r)
+    if "b" in sides: y[-F:] = np.minimum(y[-F:], r[::-1])
+    return y[:, None] * x[None, :]
+
 def cut_stream(src, mapping, fps, tail, pix, vf_extra=""):
     """ffmpeg process that outputs the kept frames of SRC in output order, then holds the last frame for tail s.
     Chronological pieces use one select filter (each frame decoded once). Pieces out of order (a cold open)
@@ -145,6 +157,60 @@ class Insert:
                 dst[y + off:y + h, x:x + w] = tile[:h - off]
         return dst
 
+class Inset:
+    """The speaker in a card over a full-screen panel (explainer split layout, as in many produced explainers):
+    the plate frame cropped around the head found in the matte, drawn after the overlay layer so the panel stays
+    a full-screen stage and the face never leaves the screen. Spec: rect [x, y, w, h] on the output frame,
+    head_pad (px above the head top), delay and fade (s), border and dot colors (hex), radius (px)."""
+    def __init__(self, spec, W, H):
+        self.s = spec; self.W, self.H = W, H; self.cy = None
+        x, y, w, h = spec.get("rect", [60, 1250, 960, 610])
+        self.rect = (int(x), int(y), int(w), int(h))
+        r = int(spec.get("radius", 0))
+        self.mask = None
+        if r > 0:
+            m = np.zeros((int(h), int(w)), np.uint8)
+            cv2.rectangle(m, (r, 0), (int(w) - r - 1, int(h) - 1), 255, -1); cv2.rectangle(m, (0, r), (int(w) - 1, int(h) - r - 1), 255, -1)
+            for cx_, cy_ in ((r, r), (int(w) - r - 1, r), (r, int(h) - r - 1), (int(w) - r - 1, int(h) - r - 1)):
+                cv2.circle(m, (cx_, cy_), r, 255, -1, lineType=cv2.LINE_AA)
+            self.mask = (m.astype(np.float32) / 255.0)[..., None]
+    @staticmethod
+    def rgb(hexs):
+        hexs = hexs.lstrip("#"); return np.array([int(hexs[i:i + 2], 16) for i in (0, 2, 4)], np.float32)
+    def draw(self, dst, A, M, t):
+        lt = t - self.s["start"]; dur = self.s["end"] - self.s["start"]
+        kin = min(1.0, max(0.0, (lt - self.s.get("delay", 0.12)) / max(self.s.get("fade", 0.25), 1e-6)))
+        kout = min(1.0, max(0.0, (dur - lt) / 0.18))
+        k = min(kin, kout)
+        if k <= 0:
+            return dst
+        x, y, w, h = self.rect
+        cw = self.W; ch = int(round(cw * h / w))
+        if ch > self.H:
+            ch = self.H; cw = int(round(ch * w / h))
+        # head top: first row where the matte is wider than a hand
+        rows = np.where((M[..., 0] > 0.5).sum(axis=1) > self.s.get("head_min_px", 160))[0]
+        top = float(rows.min()) if len(rows) else self.H * 0.2
+        want = max(0.0, min(float(self.H - ch), top - self.s.get("head_pad", 60)))
+        self.cy = want if self.cy is None else self.cy + (want - self.cy) * 0.12   # smooth, no jitter
+        cy = int(round(self.cy)); cx = (self.W - cw) // 2
+        tile = cv2.resize(A[cy:cy + ch, cx:cx + cw], (w, h), interpolation=cv2.INTER_AREA)
+        yy = y + int(round((1 - EASE["outCubic"](kin)) * 40))   # rises 40 px while it fades in
+        hh = min(h, self.H - yy)
+        if hh <= 0:
+            return dst
+        a = k if self.mask is None else self.mask[:hh] * k
+        reg = dst[yy:yy + hh, x:x + w]
+        reg[:] = reg * (1 - a) + tile[:hh] * a
+        if self.s.get("border"):
+            col = self.rgb(self.s["border"])
+            for (y0, y1, x0, x1) in ((yy, yy + 2, x, x + w), (yy + hh - 2, yy + hh, x, x + w), (yy, yy + hh, x, x + 2), (yy, yy + hh, x + w - 2, x + w)):
+                dst[y0:y1, x0:x1] = dst[y0:y1, x0:x1] * (1 - k) + col * k
+        if self.s.get("dot"):
+            col = self.rgb(self.s["dot"]); d = 7
+            dst[max(0, yy - d):yy + d, max(0, x - d):x + d] = dst[max(0, yy - d):yy + d, max(0, x - d):x + d] * (1 - k) + col * k
+        return dst
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plate", required=True); ap.add_argument("--matte", required=True)
@@ -158,6 +224,7 @@ def main():
     ap.add_argument("--segment", default=None, help="a-b: render only these output frames into OUT (a part, no audio); see --join")
     ap.add_argument("--join", nargs="*", default=None, help="parts to concatenate in order, muxed with --audio into --out")
     ap.add_argument("--sharpen", type=float, default=0.0, help="contrast-adaptive sharpening amount on the plate (0 to 1)")
+    ap.add_argument("--edge-feather", type=int, default=72, help="px of soft edge on the sides of a scaled or moved speaker (0: hard edge)")
     ap.add_argument("--grain", type=float, default=0.0, help="film grain strength in 8-bit levels (2 to 4 is subtle); also hides banding on flat panels")
     a = ap.parse_args()
     P = json.load(open(a.plan)); fps, W, H = P["fps"], P["w"], P["h"]
@@ -182,6 +249,7 @@ def main():
     matte = cut_stream(a.matte, P["mapping"], fps, P["tail"], "gray")
     L = {k: Layer(os.path.join(a.layers, k)) for k in ("bg", "under", "over")}
     ins = [Insert(x, fps, W, H) for x in P.get("inserts", [])]
+    cards = [Inset(x, W, H) for x in P.get("insets", [])]
     lo, hi = (0, N - 1)
     seg = None
     if a.segment:
@@ -205,11 +273,14 @@ def main():
                 "-movflags", "+faststart"]
         if a.audio:
             cmd += ["-map", "0:v", "-map", "1:a", "-c:a", "aac", "-b:a", "256k", "-shortest"]
-        cmd += [a.out]
+        # write under a temporary name and rename at the end: a killed run never leaves a part that looks finished
+        tmp_out = os.path.splitext(a.out)[0] + ".partial" + os.path.splitext(a.out)[1]
+        cmd += [tmp_out]
         enc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     fsz, msz = W * H * 3, W * H
     t0 = time.time()
     ink = np.array([14, 14, 12], np.float32)
+    edge_cache = {}
     for i in range(N):
         pb = plate.stdout.read(fsz); mb = matte.stdout.read(msz)
         if len(pb) < fsz or len(mb) < msz:
@@ -236,7 +307,17 @@ def main():
             if abs(s - 1) > 1e-3 or abs(dx) > 0.5 or abs(dy) > 0.5:
                 Mt = np.float32([[s, 0, ax * (1 - s) + dx], [0, s, ay * (1 - s) + dy]])
                 As = cv2.warpAffine(A, Mt, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
-                Ms = cv2.warpAffine(M[..., 0], Mt, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)[..., None]
+                Msrc = M[..., 0]
+                if a.edge_feather > 0:
+                    # feather only the sides of the moved plate that now fall inside the picture
+                    x0 = ax * (1 - s) + dx; y0 = ay * (1 - s) + dy; x1 = x0 + s * W; y1 = y0 + s * H
+                    sides = ("l" if x0 > 0.5 else "") + ("r" if x1 < W - 0.5 else "") + ("t" if y0 > 0.5 else "") + ("b" if y1 < H - 0.5 else "")
+                    if sides:
+                        key = (sides,)
+                        if key not in edge_cache:
+                            edge_cache[key] = edge_mask(W, H, int(a.edge_feather), sides)
+                        Msrc = Msrc * edge_cache[key]
+                Ms = cv2.warpAffine(Msrc, Mt, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)[..., None]
             else:
                 As, Ms = A, M
             frame = base * (1 - Ms) + As * Ms
@@ -263,6 +344,9 @@ def main():
                 over(frame, ov)
             else:
                 frame = ov[..., :3].astype(np.float32)
+        for c in cards:
+            if c.s["start"] <= t < c.s["end"]:
+                c.draw(frame, A, M, t)
         if a.grain > 0:
             g = np.random.default_rng(i).standard_normal((H // 2, W // 2)).astype(np.float32) * a.grain
             frame += cv2.resize(g, (W, H), interpolation=cv2.INTER_LINEAR)[..., None]
@@ -278,6 +362,9 @@ def main():
         p.stdout.close(); p.kill()
     if enc:
         enc.stdin.close(); enc.wait()
+        if enc.returncode != 0:
+            sys.exit(f"encoder failed with code {enc.returncode}; {tmp_out} left for inspection")
+        os.replace(tmp_out, a.out)
     print(json.dumps({"status": "DONE", "frames": N, "seconds": round(time.time() - t0, 1), "out": a.out if enc else a.stills}))
 
 if __name__ == "__main__":

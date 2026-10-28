@@ -101,6 +101,7 @@ def main():
     ap.add_argument("--format", default=None, choices=["png", "jpg"])
     ap.add_argument("--only", default=None, help="frame range a-b (inclusive) for tests")
     ap.add_argument("--frames", default=None, help="comma-separated frame numbers (previews)")
+    ap.add_argument("--allow-system-fonts", action="store_true", help="render even when a token font is missing (fallback font)")
     ap.add_argument("--fonts-dir", default=str(HERE.parent / "fonts" / "node_modules" / "@fontsource"))
     ap.add_argument("--duration", type=float, default=0, help="timeline length in seconds (default: last element end)")
     a = ap.parse_args()
@@ -110,10 +111,17 @@ def main():
     tl["fps"] = a.fps or tl.get("fps", 30)
     resolve_paths(tl["elements"], lp.parent)
     tl["fonts"] = font_list(tl.get("tokens", {}), a.fonts_dir)
+    # a missing brand font never fails in the browser: it silently falls back to a system font. Stop here instead.
+    want = {tl.get("tokens", {}).get(k) for k in ("font_display", "font_body", "font_mono", "font_serif")} - {None}
+    missing = sorted(f for f in want if f not in {x["family"] for x in tl["fonts"]})
+    if missing and not a.allow_system_fonts:
+        sys.exit(f"fonts not found in {a.fonts_dir}: {', '.join(missing)}. Install them (npm i --prefix fonts @fontsource/<family>), "
+                 "point --fonts-dir to the @fontsource folder, or add the family to FONT_FILES. --allow-system-fonts renders anyway.")
     fmt = a.format or ("jpg" if tl.get("opaque") else "png")
     dur = a.duration or max(e["end"] for e in tl["elements"])
     nfr = int(round(dur * tl["fps"]))
     frames = [i for i in range(nfr) if any(e["start"] <= i / tl["fps"] < e["end"] for e in tl["elements"])]
+    all_frames = list(frames)
     if a.only:
         lo, hi = [int(x) for x in a.only.split("-")]
         frames = [i for i in frames if lo <= i <= hi]
@@ -139,8 +147,11 @@ def main():
             print(json.dumps({"worker": wid, "frames": n}), flush=True)
     for pr in procs:
         pr.join()
+    # the manifest lists every frame of this timeline that exists on disk, so a partial re-render (--only, --frames)
+    # patches a layer without hiding the frames rendered before
+    on_disk = [i for i in all_frames if os.path.exists(os.path.join(a.outdir, f"{i:06d}.{fmt}"))]
     json.dump({"layer": tl.get("layer", lp.stem), "fps": tl["fps"], "w": tl["w"], "h": tl["h"], "format": fmt,
-               "opaque": bool(tl.get("opaque")), "frames": frames}, open(os.path.join(a.outdir, "manifest.json"), "w"))
+               "opaque": bool(tl.get("opaque")), "frames": on_disk}, open(os.path.join(a.outdir, "manifest.json"), "w"))
     el = time.time() - t0
     if failed:
         sys.exit(1)

@@ -23,14 +23,19 @@ Look at style.jpg (one frame after each change), then fill the card. With a link
 
 | Item | What to write |
 |---|---|
-| Pace | cuts per 10 s, median shot length, visual changes per 10 s (style.json) |
+| Pace | cuts per 10 s, median shot length, visual changes per 10 s (style.json), seconds between graphic beats |
+| Layouts | full face, explainer split (diagram stage with the speaker in a card), picture in picture, screen only; when each one is used |
 | Face share | share of frames where the face fills the frame |
 | Hook | layout of the first 3 seconds: text position, size, how many lines, what moves |
 | Captions | size, position, case, emphasis style, words per line |
 | Inserts | types (screen capture, page, stock, own footage, motion card) and how many per minute |
-| Motion design | vocabulary: counters, lower thirds, highlights, 3D tilts, kinetic words, maps |
+| Motion design | vocabulary: counters, lower thirds, highlights, 3D tilts, kinetic words, maps; how items are revealed (blur to sharp, wipe, pop) |
+| Type | title fonts and any accent font, case, sizes |
+| Proof devices | how the reference shows results (collage of past videos with view counts, screenshots, numbers) |
 | Sound | effects you can see as visual events, music presence and energy |
 | Color | warm or cool, contrast, skin look, any visible look |
 | Level | the dial level that matches, and what to copy or skip for this brand |
+
+Then split the card in two lists for the brand: what to copy (layouts, pacing, proof devices), what to skip (anything the company context bans, e.g. glow, gradients, rounded corners).
 
 Copy the method, never the assets: no frames, music or graphics from the reference go into the edit.

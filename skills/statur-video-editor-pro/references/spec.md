@@ -13,13 +13,16 @@ One JSON file per edit version, next to the clip spec of statur-clip-plan. The c
 | `tokens` | Brand tokens for motion design (statur-motion-design references/tokens.md). |
 | `keyed` | Source ranges where the background is replaced (needs the person matte). |
 | `bg`, `under`, `over` | Motion layers. `bg`: opaque backgrounds for keyed ranges. `under`: drawn behind the speaker (text behind the subject). `over`: on top (cards, chips, end card). Each element: `{"id", "type", "src": [s, e] or "out": [s, e], "z", "props", "sfx": true}`. Types and props: statur-motion-design references/templates.md. |
-| `captions` | `props` (y, size, max_width, max_chars, lines), `emph_src` (source windows whose words get the accent box) or `emph_words`, optional `y_keys` to move captions for a while. Words come from words_out.json. |
+| `captions` | `props` (y, size, max_width, max_chars, lines), `emph_src` (source windows whose words get the accent box) or `emph_words`, optional `y_keys` to move or restyle captions for a while: `{"src": [s, e], "y": 1185, "lines": 1, "max_chars": 18}` (any caption prop). Use them when the speaker is scaled down or a speaker card takes the lower third. Words come from words_out.json. |
 | `watermark` | Moving text, `from_src`, `to_src`, size, opacity; hidden automatically during panels, inserts and the end card. |
 | `subject_keys` | Keyed ranges only: scale and move the speaker (`s`, `ax`, `ay` anchor, `dx`, `dy`, `dur`, `ease`). |
 | `camera_keys` | Outside keyed ranges: punch-ins and pushes on the whole picture (`z`, `fx`, `fy` focus, `ox`, `oy` where the focus lands, `dur`, `ease`). A key holds until the next one. |
 | `inserts` | B-roll files: `file`, `src`, `rect` ("full" or [x, y, w, h]), `ken_burns`, `transition` (slide or fade), `seek`, `focus_y`. |
+| `insets` | Speaker card over a full-screen panel (explainer split layout): `src`, `rect` [x, y, w, h], `head_pad` (px kept above the head, found in the matte), `delay`, `fade`, `border`, `dot`, `radius` (border, dot and radius default to the tokens muted, accent and radius). Drawn after the overlays, so the panel stays a full-screen stage and the face stays on screen. Use a card close to square for close selfies (the head must fit, chin included). Only where the plate shows the face. |
 | `sfx` | Manual cues: `src`, `name`, `gain_db`, `why`. Template entrances add their own cues (build_layers.py AUTO_SFX). |
 | `music` | `bpm`, `key`, `drops_out` (output-time windows without drums: a breath before a reveal). |
+
+Picture options of composite.py: `--edge-feather` (px of soft edge where a scaled speaker's plate ends inside the picture, default 72; 96 looked best on a close selfie), `--grain` (2 is subtle and hides banding on flat panels), `--sharpen`.
 
 Local times inside props (a chip appears, a counter starts, a highlight draws) can be given as `t_src` (source time); build_layers.py converts them.
 

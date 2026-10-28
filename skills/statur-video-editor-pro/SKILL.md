@@ -52,7 +52,7 @@ Ask these in one message, with the default the agent will use if the user does n
 Planning rules (evidence and practice in references/levels.md):
 - Every insert proves or explains something said in that sentence; write the sentence next to it. No decoration.
 - Hook: picture, sound and text within the first 1 to 2 seconds. The text hook makes the same promise as the spoken hook in different words.
-- Back to the face within about 4 seconds after a full-screen card; never more than two cards in a row.
+- Keep the face on screen: back to the face within about 4 seconds after a full-screen card, never more than two cards in a row, or keep the speaker in a card under the panel (explainer split layout, `insets` in references/spec.md) when the explanation runs longer.
 - A sound effect only on a visual event (a card enters, a word appears, a number lands).
 - Numbers on screen carry their source line. Names follow the company rules.
 - Keep the caption zone free on every card; keep text out of the platform UI zones (qa_pro.py checks).
@@ -89,6 +89,14 @@ Each craft is a slot with a default that runs on a CPU, a license, and alternati
 ## 9. Where it breaks
 
 Traps met on the first real run (HDR phone footage, captions on the mouth, cards hidden behind their own panel, a word the transcript missed, a slow first render): references/pitfalls.md. Read it before the first render.
+
+## 10. Update this skill
+
+New tools, new evidence and expert advice change this skill through three doors, so a later reader can tell what changed and why:
+- A new tool: change its slot (references/slots.md) and the companion skill that owns the craft; the spec format stays. Record the license and a measured speed.
+- New evidence or an expert's rule: add it to the parameter table of references/levels.md with its evidence level (measured, platform guidance, practitioner, vendor, convention) and its source link. Change a default only for a higher evidence level, or for results measured on the account itself; otherwise keep the default and note the alternative.
+- A trap met on a real run: one row in references/pitfalls.md with the fix.
+Then bump metadata.version, add a CHANGELOG line, and update the playbook card and the handbook page.
 
 ## Rules
 

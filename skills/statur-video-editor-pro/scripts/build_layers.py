@@ -177,8 +177,9 @@ def main():
         # caption height can move for a while (e.g. when the speaker is scaled down)
         for k, yk in enumerate(cap.get("y_keys", [])):
             s, e = when(yk, mp)
+            extra = {kk: vv for kk, vv in yk.items() if kk not in ("src", "out")}   # y, and any caption prop (lines, size...)
             over_items.append({"id": f"captions_y{k}", "type": "captions", "out": [s, e], "z": 51, "sfx": False,
-                               "props": dict(props, y=yk["y"], words=[x for x in cw if s - 0.05 <= x["s"] < e])})
+                               "props": dict(props, **extra, words=[x for x in cw if s - 0.05 <= x["s"] < e])})
     wm = spec.get("watermark")
     if wm and wm.get("enabled", True):
         s0 = mp(float(wm.get("from_src", 0)))
@@ -214,6 +215,10 @@ def main():
             "subject_keys": keys(spec.get("subject_keys", []), ["s", "ax", "ay", "dx", "dy"]),
             "camera_keys": keys(spec.get("camera_keys", []), ["z", "fx", "fy", "ox", "oy"]),
             "inserts": [dict(x, start=when(x, mp)[0], end=when(x, mp)[1], file=resolve(x["file"])) for x in spec.get("inserts", [])],
+            # speaker card over a full-screen panel (explainer split layout), drawn by composite.py after the overlays
+            "insets": [dict({"border": tokens.get("muted"), "dot": tokens.get("accent"), "radius": tokens.get("radius", 0)},
+                            **{k: v for k, v in x.items() if k != "src"}, start=when(x, mp)[0], end=when(x, mp)[1])
+                       for x in spec.get("insets", [])],
             "music": dict({k: v for k, v in spec.get("music", {}).items() if k not in ("drop_src", "drops_out")},
                           drops=[f"{round(mp(float(x)), 3)}" for x in spec.get("music", {}).get("drop_src", [])]
                                 + [f"{w[0]}-{w[1]}" for w in spec.get("music", {}).get("drops_out", [])]),
