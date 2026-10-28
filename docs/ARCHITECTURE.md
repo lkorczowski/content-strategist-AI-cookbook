@@ -93,7 +93,8 @@ One artifact, one owner. Every other place links to the owner and never holds a 
 
 ```
 README.md                    catalog: playbooks -> skills, install, author
-CLAUDE.md                    rules for agents working here (public repo: never commit private data)
+AGENTS.md                    rules for agents working here (public repo: never commit private data)
+CLAUDE.md                    @AGENTS.md (imports the rules)
 CHANGELOG.md                 one line per change, newest first
 LICENSE                      MIT
 .claude-plugin/marketplace.json   one plugin per playbook, pointing at skills/

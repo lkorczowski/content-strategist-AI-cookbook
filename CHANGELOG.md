@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.6.2
+
+- AGENTS.md holds the repo rules; CLAUDE.md only imports it, so every coding agent reads the same file.
+
 ## 2026-10-28 · v2.6.0
 
 - blueprint/SPEC.md 1.0: specification of EVEREST OS (goal, nine principles, stores, orchestrators, adoption levels, feature catalog, edge cases, dated platform constraints, acceptance tests T01 to T14). Instances keep their status table in their own repo and link here.
