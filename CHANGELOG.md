@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.6.3
+
+- statur-idea-war-map 1.1.0: ideas become beliefs. Step 3 names beliefs with a four-question test ("I believe that", any packaging, support and attack, no format word), every post gets a stance, idea_map.py counts support against attack inside a belief, templates/concepts.csv becomes templates/beliefs.csv (1.0 annotation files with a concept column still run).
+
 ## 2026-10-28 · v2.6.2
 
 - AGENTS.md holds the repo rules; CLAUDE.md only imports it, so every coding agent reads the same file.
