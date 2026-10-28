@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.2.0"
+    "version": "2.5.0"
   },
   "plugins": [
     {
@@ -26,7 +26,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/statur-social-analytics"
+        "./skills/statur-social-analytics",
+        "./skills/statur-share-social-media"
       ]
     },
     {
@@ -162,6 +163,7 @@
         "./skills/statur-format-review",
         "./skills/statur-content-learning",
         "./skills/statur-social-analytics",
+        "./skills/statur-share-social-media",
         "./skills/statur-format-library",
         "./skills/statur-story-analysis",
         "./skills/statur-story-replication",

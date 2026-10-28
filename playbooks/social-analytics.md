@@ -17,5 +17,6 @@ Built from a real collection on October 25, 2026: a founder TikTok account (238 
 | Skill | Use it for |
 |---|---|
 | [statur-social-analytics](../skills/statur-social-analytics/) | Set up the base, collect, build, query (sql, dice, winners), proof screenshots, export the video log for the other skills, weekly routine. |
+| [statur-share-social-media](../skills/statur-share-social-media/) | Give a strategist access to Instagram, Facebook, TikTok, YouTube and LinkedIn analytics before the first review, without sharing a password in plain text. |
 
 Works with: [statur-video-post-mortem](../skills/statur-video-post-mortem/), [statur-format-review](../skills/statur-format-review/), [statur-content-learning](../skills/statur-content-learning/), [statur-format-library](../skills/statur-format-library/), the Video Script Structure skills, [statur-clipping](../skills/statur-clipping/) and [statur-organic-to-paid](../skills/statur-organic-to-paid/). Who does what: [docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md), section 8.

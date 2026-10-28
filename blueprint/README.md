@@ -69,3 +69,13 @@ The skill statur-content-os-setup walks an assistant through these steps with th
 3. Run scripts/check_skills.py and scripts/leak_scan.py with your private denylist.
 4. Publish it in the cookbook with a version and a CHANGELOG line.
 5. In the private repo, keep only what is private: a thin skill that names the public one and adds your context, or nothing at all.
+
+## Start a client project in ChatGPT or Claude
+
+Create a project, upload the engagement brief, and paste this instruction once. It never changes: the operating manual it points to is versioned in this folder.
+
+```
+Open https://raw.githubusercontent.com/lkorczowski/content-strategist-AI-cookbook/main/blueprint/START.md at the start of every conversation and follow it. If you cannot open it, say so in one line, then work only from the documents uploaded to this project.
+```
+
+Then start a conversation with "Start EVEREST OS". Manual: [START.md](START.md). State template: [templates/STATE.md](templates/STATE.md).
