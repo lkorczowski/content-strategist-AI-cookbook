@@ -1,0 +1,1447 @@
+{
+ "_comment": "Level 4 edit of a 97-second selfie recorded with a phone green-screen effect (VID01, 2026-10-28). Times are source times (words.json). Asset paths are relative to this file.",
+ "id": "C01",
+ "version": 1,
+ "code": "VID01",
+ "level": 4,
+ "fps": 30,
+ "w": 1080,
+ "h": 1920,
+ "tail": 2.0,
+ "tokens": {
+  "ink": "#0E0E0C",
+  "paper": "#F2EFE8",
+  "accent": "#E8501C",
+  "muted": "#8A8780",
+  "line": "rgba(242,239,232,.18)",
+  "font_display": "Archivo",
+  "weight_display": 900,
+  "font_body": "Archivo",
+  "font_mono": "JetBrains Mono",
+  "font_serif": "Cormorant",
+  "radius": 0
+ },
+ "keyed": [
+  [
+   0.3,
+   25.1
+  ]
+ ],
+ "bg": [
+  {
+   "id": "wall",
+   "type": "poster_wall",
+   "src": [
+    0.3,
+    14.1
+   ],
+   "props": {
+    "images": [
+     "assets/LIVE02_C01_v3_un-live-tous-les-midis.jpg",
+     "assets/LIVE02_C03_v3_ce-que-yc-regarde.jpg",
+     "assets/LIVE02_C06_v4_claude-derriere-un-whatsapp.jpg",
+     "assets/LIVE02_C10_v3_le-test-du-commentaire.jpg",
+     "assets/LIVE02_C13_v3_un-cmo-pour-3k-de-mrr.jpg",
+     "assets/LIVE02_C16_v4_entretiens-clients-zero-valeur.jpg"
+    ],
+    "cols": 3,
+    "speed": [
+     38,
+     -52,
+     30
+    ],
+    "dim": 0.64,
+    "scale": 1.15
+   }
+  },
+  {
+   "id": "inkgrid",
+   "type": "ink_grid",
+   "src": [
+    14.1,
+    25.1
+   ],
+   "props": {
+    "marks": [
+     {
+      "x": 70,
+      "y": 1840,
+      "text": "statur.co",
+      "size": 22
+     },
+     {
+      "x": 860,
+      "y": 1840,
+      "text": "[•] 2026",
+      "size": 22,
+      "accent": true
+     }
+    ]
+   }
+  }
+ ],
+ "under": [
+  {
+   "id": "views",
+   "type": "big_text",
+   "src": [
+    21.6,
+    25.1
+   ],
+   "props": {
+    "y": 300,
+    "size": 280,
+    "color": "#F2EFE8",
+    "text": "0M+",
+    "counter": {
+     "from": 0,
+     "to": 400,
+     "format": "M",
+     "suffix": "+",
+     "t_src": 21.91,
+     "dur": 1.25
+    }
+   }
+  },
+  {
+   "id": "idea",
+   "type": "big_text",
+   "src": [
+    74.25,
+    75.15
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#0E0E0C",
+    "text": "IDEA"
+   }
+  },
+  {
+   "id": "vision",
+   "type": "big_text",
+   "src": [
+    75.15,
+    76.15
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#0E0E0C",
+    "text": "VISION"
+   }
+  },
+  {
+   "id": "unique",
+   "type": "big_text",
+   "src": [
+    76.15,
+    77.7
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#E8501C",
+    "text": "UNIQUE"
+   }
+  },
+  {
+   "id": "packaged",
+   "type": "big_text",
+   "src": [
+    79.3,
+    80.85
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#0E0E0C",
+    "text": "PACKAGED"
+   }
+  },
+  {
+   "id": "viral",
+   "type": "big_text",
+   "src": [
+    80.85,
+    81.65
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#E8501C",
+    "text": "VIRAL"
+   }
+  },
+  {
+   "id": "problem",
+   "type": "big_text",
+   "src": [
+    91.55,
+    92.3
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#0E0E0C",
+    "text": "PROBLEM"
+   }
+  },
+  {
+   "id": "vision2",
+   "type": "big_text",
+   "src": [
+    92.3,
+    93.25
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#0E0E0C",
+    "text": "VISION"
+   }
+  },
+  {
+   "id": "issues",
+   "type": "big_text",
+   "src": [
+    93.25,
+    94.9
+   ],
+   "props": {
+    "y": 250,
+    "size": 210,
+    "color": "#E8501C",
+    "text": "ISSUES"
+   }
+  }
+ ],
+ "over": [
+  {
+   "id": "hook",
+   "type": "hook_box",
+   "src": [
+    0.3,
+    3.25
+   ],
+   "props": {
+    "text": "Claude edits and|posts my videos",
+    "y": 285,
+    "size": 76,
+    "max_width": 980
+   }
+  },
+  {
+   "id": "p_sched",
+   "type": "panel",
+   "src": [
+    3.28,
+    7.5
+   ],
+   "props": {},
+   "z": 2
+  },
+  {
+   "id": "sched",
+   "type": "card_list",
+   "src": [
+    3.28,
+    7.5
+   ],
+   "z": 5,
+   "props": {
+    "x": 70,
+    "y": 300,
+    "w": 940,
+    "label": "Today · 28 Oct",
+    "title": "16 posts",
+    "counter": "0 by hand",
+    "rows": [
+     {
+      "a": "16:10",
+      "b": "4 platforms",
+      "c": "Motion demo: statur-clipping"
+     },
+     {
+      "a": "17:00",
+      "b": "TikTok",
+      "c": "What a good CMO really costs per month"
+     },
+     {
+      "a": "17:30",
+      "b": "YouTube",
+      "c": "What a good CMO really costs per month"
+     },
+     {
+      "a": "18:00",
+      "b": "TikTok",
+      "c": "Claude behind a WhatsApp can replace your MVP"
+     },
+     {
+      "a": "18:30",
+      "b": "YouTube",
+      "c": "Claude behind a WhatsApp can replace your MVP"
+     },
+     {
+      "a": "19:00",
+      "b": "TikTok",
+      "c": "What YC really looks at in your application"
+     },
+     {
+      "a": "19:30",
+      "b": "YouTube",
+      "c": "What YC really looks at in your application"
+     },
+     {
+      "a": "20:00",
+      "b": "TikTok",
+      "c": "Never stop selling your startup"
+     },
+     {
+      "a": "20:30",
+      "b": "YouTube",
+      "c": "Never stop selling your startup"
+     },
+     {
+      "a": "21:00",
+      "b": "TikTok",
+      "c": "Stop building in stealth"
+     },
+     {
+      "a": "21:30",
+      "b": "YouTube",
+      "c": "Stop building in stealth"
+     },
+     {
+      "a": "22:00",
+      "b": "TikTok",
+      "c": "Why I go live on TikTok every day at lunch"
+     },
+     {
+      "a": "22:30",
+      "b": "YouTube",
+      "c": "Why I go live on TikTok every day at lunch"
+     }
+    ],
+    "first": 0.35,
+    "stagger": 0.25,
+    "max_rows": 9,
+    "row_h": 74
+   }
+  },
+  {
+   "id": "made",
+   "type": "label_chip",
+   "src": [
+    8.1,
+    9.25
+   ],
+   "props": {
+    "text": "Claude + Agent Skills",
+    "dot": true,
+    "x": 540,
+    "y": 300,
+    "size": 32
+   }
+  },
+  {
+   "id": "steps",
+   "type": "chips",
+   "src": [
+    10.9,
+    13.95
+   ],
+   "props": {
+    "y": 300,
+    "size": 36,
+    "items": [
+     {
+      "text": "Record",
+      "t_src": 11.22
+     },
+     {
+      "text": "Claude edits",
+      "t_src": 11.7
+     },
+     {
+      "text": "Claude posts",
+      "t_src": 12.42
+     }
+    ]
+   }
+  },
+  {
+   "id": "name",
+   "type": "lower_third",
+   "src": [
+    14.6,
+    19.0
+   ],
+   "props": {
+    "x": 60,
+    "y": 290,
+    "w": 760,
+    "name": "Dr. Louis Korczowski",
+    "title": "Short-form content strategist",
+    "sub": "PhD · machine learning & neuroscience"
+   }
+  },
+  {
+   "id": "views_src",
+   "type": "footnote",
+   "src": [
+    22.7,
+    25.1
+   ],
+   "props": {
+    "x": 540,
+    "y": 600,
+    "text": "Organic views for clients · last count Jan 2026",
+    "size": 24
+   }
+  },
+  {
+   "id": "p_chart",
+   "type": "panel",
+   "src": [
+    31.38,
+    36.0
+   ],
+   "props": {},
+   "z": 2
+  },
+  {
+   "id": "chart",
+   "type": "chart_curve",
+   "src": [
+    31.38,
+    36.0
+   ],
+   "z": 5,
+   "props": {
+    "x": 90,
+    "y": 290,
+    "w": 900,
+    "h": 640,
+    "label": "Illustration · 1% chance per video",
+    "title": "More videos, less luck",
+    "xlabel": "videos posted",
+    "points": [
+     [
+      0,
+      0.0
+     ],
+     [
+      3,
+      0.029700999999999977
+     ],
+     [
+      6,
+      0.058519850599
+     ],
+     [
+      9,
+      0.08648275251635917
+     ],
+     [
+      12,
+      0.11361512828387077
+     ],
+     [
+      15,
+      0.13994164535871156
+     ],
+     [
+      18,
+      0.1654862385499125
+     ],
+     [
+      21,
+      0.19027213177874158
+     ],
+     [
+      24,
+      0.21432185919278124
+     ],
+     [
+      27,
+      0.23765728565289646
+     ],
+     [
+      30,
+      0.2602996266117198
+     ],
+     [
+      33,
+      0.2822694674017251
+     ],
+     [
+      36,
+      0.30358678195042654
+     ],
+     [
+      39,
+      0.3242709509397169
+     ],
+     [
+      42,
+      0.3443407794258564
+     ],
+     [
+      45,
+      0.36381451393612907
+     ],
+     [
+      48,
+      0.38270985905771204
+     ],
+     [
+      51,
+      0.401043993533839
+     ],
+     [
+      54,
+      0.41883358588189046
+     ],
+     [
+      57,
+      0.4360948095476125
+     ],
+     [
+      60,
+      0.4528433576092388
+     ],
+     [
+      63,
+      0.46909445704488684
+     ],
+     [
+      66,
+      0.4848628825761967
+     ],
+     [
+      69,
+      0.500162970100801
+     ],
+     [
+      72,
+      0.5150086297258372
+     ],
+     [
+      75,
+      0.5294133584143501
+     ],
+     [
+      78,
+      0.5433902522560855
+     ],
+     [
+      81,
+      0.5569520183738275
+     ],
+     [
+      84,
+      0.5701109864761065
+     ],
+     [
+      87,
+      0.5828791200667797
+     ],
+     [
+      90,
+      0.5952680273216762
+     ],
+     [
+      93,
+      0.6072889716421952
+     ],
+     [
+      96,
+      0.6189528818954504
+     ],
+     [
+      99,
+      0.6302703623502736
+     ],
+     [
+      102,
+      0.6412517023181081
+     ],
+     [
+      105,
+      0.651906885507558
+     ],
+     [
+      108,
+      0.662245599101098
+     ],
+     [
+      111,
+      0.6722772425621963
+     ],
+     [
+      114,
+      0.6820109361808565
+     ],
+     [
+      117,
+      0.6914555293653489
+     ],
+     [
+      120,
+      0.7006196086876687
+     ],
+     [
+      123,
+      0.7095115056900363
+     ],
+     [
+      126,
+      0.7181393044595366
+     ],
+     [
+      129,
+      0.7265108489777838
+     ],
+     [
+      132,
+      0.7346337502522946
+     ],
+     [
+      135,
+      0.7425153932360513
+     ],
+     [
+      138,
+      0.7501629435415473
+     ],
+     [
+      141,
+      0.7575833539554198
+     ],
+     [
+      144,
+      0.7647833707595899
+     ],
+     [
+      147,
+      0.7717695398646593
+     ],
+     [
+      150,
+      0.7785482127611391
+     ],
+     [
+      153,
+      0.7851255522939204
+     ],
+     [
+      156,
+      0.7915075382652388
+     ],
+     [
+      159,
+      0.7976999728712229
+     ],
+     [
+      162,
+      0.8037084859769748
+     ],
+     [
+      165,
+      0.8095385402349726
+     ],
+     [
+      168,
+      0.8151954360514537
+     ],
+     [
+      171,
+      0.8206843164052895
+     ],
+     [
+      174,
+      0.826010171523736
+     ],
+     [
+      177,
+      0.8311778434193096
+     ],
+     [
+      180,
+      0.8361920302919126
+     ],
+     [
+      183,
+      0.8410572908002125
+     ],
+     [
+      186,
+      0.8457780482061554
+     ],
+     [
+      189,
+      0.8503585943963844
+     ],
+     [
+      192,
+      0.8548030937842174
+     ],
+     [
+      195,
+      0.8591155870957323
+     ],
+     [
+      198,
+      0.8632999950434019
+     ],
+     [
+      201,
+      0.867360121890618
+     ],
+     [
+      204,
+      0.8712996589103447
+     ],
+     [
+      207,
+      0.8751221877410486
+     ],
+     [
+      210,
+      0.8788311836429517
+     ],
+     [
+      213,
+      0.8824300186575723
+     ],
+     [
+      216,
+      0.8859219646734238
+     ],
+     [
+      219,
+      0.8893101964006584
+     ],
+     [
+      222,
+      0.8925977942573625
+     ],
+     [
+      225,
+      0.8957877471701245
+     ],
+     [
+      228,
+      0.8988829552914247
+     ],
+     [
+      231,
+      0.9018862326363141
+     ],
+     [
+      234,
+      0.904800309640783
+     ],
+     [
+      237,
+      0.9076278356441421
+     ],
+     [
+      240,
+      0.9103713812976754
+     ],
+     [
+      243,
+      0.9130334409017531
+     ],
+     [
+      246,
+      0.9156164346735302
+     ],
+     [
+      249,
+      0.9181227109472916
+     ],
+     [
+      252,
+      0.9205545483094462
+     ],
+     [
+      255,
+      0.9229141576701073
+     ],
+     [
+      258,
+      0.9252036842731475
+     ],
+     [
+      261,
+      0.9274252096465507
+     ],
+     [
+      264,
+      0.9295807534948385
+     ],
+     [
+      267,
+      0.9316722755352883
+     ],
+     [
+      270,
+      0.9337016772796147
+     ],
+     [
+      273,
+      0.9356708037627328
+     ],
+     [
+      276,
+      0.937581445220176
+     ],
+     [
+      279,
+      0.9394353387156915
+     ],
+     [
+      282,
+      0.9412341697204967
+     ],
+     [
+      285,
+      0.9429795736456282
+     ],
+     [
+      288,
+      0.9446731373287794
+     ],
+     [
+      291,
+      0.9463164004769774
+     ],
+     [
+      294,
+      0.9479108570664107
+     ],
+     [
+      297,
+      0.9494579567006812
+     ],
+     [
+      300,
+      0.9509591059287142
+     ]
+    ],
+    "markers": [
+     {
+      "x": 10,
+      "y": 0.09561792499119559,
+      "text": "10 videos: 10%"
+     },
+     {
+      "x": 100,
+      "y": 0.6339676587267709,
+      "text": "100: 63%"
+     },
+     {
+      "x": 300,
+      "y": 0.9509591059287142,
+      "text": "300: 95%",
+      "anchor": "end",
+      "dx": -26,
+      "dy": 52
+     }
+    ],
+    "draw": [
+     0.35,
+     3.0
+    ],
+    "title_size": 70
+   }
+  },
+  {
+   "id": "p_gh",
+   "type": "panel",
+   "src": [
+    39.95,
+    43.65
+   ],
+   "props": {
+    "enter": "fade"
+   },
+   "z": 2
+  },
+  {
+   "id": "gh",
+   "type": "page_card",
+   "src": [
+    39.95,
+    43.65
+   ],
+   "z": 5,
+   "props": {
+    "img": "assets/gh_v_full.png",
+    "frame": {
+     "x": 60,
+     "y": 380,
+     "w": 960,
+     "h": 720
+    },
+    "label": "Open source · MIT",
+    "url": "github.com/lkorczowski",
+    "view": {
+     "x": 40,
+     "y": 70,
+     "w": 1150
+    },
+    "view_to": {
+     "x": 90,
+     "y": 1780,
+     "w": 1000
+    },
+    "move": [
+     0.55,
+     1.9
+    ],
+    "highlights": [
+     {
+      "x": 130,
+      "y": 1882,
+      "w": 1316,
+      "h": 101,
+      "t_src": 42.95,
+      "dur": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "id": "live_chip",
+   "type": "label_chip",
+   "src": [
+    48.3,
+    51.0
+   ],
+   "z": 5,
+   "props": {
+    "text": "Live · 25 Oct · 1 h 17 min",
+    "dot": true,
+    "x": 540,
+    "y": 300,
+    "size": 30
+   }
+  },
+  {
+   "id": "p_cut",
+   "type": "panel",
+   "src": [
+    54.1,
+    59.45
+   ],
+   "props": {},
+   "z": 2
+  },
+  {
+   "id": "cut",
+   "type": "timeline_cut",
+   "src": [
+    54.1,
+    59.45
+   ],
+   "z": 5,
+   "props": {
+    "y": 290,
+    "label": "Live · 25 Oct",
+    "title": "77 minutes in",
+    "bar": {
+     "x": 80,
+     "y": 470,
+     "w": 920,
+     "h": 96
+    },
+    "cuts": [
+     {
+      "s": 0.081,
+      "e": 0.115
+     },
+     {
+      "s": 0.157,
+      "e": 0.184
+     },
+     {
+      "s": 0.325,
+      "e": 0.418
+     },
+     {
+      "s": 0.487,
+      "e": 0.544
+     },
+     {
+      "s": 0.63,
+      "e": 0.659
+     },
+     {
+      "s": 0.82,
+      "e": 0.86
+     }
+    ],
+    "posters": [
+     "assets/LIVE02_C01_v3_un-live-tous-les-midis.jpg",
+     "assets/LIVE02_C03_v3_ce-que-yc-regarde.jpg",
+     "assets/LIVE02_C06_v4_claude-derriere-un-whatsapp.jpg",
+     "assets/LIVE02_C10_v3_le-test-du-commentaire.jpg",
+     "assets/LIVE02_C13_v3_un-cmo-pour-3k-de-mrr.jpg",
+     "assets/LIVE02_C16_v4_entretiens-clients-zero-valeur.jpg"
+    ],
+    "grid": {
+     "x": 206,
+     "y": 650,
+     "cols": 3,
+     "w": 200,
+     "gap": 34,
+     "rows_gap": 22
+    },
+    "scan": [
+     0.3,
+     1.8
+    ],
+    "fly_src": 56.45,
+    "fly_stagger": 0.14,
+    "result": "6 clips · English captions"
+   }
+  },
+  {
+   "id": "p_prompt",
+   "type": "panel",
+   "src": [
+    62.22,
+    65.4
+   ],
+   "props": {},
+   "z": 2
+  },
+  {
+   "id": "prompt",
+   "type": "prompt_box",
+   "src": [
+    62.22,
+    65.4
+   ],
+   "z": 5,
+   "props": {
+    "x": 70,
+    "y": 330,
+    "w": 940,
+    "text": "Clip my last live with English captions",
+    "type_from": 0.2,
+    "type_dur": 1.2,
+    "lines": [
+     "13,480 words transcribed",
+     "16 moments scored",
+     "6 clips edited",
+     "Review page ready"
+    ],
+    "line_stagger": 0.28
+   }
+  },
+  {
+   "id": "p_cat",
+   "type": "panel",
+   "src": [
+    67.95,
+    71.9
+   ],
+   "props": {
+    "enter": "fade"
+   },
+   "z": 2
+  },
+  {
+   "id": "cat",
+   "type": "page_card",
+   "src": [
+    67.95,
+    71.9
+   ],
+   "z": 5,
+   "props": {
+    "img": "assets/gh_v_full.png",
+    "frame": {
+     "x": 60,
+     "y": 380,
+     "w": 960,
+     "h": 720
+    },
+    "label": "The cookbook",
+    "url": "statur.co · github",
+    "view": {
+     "x": 80,
+     "y": 2600,
+     "w": 1200
+    },
+    "view_to": {
+     "x": 80,
+     "y": 3200,
+     "w": 1200
+    },
+    "move": [
+     0.4,
+     2.0
+    ],
+    "highlights": [
+     {
+      "x": 131,
+      "y": 3323,
+      "w": 1314,
+      "h": 362,
+      "t_src": 70.7,
+      "dur": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "id": "p_loop",
+   "type": "panel",
+   "src": [
+    85.6,
+    88.07
+   ],
+   "props": {},
+   "z": 2
+  },
+  {
+   "id": "loop",
+   "type": "loop_diagram",
+   "src": [
+    85.6,
+    88.07
+   ],
+   "z": 5,
+   "props": {
+    "label": "The cookbook loop",
+    "title": "Editing is step one",
+    "label_y": 290,
+    "cy": 800,
+    "r": 225,
+    "nodes": [
+     {
+      "text": "Make",
+      "sub": "edit, post"
+     },
+     {
+      "text": "Measure",
+      "sub": "statur-social-analytics"
+     },
+     {
+      "text": "Diagnose",
+      "sub": "statur-video-post-mortem"
+     },
+     {
+      "text": "Decide",
+      "sub": "statur-format-review"
+     }
+    ],
+    "active": 0,
+    "draw": [
+     0.2,
+     1.3
+    ],
+    "here": "You are here"
+   }
+  },
+  {
+   "id": "end",
+   "type": "end_card",
+   "out": [
+    88.75,
+    91.0
+   ],
+   "z": 70,
+   "props": {
+    "lockup": "[•] STATUR.",
+    "headline": "Free skills to edit and post with Claude",
+    "url": "statur.co/ai-video-editor",
+    "sub": "Open source · MIT"
+   }
+  }
+ ],
+ "captions": {
+  "props": {
+   "y": 1420,
+   "size": 64,
+   "max_width": 700,
+   "max_chars": 16,
+   "lines": 2
+  },
+  "emph_src": [
+   [
+    6.55,
+    7.3
+   ],
+   [
+    8.5,
+    9.1
+   ],
+   [
+    21.85,
+    23.6
+   ],
+   [
+    27.4,
+    28.2
+   ],
+   [
+    35.45,
+    36.0
+   ],
+   [
+    43.0,
+    43.6
+   ],
+   [
+    61.0,
+    61.5
+   ],
+   [
+    63.25,
+    63.9
+   ],
+   [
+    70.8,
+    71.6
+   ],
+   [
+    80.88,
+    81.6
+   ],
+   [
+    86.15,
+    86.7
+   ],
+   [
+    96.4,
+    96.95
+   ]
+  ]
+ },
+ "watermark": {
+  "text": "statur.co/ai-video-editor",
+  "size": 26,
+  "opacity": 0.45,
+  "from_src": 3.3,
+  "to_src": 96.7,
+  "seed": 11
+ },
+ "subject_keys": [
+  {
+   "src": 21.55,
+   "s": 0.84,
+   "ax": 540,
+   "ay": 1920,
+   "dur": 0.45,
+   "ease": "inOutCubic"
+  },
+  {
+   "src": 25.02,
+   "s": 1.0,
+   "dur": 0.08
+  }
+ ],
+ "camera_keys": [
+  {
+   "src": 25.1,
+   "z": 1.1,
+   "fx": 540,
+   "fy": 900,
+   "dur": 0.01
+  },
+  {
+   "src": 25.14,
+   "z": 1.0,
+   "dur": 0.55,
+   "ease": "outCubic"
+  },
+  {
+   "src": 27.38,
+   "z": 1.1,
+   "fx": 540,
+   "fy": 900,
+   "dur": 0.16,
+   "ease": "outCubic"
+  },
+  {
+   "src": 28.25,
+   "z": 1.0,
+   "dur": 0.2
+  },
+  {
+   "src": 36.27,
+   "z": 1.0,
+   "dur": 0.01
+  },
+  {
+   "src": 36.3,
+   "z": 1.06,
+   "fx": 540,
+   "fy": 950,
+   "dur": 3.4,
+   "ease": "linear"
+  },
+  {
+   "src": 44.29,
+   "z": 1.0,
+   "dur": 0.01
+  },
+  {
+   "src": 45.0,
+   "z": 1.07,
+   "fx": 540,
+   "fy": 950,
+   "dur": 0.25,
+   "ease": "outCubic"
+  },
+  {
+   "src": 47.55,
+   "z": 1.0,
+   "dur": 0.3
+  },
+  {
+   "src": 60.95,
+   "z": 1.1,
+   "fx": 540,
+   "fy": 960,
+   "dur": 0.2,
+   "ease": "outCubic"
+  },
+  {
+   "src": 62.0,
+   "z": 1.0,
+   "dur": 0.2
+  },
+  {
+   "src": 82.92,
+   "z": 1.05,
+   "fx": 540,
+   "fy": 960,
+   "dur": 0.01
+  },
+  {
+   "src": 83.0,
+   "z": 1.0,
+   "dur": 2.4,
+   "ease": "linear"
+  },
+  {
+   "src": 88.25,
+   "z": 1.0,
+   "dur": 0.01
+  },
+  {
+   "src": 89.72,
+   "z": 1.13,
+   "fx": 540,
+   "fy": 960,
+   "dur": 0.16,
+   "ease": "outCubic"
+  },
+  {
+   "src": 90.75,
+   "z": 1.0,
+   "dur": 0.3
+  }
+ ],
+ "inserts": [
+  {
+   "file": "assets/LIVE02_broll_1230.mp4",
+   "src": [
+    48.15,
+    51.0
+   ],
+   "rect": "full",
+   "ken_burns": 0.05,
+   "transition": "slide",
+   "in": 0.28,
+   "seek": 0.0,
+   "focus_y": 0.35
+  }
+ ],
+ "sfx": [
+  {
+   "src": 0.3,
+   "name": "impact",
+   "gain_db": -12,
+   "why": "open"
+  },
+  {
+   "src": 8.15,
+   "name": "pop",
+   "gain_db": -17,
+   "why": "label"
+  },
+  {
+   "src": 21.5,
+   "name": "whoosh_low",
+   "gain_db": -17,
+   "why": "subject pulls back"
+  },
+  {
+   "src": 25.1,
+   "name": "whoosh_low",
+   "gain_db": -13,
+   "why": "cut to the room"
+  },
+  {
+   "src": 38.7,
+   "name": "riser_soft",
+   "gain_db": -18,
+   "why": "before the reveal"
+  },
+  {
+   "src": 40.02,
+   "name": "impact",
+   "gain_db": -14,
+   "why": "reveal"
+  },
+  {
+   "src": 48.15,
+   "name": "swish",
+   "gain_db": -15,
+   "why": "B-roll in"
+  },
+  {
+   "src": 51.0,
+   "name": "swish_out",
+   "gain_db": -19,
+   "why": "B-roll out"
+  },
+  {
+   "src": 60.95,
+   "name": "whoosh_low",
+   "gain_db": -20,
+   "why": "punch-in"
+  },
+  {
+   "src": 89.72,
+   "name": "whoosh_low",
+   "gain_db": -17,
+   "why": "punch-in"
+  },
+  {
+   "src": 27.38,
+   "name": "whoosh_low",
+   "gain_db": -18,
+   "why": "punch-in on consistency"
+  }
+ ],
+ "music": {
+  "bpm": 100,
+  "key": "A",
+  "drops_out": [
+   [
+    33.5,
+    35.9
+   ]
+  ]
+ }
+}

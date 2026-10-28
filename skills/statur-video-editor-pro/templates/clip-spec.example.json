@@ -1,0 +1,97 @@
+{
+ "id": "C01",
+ "version": 1,
+ "slug": "claude-edits-my-videos",
+ "title": "Claude edits and posts my videos (pro edit test)",
+ "segments": [
+  {
+   "s": 0.3,
+   "e": 96.95,
+   "label": "whole take"
+  }
+ ],
+ "cut": [
+  [
+   34.27,
+   34.7
+  ],
+  [
+   82.3,
+   82.8
+  ]
+ ],
+ "fix": [
+  {
+   "s": 15.5,
+   "e": 16.4,
+   "text": "spreading their ideas"
+  },
+  {
+   "s": 17.8,
+   "e": 18.4,
+   "text": "virality."
+  },
+  {
+   "s": 20.3,
+   "e": 20.5,
+   "text": "videos"
+  },
+  {
+   "s": 26.5,
+   "e": 26.9,
+   "text": "founders"
+  },
+  {
+   "s": 40.6,
+   "e": 40.9,
+   "text": "developed"
+  },
+  {
+   "s": 43.0,
+   "e": 43.3,
+   "text": "cookbook."
+  },
+  {
+   "s": 45.0,
+   "e": 45.4,
+   "text": "functionalities"
+  },
+  {
+   "s": 77.2,
+   "e": 77.5,
+   "text": "founder,"
+  },
+  {
+   "s": 78.4,
+   "e": 78.6,
+   "text": "get"
+  },
+  {
+   "s": 89.7,
+   "e": 90.0,
+   "text": "take your"
+  },
+  {
+   "s": 95.6,
+   "e": 95.8,
+   "text": "AI"
+  }
+ ],
+ "zoom": {
+  "enabled": false
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30
+ },
+ "changelog": [
+  "v1: whole take, two false starts cut (in, So), caption spelling fixes"
+ ],
+ "silence": {
+  "min_gap": 0.24,
+  "pad_in": 0.05,
+  "pad_out": 0.1,
+  "max_keep_gap": 0.16
+ }
+}
