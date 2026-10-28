@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.6.2
+
+- AGENTS.md holds the repo rules; CLAUDE.md only imports it, so every coding agent reads the same file.
+
 ## 2026-10-28 · v2.6.1
 
 - blueprint/SPEC.md 1.1: independent review. Links to README, START.md and templates; private repo merged by a human, nobody pushes to main; C08 (cloud scheduled task read and push observed), C09 (shallow clones fetch one branch); C10 (cloud git proxy: no tag push, no branch deletion; local merges skip auto-delete); F14 and E13 (branch hygiene); acceptance tests reused by ID, not copied (P1); T06 machine file only on a personal computer. Templates: CLAUDE.md ends with branch and pull request, git-sync.sh never pushes main.
