@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.0.1"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -32,6 +32,7 @@ What the plan and the edit need from it, ask once for what is missing:
 - The Downloads folder only if a browser download lands there, and the Google Drive for desktop folder only if a source lives in Drive. Ask for each one, one time, with the reason.
 - Platforms: the user signs in in their own browser. Never ask for a password, never copy cookies or tokens.
 - Never delete the user's files. Temporary files go to a temp folder outside synced folders, and the agent removes only what it created.
+- Live replays downloaded by the browser land in Downloads: connect that folder once at setup, next to the working folder. An agent cannot grant itself folder access, and a scheduled run has no one to approve it.
 - Never move a file out of a synced folder (Google Drive, Dropbox, OneDrive): it disappears from the cloud for everyone. Copy it.
 - Some sandboxes stop a command after a few minutes or forbid deletions in connected folders: use `--budget` on the render scripts and re-run until they print DONE.
 

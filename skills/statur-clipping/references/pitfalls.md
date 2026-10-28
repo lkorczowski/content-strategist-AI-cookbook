@@ -26,6 +26,8 @@ Each item below cost a render on the first real run (a 1:40 TikTok live in Frenc
 
 ## Machines and folders
 
+- **Two browsers connected.** When the same account has the browser extension connected on two computers, the agent can drive the wrong one: the replay then lands in the Downloads folder of the other computer, out of reach. Before any browser step, list the connected browsers and select the one on the computer that holds the working folder, by its device id (display names change). Write that id in a machine file at the root of the working folder so every session and every routine picks the same browser.
+- **The download folder is outside the working folder.** Browsers save to Downloads, and an agent cannot grant itself access to a folder: in auto mode the request is refused, and no one is there to approve it during a night run. Connect the Downloads folder once at setup (or attach it to the scheduled task when you create it), then the routine copies each replay from Downloads to the working folder. Moving the file with the file manager instead breaks as soon as the screen locks.
 - **Render where the footage is.** A 4K master never travels through a chat tool or a 20 MB upload limit. Only the review copies travel.
 - **Sandboxes that stop commands.** Some agent sandboxes stop a command after a few minutes and kill background processes. Run `render_all.py --budget 150` and re-run until it prints ALL_DONE: each run resumes the clip it stopped.
 - **Disk.** Rendered pieces weigh about 5 MB per second of clip; a 2-minute clip needs about 600 MB of temp space. render_all.py removes them after each clip unless `--keep-temp`. Keep the temp folder outside synced folders.
