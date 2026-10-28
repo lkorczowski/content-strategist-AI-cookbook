@@ -22,6 +22,7 @@ Each item below cost a render on the first real run (a 1:40 TikTok live in Frenc
 ## Picture
 
 - **Captions over the face.** Look at a contact sheet before the first render. A selfie live often has the face in the lower half: move the crop down (`frame.crop_y` 0.6 on a 960x1920 replay) and the captions to 0.75 of the height, clear of the platform's bottom text and buttons.
+- **A walking selfie live.** Arm's length, walking: the face fills the lower two thirds of the frame and captions under the chin land on the mouth. On the first run all six v1 clips had captions on the face. Look at one poster before rendering the batch; here captions at 0.28 of the height (above the head) and the hook at 0.11 cleared it.
 - **Hook too small to read on a phone.** Hook size 90 to 100 on 1080x1920, two lines at most, one natural sentence. Two short punchy sentences read as AI-written.
 
 ## Machines and folders

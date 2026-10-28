@@ -4,7 +4,7 @@ Newest first. One line per change: date, what changed, version.
 
 ## 2026-10-28 · v2.5.1
 
-- statur-clipping 2.0.1: Downloads folder connected once at setup (an agent cannot grant itself folder access, a night run has no one to approve it), two connected browsers (select the one on the computer that holds the footage, by device id, kept in a machine file). Found on the first unattended run of a TikTok live, 2026-10-28.
+- statur-clipping 2.0.1: Downloads folder connected once at setup (an agent cannot grant itself folder access, a night run has no one to approve it), two connected browsers (select the one on the computer that holds the footage, by device id, kept in a machine file), captions above the head on walking selfie lives. Found on the first unattended run of a TikTok live, 2026-10-28.
 
 ## 2026-10-28 · v2.5.0
 
