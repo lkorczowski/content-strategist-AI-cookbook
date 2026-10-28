@@ -6,6 +6,7 @@ Newest first. One line per change: date, what changed, version.
 
 - statur-clipping 2.1.0: section 1 rewritten as a one-message setup checklist (working folder, Downloads, browser extension on the computer that holds the footage, Drive, tools, the routine approved once).
 - statur-clip-plan 2.1.0: captions in another language than the speech, one fix per phrase that never crosses a pause, a cut or a segment, checked against the original cut list.
+- statur-clip-edit 2.1.0 and statur-clipping render_all.py: an upload copy per clip (TRAVAIL <code>/upload/<code>-<id>-v<version>.mp4, 4.5 Mbps), named with the video id used to track posts. Found while posting six LIVE02 clips on TikTok and YouTube (issue #17).
 - statur-clip-review 2.1.0: the review page shows only the latest version of each clip when it is an improvement; two versions only when they are options to choose from.
 
 ## 2026-10-28 · v2.5.1

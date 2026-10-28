@@ -10,6 +10,8 @@ Usage:
                 [--sync sync.json] [--audio audio16k.flac] [--fonts DIR] [--tmp /tmp/clips] [--budget 150] SPEC [SPEC ...]
 Outputs: TRAVAIL <code>/<id>_v<version>/ (master, captions, review copy) and
          EXPORTS <code>/<code>_<id>_v<version>_<slug>.mp4 + .srt
+         TRAVAIL <code>/upload/<code>-<id>-v<version>.mp4: upload copy for posting (H.264 4.5 Mbps, AAC 160k,
+         faststart), named with the video id used by distribution tracking. --no-upload-copy disables it.
 The root of EXPORTS keeps only the newest version of each clip: older versions (.mp4 and .srt) move to
 EXPORTS <code>/archives/ (moved, never deleted). Move a clip you drop to archives/ yourself. --keep-old disables it.
 """
@@ -46,6 +48,7 @@ def main():
     ap.add_argument("--watermark", default=None, help="default watermark text for every clip (a spec's own text wins)")
     ap.add_argument("--keep-temp", action="store_true", help="keep the rendered pieces (faster re-renders, more disk)")
     ap.add_argument("--keep-old", action="store_true", help="leave older versions at the root of EXPORTS (default: move them to EXPORTS/archives/)")
+    ap.add_argument("--no-upload-copy", action="store_true", help="do not write TRAVAIL <code>/upload/<code>-<id>-v<version>.mp4")
     ap.add_argument("specs", nargs="+")
     a = ap.parse_args()
     t0 = time.time()
@@ -90,10 +93,21 @@ def main():
         name = f"{a.code}_{cid}_v{v}_{slug}"
         shutil.copy(os.path.join(out, f"{cid}_v{v}_master.mp4"), os.path.join(exports, name + ".mp4"))
         shutil.copy(os.path.join(out, "captions.srt"), os.path.join(exports, name + ".srt"))
+        upload = None
+        if not a.no_upload_copy:      # masters are ~30 Mbps: too heavy to post through a browser
+            up_dir = os.path.join(work, "upload"); os.makedirs(up_dir, exist_ok=True)
+            upload = os.path.join(up_dir, f"{a.code}-{cid}-v{v}.mp4")
+            u = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(out, f"{cid}_v{v}_master.mp4"),
+                                "-c:v", "libx264", "-preset", "veryfast", "-crf", "21", "-maxrate", "4500k", "-bufsize", "9000k",
+                                "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "160k", upload],
+                               capture_output=True, text=True)
+            if u.returncode != 0:
+                print(json.dumps({"clip": f"{cid}_v{v}", "status": "FAILED", "error": "upload copy: " + u.stderr[-400:]})); pending += 1; continue
         open(marker, "w").write(sha)
         archived = [] if a.keep_old else archive_older(exports, a.code, cid)
         rep = json.load(open(os.path.join(out, "render_report.json")))
-        print(json.dumps({"clip": f"{cid}_v{v}", "status": "DONE", "duration": rep["duration"], "export": name + ".mp4", "archived": archived}))
+        print(json.dumps({"clip": f"{cid}_v{v}", "status": "DONE", "duration": rep["duration"], "export": name + ".mp4",
+                          "upload": os.path.basename(upload) if upload else None, "archived": archived}))
     print("ALL_DONE" if pending == 0 else f"PENDING {pending}: run again")
 
 if __name__ == "__main__":

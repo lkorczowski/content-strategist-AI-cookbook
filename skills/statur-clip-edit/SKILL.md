@@ -4,7 +4,7 @@ description: Render a planned clip from a long recording with ffmpeg and no edit
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -42,7 +42,7 @@ python3 render_all.py --project "$HOME/Clips/2026-10-24 LIVE01 Title" --code LIV
   --sync sync.json --audio audio16k.flac --fonts FONTS_DIR --tmp /tmp/clips [--budget 150] specs/C01.json specs/C05.json ...
 ```
 
-Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_out.json` (the words the edit keeps, on the clip's timeline), `cutlist.json`, `render_report.json` (cut map, loudness), `review/C01_v1_review.mp4` (under 19.3 MiB) and a poster. render_all.py also writes `EXPORTS LIVE01/LIVE01_C01_v1_slug.mp4` and its `.srt`, and moves older versions of that clip to `EXPORTS LIVE01/archives/`, so the root holds only the version ready to post (`--keep-old` disables it). On a machine that stops long commands, keep `--budget` and re-run until it prints DONE or ALL_DONE.
+Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_out.json` (the words the edit keeps, on the clip's timeline), `cutlist.json`, `render_report.json` (cut map, loudness), `review/C01_v1_review.mp4` (under 19.3 MiB) and a poster. render_all.py also writes `EXPORTS LIVE01/LIVE01_C01_v1_slug.mp4` and its `.srt`, and moves older versions of that clip to `EXPORTS LIVE01/archives/`, so the root holds only the version ready to post (`--keep-old` disables it). It also writes an upload copy `TRAVAIL LIVE01/upload/LIVE01-C01-v1.mp4` (H.264 4.5 Mbps, about 40 to 70 MB for 1 to 2 minutes): post that file, never the master, which is about 30 Mbps and too heavy for a browser upload. Its name is the video id that distribution tracking uses (`--no-upload-copy` disables it). On a machine that stops long commands, keep `--budget` and re-run until it prints DONE or ALL_DONE.
 
 ## Edit style "simple" (default)
 
