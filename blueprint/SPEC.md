@@ -1,6 +1,6 @@
 # EVEREST OS · specification
 
-Version 1.0 · 2026-10-28 · public, by Dr. Louis Korczowski (STATUR). Generic specification of the AI operating system described in this blueprint. It contains no company data. Each private instance keeps its own status table (which requirement passes, which issue tracks a gap) in its own repo and links here instead of copying this text.
+Version 1.1 · 2026-10-28 · public, by Dr. Louis Korczowski (STATUR). Generic specification of the AI operating system described in this blueprint ([README.md](README.md)). Client manual: [START.md](START.md). Templates for a private repo: [templates/](templates/). It contains no company data. Each private instance keeps its own status table (which requirement passes, which issue tracks a gap) in its own repo and links here instead of copying this text.
 
 Who this is for:
 - A company deciding whether to adopt the system: sections 1, 2 and 4 say what it does and what it does not.
@@ -31,7 +31,7 @@ One assistant that knows the company, works the same way in every tool (chat on 
 
 | Store | Holds | Written by | Read by |
 |---|---|---|---|
-| Private repo, main branch | rules file (AGENTS.md), knowledge base (kb/), private skills, routine prompts, the instance's status table | agents through branches and pull requests, humans | every session that can attach the repo |
+| Private repo, main branch | rules file (AGENTS.md), knowledge base (kb/), private skills, routine prompts, the instance's status table | agents through branches and pull requests, merged by a human; nobody pushes to main | every session that can attach the repo |
 | Tracker (Airtable or similar) | tasks, decisions, blockers, log, a queue of "pending repo writes" | every session, every routine | every session at start |
 | This public cookbook | method: skills, playbooks, this specification, START.md | the method owner | every instance |
 | Entry points | the short bootstrap of P2 | a human, once | the tool that loads it |
@@ -42,7 +42,7 @@ One assistant that knows the company, works the same way in every tool (chat on 
 | Orchestrator | Reaches the repo | Notes |
 |---|---|---|
 | Coding session (Claude Code, Codex, Cursor) started on the repo | yes, from the start | Reads AGENTS.md through CLAUDE.md (`@AGENTS.md`). |
-| Scheduled task | yes, if its prompt asks for the repo by name | The stored prompt is the user's request for that run. To verify per platform (test T12). |
+| Scheduled task | yes, if its prompt asks for the repo by name | The stored prompt is the user's request for that run. Observed on Claude cloud scheduled tasks (C08); other platforms: test T12. |
 | Chat in a project (Claude, ChatGPT) | only when the user asks for it in a message | See constraint C01. |
 | Session linked to a personal computer | through the local clone | Push rules for local clones: the instance's rule 0. |
 | Client project without a repo (level 0 below) | no | Uses START.md from this cookbook and uploaded files. |
@@ -73,6 +73,7 @@ One assistant that knows the company, works the same way in every tool (chat on 
 | F11 | Skills always at their latest version | 1 | gap: see C03 |
 | F12 | Access tiers (contractor, read-only employee, agent with write access, client data split) | 1 + 2 | to design |
 | F13 | Real-time client channel | any | out of scope for now |
+| F14 | Weekly drift check: rules checks, caches against the main commit, and per-repo branch hygiene (merged, stale, open branches) | 1 | specified (E13) |
 
 ## 5. Edge cases
 
@@ -90,6 +91,7 @@ One assistant that knows the company, works the same way in every tool (chat on 
 | E10 | Quick question on a cheap model | Reads the machine index, then one section, never the whole base. |
 | E11 | A client shares documents with the assistant | They stay in the client's project; nothing goes to a public page. |
 | E12 | Two tools edit the same file | Branches and pull requests; routine state never lives in git with several writers. |
+| E13 | Work branches pile up | A merged branch is deleted at merge. An unmerged branch idle for 7 days without a pull request is kept as a tag `archive/<branch>`, then deleted. A weekly check counts merged, stale and open branches and deletes nothing. |
 
 ## 6. Platform constraints (observed, dated, may change)
 
@@ -104,10 +106,12 @@ These are facts about the tools, not choices. Each was observed on the date give
 | C05 | Creating a scheduled task from a session needs an explicit request from the user in that session. | Routines are created on a human's request, then run alone. |
 | C06 | A git client inside a sandboxed view of a personal computer can read but should not commit (no credentials, lock files left behind). | Push from a cloud clone or from the computer's own terminal. |
 | C07 | Files an assistant writes in a ChatGPT or Claude project conversation are not added to the project's knowledge. | At level 0, STATE.md and kb files are re-uploaded by hand. |
+| C08 | A Claude cloud scheduled task whose stored prompt names the repo attached it, read the rules file and pushed a test branch with no human, in under a minute. | Level 3 routines can run in the cloud. Creating the task still needs C05. |
+| C09 | `git clone --depth 1` implies `--single-branch`: the clone fetches only the default branch (git documentation). | Before branching, add the fetch refspec `+refs/heads/*:refs/remotes/origin/*`, or a pushed branch has no remote ref and checks report false "unpushed commit" alerts. Judge whether a branch is merged on full history. |
 
 ## 7. Acceptance tests
 
-An instance copies this list into its own tests file and records date, result and link for each.
+An instance reuses these IDs in its own tests file (P1: it links here and does not copy the text) and records date, result and link for each.
 
 | ID | Test | Pass when |
 |---|---|---|
@@ -116,7 +120,7 @@ An instance copies this list into its own tests file and records date, result an
 | T03 | No machine path in any routine prompt | Automatic check passes |
 | T04 | Phone chat, question on a canonical fact | Answer cites the source file, invents nothing, says which copy or repo it read |
 | T05 | Same question in ChatGPT and in Claude | Same facts, same sources |
-| T06 | Coding session on the repo | Reads the rules file and the machine identity file before any edit |
+| T06 | Coding session on the repo | Reads the rules file, and on a personal computer the machine identity file, before any edit |
 | T07 | Forgotten task (E01) | Announced first |
 | T08 | Blocked task (E02) | Refused, subtask named |
 | T09 | Postponed decision (E03) | Pending row with review date |

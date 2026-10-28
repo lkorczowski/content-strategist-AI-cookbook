@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.6.1
+
+- blueprint/SPEC.md 1.1: independent review. Links to README, START.md and templates; private repo merged by a human, nobody pushes to main; C08 (cloud scheduled task read and push observed), C09 (shallow clones fetch one branch); F14 and E13 (branch hygiene); acceptance tests reused by ID, not copied (P1); T06 machine file only on a personal computer. Templates: CLAUDE.md ends with branch and pull request, git-sync.sh never pushes main.
+
 ## 2026-10-28 · v2.6.0
 
 - blueprint/SPEC.md 1.0: specification of EVEREST OS (goal, nine principles, stores, orchestrators, adoption levels, feature catalog, edge cases, dated platform constraints, acceptance tests T01 to T14). Instances keep their status table in their own repo and link here.
