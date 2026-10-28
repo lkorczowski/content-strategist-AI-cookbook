@@ -14,7 +14,7 @@
 
 - Duration off the plan by more than 0.25 s.
 - Frozen stretches (a still card can be intended: check it).
-- Graphics in a platform UI zone on several sampled frames.
+- Graphics in a platform UI zone on several sampled frames. The gate checks the hard UI zones (top 240 px, right column x 960 to 1080 for y 840 to 1700, bottom below y 1700); the target area for text is tighter (references/levels.md, safe areas).
 
 ## What the agent looks at, every time
 

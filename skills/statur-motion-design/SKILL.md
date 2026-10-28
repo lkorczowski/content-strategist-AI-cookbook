@@ -46,7 +46,7 @@ Catalog with every prop: references/templates.md. In short:
 ## Design rules that keep it native
 
 - One idea per card, readable in the time of its sentence. Look at a still of every card before the full render.
-- Text in the safe area: no text in the top 240 px, nothing in the right column (x over 960) below y 840 on a 1080x1920 frame; keep the caption zone free on cards.
+- Text in the safe area of TikTok and Reels on a 1080x1920 frame: y 269 to 1248, x 120 to 960 above y 840 and x 120 to 780 below it; keep the caption zone free on cards. Full-screen panels may cover the zones, their text may not.
 - Motion has a reason: an element enters when its word is said, a highlight draws when the claim is made, a number counts while it is spoken.
 - Every entrance is a visual event that may carry a sound effect (statur-sound-design); quiet exits.
 - Numbers on screen carry their source line (footnote template).

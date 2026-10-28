@@ -8,7 +8,8 @@ Checks
   loudness   integrated -15 to -13 LUFS, true peak at most -1.0 dBTP
   picture    black or frozen stretches longer than 0.5 s outside the planned end card
   safe areas over-layer pixels (text, cards) in the platform UI zones, outside full-screen panels:
-             top 0-240 px, right column x 960-1080 for y 840-1700, bottom y over 1700 (1080x1920 frame)
+             top 0-240 px, right column x 960-1080 for y 840-1700, bottom y over 1700 (1080x1920 frame);
+             these are the hard UI zones, looser than the target area for text in references/levels.md
   speech     optional: words heard back (qa_clip.py of statur-clipping) at 90% or more
   sheet      16 frames with their times, for the agent to look at
 
