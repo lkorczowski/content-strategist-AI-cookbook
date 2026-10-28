@@ -9,6 +9,14 @@ Newest first. One line per change: date, what changed, version.
 - Same release, after the second and third versions of the test edit: speaker card under full-screen panels (explainer split layout, `insets`, drawn after the overlays, head found in the matte), caption `y_keys` that carry any caption prop, soft plate edges for a scaled speaker (`--edge-feather`), motion_render.py stops when a brand font is missing and keeps every rendered frame in the manifest after a partial render, an "Update this skill" section (new tools, new evidence, expert rules, traps), seven new pitfalls, layouts and proof devices in the reference style card.
 - Same release, after an independent fact-check: levels.md scopes the 2.5x emoji result to direct-response ads, marks which agent times were measured (levels 1 and 4) and which are estimates, gives level 4 as 35 to 45 minutes like SKILL.md and the playbook card, and links pip-and-pop to its DOI; the text safe area (y 269 to 1248, x 120 to 960 above y 840, x 120 to 780 below) is now the same in levels.md, statur-motion-design and the handbook, and qa.md says the gate checks the looser hard UI zones; SKILL.md says the matte covers the whole recording (range matting on the roadmap).
 
+## 2026-10-28 · v2.6.2
+
+- AGENTS.md holds the repo rules; CLAUDE.md only imports it, so every coding agent reads the same file.
+
+## 2026-10-28 · v2.6.1
+
+- blueprint/SPEC.md 1.1: independent review. Links to README, START.md and templates; private repo merged by a human, nobody pushes to main; C08 (cloud scheduled task read and push observed), C09 (shallow clones fetch one branch); C10 (cloud git proxy: no tag push, no branch deletion; local merges skip auto-delete); F14 and E13 (branch hygiene); acceptance tests reused by ID, not copied (P1); T06 machine file only on a personal computer. Templates: CLAUDE.md ends with branch and pull request, git-sync.sh never pushes main.
+
 ## 2026-10-28 · v2.6.0
 
 - blueprint/SPEC.md 1.0: specification of EVEREST OS (goal, nine principles, stores, orchestrators, adoption levels, feature catalog, edge cases, dated platform constraints, acceptance tests T01 to T14). Instances keep their status table in their own repo and link here.
