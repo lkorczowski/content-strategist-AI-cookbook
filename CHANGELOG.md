@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-29 · v2.7.0
+
+- New skill statur-personal-brand-scale 1.0.0 and playbook card personal-brand-levels: the Korczowski scale of personal branding (Type 0 to Type 4), 16-line evidence score with decimals, trap per type, 90-day plan to the next type. Page: https://statur.co/personal-brand-levels/.
+
 ## 2026-10-29 · v2.6.3
 
 - statur-clipping 2.0.1 and statur-clip-edit 2.0.1: `--audio-preroll` in clip_render.py and render_all.py (audio decoded from its own short seek when a corrupt AAC stretch silences the start of a piece), new pitfall, quality check of translated captions against the source-language words. Found on a 2 h 15 TikTok replay.

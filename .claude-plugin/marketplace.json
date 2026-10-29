@@ -198,6 +198,15 @@
       "skills": [
         "./skills/statur-idea-war-map"
       ]
+    },
+    {
+      "name": "statur-personal-brand-scale",
+      "description": "The Korczowski scale of personal branding: score from Type 0 to Type 4 on evidence, the trap of each type and the 90-day plan to the next one.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-personal-brand-scale"
+      ]
     }
   ]
 }
