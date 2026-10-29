@@ -4,7 +4,7 @@ description: Render a planned clip from a long recording with ffmpeg and no edit
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.0.1"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -70,6 +70,8 @@ It transcribes the clip again and aligns it with the words the edit meant to kee
 - A word heard at a cut that the spec removed: the cut is too loose (or a hidden word, which is expected). A planned word missing at a cut: the cut is too tight.
 - A caption that shows words the speaker did not say, or misses words they said: fix the spec. Map a clip time back to the source with `cutlist.json`, read the source words, and when unsure transcribe a 2 to 3 second window alone.
 - Look at the first frame after every cut (grey frames, framing, zoom) and at ten moments with captions, hook, labels and watermark burned in.
+
+Captions translated into another language (fixes that replace each phrase): the words_out.json of the render holds the translation, so compare the audio with the source-language words instead: dry-run the same spec with an empty `fix` list (`--plan-only`) and pass that words_out.json to qa_clip.py.
 
 Write what the check found in the spec's `check` list, so the reviewer knows where to look.
 

@@ -395,6 +395,7 @@ def main():
     ap.add_argument("--plan-only", action="store_true", help="write the cut list, captions and words, then stop (no video)")
     ap.add_argument("--watermark", default=None, help="watermark text (creator handle or domain); the spec's watermark.text wins; 'none' disables")
     ap.add_argument("--audio", default=None, help="transcript audio (audio16k.flac): moves each cut-in back to the real speech onset")
+    ap.add_argument("--audio-preroll", type=float, default=None, help="seconds of audio decoded before each cut, from a second, shorter seek (default: same as the video pre-roll); use about 0.8 when a corrupt audio stretch silences the start of a piece")
     ap.add_argument("--sync", default=None, help="sync map from sync_check.py (or a constant offset in seconds) when the transcript audio does not follow the video's timeline")
     a = ap.parse_args()
     t_start = time.time()
@@ -420,7 +421,7 @@ def main():
     os.makedirs(a.out, exist_ok=True)
     ivs = keep_intervals(words, spec, a.audio)
     kept_words = keep_intervals.kept
-    fp = hashlib.sha1(json.dumps([[iv[:2] for iv in ivs], fr, zm, PREROLL, info["w"], info["h"], str(a.sync), 3], sort_keys=True).encode()).hexdigest()[:10]
+    fp = hashlib.sha1(json.dumps([[iv[:2] for iv in ivs], fr, zm, PREROLL, a.audio_preroll, info["w"], info["h"], str(a.sync), 3], sort_keys=True).encode()).hexdigest()[:10]
     tmp = os.path.join(a.tmp or os.path.join(a.out, "_tmp"), f"{spec.get('id', 'clip')}_v{spec.get('version', 1)}_{fp}")
     if a.force:
         shutil.rmtree(tmp, ignore_errors=True)
@@ -484,13 +485,16 @@ def main():
         # audio: the start is found on timestamps, the length is counted in samples. Live replays carry
         # jittery audio timestamps, so a duration measured on timestamps gives pieces a few ms too long
         # or too short, and the error adds up over the concat (up to 0.1 s of lip-sync drift on a 1 min clip)
+        apre = pre if a.audio_preroll is None else min(a.audio_preroll, start)
         fc = (f"[0:v]fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
               f"crop={cw}:{ch}:{cx}:{cy},scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[v];"
-              f"[0:a]atrim=start={pre:.4f}:duration={dur + 0.25:.4f},asetpts=PTS-STARTPTS,aresample=48000,asetpts=N/SR/TB,"
+              f"[{0 if apre == pre else 1}:a]atrim=start={apre:.4f}:duration={dur + 0.25:.4f},asetpts=PTS-STARTPTS,aresample=48000,asetpts=N/SR/TB,"
               f"aformat=sample_fmts=s16:channel_layouts=stereo,apad=whole_len={ns},atrim=end_sample={ns},"
               f"afade=t=in:st=0:d={fade:.3f},afade=t=out:st={max(0, dur - fade):.4f}:d={fade:.3f}[a]")
-        cmd = ["ffmpeg", "-nostdin", "-y", "-v", "error", "-ss", f"{start - pre:.4f}", "-i", a.source,
-               "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "ultrafast",
+        cmd = ["ffmpeg", "-nostdin", "-y", "-v", "error", "-ss", f"{start - pre:.4f}", "-i", a.source]
+        if apre != pre:  # audio from its own, shorter seek: a corrupt AAC stretch inside the video pre-roll can silence the decoder
+            cmd += ["-ss", f"{start - apre:.4f}", "-i", a.source]
+        cmd += ["-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "ultrafast",
                "-crf", "10", "-c:a", "pcm_s16le"]
         if a.threads:
             cmd += ["-threads", str(a.threads)]

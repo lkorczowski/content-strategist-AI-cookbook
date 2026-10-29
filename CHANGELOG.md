@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-29 · v2.6.3
+
+- statur-clipping 2.0.1 and statur-clip-edit 2.0.1: `--audio-preroll` in clip_render.py and render_all.py (audio decoded from its own short seek when a corrupt AAC stretch silences the start of a piece), new pitfall, quality check of translated captions against the source-language words. Found on a 2 h 15 TikTok replay.
+
 ## 2026-10-28 · v2.6.2
 
 - AGENTS.md holds the repo rules; CLAUDE.md only imports it, so every coding agent reads the same file.
