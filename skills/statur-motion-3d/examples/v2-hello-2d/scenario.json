@@ -1,0 +1,6 @@
+{ "name": "v2-hello-2d", "engine": "2d", "sim_no": "002", "width": 720, "height": 1280, "fps": 30, "duration": 6, "grain": 0.05, "vignette": 0.18, "ui": "light", "hud_top": 92,
+  "title": { "text": "The *2D* stage", "to": 2.0 },
+  "hud": [{ "from": 0, "to": 4.5, "label": "SIM CLOCK", "value": "DEMO", "prog": [0, 1] }],
+  "captions": [[2.0, 4.5, "Paper, ink outlines, one *signal* color."]],
+  "end": { "from": 4.5, "title": "Your *what if* here", "question": "Write your own script." },
+  "music": { "bpm": 118, "key": "C", "mood": "playful", "sections": [[0, 4.5, "drive"], [4.5, 6, "end"]] }, "sfx": [["pop", 2.0], ["hit", 4.5]] }

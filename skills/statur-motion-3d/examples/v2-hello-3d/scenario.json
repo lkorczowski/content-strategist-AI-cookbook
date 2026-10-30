@@ -1,0 +1,8 @@
+{ "name": "v2-hello-3d", "engine": "3d", "sim_no": "001", "width": 720, "height": 1280, "fps": 30, "duration": 8,
+  "bloom": 0.4, "exposure": 1.0, "shadows": true, "grain": 0.05, "vignette": 0.35,
+  "title": { "text": "Hello from the *v2* engine", "to": 2.4 },
+  "hud": [{ "from": 0, "to": 6, "label": "SIM CLOCK", "value": "DEMO", "prog": [0, 1] }],
+  "captions": [[2.4, 4.4, "A host, a crowd, *real shadows.*"], [4.4, 6.0, "Captions pop. Keywords in *color.*"]],
+  "end": { "from": 6.0, "title": "Your *what if* here", "question": "Write your own script." },
+  "music": { "bpm": 112, "key": "F", "mood": "bright", "sections": [[0, 6, "drive"], [6, 8, "end"]] },
+  "sfx": [["ding", 2.4], ["whoosh", 4.4], ["hit", 6.0]] }

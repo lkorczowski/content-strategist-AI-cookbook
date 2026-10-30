@@ -1,10 +1,10 @@
 ---
 name: statur-motion-3d
-description: Make full 3D motion-design short videos in code, with no AI video model and no 3D software, such as the viral "What if X disappeared for 5 seconds?" format - a procedural low-poly world (park, skyline, crowd, hands, Earth, Moon) drawn in day, wireframe, glow and point-cloud modes, a ticking HUD clock, serif captions, a loop end card and a synthesized sound bed, rendered frame by frame on a CPU with Three.js, headless Chromium and ffmpeg. Use when someone wants a faceless 3D explainer or what-if video, a 3D background for a talking-head video, or to reproduce or adapt a 3D short format.
+description: Make full 3D motion-design short videos in code, with no AI video model and no 3D software, such as the viral "What if X disappeared for 5 seconds?" format - a procedural low-poly world (park, skyline, crowd, hands, Earth, Moon) drawn in day, wireframe, glow and point-cloud modes, a ticking HUD clock, serif captions, a loop end card and a synthesized sound bed, rendered frame by frame on a CPU with Three.js, headless Chromium and ffmpeg. Version 2 adds bloom and shadows, animated characters and a host mascot, a brand overlay, a 2D editorial stage and a synthesized music bed. Use when someone wants a faceless 3D explainer or what-if video, a 3D background for a talking-head video, or to reproduce or adapt a 3D short format.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.1.0"
+  version: "0.2.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -50,6 +50,26 @@ Measured on a 2 vCPU cloud machine (2026-10-30): 15 stills in under 10 s; 80 s a
 - `scenario.json` holds every text and time: title (keyword in `<hl>`), HUD segments (label, clock, sub-line, including an interpolated number), captions, end card, sound cues. Schema: references/scenario-schema.md.
 - `core.js` exposes `window.renderAt(t)`. Nothing depends on the wall clock, so frame 812 always renders the same picture, stills match the video, and any range can be re-rendered.
 - `scripts/sound.py` synthesizes the sound bed from the cues: ticks on the countdown, a boom at the event, a drone, crackles and swells, impacts, a space pad, silence before the end card. No samples, so there is no license to clear.
+
+## Engine v2 (production value)
+
+The first engine (engine/) reproduces a format. Engine v2 (engine2/) is for original videos that must look produced. Same principle (deterministic `renderAt(t)`, stills first), more craft:
+
+- Stage: `scenario.engine` is `3d` (Three.js with ACES tone mapping, UnrealBloom, optional soft shadows) or `2d` (a canvas the shots draw on). Workspace layout: one folder per video (`<workspace>/<video>/scenario.json` and `shots.js`), engine files at the workspace root. Setup: `bash scripts/setup_project2.sh <workspace>`.
+- Kit (`engine2/lib3d.js`): articulated people with poses (walk, march with a sign, cheer, phone, type, shrug, look up, point), a host mascot (`host()`, `hostPose()`), robots, city blocks with lit windows, streets, cars, lamps, facade screens, signs with text, aircraft, star fields, camera paths with handheld shake.
+- Overlay (`engine2/core2.js` + `index.html`): brand tag and site, title with a colored keyword (`*word*`), HUD readout (label, value, progress bar), punchy captions (scale-in, keyword in the signal color), a source line under any caption that carries a number, end card with a question, film grain and vignette. Light backgrounds: `"ui": "light"`; move the HUD with `"hud_top"`.
+- Sound (`scripts/sound2.py`): music bed by sections (pulse, drop, build, drive, wide, hold, end) in a mood (tense minor, bright or playful major), plus SFX on cuts (whoosh, blackout, thud, hit, pop, ding, crowd). Still no samples and no license to clear.
+- Render: `SUB=<video> node scripts/render2.js <workspace> stills 1,4,9 <out>` then `SUB=<video> node scripts/render2.js <workspace> video <out.mp4>`; mux with ffmpeg. Measured 2026-10-31 on 2 vCPU at 720x1280 30 fps: 3D with bloom about 2.2 frames per second (52 s in 10 to 11 min), 2D about 6 frames per second (52 s in 4 min).
+
+## Production value rules (learned from a 6/10 review)
+
+- No dead air: a caption on screen at all times after the title; gaps under 0.5 s; 2.5 to 3.5 s per caption; 45 to 60 s total.
+- Something moves in every frame: the camera (path plus light shake) and the characters (walk, react, cheer). A static crowd reads as a bug.
+- Cut every 1 or 2 captions to a new place or scale; each cut gets a whoosh and the HUD moves.
+- One signature across every video: the same tag, HUD, caption style and end card, and, when the brand has one, the host mascot in the hook and the last beat.
+- Light the characters: at night add a soft fill light that follows the camera; keep bloom under the level that turns domes and skies into white blobs.
+- Every number on screen carries its source line; every story beat survives a "really?" in the comments.
+- Before the full render, a contact sheet of one still every 2 to 3 s; fix every shot where the subject is not readable at phone size.
 
 ## Format recipe (what to keep from viral what-if shorts)
 

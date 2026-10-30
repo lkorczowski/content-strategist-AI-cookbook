@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-31 · v2.6.5
+
+- statur-motion-3d 0.2.0: engine v2 (bloom, soft shadows, ACES), animated people and a host mascot, robots and city kit, brand overlay with HUD, keyword captions and source lines, 2D editorial stage, synthesized music bed with SFX (sound2.py), production value rules from a 6/10 review, minimal 3D and 2D examples, new pitfalls.
+
 ## 2026-10-30 · v2.6.4
 
 - New skill statur-motion-3d 0.1.0: 3D motion-design shorts in code (Three.js scene kit with day, wireframe, glow and point-cloud modes, scenario.json for texts, HUD clock, captions and sound cues, deterministic CPU render with Chromium and ffmpeg, synthesized sound bed), format recipe of viral what-if shorts, pitfalls from the first real test.

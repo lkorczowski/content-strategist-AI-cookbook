@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:'Archivo';src:url(fonts/archivo-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'Archivo';src:url(fonts/archivo-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:'Archivo';src:url(fonts/archivo-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:'Archivo';src:url(fonts/archivo-latin-900-normal.woff2);font-weight:900}
+@font-face{font-family:'JBM';src:url(fonts/jetbrains-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'JBM';src:url(fonts/jetbrains-mono-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:'Corm';src:url(fonts/cormorant-latin-500-italic.woff2);font-style:italic;font-weight:500}
+:root{--ink:#0E0E0C;--paper:#F2EFE8;--sig:#E8501C}
+html,body{margin:0;padding:0;background:#000;overflow:hidden}
+#stage{position:relative;overflow:hidden;background:#000;width:720px;height:1280px}
+#gl,#c2d{position:absolute;left:0;top:0}
+.ov{position:absolute;left:0;top:0;width:720px;height:1280px;pointer-events:none}
+#white{background:var(--paper);opacity:0}
+#black{background:#000;opacity:0}
+#tag{position:absolute;left:34px;top:46px;font-family:'JBM';font-weight:700;font-size:15px;letter-spacing:.14em;color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+#tag b{color:var(--sig)}
+#site{position:absolute;right:34px;top:46px;font-family:'JBM';font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--paper);opacity:.9;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+#title{position:absolute;left:44px;right:44px;top:230px;text-align:center;font-family:'Archivo';font-weight:900;font-size:62px;line-height:1.02;letter-spacing:-.01em;color:var(--paper);paint-order:stroke fill;-webkit-text-stroke:12px var(--ink);text-transform:none}
+#hud{position:absolute;left:34px;top:560px;color:var(--paper)}
+#hudl{font-family:'JBM';font-weight:700;font-size:14px;letter-spacing:.16em;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+#hudv{font-family:'Archivo';font-weight:900;font-size:50px;line-height:1.02;margin-top:4px;paint-order:stroke fill;-webkit-text-stroke:9px var(--ink)}
+#hudb{width:230px;height:5px;background:rgba(242,239,232,.28);margin-top:10px}
+#hudf{height:5px;background:var(--sig);width:0}
+#cap{position:absolute;left:46px;right:46px;top:860px;text-align:center;font-family:'Archivo';font-weight:800;font-size:50px;line-height:1.06;color:var(--paper);paint-order:stroke fill;-webkit-text-stroke:11px var(--ink);transform-origin:50% 50%}
+o,.o{color:var(--sig)}
+#src{position:absolute;left:60px;right:60px;top:1080px;text-align:center;font-family:'JBM';font-weight:400;font-size:14px;letter-spacing:.06em;color:var(--paper);opacity:.85;text-shadow:0 0 4px #000,0 1px 8px #000}
+#end{position:absolute;left:0;top:0;width:720px;height:1280px;background:var(--ink);display:none}
+#endt{position:absolute;left:50px;right:50px;top:420px;font-family:'Archivo';font-weight:900;font-size:64px;line-height:1.02;color:var(--paper)}
+#endq{position:absolute;left:50px;right:50px;top:700px;font-family:'Corm';font-style:italic;font-weight:500;font-size:44px;line-height:1.1;color:var(--paper)}
+#endb{position:absolute;left:50px;bottom:150px;font-family:'JBM';font-weight:700;font-size:20px;letter-spacing:.14em;color:var(--paper)}
+#endb b{color:var(--sig)}
+#endrule{position:absolute;left:50px;right:50px;top:660px;height:2px;background:var(--paper);opacity:.35}
+#fx{position:absolute;left:0;top:0;pointer-events:none}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="720" height="1280"></canvas>
+  <canvas id="c2d" width="720" height="1280" style="display:none"></canvas>
+  <div id="white" class="ov"></div>
+  <div id="black" class="ov"></div>
+  <canvas id="fx" width="720" height="1280"></canvas>
+  <div id="tag"></div><div id="site">statur.co</div>
+  <div id="title"></div>
+  <div id="hud"><div id="hudl"></div><div id="hudv"></div><div id="hudb"><div id="hudf"></div></div></div>
+  <div id="cap"></div><div id="src"></div>
+  <div id="end"><div id="endt"></div><div id="endrule"></div><div id="endq"></div><div id="endb"><b>[•]</b> STATUR · statur.co</div></div>
+</div>
+<script type="module" src="core2.js"></script>
+</body>
+</html>
