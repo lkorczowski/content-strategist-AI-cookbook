@@ -4,7 +4,7 @@ description: Render a planned clip from a long recording with ffmpeg and no edit
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.1"
+  version: "2.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -57,7 +57,19 @@ Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_ou
 - Audio: high-pass 70 Hz, light compression, two-pass loudness normalization to -14 LUFS with a -1.5 dB true peak.
 - Master: H.264 CRF 17 at the spec's size and frame rate, any length, 4K when the source allows it. Render where the footage is: a master never travels through a chat tool.
 
-Next styles, not in this version: B-roll from a stock library, motion design with a programmatic tool (check the license threshold of each tool for companies), a crop per speaker for split screens.
+Next styles, not in this version: B-roll from a stock library.
+
+## Edit style "podcast split": two cameras and motion design
+
+For a recorded video call (two people, one screen recording) and, when possible, a second camera on the speaker (a phone on a stand). Validated on a 28-minute call: the reviewer approved the result after the four steps below.
+
+1. Sync the second camera on the audio, never on the file clock. Extract both audio tracks at 16 kHz, cross-correlate the energy envelopes to get the offset, then refine with short windows at about ten points across the call: a phone and a screen recorder drift by a few tens of milliseconds over half an hour, so fit a straight line (offset plus drift) and use it per clip.
+2. Build the picture before the render, one excerpt per clip (from 6 s before the first passage to 2 s after the last), at 1080x1920 with ffmpeg: a 540 px band on top for the text box, the other person cropped from the call tile in the middle, the second camera at the bottom, both 1080x690, call audio as the only track. Then render the clip from that excerpt with the spec and words shifted to its timeline, with zoom off. Work from the big camera file where it is: copying several gigabytes inside a sandbox that stops long commands leaves a truncated file.
+3. Keep every text inside the safe zone of the platforms: top 270 px, bottom 670 px, sides 120 px, and the button column on the right (x above 780) from y 840 down (measured on the TikTok template and the Reels specification). Text box at y 0.15 in lines of 22 characters or fewer, size 52, kept on screen for the whole clip; captions at y 0.625, x 0.42, size 66, 14 characters per line. Draw these zones in red on six frames of every master and look before review.
+4. Abstract ideas (a model, a metaphor, a distribution) do not land on a talking head. Replace the listener's panel with motion design while the speaker explains, timed to the words: an HTML page in the brand's colors and fonts with one function `setT(t)` that sets every element for time t (entrances at the word timestamps of the transcript), captured frame by frame with Playwright at 30 fps, encoded to a small `.mkv`, and laid over the panel with `-itsoffset` when the excerpt is built. Reuse the diagrams the brand already publishes so the clip and the site tell the same story. Keep every element inside the panel's safe box (x 120 to 770 under y 840) and give the listener's face back for the reaction at the end.
+
+Packaging rules that came out of the same review: open on the strongest line or the tension (never a hesitation or a chronological setup), move the backstory after it as the explanation, cut stumbles in the middle, and split a caption fix around a cut so its words stay on screen. The on-screen text box and the spoken opening never say the same thing.
+
 
 ## Quality check (always, before review)
 
