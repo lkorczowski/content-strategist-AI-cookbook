@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-30 · v2.6.4
+
+- statur-idea-war-map 1.1.0: ideas become beliefs. Step 3 names beliefs with a four-question test ("I believe that", any packaging, support and attack, no format word), every post gets a stance, idea_map.py counts support against attack inside a belief, templates/concepts.csv becomes templates/beliefs.csv (1.0 annotation files with a concept column still run).
+
 ## 2026-10-29 · v2.6.3
 
 - statur-clipping 2.0.1 and statur-clip-edit 2.0.1: `--audio-preroll` in clip_render.py and render_all.py (audio decoded from its own short seek when a corrupt AAC stretch silences the start of a piece), new pitfall, quality check of translated captions against the source-language words. Found on a 2 h 15 TikTok replay.

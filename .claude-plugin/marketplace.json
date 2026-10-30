@@ -192,7 +192,7 @@
     },
     {
       "name": "statur-idea-war-map",
-      "description": "Map the ideas fighting in an online controversy: implied ideas read from images and videos, contested concepts, camps, third parties, quote duels and an Elo rating per idea.",
+      "description": "Map the beliefs fighting in an online controversy: implied ideas read from images and videos, beliefs with a stance per post, camps, third parties, quote duels and an Elo rating per belief.",
       "source": "./",
       "strict": false,
       "skills": [
