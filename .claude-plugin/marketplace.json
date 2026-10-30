@@ -198,6 +198,15 @@
       "skills": [
         "./skills/statur-idea-war-map"
       ]
+    },
+    {
+      "name": "statur-motion-3d",
+      "description": "Faceless 3D motion-design shorts built in code: procedural low-poly world in four render modes, HUD clock, captions, loop card and synthesized sound, rendered on a CPU.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-motion-3d"
+      ]
     }
   ]
 }

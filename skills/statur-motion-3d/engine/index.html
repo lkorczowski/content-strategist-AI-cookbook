@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:'Garamond';src:url(fonts/eb-garamond-latin-400-normal.woff2);font-weight:400;font-style:normal}
+@font-face{font-family:'Garamond';src:url(fonts/eb-garamond-latin-500-normal.woff2);font-weight:500;font-style:normal}
+@font-face{font-family:'Garamond';src:url(fonts/eb-garamond-latin-400-italic.woff2);font-weight:400;font-style:italic}
+@font-face{font-family:'Garamond';src:url(fonts/eb-garamond-latin-500-italic.woff2);font-weight:500;font-style:italic}
+@font-face{font-family:'InterX';src:url(fonts/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'InterX';src:url(fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:'Mono';src:url(fonts/jetbrains-mono-latin-400-normal.woff2)}
+html,body{margin:0;padding:0;background:#000;overflow:hidden}
+#stage{position:relative;overflow:hidden;background:#000}
+canvas{display:block}
+#gl{position:absolute;left:0;top:0}
+#fx{position:absolute;left:0;top:0;pointer-events:none}
+.ov{position:absolute;left:0;top:0;width:720px;height:1280px;pointer-events:none}
+#title{position:absolute;left:40px;right:40px;top:300px;text-align:center;font-family:'Garamond';font-weight:400;font-size:50px;line-height:1.12;color:#f4f1ea;text-shadow:0 0 2px rgba(0,0,0,.6),0 2px 16px rgba(0,0,0,.6)}
+#title .hl{color:#6fa6ff;text-shadow:0 0 2px rgba(5,20,70,1),0 0 14px rgba(40,110,255,.9)}
+#cap{position:absolute;left:60px;right:60px;top:830px;text-align:center;font-family:'Garamond';font-style:italic;font-weight:500;font-size:33px;line-height:1.18;color:#f6f3ee;text-shadow:0 0 2px rgba(0,0,0,.9),0 1px 4px rgba(0,0,0,.8),0 2px 22px rgba(0,0,0,.75)}
+#hud{position:absolute;left:40px;top:588px;color:#fff;text-shadow:0 0 2px rgba(0,0,0,.85),0 1px 10px rgba(0,0,0,.7)}
+#hudl{font-family:'InterX';font-weight:600;font-size:14.5px;letter-spacing:.16em}
+#hudt{font-family:'Garamond';font-weight:400;font-size:44px;line-height:1.0;margin-top:2px;letter-spacing:.01em}
+#huds{font-family:'InterX';font-weight:500;font-size:10.5px;letter-spacing:.17em;margin-top:9px;opacity:.9}
+#end{position:absolute;left:0;top:0;width:720px;height:1280px;background:#0b0b0b;display:none}
+#endt{position:absolute;left:40px;right:40px;top:470px;text-align:center;font-family:'Garamond';font-size:50px;line-height:1.12;color:#f1eee8}
+#endt .hl{color:#a9cbff;text-shadow:0 0 16px rgba(120,170,255,.6)}
+#ends{position:absolute;left:40px;right:40px;top:650px;text-align:center;font-family:'Mono';font-size:11px;letter-spacing:.2em;line-height:1.9;color:#cfcac2}
+#white{position:absolute;left:0;top:0;width:720px;height:1280px;background:#f3f5fb;opacity:0}
+#vig{position:absolute;left:0;top:0;width:720px;height:1280px;opacity:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(6,12,40,.9) 100%)}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="720" height="1280"></canvas>
+  <div id="white" class="ov"></div>
+  <canvas id="fx" width="720" height="1280"></canvas>
+  <div id="vig"></div>
+  <div id="title"></div>
+  <div id="hud"><div id="hudl"></div><div id="hudt"></div><div id="huds"></div></div>
+  <div id="cap"></div>
+  <div id="end"><div id="endt"></div><div id="ends"></div></div>
+</div>
+<script type="module" src="core.js"></script>
+</body>
+</html>

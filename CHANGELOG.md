@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-30 · v2.6.4
+
+- New skill statur-motion-3d 0.1.0: 3D motion-design shorts in code (Three.js scene kit with day, wireframe, glow and point-cloud modes, scenario.json for texts, HUD clock, captions and sound cues, deterministic CPU render with Chromium and ffmpeg, synthesized sound bed), format recipe of viral what-if shorts, pitfalls from the first real test.
+
 ## 2026-10-29 · v2.6.3
 
 - statur-clipping 2.0.1 and statur-clip-edit 2.0.1: `--audio-preroll` in clip_render.py and render_all.py (audio decoded from its own short seek when a corrupt AAC stretch silences the start of a piece), new pitfall, quality check of translated captions against the source-language words. Found on a 2 h 15 TikTok replay.
