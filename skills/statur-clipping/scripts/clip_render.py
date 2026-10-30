@@ -287,6 +287,7 @@ def build_ass(words_out, spec, W, H, total, mapping=None):
     if wm["enabled"] and wm["text"]:
         import random
         spots = [(0.05, 0.095), (0.58, 0.095), (0.05, 0.35), (0.55, 0.35), (0.05, 0.53), (0.30, 0.45), (0.05, 0.62)]
+        spots = [p for p in spots if abs(p[1] - float(cap["y"])) > 0.06] or spots   # never on the caption line
         rng = random.Random(str(spec.get("id", "clip")) + wm["text"])
         t, last = 0.0, None
         while t < total - 0.2:
@@ -340,7 +341,7 @@ def build_ass(words_out, spec, W, H, total, mapping=None):
                 for j, x in enumerate(ch):
                     t = x["d"].replace("{", "(").replace("}", ")")
                     parts.append(f"{{\\c{act}}}{t}{{\\c{base}}}" if j == k else t)
-                lines.append(f"Dialogue: 1,{ass_time(st)},{ass_time(en)},Cap,,0,0,0,,{{\\an5\\pos({W//2},{y})}}" + " ".join(parts))
+                lines.append(f"Dialogue: 1,{ass_time(st)},{ass_time(en)},Cap,,0,0,0,,{{\\an5\\pos({int(float(cap.get('x', 0.5)) * W)},{y})}}" + " ".join(parts))
     return "\n".join(lines) + "\n"
 
 def write_srt(words_out, path, max_chars=42):

@@ -6,6 +6,10 @@ Newest first. One line per change: date, what changed, version.
 
 - statur-idea-war-map 1.1.0: ideas become beliefs. Step 3 names beliefs with a four-question test ("I believe that", any packaging, support and attack, no format word), every post gets a stance, idea_map.py counts support against attack inside a belief, templates/concepts.csv becomes templates/beliefs.csv (1.0 annotation files with a concept column still run).
 
+## 2026-10-30 · v2.7.0
+
+- statur-clip-edit 2.1.0: edit style "podcast split" (second camera synced on the audio, stacked split built per clip, safe zones of TikTok and Reels, motion design from an HTML page captured frame by frame for abstract ideas) and the packaging rules from the same review. statur-clipping 2.1.0: `captions.x` in clip_render.py, the watermark never takes a spot on the caption line, `hook.dur` longer than the clip keeps the text box on screen.
+
 ## 2026-10-29 · v2.6.3
 
 - statur-clipping 2.0.1 and statur-clip-edit 2.0.1: `--audio-preroll` in clip_render.py and render_all.py (audio decoded from its own short seek when a corrupt AAC stretch silences the start of a piece), new pitfall, quality check of translated captions against the source-language words. Found on a 2 h 15 TikTok replay.
