@@ -22,7 +22,8 @@ Each item below cost a render on the first real run (a 1:40 TikTok live in Frenc
 
 ## Picture
 
-- **Captions over the face.** Look at a contact sheet before the first render. A selfie live often has the face in the lower half: move the crop down (`frame.crop_y` 0.6 on a 960x1920 replay) and the captions to 0.75 of the height, clear of the platform's bottom text and buttons.
+- **Captions over the face.** Look at a contact sheet before the first render. A selfie live often has the face in the lower half: move the crop down (`frame.crop_y` 0.57 to 0.61 with `frame.zoom` 1.15 on a 960x1920 replay) so the eyes sit near 40% of the height. Keep the captions at 0.625 of the height: below 0.65 is the platform bottom zone (text and buttons on TikTok and Reels).
+- **Resolution switches inside a live replay.** TikTok replays change resolution with the bitrate (640x1280, then 960x1920, then back). The crop box is computed on the first frame, so on the other resolution it lands on the wrong part of the picture (face cut, ceiling in view). Check with `ffprobe -skip_frame nokey -show_entries frame=width,height` and set `frame.norm` to the larger size.
 - **Hook too small to read on a phone.** Hook size 90 to 100 on 1080x1920, two lines at most, one natural sentence. Two short punchy sentences read as AI-written.
 
 ## Machines and folders
