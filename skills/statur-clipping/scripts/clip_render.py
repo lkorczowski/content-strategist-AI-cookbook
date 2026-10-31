@@ -369,6 +369,9 @@ def crop_box(src_w, src_h, W, H, frame, zoom):
         ch = src_h; cw = int(round(src_h * target))
     else:                            # source taller: crop height
         cw = src_w; ch = int(round(src_w / target))
+    bz = float(frame.get("zoom", 1.0))     # base zoom: a tighter crop around crop_x/crop_y (face too low or too small in the source)
+    if bz > 1.0:
+        cw = int(round(cw / bz)); ch = int(round(ch / bz))
     cw -= cw % 2; ch -= ch % 2
     cy = frame.get("crop_y", 0.5) * src_h
     cx = frame.get("crop_x", 0.5) * src_w
@@ -414,6 +417,10 @@ def main():
     words = join_punct(words)
     info = probe(a.source) if not a.plan_only else {"w": 1080, "h": 1920, "fps": 30, "dur": 0, "has_audio": True}
     fr = {"w": 1080, "h": 1920, "fps": 30}; fr.update(spec.get("frame", {}))
+    norm = fr.get("norm")   # [w, h]: scale every frame first. Live replays (adaptive bitrate) switch resolution mid-stream,
+    if norm:                # and a crop box computed on the first frame's size then lands on the wrong part of the picture
+        info["w"], info["h"] = int(norm[0]), int(norm[1])
+    pre_scale = f"scale={int(norm[0])}:{int(norm[1])}:flags=lanczos,setsar=1," if norm else ""
     W, H, FPS = int(fr["w"]), int(fr["h"]), float(fr["fps"])
     enc = {"crf": 17, "preset": "veryfast"}; enc.update(spec.get("encode", {}))
     au = {"lufs": -14, "tp": -1.5, "lra": 11, "highpass": 70}; au.update(spec.get("audio", {}))
@@ -487,7 +494,7 @@ def main():
         # jittery audio timestamps, so a duration measured on timestamps gives pieces a few ms too long
         # or too short, and the error adds up over the concat (up to 0.1 s of lip-sync drift on a 1 min clip)
         apre = pre if a.audio_preroll is None else min(a.audio_preroll, start)
-        fc = (f"[0:v]fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
+        fc = (f"[0:v]{pre_scale}fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
               f"crop={cw}:{ch}:{cx}:{cy},scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[v];"
               f"[{0 if apre == pre else 1}:a]atrim=start={apre:.4f}:duration={dur + 0.25:.4f},asetpts=PTS-STARTPTS,aresample=48000,asetpts=N/SR/TB,"
               f"aformat=sample_fmts=s16:channel_layouts=stereo,apad=whole_len={ns},atrim=end_sample={ns},"

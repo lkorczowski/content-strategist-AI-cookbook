@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-31 · v2.8.0
+
+- statur-clipping 2.2.0: `frame.norm` scales every frame before the crop (TikTok replays switch resolution mid-stream, which moved the crop off the face), `frame.zoom` for a tighter base crop; pitfalls updated (captions at 0.625, resolution switches).
+
 ## 2026-10-30 · v2.6.4
 
 - statur-idea-war-map 1.1.0: ideas become beliefs. Step 3 names beliefs with a four-question test ("I believe that", any packaging, support and attack, no format word), every post gets a stance, idea_map.py counts support against attack inside a belief, templates/concepts.csv becomes templates/beliefs.csv (1.0 annotation files with a concept column still run).

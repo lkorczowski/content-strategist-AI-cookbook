@@ -21,6 +21,8 @@ One JSON file per clip version. statur-clip-plan writes it, statur-clip-edit ren
 | `frame` | `{"w": 1080, "h": 1920, "fps": 30}` | Output size and frame rate. Phone lives: `"fps": 25`. 4K vertical: `"w": 2160, "h": 3840` when the source allows it. |
 | `frame.crop_x`, `frame.crop_y` | 0.5, 0.5 | Center of the 9:16 crop in the source, as a fraction of its width and height. A selfie live often needs `crop_y` 0.6 to put the face high in the frame. |
 | `frame.face_x`, `frame.face_y` | 0.5, 0.42 | Point the punch-in zooms toward, inside the crop. |
+| `frame.zoom` | 1.0 | Base zoom: a tighter crop around `crop_x`, `crop_y` for the whole clip. Use 1.1 to 1.2 when the face is small or low in a phone live. The punch-in still applies on top. |
+| `frame.norm` | none | `[w, h]`: scale every source frame to this size before the crop. Set it on live replays that switch resolution mid-stream (TikTok adaptive bitrate: 640x1280 and 960x1920 in the same file). |
 | `zoom` | `{"enabled": true, "factor": 1.10}` | Every other piece is punched in, so jump cuts read as intended. |
 | `captions` | font Archivo Black, size 78, 3 words or 18 characters per line, `y` 0.70, white, active word `#E8501C`, outline `#0E0E0C` | Word-by-word captions with the active word highlighted. Put `y` under the chin and above the platform's bottom text (0.70 to 0.75). `x` (default 0.5) moves the line's center left of the platform's button column, for example 0.42 with lines of 14 characters. `"enabled": false` for no captions. |
 | `labels` | size 58, white on `#E8501C`, `y` 0.155 | Style of the `screen` chapter labels. |
