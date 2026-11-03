@@ -39,6 +39,8 @@ PRIVATE instance   your company repo: knowledge base, routines, data, skills   (
   archive/<date>-<subject>/       everything replaced, never deleted in place
 ```
 
+Specification (goal, principles, architecture, features, edge cases, platform constraints, acceptance tests): [SPEC.md](SPEC.md).
+
 Templates for every file above are in templates/, plus templates/PROJECT-INSTRUCTIONS.md for the assistant's project instructions. The shared memory between routine runs is described in [annotation-loop.md](annotation-loop.md).
 
 ## Seven rules that keep the system healthy

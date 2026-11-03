@@ -1,0 +1,47 @@
+{
+  "name": "kit-tour",
+  "note": "Demo of the kit, our own text. No factual claim, so nothing to source. Replace every text field for a real video.",
+  "width": 720, "height": 1280, "fps": 30, "duration": 80.16, "seed": 42,
+  "event_time": 8.2, "return_time": 63.2,
+  "title": { "html": "What if your city turned into <hl>lines</hl> for 5 seconds?", "to": 5.8, "fade": 0.8, "icon": "atom", "icon_until": 8.2 },
+  "hud": [
+    { "from": 0, "to": 8.2, "label": "THE CITY TURNS IN", "clock": { "countdown_to": 8.333 }, "sub": "DEMO OF THE STATUR-MOTION-3D KIT" },
+    { "from": 8.2, "to": 63.2, "label": "BACK TO NORMAL IN", "clock": { "countdown_from": 5, "start": 8.2, "slow": 11.2 },
+      "sub": [[8.2, "TIME SLOWED DOWN 11x"], [44.2, { "template": "CAMERA IS {n} METERS AWAY", "keys": [[44.2, 12000], [53, 380000]] }], [55.2, "THE MOON LEFT THE FRAME"]] },
+    { "from": 63.2, "to": 72.2, "label": "CITY", "clock": { "text": "BACK" }, "sub": "SAME PARK, 5 SECONDS LATER" }
+  ],
+  "captions": [
+    [5.8, 8.2, "You're sitting in a city park."],
+    [9.0, 12.6, "Day mode becomes wire mode:<br>the same world, only its edges."],
+    [16.4, 19.9, "Your hands are drawn in lines too."],
+    [20.5, 23.6, "Every person is a few boxes."],
+    [24.4, 27.9, "Every tree is one low-poly crown."],
+    [32.4, 35.9, "Glow mode lights the edges up."],
+    [36.4, 39.9, "Bright enough to wash the frame out."],
+    [44.4, 48.0, "Then the camera leaves the planet."],
+    [48.4, 53.6, "The Moon passes in front."],
+    [63.6, 67.6, "The city comes back as a point cloud."],
+    [68.0, 71.6, "And the points fly apart."]
+  ],
+  "end_card": { "from": 74.0, "html": "What if your city turned into <hl>lines</hl> for 5 seconds?", "fact": "BUILT IN CODE WITH STATUR-MOTION-3D<br>THREE.JS, CHROMIUM, FFMPEG" },
+  "sound": [
+    { "type": "ambience", "from": 0, "to": 8.2, "gain": 0.35 },
+    { "type": "ticks", "from": 0.133, "to": 8.2, "every": 1, "gain": 0.5 },
+    { "type": "riser", "from": 4, "to": 8.2, "gain": 0.12 },
+    { "type": "boom", "at": 8.2, "size": 1.2, "gain": 0.8 },
+    { "type": "drone", "from": 8.3, "to": 40.6, "gain": 0.22 },
+    { "type": "crackle", "from": 28.5, "to": 40.4, "gain": 0.35 },
+    { "type": "swell", "from": 28, "to": 40.6, "gain": 0.9 },
+    { "type": "boom", "at": 32.3, "size": 0.8, "freq": 55, "gain": 0.55 },
+    { "type": "boom", "at": 36.3, "size": 0.9, "freq": 50, "gain": 0.65 },
+    { "type": "boom", "at": 40.6, "size": 3.0, "freq": 36, "gain": 1.0 },
+    { "type": "noise", "from": 40.6, "to": 44.2, "gain": 0.25 },
+    { "type": "pad", "from": 44.2, "to": 63.2, "gain": 0.16 },
+    { "type": "rumble", "from": 44.2, "to": 63.2, "gain": 0.9 },
+    { "type": "shimmer", "from": 63.2, "to": 68, "gain": 0.07 },
+    { "type": "boom", "at": 63.2, "size": 0.7, "freq": 70, "gain": 0.5 },
+    { "type": "boom", "at": 68.0, "size": 2.5, "freq": 38, "gain": 1.0 },
+    { "type": "noise", "from": 68, "to": 72.2, "cut": 2500, "gain": 0.5 },
+    { "type": "note", "from": 74, "to": 80.16, "freq": 55, "gain": 0.25 }
+  ]
+}

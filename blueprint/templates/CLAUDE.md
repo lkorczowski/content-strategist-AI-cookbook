@@ -11,5 +11,5 @@
 - Public skills come from the cookbook by version. Do not copy them here. A private skill names the public skill it extends.
 
 ## End
-1. Commit with a clear message and push in the same session. Push refused: stop, say so, never force.
+1. Work on a branch from origin/main, commit with a clear message (imperative summary, then what and why), push the branch in the same session and open a pull request. A human merges. Nobody pushes to main. Push refused: stop, say so, never force.
 2. Decisions and statuses go to their source of truth (kb file or tracker), never only in a chat.
