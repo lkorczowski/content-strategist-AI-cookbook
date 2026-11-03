@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-31 · v2.8.0
+
+- statur-clipping 2.2.0: `frame.norm` scales every frame before the crop (TikTok replays switch resolution mid-stream, which moved the crop off the face), `frame.zoom` for a tighter base crop (without `frame.norm`, frames still scale to the probed size as in 2.1.1); pitfalls updated (captions at 0.625, resolution switches).
+
 ## 2026-10-31 · v2.7.1
 
 - statur-clipping 2.1.1: clip_render.py scales every frame to the probed size before the crop, so a replay that switches resolution mid-stream no longer fails some pieces. New pitfall. Found on a 1 h 51 TikTok replay.
