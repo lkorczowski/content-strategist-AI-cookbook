@@ -16,9 +16,11 @@ def norm(w):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("clip"); ap.add_argument("words_out"); ap.add_argument("--report")
+    ap.add_argument("--max-speech", type=float, default=15.0,
+                    help="chunk length of the second reading; 4 to 6 for accented or bilingual speech, where long chunks drift into another language")
     a = ap.parse_args()
     with tempfile.TemporaryDirectory() as td:
-        r = subprocess.run([sys.executable, os.path.join(HERE, "transcribe.py"), a.clip, td, "--max-speech", "15"],
+        r = subprocess.run([sys.executable, os.path.join(HERE, "transcribe.py"), a.clip, td, "--max-speech", str(a.max_speech)],
                            capture_output=True, text=True)
         if r.returncode:
             print(r.stderr[-2000:]); sys.exit(1)

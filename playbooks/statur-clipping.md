@@ -6,7 +6,7 @@ Turn a live, a webinar, a long video or a folder of recordings into ready-to-pos
 - Markdown for AI assistants: https://statur.co/clipping.md
 - The story behind it (essay on louis-korczowski.org): coming soon
 - Demo (34 s, no sound): [docs/media/statur-clipping-demo.mp4](../docs/media/statur-clipping-demo.mp4), second run on a 77-minute live in French, six clips with English captions
-- Version 1.3, 2026-10-28 (page); skills statur-clipping 2.3.0, statur-clip-plan 2.1.0, statur-clip-edit 2.2.0, statur-clip-review 2.1.0 (2026-11-03)
+- Version 1.3, 2026-10-28 (page); skills statur-clipping 2.3.1, statur-clip-plan 2.1.0, statur-clip-edit 2.2.0, statur-clip-review 2.1.0 (2026-11-03)
 
 ## Summary
 

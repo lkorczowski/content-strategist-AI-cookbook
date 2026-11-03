@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-03 · v2.14.1
+
+- statur-clipping 2.3.1: `qa_clip.py --max-speech` (chunk length of the second reading, default 15 s) and the pitfall "a quality check that translates" for accented English, found on a real English live. Written as v2.7.1 / 2.1.1, renumbered at merge.
+
 ## 2026-10-28 · v2.14.0
 
 - Playbook card statur-clipping: 34-second demo video of the second run (docs/media), page version 1.3.
