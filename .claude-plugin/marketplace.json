@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.10.0"
+    "version": "2.12.0"
   },
   "plugins": [
     {
@@ -224,6 +224,15 @@
       "strict": false,
       "skills": [
         "./skills/statur-personal-brand-scale"
+      ]
+    },
+    {
+      "name": "statur-motion-3d",
+      "description": "Faceless 3D motion-design shorts built in code: procedural low-poly world in four render modes, HUD clock, captions, loop card and synthesized sound, rendered on a CPU.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-motion-3d"
       ]
     }
   ]
