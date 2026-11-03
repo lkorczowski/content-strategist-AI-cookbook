@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-03 · v2.15.0
+
+- statur-format-library 3.0.0: The Format Library becomes a library of 150 format cards (one file per format in skills/statur-format-library/library/formats/), tagged on four dimensions (funnel, value, structure, setup) with a controlled taxonomy (references/taxonomy.json, 3 + 7 + 41 + 24 tags) and a naming rule. Modes: find, plan a starter deck, script, invent an original format, document a format, sort a collection of saved videos, hand over the results. New tool scripts/library.py (build, check, lint, find, suggest, similar, new, gaps) with --private for a private library of cards. New references: card-template.md, private-card-template.md (with observed results per format) and collection-import.md. The twelve formats of version 2.0.0 are kept as cards. 16 cards (F135 to F150) and the status of 13 cards come from real programs, anonymized. CI runs library.py check.
+- Same release, issue #12: the skill no longer reads results or decides which formats to keep (the 48-hour reading step of 2.0.0 is gone). statur-format-review decides on mature data, statur-content-learning runs the monthly lessons; this skill only copies a review decision into a private card. ARCHITECTURE section 8: Make row updated, known overlap removed. Playbook card format-library: library version 0.1.
+- Ported from draft pull request #3 (format-library-coach 2.0, 2026-10-25, written before the statur- rename): paths moved under skills/statur-format-library/, skill links renamed (statur-comment-section, statur-format-review). Marketplace 2.15.0.
+
 ## 2026-10-28 · v2.14.0
 
 - Playbook card statur-clipping: 34-second demo video of the second run (docs/media), page version 1.3.
