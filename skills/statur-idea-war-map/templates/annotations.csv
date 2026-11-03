@@ -1,6 +1,3 @@
-id,date,handle,views,likes,community,side,concept,idea,register,parent_id,rel,confidence,url
-1001,2026-10-18,example_a,2300000,47000,JA,JA,K01,"Stop using our culture as a symbol of riots",argument,,,3,https://x.com/example_a/status/1001
-1002,2026-10-18,example_b,2480000,69000,FR,FR,K02,"The other side's users are hopeless on this app",insult,1001,rebut,2,
-1003,2026-10-21,example_c,17900000,49000,FR,FR,K03,"Absurd claim that a famous hero belongs to us",humor,,,3,https://x.com/example_c/status/1003
-1004,2026-10-22,example_d,8300000,220000,JA,JA,K04,"The hero eats pork, so the claim is false",humor,1003,rebut,3,https://x.com/example_d/status/1004
-1005,2026-10-23,example_e,3400000,210000,EN,FR,K05,"Okay, this side wins, calm down",humor,1003,verdict,3,https://x.com/example_e/status/1005
+id,date,handle,views,likes,community,side,belief,stance,idea,register,parent_id,rel,confidence,url
+1001,2026-10-18,example_a,2300000,47000,JA,JA,B01,supports,"Stop using our culture as a symbol of riots",argument,,,3,https://x.com/example_a/status/1001
+1002,2026-10-18,example_b,2480000,69000,FR,FR,B01,attacks,"Then give back everything your culture borrowed from ours",humor,1001,rebut,2,

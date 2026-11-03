@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.5.0"
+    "version": "2.12.0"
   },
   "plugins": [
     {
@@ -176,7 +176,12 @@
         "./skills/statur-comment-section",
         "./skills/statur-x-viral-post-ghostwriter",
         "./skills/statur-brand-dna-audit",
-        "./skills/statur-hook-forensics"
+        "./skills/statur-hook-forensics",
+        "./skills/statur-video-editor-pro",
+        "./skills/statur-motion-design",
+        "./skills/statur-sound-design",
+        "./skills/statur-color-grade",
+        "./skills/statur-broll-find"
       ]
     },
     {
@@ -192,11 +197,33 @@
     },
     {
       "name": "statur-idea-war-map",
-      "description": "Map the ideas fighting in an online controversy: implied ideas read from images and videos, contested concepts, camps, third parties, quote duels and an Elo rating per idea.",
+      "description": "Map the beliefs fighting in an online controversy: implied ideas read from images and videos, beliefs with a stance per post, camps, third parties, quote duels and an Elo rating per belief.",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/statur-idea-war-map"
+      ]
+    },
+    {
+      "name": "statur-ai-video-editor",
+      "description": "Edit a talking-head recording or a clip at the production level you choose: color and HDR fix, voice cleanup, sound design and music, captures of your own pages, motion design, background replacement, quality gate.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-video-editor-pro",
+        "./skills/statur-motion-design",
+        "./skills/statur-sound-design",
+        "./skills/statur-color-grade",
+        "./skills/statur-broll-find"
+      ]
+    },
+    {
+      "name": "statur-personal-brand-scale",
+      "description": "The Korczowski scale of personal branding: score from Type 0 to Type 4 on evidence, the trap of each type and the 90-day plan to the next one.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-personal-brand-scale"
       ]
     },
     {
