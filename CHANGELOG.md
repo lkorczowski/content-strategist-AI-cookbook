@@ -2,6 +2,19 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-28 · v2.14.0
+
+- Playbook card statur-clipping: 34-second demo video of the second run (docs/media), page version 1.3.
+- statur-clipping 2.3.0: section 1 rewritten as a one-message setup checklist (working folder, Downloads, browser extension on the computer that holds the footage, Drive, tools, the routine approved once).
+- statur-clip-plan 2.1.0: captions in another language than the speech, one fix per phrase that never crosses a pause, a cut or a segment, checked against the original cut list.
+- statur-clip-edit 2.2.0 and statur-clipping render_all.py: an upload copy per clip (TRAVAIL <code>/upload/<code>-<id>-v<version>.mp4, 4.5 Mbps), named with the video id used to track posts. Found while posting six LIVE02 clips on TikTok and YouTube (issue #17).
+- statur-clip-review 2.1.0: the review page shows only the latest version of each clip when it is an improvement; two versions only when they are options to choose from.
+- Versions renumbered at merge (written on 2026-10-28 as v2.5.1 and v2.6.0, skills statur-clipping 2.0.1 and 2.1.0, statur-clip-edit 2.1.0): main had reached statur-clipping 2.2.0 and statur-clip-edit 2.1.0 in between.
+
+## 2026-10-28 · v2.13.0
+
+- statur-clipping 2.3.0 (first part): Downloads folder connected once at setup (an agent cannot grant itself folder access, a night run has no one to approve it), two connected browsers (select the one on the computer that holds the footage, by device id, kept in a machine file), captions above the head on walking selfie lives. Found on the first unattended run of a TikTok live, 2026-10-28.
+
 ## 2026-10-31 · v2.12.0
 
 - statur-motion-3d 0.2.0: engine v2 (bloom, soft shadows, ACES), animated people and a host mascot, robots and city kit, brand overlay with HUD, keyword captions and source lines, 2D editorial stage, synthesized music bed with SFX (sound2.py), production value rules from a 6/10 review, minimal 3D and 2D examples, new pitfalls.

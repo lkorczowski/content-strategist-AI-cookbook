@@ -21,6 +21,8 @@ The run stops and reports, without guessing, when: a source cannot be read, the 
 
 ## How to switch it on
 
+Two things are set once, by the user, before the first run, because an agent cannot do them for itself: connect the browser's Downloads folder (replays arrive there) next to the working folder, and approve the scheduled task. After that, no run asks for anything. On a computer that shares the account's browser extension with another computer, write the browser's device id in the machine file (see pitfalls.md).
+
 Pick what the user's assistant offers:
 - **A scheduled task in the assistant** (Claude, ChatGPT and others offer them): ask "Create a scheduled task that runs the prompt below every Monday at 8:00 on this computer", paste the prompt, and check the folders it may use.
 - **Claude Code in headless mode** with the system scheduler: a cron job or a launchd agent that runs, in the working folder, `claude -p "<the prompt below>"`. Allow only the tools the routine needs.

@@ -4,7 +4,7 @@ description: Run the review loop of edited clips with a human. Publishes light r
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.1.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -27,7 +27,7 @@ The page: a 9:16 player with frame stepping and speed control, notes stamped at 
 ## Build the page
 
 1. Render review copies with statur-clip-edit (`--review`): a 720x1280 MP4 under 19.3 MiB and a poster per clip version.
-2. Write data.json (shape: templates/review-data.example.json): the recording (code, title, date, duration in seconds), one entry per clip version (id, v, title, dur, fps, src, poster and the brief), and the plan. Keep every earlier version in the list: the reviewer compares versions. `start` picks the version shown first; `lang` is fr or en.
+2. Write data.json (shape: templates/review-data.example.json): the recording (code, title, date, duration in seconds), one entry per clip version (id, v, title, dur, fps, src, poster and the brief), and the plan. Show only the latest version of each clip when it improves on the previous one (a fix, a better hook, captions moved): the reviewer judges what will be posted, and the changelog of the brief says what changed. Keep two versions side by side only when they are two options the reviewer must choose between. Older masters stay in EXPORTS/archives. `start` picks the version shown first; `lang` is fr or en.
 3. Claude artifact: upload each review copy and poster as an asset of the artifact, put the returned URLs in `src` and `poster`, build with `python3 scripts/build_review.py data.json templates/review.html "<CODE> Clip Review.html"` and publish it private, with the capabilities db, user and assets. Share the link only with the reviewers.
 4. Local mode: build the page into the folder that holds the review copies, with `src` and `poster` as file names, and open it in a browser. Notes stay in that browser until the reviewer clicks Copy notes.
 
@@ -38,7 +38,7 @@ The page: a 9:16 player with frame stepping and speed control, notes stamped at 
 3. Read the notes. Artifact: collections `notes` (clip, v, t, t2, tag, text, state), `verdicts` (one per clip version) and `planvotes`. Local mode: the JSON the reviewer pasted.
 4. Map each note to a spec change: move a cut, remove a passage, add a cold open, fix a caption word, change the hook, change the framing. Change only what the note asks for. Write the change in the spec's `changelog`, bump `version`, dry-run, render, run the quality check.
 5. Answer each note on the page: set `state` to `done` and `reply` to one line ("Fixed in v2: hook in one sentence"). In local mode, answer in the chat.
-6. Add the new version to data.json, upload its review copy, rebuild and republish the same page. Tell the reviewer what changed, clip by clip.
+6. Replace the clip's entry in data.json with the new version (its changelog lists every change), upload its review copy, rebuild and republish the same page. Tell the reviewer what changed, clip by clip.
 7. Stop when every clip has a verdict. "Ready to post" means the master in EXPORTS is the one to publish; "Drop it" removes the clip from the batch. Plan votes decide which candidates are edited next.
 
 ## Rules
