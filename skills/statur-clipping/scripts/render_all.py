@@ -42,6 +42,7 @@ def main():
     ap.add_argument("--source", required=True); ap.add_argument("--words", required=True)
     ap.add_argument("--sync", default=None); ap.add_argument("--fonts", default=os.path.join(HERE, "..", "fonts"))
     ap.add_argument("--audio", default=None, help="transcript audio (audio16k.flac): each cut-in moves back to the real speech onset")
+    ap.add_argument("--audio-preroll", default=None, help="passed to clip_render.py (see its help)")
     ap.add_argument("--tmp", default="/tmp/clips"); ap.add_argument("--budget", type=float, default=0)
     ap.add_argument("--watermark", default=None, help="default watermark text for every clip (a spec's own text wins)")
     ap.add_argument("--keep-temp", action="store_true", help="keep the rendered pieces (faster re-renders, more disk)")
@@ -77,6 +78,8 @@ def main():
             cmd += ["--audio", a.audio]
         if a.watermark:
             cmd += ["--watermark", a.watermark]
+        if a.audio_preroll is not None:
+            cmd += ["--audio-preroll", str(a.audio_preroll)]
         if a.keep_temp:
             cmd += ["--keep-temp"]
         if a.budget:
