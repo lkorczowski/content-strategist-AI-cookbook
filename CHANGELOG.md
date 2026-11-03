@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-10-29 · v2.10.0
+
+- New skill statur-personal-brand-scale 1.0.0 and playbook card personal-brand-levels: the Korczowski scale of personal branding (Type 0 to Type 4), 16-line evidence score with decimals, trap per type, 90-day plan to the next type. Page: https://statur.co/personal-brand-levels/.
+
 ## 2026-10-28 · v2.9.0
 
 - New playbook card ai-video-editor (The AI video editor, https://statur.co/ai-video-editor/) and five skills, one craft each: statur-video-editor-pro 1.0.0 (four-level production dial with level 1 = the statur-clip-edit render unchanged, intake with reference videos and style_probe.py, pro spec on the source timeline, build_layers.py, composite.py with person matte, subject and camera keys, inserts and grain, render_pro.py, qa_pro.py quality gate with refusal), statur-motion-design 1.0.0 (deterministic HTML templates rendered with alpha by motion_render.py: hook box, captions with emphasis, chips, name card, list card, page capture card with pan and highlights, prompt box, curve chart, loop diagram, recording cut into clips, big text behind the speaker, poster wall and grid backgrounds, end card, moving watermark), statur-sound-design 1.0.0 (generated effect library, generated music bed with drum drops, mix.py: voice chain, cues, ducking, two-pass loudness, stem report), statur-color-grade 1.0.0 (plate.py HDR to SDR, make_lut.py readable grades, scopes.py skin line and levels) and statur-broll-find 1.0.0 (capture.py, snapshot.js and render_snapshot.py for pages only the user's browser can see, assets.csv). Built from a level 4 edit of a 97-second iPhone HDR selfie on 2026-10-28.
