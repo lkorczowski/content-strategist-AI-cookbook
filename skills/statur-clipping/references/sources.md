@@ -57,6 +57,21 @@ rclone copy "drive:" ~/Clips/_inbox/<name> --drive-root-folder-id <FOLDER_ID> --
 
 A Google Drive connector in the assistant is fine to find a file, its folder and its owner. Move the video itself with Drive for desktop, gdown or rclone.
 
+## Loom and other screen recordings
+
+- The transcript first. Loom shows a transcript and captions to viewers on every plan, unless the creator turned transcription off ([Loom help](https://support.atlassian.com/loom/docs/loom-video-transcription-and-closed-captions/)). An agent that can read the share page in the user's browser can plan the clips on it before the video is downloaded (see "Planning before the download" in spec.md). The page's captions are timed per phrase, every 3 to 5 seconds: good for planning, too coarse for cuts.
+- The file. The owner downloads an MP4 from the video's menu, "Download". Viewers can download only when the owner has a paid creator or admin role, turned downloads on, and the viewer is signed in; Loom meeting recordings download for the organizer only; files over 20 GB do not download ([Loom help](https://support.atlassian.com/loom/docs/download-your-loom-video/)). The download keeps trims and drops captions, chapters and the filler-word removal.
+- Non-16:9 recordings can look stretched in the download (same page). Compare the file with the recording's size shown by Loom and set the source's `size` in the spec when they differ.
+- The browser download lands in the Downloads folder. Ask for that folder (or ask the user to drop the files into the project's RUSHS folder) before the user leaves: an unattended agent cannot get that approval.
+- An agent's own network often blocks the platform's site and its video servers (it did in our test, for the cloud sandbox and for the desktop sandbox). Go through the user's browser for the page and the download.
+
+## Video calls (Google Meet, Zoom, Teams)
+
+- Your own call window shows the others in the big tile and you in a thumbnail. On our 1714x1336 recording of a Google Meet window, the speaker's own thumbnail was about 194x110 pixels: enough for an audio-led clip (the thumbnail enlarged in a rounded box, a blurred background, big captions), never for a talking head.
+- When you present, Meet dims your shared screen in your own window and writes "You are presenting" over it. That part of the picture cannot be used.
+- Better sources, in order: the call's own cloud recording in speaker view, a local camera recording (Loom with the camera bubble, OBS, the camera app), a participant's recording of the call. Pin the speaker before recording.
+- Other participants stay out of the clip unless they agreed in writing: crop to the speaker and cut their interjections. A platform's transcript does not tell voices apart, so read the words around every cut.
+
 ## Local files and folders
 
 ```

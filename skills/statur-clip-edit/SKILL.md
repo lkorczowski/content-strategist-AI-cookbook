@@ -1,10 +1,10 @@
 ---
 name: statur-clip-edit
-description: Render a planned clip from a long recording with ffmpeg and no editing software. Cut list from word timestamps, silence trimming, cold open, alternating punch-in on jump cuts, 9:16 crop, word-by-word burned captions with the active word highlighted, opening hook box, chapter labels, a small moving watermark, two-pass loudness normalization, an H.264 master at any length and resolution up to 4K, a light review copy, then a quality check that transcribes the clip again. Use when a clip spec exists (from statur-clip-plan) and the user wants the edited file, a batch of clips, or a simple repeatable edit style for lives, webinars and long videos.
+description: Render a planned clip from one or several long recordings with ffmpeg and no editing software. Cut list from word timestamps, silence trimming, cold open, alternating punch-in on jump cuts, a 9:16 crop or a composed layout (screen share on top, camera bubble in a circle, call thumbnail in a rounded box, blurred background), word-by-word burned captions with the active word highlighted, opening hook box, chapter labels, a small moving watermark, loudness leveled across sources and normalized in two passes, an H.264 master at any length and resolution up to 4K, a light review copy, then a quality check that transcribes the clip again. Use when a clip spec exists (from statur-clip-plan) and the user wants the edited file, a batch of clips, a mix of several recordings, or a simple repeatable edit style for lives, webinars, calls, screen recordings and long videos.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.2.0"
+  version: "2.3.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -42,6 +42,13 @@ python3 render_all.py --project "$HOME/Clips/2026-10-24 LIVE01 Title" --code LIV
   --sync sync.json --audio audio16k.flac --fonts FONTS_DIR --tmp /tmp/clips [--budget 150] specs/C01.json specs/C05.json ...
 ```
 
+A mix of several recordings, or a project with one folder for several recordings: the spec lists its `sources` (paths relative to the project folder), and no `--source` or `--words` is needed:
+
+```
+python3 clip_render.py --spec "TRAVAIL WEB01/specs/C02_v1.json" --root "$HOME/Clips/2026-10-25 WEB01 Title" --out "TRAVAIL WEB01/C02_v1" --fonts FONTS_DIR --review --tmp /tmp/clips
+python3 render_all.py --project "$HOME/Clips/2026-10-25 WEB01 Title" --code WEB01 --fonts FONTS_DIR --tmp /tmp/clips --budget 150 specs/C0*_v1.json
+```
+
 Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_out.json` (the words the edit keeps, on the clip's timeline), `cutlist.json`, `render_report.json` (cut map, loudness), `review/C01_v1_review.mp4` (under 19.3 MiB) and a poster. render_all.py also writes `EXPORTS LIVE01/LIVE01_C01_v1_slug.mp4` and its `.srt`, and moves older versions of that clip to `EXPORTS LIVE01/archives/`, so the root holds only the version ready to post (`--keep-old` disables it). It also writes an upload copy `TRAVAIL LIVE01/upload/LIVE01-C01-v1.mp4` (H.264 4.5 Mbps, about 40 to 70 MB for 1 to 2 minutes): post that file, never the master, which is about 30 Mbps and too heavy for a browser upload. Its name is the video id that distribution tracking uses (`--no-upload-copy` disables it). On a machine that stops long commands, keep `--budget` and re-run until it prints DONE or ALL_DONE.
 
 ## Edit style "simple" (default)
@@ -57,7 +64,14 @@ Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_ou
 - Audio: high-pass 70 Hz, light compression, two-pass loudness normalization to -14 LUFS with a -1.5 dB true peak.
 - Master: H.264 CRF 17 at the spec's size and frame rate, any length, 4K when the source allows it. Render where the footage is: a master never travels through a chat tool.
 
-Next styles, not in this version: B-roll from a stock library.
+## Layouts for screen shares, camera bubbles and calls
+
+A source or a segment can take a composed layout instead of the 9:16 crop (fields: `../statur-clipping/references/spec.md`). Three that worked on real recordings:
+- `face`: the camera bubble of a screen recording (Loom) enlarged in a circle over a blurred copy of the screen, captions at 0.75. For talking.
+- `react`: the video on screen (the one being analyzed) in the top half, captions in the middle, the bubble below. For moments where the screen matters.
+- `meet`: the speaker's call thumbnail enlarged in a rounded box over its own blurred copy, captions at 0.70. The only clean option when the speaker recorded their own call window; it stays soft.
+
+Measure each rectangle on a frame of the recording, render five seconds with `--plan-only` off, look at three frames, then render the clip. Alternate two layouts of the same source (face, then react) to cover a jump cut instead of the punch-in.
 
 ## Edit style "podcast split": two cameras and motion design
 
@@ -69,6 +83,8 @@ For a recorded video call (two people, one screen recording) and, when possible,
 4. Abstract ideas (a model, a metaphor, a distribution) do not land on a talking head. Replace the listener's panel with motion design while the speaker explains, timed to the words: an HTML page in the brand's colors and fonts with one function `setT(t)` that sets every element for time t (entrances at the word timestamps of the transcript), captured frame by frame with Playwright at 30 fps, encoded to a small `.mkv`, and laid over the panel with `-itsoffset` when the excerpt is built. Reuse the diagrams the brand already publishes so the clip and the site tell the same story. Keep every element inside the panel's safe box (x 120 to 770 under y 840) and give the listener's face back for the reaction at the end.
 
 Packaging rules that came out of the same review: open on the strongest line or the tension (never a hesitation or a chronological setup), move the backstory after it as the explanation, cut stumbles in the middle, and split a caption fix around a cut so its words stay on screen. The on-screen text box and the spoken opening never say the same thing.
+
+Next styles, not in this version: B-roll from a stock library, automatic speaker detection in calls.
 
 
 ## Quality check (always, before review)

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.14.0"
+    "version": "2.15.0"
   },
   "plugins": [
     {
@@ -32,7 +32,7 @@
     },
     {
       "name": "statur-clipping",
-      "description": "Turn lives, webinars, long videos or a Google Drive folder into ready-to-post vertical clips: transcription, clip plan, edit, quality check and review page.",
+      "description": "Turn lives, webinars, calls, Loom recordings, long videos or a Google Drive folder into ready-to-post vertical clips, alone or mixed: transcription, clip plan, edit with layouts, quality check and review page.",
       "source": "./",
       "strict": false,
       "skills": [
