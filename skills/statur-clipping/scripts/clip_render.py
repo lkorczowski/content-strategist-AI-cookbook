@@ -420,7 +420,7 @@ def main():
     norm = fr.get("norm")   # [w, h]: scale every frame first. Live replays (adaptive bitrate) switch resolution mid-stream,
     if norm:                # and a crop box computed on the first frame's size then lands on the wrong part of the picture
         info["w"], info["h"] = int(norm[0]), int(norm[1])
-    pre_scale = f"scale={int(norm[0])}:{int(norm[1])}:flags=lanczos,setsar=1," if norm else ""
+    pre_scale = f"scale={info['w']}:{info['h']}:flags=lanczos,setsar=1,"   # always: frame.norm, else the probed size (2.1.1)
     W, H, FPS = int(fr["w"]), int(fr["h"]), float(fr["fps"])
     enc = {"crf": 17, "preset": "veryfast"}; enc.update(spec.get("encode", {}))
     au = {"lufs": -14, "tp": -1.5, "lra": 11, "highpass": 70}; au.update(spec.get("audio", {}))
@@ -484,7 +484,8 @@ def main():
             print(json.dumps({"status": "INCOMPLETE", "stage": "pieces", "done": i, "of": len(mapping)})); sys.exit(3)
         # seek a few seconds early, then decode forward and trim inside the filter graph: live recordings
         # (HEVC/TS, long GOPs) give grey frames when decoding starts on a non-keyframe, and the trims keep
-        # audio and video cut at the same sample-accurate point
+        # audio and video cut at the same sample-accurate point. The first scale brings every frame back to
+        # the probed size: live replays switch resolution mid-stream (adaptive bitrate), which breaks a fixed crop
         start = m["media_s"]
         pre = min(PREROLL, start)
         nfr = max(1, round(dur * FPS))
