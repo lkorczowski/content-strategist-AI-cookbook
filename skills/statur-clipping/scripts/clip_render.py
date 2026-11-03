@@ -516,7 +516,8 @@ def compose_filter(L, info, W, H, FPS, nfr, sp, zoom, pre=""):
         blur = float(ly.get("blur", 0))
         if blur:
             sw, sh = max(16, even(TW / 8)), max(16, even(TH / 8))
-            ch_ += f",scale={sw}:{sh}:flags=bilinear,boxblur={max(1, int(blur))}:2,scale={TW}:{TH}:flags=bilinear"
+            br = max(1, min(int(blur), min(sw, sh) // 4 - 1))   # boxblur refuses a radius over half the chroma plane
+            ch_ += f",scale={sw}:{sh}:flags=bilinear,boxblur={br}:2,scale={TW}:{TH}:flags=bilinear"
         else:
             ch_ += f",scale={TW}:{TH}:flags=lanczos"
         if ly.get("sharpen"):
