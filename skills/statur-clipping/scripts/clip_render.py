@@ -477,7 +477,8 @@ def main():
             print(json.dumps({"status": "INCOMPLETE", "stage": "pieces", "done": i, "of": len(mapping)})); sys.exit(3)
         # seek a few seconds early, then decode forward and trim inside the filter graph: live recordings
         # (HEVC/TS, long GOPs) give grey frames when decoding starts on a non-keyframe, and the trims keep
-        # audio and video cut at the same sample-accurate point
+        # audio and video cut at the same sample-accurate point. The first scale brings every frame back to
+        # the probed size: live replays switch resolution mid-stream (adaptive bitrate), which breaks a fixed crop
         start = m["media_s"]
         pre = min(PREROLL, start)
         nfr = max(1, round(dur * FPS))
@@ -487,7 +488,7 @@ def main():
         # jittery audio timestamps, so a duration measured on timestamps gives pieces a few ms too long
         # or too short, and the error adds up over the concat (up to 0.1 s of lip-sync drift on a 1 min clip)
         apre = pre if a.audio_preroll is None else min(a.audio_preroll, start)
-        fc = (f"[0:v]fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
+        fc = (f"[0:v]scale={info['w']}:{info['h']}:flags=bicubic,fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,"
               f"crop={cw}:{ch}:{cx}:{cy},scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[v];"
               f"[{0 if apre == pre else 1}:a]atrim=start={apre:.4f}:duration={dur + 0.25:.4f},asetpts=PTS-STARTPTS,aresample=48000,asetpts=N/SR/TB,"
               f"aformat=sample_fmts=s16:channel_layouts=stereo,apad=whole_len={ns},atrim=end_sample={ns},"
