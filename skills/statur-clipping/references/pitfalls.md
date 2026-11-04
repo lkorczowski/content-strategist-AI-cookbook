@@ -19,6 +19,7 @@ The first items cost a render on the first real run (a 1:40 TikTok live in Frenc
 - **A lone question mark.** The model can emit punctuation as its own token. The renderer joins punctuation to the previous word, with the French space before ? ! : ;.
 - **Removed words in the captions.** Captions are built only from the words kept in the edit.
 - **A caption fix that is a rewrite.** A fix corrects spelling, names, numbers and punctuation. It never changes what the speaker said, and it never changes the audio. Viewers notice a caption that says something else. If a sentence must change, cut it.
+- **A quality check that translates.** On accented English the model can switch to French and translate what it hears, even with short chunks: the match ratio falls to 40-80 % while nothing is missing. Read only the "delete" issues of qa_clip.py and transcribe each of those windows alone (`--max-speech 2.5`); "replace" issues in another language are translations. `qa_clip.py --max-speech 4` sets the chunk length of the second reading.
 - **A hidden word that stays audible.** An empty fix hides words from the captions only. To remove a word from the clip, cut it.
 - **A plan written on the platform's transcript.** Loom, YouTube and TikTok captions are timed per phrase (3 to 5 s) and mishear words. Plan on them, then transcribe only the chosen windows locally (`transcribe.py --ranges`) and snap every edge to the words (`snap_segments.py`). On our run: 13 minutes of a 93-minute call transcribed instead of the whole file.
 
