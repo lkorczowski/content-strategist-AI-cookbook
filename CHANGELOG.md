@@ -8,6 +8,10 @@ Newest first. One line per change: date, what changed, version.
 - Same release, issue #12: the skill no longer reads results or decides which formats to keep (the 48-hour reading step of 2.0.0 is gone). statur-format-review decides on mature data, statur-content-learning runs the monthly lessons; this skill only copies a review decision into a private card. ARCHITECTURE section 8: Make row updated, known overlap removed. Playbook card format-library: library version 0.1.
 - Ported from draft pull request #3 (format-library-coach 2.0, 2026-10-25, written before the statur- rename): paths moved under skills/statur-format-library/, skill links renamed (statur-comment-section, statur-format-review). Marketplace 2.15.0.
 
+## 2026-11-03 · v2.14.1
+
+- statur-clipping 2.3.1: `qa_clip.py --max-speech` (chunk length of the second reading, default 15 s) and the pitfall "a quality check that translates" for accented English, found on a real English live. Written as v2.7.1 / 2.1.1, renumbered at merge.
+
 ## 2026-10-28 · v2.14.0
 
 - Playbook card statur-clipping: 34-second demo video of the second run (docs/media), page version 1.3.
