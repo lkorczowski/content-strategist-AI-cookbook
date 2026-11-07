@@ -17,7 +17,8 @@
       "skills": [
         "./skills/statur-video-post-mortem",
         "./skills/statur-format-review",
-        "./skills/statur-content-learning"
+        "./skills/statur-content-learning",
+        "./skills/statur-trial-reels"
       ]
     },
     {
@@ -181,7 +182,8 @@
         "./skills/statur-motion-design",
         "./skills/statur-sound-design",
         "./skills/statur-color-grade",
-        "./skills/statur-broll-find"
+        "./skills/statur-broll-find",
+        "./skills/statur-trial-reels"
       ]
     },
     {
