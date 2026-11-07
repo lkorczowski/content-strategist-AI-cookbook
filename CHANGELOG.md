@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-03 · v2.15.0
+
+- statur-clipping 2.4.0, statur-clip-edit 2.3.0, statur-clip-plan 2.2.0: several recordings in one clip or one project (spec `sources`, segment `src`, cuts and fixes per source, loudness leveled across sources), composed layouts for screen recordings and calls (camera bubble in a circle over a blurred screen, screen on top with the bubble below, call thumbnail in a rounded box, caption height per layout, watermark spots per spec), stretched downloads brought back to square pixels (sample aspect ratio, source `size`), planning on the platform's own transcript before the download (`snap_segments.py`), local transcription of chosen windows only (`transcribe.py --ranges`, `--append`), `prep_source.sh` with `SRCID`, and a mix spec template (`templates/clip-spec.mix.example.json`). Keeps 2.3.0's always-on pre-scale (now per source: `size`, then the source's `norm` or `frame.norm`, then the probed size), `captions.x`, `frame.zoom` (also per crop layout) and `--audio-preroll`. Ported from draft PR #2 (written 2026-10-24 as statur-clipping 1.1.0 from three Loom recordings mixed into five clips).
+
 ## 2026-11-03 · v2.14.1
 
 - statur-clipping 2.3.1: `qa_clip.py --max-speech` (chunk length of the second reading, default 15 s) and the pitfall "a quality check that translates" for accented English, found on a real English live. Written as v2.7.1 / 2.1.1, renumbered at merge.
