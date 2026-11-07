@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-07 · v2.16.0
+
+- New skill statur-trial-reels 0.1.0 (Content Testing Loop): test 2 to 4 hooks as Instagram trial reels, publish them from Claude through the STATUR connector (official Instagram API, MANUAL or SS_PERFORMANCE graduation, scheduling, client accounts by link), compare the versions on watch time ratio and shares per reach after 24 to 72 hours, write the lesson as a sentence about hooks.
+
 ## 2026-11-03 · v2.15.0
 
 - statur-clipping 2.4.0, statur-clip-edit 2.3.0, statur-clip-plan 2.2.0: several recordings in one clip or one project (spec `sources`, segment `src`, cuts and fixes per source, loudness leveled across sources), composed layouts for screen recordings and calls (camera bubble in a circle over a blurred screen, screen on top with the bubble below, call thumbnail in a rounded box, caption height per layout, watermark spots per spec), stretched downloads brought back to square pixels (sample aspect ratio, source `size`), planning on the platform's own transcript before the download (`snap_segments.py`), local transcription of chosen windows only (`transcribe.py --ranges`, `--append`), `prep_source.sh` with `SRCID`, and a mix spec template (`templates/clip-spec.mix.example.json`). Keeps 2.3.0's always-on pre-scale (now per source: `size`, then the source's `norm` or `frame.norm`, then the probed size), `captions.x`, `frame.zoom` (also per crop layout) and `--audio-preroll`. Ported from draft PR #2 (written 2026-10-24 as statur-clipping 1.1.0 from three Loom recordings mixed into five clips).
