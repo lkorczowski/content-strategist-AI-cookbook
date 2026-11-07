@@ -2,11 +2,15 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-03 · v2.15.0
+## 2026-11-03 · v2.16.0
 
 - statur-format-library 3.0.0: The Format Library becomes a library of 150 format cards (one file per format in skills/statur-format-library/library/formats/), tagged on four dimensions (funnel, value, structure, setup) with a controlled taxonomy (references/taxonomy.json, 3 + 7 + 41 + 24 tags) and a naming rule. Modes: find, plan a starter deck, script, invent an original format, document a format, sort a collection of saved videos, hand over the results. New tool scripts/library.py (build, check, lint, find, suggest, similar, new, gaps) with --private for a private library of cards. New references: card-template.md, private-card-template.md (with observed results per format) and collection-import.md. The twelve formats of version 2.0.0 are kept as cards. 16 cards (F135 to F150) and the status of 13 cards come from real programs, anonymized. CI runs library.py check.
 - Same release, issue #12: the skill no longer reads results or decides which formats to keep (the 48-hour reading step of 2.0.0 is gone). statur-format-review decides on mature data, statur-content-learning runs the monthly lessons; this skill only copies a review decision into a private card. ARCHITECTURE section 8: Make row updated, known overlap removed. Playbook card format-library: library version 0.1.
 - Ported from draft pull request #3 (format-library-coach 2.0, 2026-10-25, written before the statur- rename): paths moved under skills/statur-format-library/, skill links renamed (statur-comment-section, statur-format-review). Marketplace 2.15.0.
+
+## 2026-11-03 · v2.15.0
+
+- statur-clipping 2.4.0, statur-clip-edit 2.3.0, statur-clip-plan 2.2.0: several recordings in one clip or one project (spec `sources`, segment `src`, cuts and fixes per source, loudness leveled across sources), composed layouts for screen recordings and calls (camera bubble in a circle over a blurred screen, screen on top with the bubble below, call thumbnail in a rounded box, caption height per layout, watermark spots per spec), stretched downloads brought back to square pixels (sample aspect ratio, source `size`), planning on the platform's own transcript before the download (`snap_segments.py`), local transcription of chosen windows only (`transcribe.py --ranges`, `--append`), `prep_source.sh` with `SRCID`, and a mix spec template (`templates/clip-spec.mix.example.json`). Keeps 2.3.0's always-on pre-scale (now per source: `size`, then the source's `norm` or `frame.norm`, then the probed size), `captions.x`, `frame.zoom` (also per crop layout) and `--audio-preroll`. Ported from draft PR #2 (written 2026-10-24 as statur-clipping 1.1.0 from three Loom recordings mixed into five clips).
 
 ## 2026-11-03 · v2.14.1
 

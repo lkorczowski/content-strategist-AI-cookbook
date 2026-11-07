@@ -1,0 +1,271 @@
+{
+ "id": "C02",
+ "version": 1,
+ "slug": "reaction-format-supercut",
+ "title": "The reaction format, told in three sessions",
+ "hook": {
+  "text": "Reaction videos are the|cheat code right now",
+  "dur": 3.0,
+  "size": 84
+ },
+ "sources": {
+  "V1": {
+   "file": "RUSHS WEB01/WEB01_V1_source.mp4",
+   "words": "TRAVAIL WEB01/V1/asr/words.json",
+   "audio": "TRAVAIL WEB01/V1/audio16k.flac",
+   "layout": "v1_face",
+   "size": [
+    2464,
+    1300
+   ]
+  },
+  "V2": {
+   "file": "RUSHS WEB01/WEB01_V2_source.mp4",
+   "words": "TRAVAIL WEB01/V2/asr/words.json",
+   "audio": "TRAVAIL WEB01/V2/audio16k.flac",
+   "layout": "v2_face",
+   "size": [
+    2170,
+    1300
+   ]
+  },
+  "V3": {
+   "file": "RUSHS WEB01/WEB01_V3_source.mp4",
+   "words": "TRAVAIL WEB01/V3/asr/words.json",
+   "audio": "TRAVAIL WEB01/V3/audio16k.flac",
+   "layout": "v3_call",
+   "size": [
+    1714,
+    1336
+   ]
+  }
+ },
+ "layouts": {
+  "v1_face": {
+   "captions_y": 0.75,
+   "layers": [
+    {
+     "rect": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "blur": 20,
+     "dim": 0.4
+    },
+    {
+     "rect": [
+      0.0145,
+      0.6775,
+      0.153,
+      0.29
+     ],
+     "to": [
+      0.148,
+      0.2917,
+      0.7037,
+      0.3958
+     ],
+     "mask": "circle",
+     "border": {
+      "w": 8
+     },
+     "punch": true
+    }
+   ]
+  },
+  "v1_react": {
+   "captions_y": 0.545,
+   "layers": [
+    {
+     "rect": [
+      0.2409,
+      0.0,
+      0.2956,
+      1.0
+     ],
+     "to": [
+      0,
+      0,
+      1,
+      0.5
+     ],
+     "anchor_y": 0.3
+    },
+    {
+     "rect": [
+      0.0145,
+      0.6775,
+      0.153,
+      0.29
+     ],
+     "to": [
+      0.259,
+      0.578,
+      0.4815,
+      0.2708
+     ],
+     "mask": "circle",
+     "border": {
+      "w": 6
+     },
+     "punch": true
+    }
+   ]
+  },
+  "v2_face": {
+   "captions_y": 0.75,
+   "layers": [
+    {
+     "rect": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "blur": 20,
+     "dim": 0.4
+    },
+    {
+     "rect": [
+      0.0164,
+      0.6872,
+      0.1726,
+      0.2876
+     ],
+     "to": [
+      0.148,
+      0.2917,
+      0.7037,
+      0.3958
+     ],
+     "mask": "circle",
+     "border": {
+      "w": 8
+     },
+     "punch": true
+    }
+   ]
+  },
+  "v3_call": {
+   "captions_y": 0.7,
+   "layers": [
+    {
+     "rect": [
+      0.8745,
+      0.0865,
+      0.113,
+      0.082
+     ],
+     "blur": 30,
+     "dim": 0.35
+    },
+    {
+     "rect": [
+      0.8745,
+      0.0865,
+      0.113,
+      0.082
+     ],
+     "to": [
+      0.0833,
+      0.2917,
+      0.8333,
+      0.265
+     ],
+     "mask": "round",
+     "radius": 28,
+     "border": {
+      "w": 6
+     },
+     "sharpen": 0.6,
+     "punch": true
+    }
+   ]
+  }
+ },
+ "segments": [
+  {
+   "src": "V2",
+   "s": 499.0,
+   "e": 514.6,
+   "from": "reaction videos are the cheat code",
+   "to": "easy to replicate",
+   "label": "cold open"
+  },
+  {
+   "src": "V1",
+   "s": 0.3,
+   "e": 32.9,
+   "layout": "v1_react",
+   "from": "this brand sells neon signs",
+   "to": "sells its signs to businesses",
+   "label": "the example"
+  },
+  {
+   "src": "V3",
+   "s": 2291.8,
+   "e": 2301.4,
+   "from": "if you use more than a few seconds",
+   "to": "tag them",
+   "label": "the rule"
+  }
+ ],
+ "cut": [
+  {
+   "src": "V1",
+   "s": 17.6,
+   "e": 20.5,
+   "text": "uh the big uh"
+  }
+ ],
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30
+ },
+ "watermark": {
+  "spots": [
+   [
+    0.05,
+    0.095
+   ],
+   [
+    0.58,
+    0.095
+   ],
+   [
+    0.05,
+    0.235
+   ],
+   [
+    0.58,
+    0.235
+   ],
+   [
+    0.05,
+    0.84
+   ],
+   [
+    0.58,
+    0.84
+   ]
+  ]
+ },
+ "caption": "...",
+ "hashtags": [
+  "#contentstrategy"
+ ],
+ "pinned": "...",
+ "objective": {
+  "stage": "MOFU",
+  "goals": [
+   "authority"
+  ]
+ },
+ "format": "supercut of three recordings",
+ "changelog": [
+  "v1: planned on the platform's transcript; snap_segments.py before rendering"
+ ]
+}

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Local FR/EN transcription with word timestamps (sherpa-onnx + NVIDIA Parakeet TDT 0.6B v3 + Silero VAD).
-Usage: transcribe.py INPUT_MEDIA OUT_DIR [--threads N] [--max-speech 20]
+Usage: transcribe.py INPUT_MEDIA OUT_DIR [--threads N] [--max-speech 20] [--ranges 38-230,1715-2005] [--append]
 (--max-speech: longest chunk in seconds; 6 or less for a second reading of a bilingual passage)
+(--ranges: transcribe only these windows, in seconds of the input, for example the passages a clip plan
+ picked from the platform's own transcript; times in the outputs stay on the input's timeline.
+ --append: merge into an existing words.json, replacing the words inside the new windows.)
 Outputs in OUT_DIR: words.json, segments.json, transcript.txt (timestamped), transcript.srt, speech.json (VAD speech spans)
 """
 import sys, os, json, time, subprocess, argparse
@@ -12,8 +15,9 @@ M = os.environ.get("ASR_MODEL_DIR", os.path.join(HERE, "..", "models", "sherpa-o
 VAD = os.environ.get("VAD_MODEL", os.path.join(HERE, "..", "models", "silero_vad.onnx"))
 SR = 16000
 
-def load_audio(path):
-    cmd = ["ffmpeg", "-nostdin", "-v", "error", "-i", path, "-vn", "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]
+def load_audio(path, start=None, dur=None):
+    cmd = ["ffmpeg", "-nostdin", "-v", "error"] + (["-ss", f"{start:.3f}"] if start else []) + ["-i", path]
+    cmd += (["-t", f"{dur:.3f}"] if dur else []) + ["-vn", "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]
     raw = subprocess.run(cmd, check=True, capture_output=True).stdout
     return np.frombuffer(raw, dtype=np.float32).copy()
 
@@ -28,12 +32,21 @@ def main():
     ap.add_argument("input"); ap.add_argument("out")
     ap.add_argument("--threads", type=int, default=max(1, os.cpu_count() or 2))
     ap.add_argument("--max-speech", type=float, default=20.0)
+    ap.add_argument("--ranges", default=None, help="only these windows, in seconds: 38-230,1715-2005")
+    ap.add_argument("--append", action="store_true", help="merge into an existing words.json of OUT_DIR")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     t0 = time.time()
-    samples = load_audio(a.input)
-    total = len(samples) / SR
-    print(f"audio {total/60:.1f} min loaded in {time.time()-t0:.1f}s", flush=True)
+    wins = []
+    if a.ranges:
+        for part in a.ranges.split(","):
+            x, y = part.split("-")
+            wins.append((float(x), float(y)))
+    else:
+        wins = [(0.0, None)]
+    loaded = [(w0, load_audio(a.input, w0, (w1 - w0) if w1 else None)) for w0, w1 in wins]
+    total = sum(len(x) for _, x in loaded) / SR
+    print(f"audio {total/60:.1f} min loaded in {time.time()-t0:.1f}s ({len(loaded)} window(s))", flush=True)
 
     rec = sherpa_onnx.OfflineRecognizer.from_transducer(
         encoder=f"{M}/encoder.int8.onnx", decoder=f"{M}/decoder.int8.onnx",
@@ -47,18 +60,20 @@ def main():
     cfg.silero_vad.min_speech_duration = 0.20
     cfg.silero_vad.max_speech_duration = a.max_speech
     cfg.sample_rate = SR
-    vad = sherpa_onnx.VoiceActivityDetector(cfg, buffer_size_in_seconds=180)
     win = cfg.silero_vad.window_size
 
     spans = []
-    def drain():
-        while not vad.empty():
-            seg = vad.front
-            spans.append((seg.start, np.array(seg.samples, dtype=np.float32)))
-            vad.pop()
-    for i in range(0, len(samples), win):
-        vad.accept_waveform(samples[i:i+win]); drain()
-    vad.flush(); drain()
+    for w0, samples in loaded:
+        vad = sherpa_onnx.VoiceActivityDetector(cfg, buffer_size_in_seconds=180)
+        base = int(round(w0 * SR))
+        def drain():
+            while not vad.empty():
+                seg = vad.front
+                spans.append((base + seg.start, np.array(seg.samples, dtype=np.float32)))
+                vad.pop()
+        for i in range(0, len(samples), win):
+            vad.accept_waveform(samples[i:i+win]); drain()
+        vad.flush(); drain()
     print(f"VAD: {len(spans)} speech spans in {time.time()-t0:.1f}s", flush=True)
 
     words, segments = [], []
@@ -86,11 +101,19 @@ def main():
         words.extend(seg_words)
         segments.append({"i": k, "s": round(off, 3), "e": round(seg_end, 3), "text": r.text.strip()})
         if k % 50 == 0:
-            done = seg_end / total
             el = time.time() - t1
-            print(f"  {k}/{len(spans)} spans, {done*100:.0f}% audio, {el:.0f}s elapsed", flush=True)
+            print(f"  {k}/{len(spans)} spans, {el:.0f}s elapsed", flush=True)
 
-    json.dump(words, open(os.path.join(a.out, "words.json"), "w"), ensure_ascii=False)
+    wpath = os.path.join(a.out, "words.json")
+    if a.append and os.path.exists(wpath) and a.ranges:
+        def inside(t):
+            return any(w0 <= t < w1 for w0, w1 in wins)
+        old = [w for w in json.load(open(wpath)) if not inside(w["s"])]
+        words = sorted(old + words, key=lambda w: w["s"])
+        sp = os.path.join(a.out, "segments.json")
+        if os.path.exists(sp):
+            segments = sorted([x for x in json.load(open(sp)) if not inside(x["s"])] + segments, key=lambda x: x["s"])
+    json.dump(words, open(wpath, "w"), ensure_ascii=False)
     json.dump(segments, open(os.path.join(a.out, "segments.json"), "w"), ensure_ascii=False, indent=0)
     json.dump([[round(s/SR,3), round(s/SR + len(c)/SR,3)] for s, c in spans], open(os.path.join(a.out, "speech.json"), "w"))
     with open(os.path.join(a.out, "transcript.txt"), "w") as f:
