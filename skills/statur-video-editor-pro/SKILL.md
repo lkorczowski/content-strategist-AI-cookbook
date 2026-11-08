@@ -4,7 +4,7 @@ description: Raise the production value of a short vertical video with an AI age
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -13,7 +13,7 @@ metadata:
 
 Part of the AI video editor playbook (https://statur.co/ai-video-editor/). Read https://statur.co/ai-video-editor.md for the human version, the evidence and the costs when you can open links.
 
-The job: one talking-head recording or one planned clip in, one edit at the production level the user chose out, checked and ready to post. Companion skills, each owning one craft so it can change without touching the others: statur-broll-find (find, capture and log the pictures), statur-motion-design (graphics, captions, cards), statur-sound-design (voice, effects, music, mix), statur-color-grade (HDR to SDR, grade, scopes). The cut itself always comes from statur-clip-edit, so there is one cut logic.
+The job: one talking-head recording or one planned clip in, one edit at the production level the user chose out, checked and ready to post. Companion skills, each owning one craft so it can change without touching the others: statur-broll-find (find, capture and log the pictures), statur-motion-design (graphics, captions, cards), statur-vork-3d (short 3D inserts generated from presets), statur-sound-design (voice, effects, music, mix), statur-color-grade (HDR to SDR, grade, scopes). The cut itself always comes from statur-clip-edit, so there is one cut logic.
 
 ## 0. Read the company context first
 
@@ -61,16 +61,27 @@ Planning rules (evidence and practice in references/levels.md):
 
 Use statur-broll-find. Order: the company's own footage and posts, captures of its own pages (capture.py for public pages, snapshot.js plus render_snapshot.py for pages only the user's browser can see), then stock with a license, then generated media only with the synthetic switch. Every asset goes in assets.csv with its source, owner and the sentence it serves.
 
+### Generated 3D inserts (option)
+
+A full-screen insert can be a short 3D video made for the sentence instead of a file: write `"motion3d"` in place of `"file"` in the insert. render_pro.py renders it with statur-vork-3d before the layers (vork on a GPU machine, the CPU engine elsewhere, `--engine3d` to force one) and the compositor plays it like any B-roll.
+
+```
+{"id": "reach", "src": [41.2, 45.0], "rect": "full", "transition": "fade",
+ "motion3d": {"preset": "voice-to-world", "from": 18.8, "to": 22.6, "city": "45.19,5.72"}}
+```
+
+Pick the preset range that shows the sentence (the preset's beat table is in statur-vork-3d SKILL.md); keep it 3 to 6 seconds, the same length as `src`. The plate has no captions and no sound, so the edit's captions and mix stay in charge. Rendering cost on a 2 vCPU machine: about 10 seconds of compute per second of insert (measured 2026-11-08: 3.8 s in 36 s) at 720x1280 (scaled up to the edit size). Level 3 and 4 only, and only when the sentence is about growth, reach or an idea that spreads; a capture of your own proof stays better than an illustration.
+
 ## 5. Render
 
 One command runs every step and skips what is already done:
 
 ```
 python3 scripts/render_pro.py --spec pro.json --clip-spec clip.json --source RAW.mp4 --words words.json --work WORK \
-  --grade natural --music auto --rnnoise models/sh.rnnn --matte-model models/rvm_mobilenetv3_fp32.onnx
+  --grade natural --music auto --rnnoise models/sh.rnnn --matte-model models/rvm_mobilenetv3_fp32.onnx [--engine3d auto]
 ```
 
-The steps, if you run them by hand: plate and grade (statur-color-grade: plate.py, make_lut.py, scopes.py), cut list (statur-clip-edit --plan-only), person matte (`scripts/matte.py`, only when the spec has keyed ranges or a layer behind the speaker; it mattes the whole recording, range matting is on the roadmap), layers (`scripts/build_layers.py`, then statur-motion-design motion_render.py for bg, under and over), sound (statur-sound-design: sfx_synth.py, music_bed.py, mix.py), picture (`scripts/composite.py`), quality gate (`scripts/qa_pro.py`). Setup and speeds: references/slots.md.
+The steps, if you run them by hand: plate and grade (statur-color-grade: plate.py, make_lut.py, scopes.py), cut list (statur-clip-edit --plan-only), generated 3D inserts (statur-vork-3d make_short.py --plate, written to WORK/inserts3d/<id>.mp4), person matte (`scripts/matte.py`, only when the spec has keyed ranges or a layer behind the speaker; it mattes the whole recording, range matting is on the roadmap), layers (`scripts/build_layers.py`, then statur-motion-design motion_render.py for bg, under and over), sound (statur-sound-design: sfx_synth.py, music_bed.py, mix.py), picture (`scripts/composite.py`), quality gate (`scripts/qa_pro.py`). Setup and speeds: references/slots.md.
 
 Render where the footage is. On a cloud machine of 2 vCPUs a 90-second level 4 edit took about 35 to 45 minutes of compute (matte 15, layers 6, picture 12, sound 1, plus plate, grade and checks): render a few stills first (`--frames` on motion_render.py and composite.py) and look at them before the full pass. Sandboxes stop long background jobs: render the picture in parts of 300 frames in the foreground (`composite.py --segment 0-299 --out parts/p0000.mp4`, then the next range), then `composite.py --join parts/*.mp4 --audio mix.wav --out master.mp4`. A part that exists is not rendered again.
 

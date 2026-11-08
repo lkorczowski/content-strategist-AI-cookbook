@@ -2,9 +2,19 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-07 · v2.17.0
+## 2026-11-08 · v2.19.0
 
 - New skill statur-trial-reels 0.1.0 (Content Testing Loop): test 2 to 4 hooks as Instagram trial reels, publish them from Claude through the STATUR connector (official Instagram API, MANUAL or SS_PERFORMANCE graduation, scheduling, client accounts by link), compare the versions on watch time ratio and shares per reach after 24 to 72 hours, write the lesson as a sentence about hooks.
+
+## 2026-11-08 · v2.18.0
+
+- New skill statur-vork-3d 0.1.0: short 3D explainers and 3D plates from presets written as code, with two renderers on one timeline: vork (headless 3D and VFX engine for agents, github.com/voyager-so/vork) on Apple Silicon with macOS 26 or NVIDIA RTX, and the statur-motion-3d CPU engine anywhere. make_short.py (engine auto-pick, parts, plate mode, city, scenario override), vork_scene.py (vork scene JSON v2 of the preset, validated against vork's editor schema; first GPU render pending), the "voice to world" preset (41 s, real coastlines from global-land-mask, mapped on the six types of the personal brand scale), vork notes with a fact check of the launch claims, pitfalls from the first render.
+- statur-video-editor-pro 1.1.0: generated 3D inserts, `motion3d` in place of `file` in an insert; render_pro.py renders them with statur-vork-3d (`--engine3d`) before the layers; build_layers.py points the insert to WORK/inserts3d/<id>.mp4.
+- statur-motion-3d 0.2.1: render2.js takes `PAGE` to render another page of the workspace (plates without overlay).
+
+## 2026-11-08 · v2.17.0
+
+- statur-creator-program 3.0.0: follows the Creator Program Playbook v2.0 (https://statur.co/creator-programs/). Seven recipes replace the six Wispr Flow steps: catalyst check, payment incl. per 1,000 views with a cap, watchlist sorted by engagement with a tracker template, 3 to 5 creators and the brief (inspire, hand over the recipe), daily animation as the core recipe, scaling from a breakout with a 10% referral, measurement with the Agentio spend threshold. Pitfall 3 covers creators who buy ads to inflate views. Cases moved to two statur.co articles (Wispr Flow, Grok Bot). Playbook card version 2.0.
 
 ## 2026-11-03 · v2.16.0
 

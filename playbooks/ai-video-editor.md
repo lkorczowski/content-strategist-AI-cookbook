@@ -5,7 +5,7 @@ Turn a talking-head recording or a planned clip into an edit at the production l
 - Page (human version, source of truth): https://statur.co/ai-video-editor/
 - Markdown for AI assistants: https://statur.co/ai-video-editor.md
 - The essay behind it (louis-korczowski.org): the future of the video editor, coming soon
-- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.0.0, statur-motion-design 1.0.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0
+- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.1.0, statur-motion-design 1.0.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0, statur-vork-3d 0.1.0
 
 ## Summary
 
@@ -21,6 +21,7 @@ Built from a real run on 2026-10-28: a 97-second iPhone selfie in HDR, recorded 
 | [statur-motion-design](../skills/statur-motion-design/) | Graphics, captions, cards, diagrams, backgrounds and end cards as deterministic HTML templates, rendered with alpha in the brand's tokens. |
 | [statur-sound-design](../skills/statur-sound-design/) | Voice cleanup, effects on visual events, a music bed ducked under the voice, loudness, with a generated library. |
 | [statur-color-grade](../skills/statur-color-grade/) | HDR to SDR plate, the grade as a readable LUT, skin and level measures. |
+| [statur-vork-3d](../skills/statur-vork-3d/) | Short 3D inserts and explainers from presets written as code (motion3d inserts), rendered with vork on a GPU machine or with the statur-motion-3d CPU engine. |
 | [statur-broll-find](../skills/statur-broll-find/) | What to show for each sentence, captures of your own pages (also signed-in pages through a snapshot), asset log with rights. |
 
 The cut always comes from [statur-clip-edit](../skills/statur-clip-edit/) (`--plan-only`), so clipping and the pro editor share one cut logic.
