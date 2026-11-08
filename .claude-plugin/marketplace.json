@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.15.0"
+    "version": "2.17.0"
   },
   "plugins": [
     {
@@ -126,7 +126,7 @@
     },
     {
       "name": "statur-format-library",
-      "description": "Pick, script and read twelve short-form formats for founders.",
+      "description": "A library of short-form video formats tagged by funnel, value, structure and setup: find, plan, script, invent, name and document formats.",
       "source": "./",
       "strict": false,
       "skills": [
