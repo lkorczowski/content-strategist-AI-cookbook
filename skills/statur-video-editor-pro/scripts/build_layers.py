@@ -214,7 +214,10 @@ def main():
             "keyed": [list(when({"src": r}, mp)) for r in spec.get("keyed", [])],
             "subject_keys": keys(spec.get("subject_keys", []), ["s", "ax", "ay", "dx", "dy"]),
             "camera_keys": keys(spec.get("camera_keys", []), ["z", "fx", "fy", "ox", "oy"]),
-            "inserts": [dict(x, start=when(x, mp)[0], end=when(x, mp)[1], file=resolve(x["file"])) for x in spec.get("inserts", [])],
+            # an insert with "motion3d" and no "file" uses the plate render_pro.py made with statur-vork-3d
+            "inserts": [dict(x, start=when(x, mp)[0], end=when(x, mp)[1],
+                             file=resolve(x["file"]) if "file" in x else os.path.join(os.path.abspath(a.out), "inserts3d", f"{x.get('id', f'm3d{k}')}.mp4"))
+                        for k, x in enumerate(spec.get("inserts", []))],
             # speaker card over a full-screen panel (explainer split layout), drawn by composite.py after the overlays
             "insets": [dict({"border": tokens.get("muted"), "dot": tokens.get("accent"), "radius": tokens.get("radius", 0)},
                             **{k: v for k, v in x.items() if k != "src"}, start=when(x, mp)[0], end=when(x, mp)[1])

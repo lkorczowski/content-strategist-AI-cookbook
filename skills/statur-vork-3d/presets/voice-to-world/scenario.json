@@ -1,0 +1,23 @@
+{ "name": "voice-to-world", "engine": "3d", "sim_no": "007", "width": 720, "height": 1280, "fps": 30, "duration": 41,
+  "bloom": 0.55, "exposure": 1.05, "shadows": false, "grain": 0.04, "vignette": 0.45, "hud_top": 118,
+  "title": { "text": "From *invisible* to legend", "to": 2.6 },
+  "hud": [{ "from": 0, "to": 37, "label": "THE KORCZOWSKI SCALE",
+            "value": [[0, "TYPE 0"], [8, "TYPE 1"], [16, "TYPE 2"], [24.8, "TYPE 3"], [27.8, "TYPE 4"], [30.8, "TYPE *5*"]],
+            "prog": [0, 1] }],
+  "captions": [
+    [2.6, 5.4, "You speak into a *sea* of people."],
+    [5.4, 8.0, "Your ideas stay in the room."],
+    [8.0, 10.6, "Then *one* person hears you."],
+    [10.6, 13.2, "Then another. Then another."],
+    [13.2, 16.0, "A content strategist makes it *compound.*"],
+    [16.0, 18.8, "Thousands listen. Then millions."],
+    [18.8, 21.8, "One of them comes *back* to you."],
+    [21.8, 24.8, "A client. A deal. An *investor.*"],
+    [24.8, 27.8, "Your ideas cross every border."],
+    [27.8, 30.8, "The whole *world* carries them."],
+    [30.8, 33.8, "Years pass. The world keeps turning."],
+    [33.8, 37.0, "Your ideas *outlive* you."]
+  ],
+  "end": { "from": 37.0, "title": "Which *type* are you today?", "question": "The Korczowski scale, from Type 0 to Type 5, at statur.co/personal-brand-levels" },
+  "music": { "bpm": 96, "key": "D", "mood": "bright", "sections": [[0, 8, "pulse"], [8, 13.2, "build"], [13.2, 24.8, "drive"], [24.8, 30.8, "wide"], [30.8, 37, "hold"], [37, 41, "end"]] },
+  "sfx": [["pop", 8.3], ["pop", 10.8], ["pop", 11.9], ["whoosh", 13.2], ["whoosh", 18.8], ["ding", 19.0], ["ding", 22.5], ["whoosh", 24.8], ["whoosh", 30.8], ["hit", 37.0]] }

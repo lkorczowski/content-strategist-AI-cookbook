@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.17.0"
+    "version": "2.18.0"
   },
   "plugins": [
     {
@@ -214,7 +214,8 @@
         "./skills/statur-motion-design",
         "./skills/statur-sound-design",
         "./skills/statur-color-grade",
-        "./skills/statur-broll-find"
+        "./skills/statur-broll-find",
+        "./skills/statur-vork-3d"
       ]
     },
     {
@@ -228,11 +229,12 @@
     },
     {
       "name": "statur-motion-3d",
-      "description": "Faceless 3D motion-design shorts built in code: procedural low-poly world in four render modes, HUD clock, captions, loop card and synthesized sound, rendered on a CPU.",
+      "description": "Faceless 3D motion-design shorts built in code: procedural low-poly world in four render modes, HUD clock, captions, loop card and synthesized sound, rendered on a CPU, plus vork 3D shorts and plates on a GPU machine.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/statur-motion-3d"
+        "./skills/statur-motion-3d",
+        "./skills/statur-vork-3d"
       ]
     }
   ]

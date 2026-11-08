@@ -4,7 +4,7 @@ description: Make full 3D motion-design short videos in code, with no AI video m
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.2.0"
+  version: "0.2.1"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -59,7 +59,7 @@ The first engine (engine/) reproduces a format. Engine v2 (engine2/) is for orig
 - Kit (`engine2/lib3d.js`): articulated people with poses (walk, march with a sign, cheer, phone, type, shrug, look up, point), a host mascot (`host()`, `hostPose()`), robots, city blocks with lit windows, streets, cars, lamps, facade screens, signs with text, aircraft, star fields, camera paths with handheld shake.
 - Overlay (`engine2/core2.js` + `index.html`): brand tag and site, title with a colored keyword (`*word*`), HUD readout (label, value, progress bar), punchy captions (scale-in, keyword in the signal color), a source line under any caption that carries a number, end card with a question, film grain and vignette. Light backgrounds: `"ui": "light"`; move the HUD with `"hud_top"`.
 - Sound (`scripts/sound2.py`): music bed by sections (pulse, drop, build, drive, wide, hold, end) in a mood (tense minor, bright or playful major), plus SFX on cuts (whoosh, blackout, thud, hit, pop, ding, crowd). Still no samples and no license to clear.
-- Render: `SUB=<video> node scripts/render2.js <workspace> stills 1,4,9 <out>` then `SUB=<video> node scripts/render2.js <workspace> video <out.mp4>`; mux with ffmpeg. Measured 2026-10-31 on 2 vCPU at 720x1280 30 fps: 3D with bloom about 2.2 frames per second (52 s in 10 to 11 min), 2D about 6 frames per second (52 s in 4 min).
+- Render: `SUB=<video> node scripts/render2.js <workspace> stills 1,4,9 <out>` (`PAGE=plate.html` renders another page of the workspace, e.g. one without the overlay, as statur-vork-3d does for plates) then `SUB=<video> node scripts/render2.js <workspace> video <out.mp4>`; mux with ffmpeg. Measured 2026-10-31 on 2 vCPU at 720x1280 30 fps: 3D with bloom about 2.2 frames per second (52 s in 10 to 11 min), 2D about 6 frames per second (52 s in 4 min).
 
 ## Production value rules (learned from a 6/10 review)
 
