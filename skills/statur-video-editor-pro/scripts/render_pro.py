@@ -10,8 +10,10 @@ Usage:
   render_pro.py --spec pro.json --clip-spec clip.json --source SRC.mp4 --words words.json --work WORK
                 [--grade natural|editorial|grade.cube] [--music auto|none|track.wav] [--rnnoise model.rnnn]
                 [--matte-model rvm_mobilenetv3_fp32.onnx] [--sync sync.json] [--redo layers,sound] [--crf 16]
+                [--engine3d auto|cpu|vork]
   --clip-spec: the statur-clip-plan spec (segments, cut, fix, silence) that defines the cut
   --spec:      the pro spec (layers, captions, keys, inserts, sfx), times on the source timeline
+  inserts with "motion3d" instead of "file" are generated 3D plates (statur-vork-3d make_short.py --plate)
 """
 import argparse, json, os, subprocess, sys, time
 
@@ -29,6 +31,7 @@ P = {
     "mix": os.path.join(SK, "statur-sound-design", "scripts", "mix.py"),
     "build": os.path.join(HERE, "build_layers.py"), "matte": os.path.join(HERE, "matte.py"),
     "comp": os.path.join(HERE, "composite.py"), "qa": os.path.join(HERE, "qa_pro.py"),
+    "m3d": os.path.join(SK, "statur-vork-3d", "scripts", "make_short.py"),
 }
 
 def run(step, cmd):
@@ -48,6 +51,7 @@ def main():
     ap.add_argument("--redo", default=""); ap.add_argument("--crf", type=int, default=16); ap.add_argument("--sharpen", type=float, default=0.3)
     ap.add_argument("--grain", type=float, default=2.0, help="film grain in 8-bit levels, 0 to turn off")
     ap.add_argument("--out", default=None, help="master path (default WORK/master.mp4)")
+    ap.add_argument("--engine3d", default="auto", choices=["auto", "cpu", "vork"], help="renderer of motion3d inserts (statur-vork-3d)")
     a = ap.parse_args()
     W = os.path.abspath(a.work); os.makedirs(W, exist_ok=True)
     redo = set(x for x in a.redo.split(",") if x)
@@ -83,6 +87,25 @@ def main():
     elif not os.path.exists(matte):
         # no effect needs the speaker cut out: an all-white matte keeps the compositor simple
         run("matte", ["ffmpeg", "-nostdin", "-y", "-v", "error", "-i", plate, "-vf", "format=gray,geq=lum=255", "-c:v", "ffv1", "-an", matte])
+    # 4b. generated 3D inserts: "motion3d": {"preset", "from", "to", "city", "engine"} renders a plate with statur-vork-3d
+    for k, x in enumerate(spec.get("inserts", [])):
+        m = x.get("motion3d")
+        if not m or "file" in x:
+            continue
+        dst = os.path.join(W, "inserts3d", f"{x.get('id', f'm3d{k}')}.mp4")
+        if need("inserts3d", dst):
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            cmd = [py, P["m3d"], "--preset", m.get("preset", "voice-to-world"), "--plate", "--out", dst, "--engine", m.get("engine", a.engine3d),
+                   "--work", os.path.join(W, "m3d")]
+            if "from" in m:
+                cmd += ["--from", m["from"]]
+            if "to" in m:
+                cmd += ["--to", m["to"]]
+            if m.get("city"):
+                cmd += ["--city", m["city"]]
+            if m.get("scenario"):
+                cmd += ["--scenario", os.path.join(os.path.dirname(os.path.abspath(a.spec)), m["scenario"])]
+            run(f"insert3d {os.path.basename(dst)}", cmd)
     # 5. layers
     lay = os.path.join(W, "layers")
     if need("layers", os.path.join(W, "plan.json")) or "layers" in redo:

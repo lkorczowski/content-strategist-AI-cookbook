@@ -9,7 +9,7 @@ if (process.argv.length < 5 || process.argv.includes('--help')) { console.log(he
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path'), { spawn } = require('child_process');
 const [project, mode, a, b, c] = process.argv.slice(2);
-const ROOT = path.resolve(project); const SUB = process.env.SUB || 'p1';
+const ROOT = path.resolve(project); const SUB = process.env.SUB || 'p1'; // PAGE=plate.html renders a page without overlay
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.woff2': 'font/woff2', '.png': 'image/png', '.jpg': 'image/jpeg' };
 const srv = http.createServer((q, r) => { const p = path.join(ROOT, decodeURIComponent(q.url.split('?')[0])); if (!p.startsWith(ROOT)) { r.writeHead(403); r.end(); return; }
   fs.readFile(p, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'Content-Type': MIME[path.extname(p)] || 'application/octet-stream' }); r.end(d); }); });
@@ -22,7 +22,7 @@ const srv = http.createServer((q, r) => { const p = path.join(ROOT, decodeURICom
   let failed = false;
   page.on('pageerror', e => { failed = true; console.error('PAGE ERROR', e.message); });
   page.on('console', m => { if (m.type() === 'error') console.error('PAGE', m.text()); });
-  await page.goto(`http://localhost:${port}/index.html?p=${SUB}`);
+  await page.goto(`http://localhost:${port}/${process.env.PAGE || 'index.html'}?p=${SUB}`);
   await page.waitForFunction('window.READY === true', null, { timeout: 180000 });
   const fontErr = await page.evaluate('window.FONT_ERROR'); if (fontErr) { console.error(fontErr + ' (run setup_project.sh again)'); process.exit(2); }
   if (failed) process.exit(3);

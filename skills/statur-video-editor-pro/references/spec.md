@@ -17,7 +17,7 @@ One JSON file per edit version, next to the clip spec of statur-clip-plan. The c
 | `watermark` | Moving text, `from_src`, `to_src`, size, opacity; hidden automatically during panels, inserts and the end card. |
 | `subject_keys` | Keyed ranges only: scale and move the speaker (`s`, `ax`, `ay` anchor, `dx`, `dy`, `dur`, `ease`). |
 | `camera_keys` | Outside keyed ranges: punch-ins and pushes on the whole picture (`z`, `fx`, `fy` focus, `ox`, `oy` where the focus lands, `dur`, `ease`). A key holds until the next one. |
-| `inserts` | B-roll files: `file`, `src`, `rect` ("full" or [x, y, w, h]), `ken_burns`, `transition` (slide or fade), `seek`, `focus_y`. |
+| `inserts` | B-roll files: `file`, `src`, `rect` ("full" or [x, y, w, h]), `ken_burns`, `transition` (slide or fade), `seek`, `focus_y`. Or a generated 3D insert: `motion3d` in place of `file`, `{"preset", "from", "to", "city", "scenario", "engine"}` (statur-vork-3d), rendered to WORK/inserts3d/<id>.mp4. |
 | `insets` | Speaker card over a full-screen panel (explainer split layout): `src`, `rect` [x, y, w, h], `head_pad` (px kept above the head, found in the matte), `delay`, `fade`, `border`, `dot`, `radius` (border, dot and radius default to the tokens muted, accent and radius). Drawn after the overlays, so the panel stays a full-screen stage and the face stays on screen. Use a card close to square for close selfies (the head must fit, chin included). Only where the plate shows the face. |
 | `sfx` | Manual cues: `src`, `name`, `gain_db`, `why`. Template entrances add their own cues (build_layers.py AUTO_SFX). |
 | `music` | `bpm`, `key`, `drops_out` (output-time windows without drums: a breath before a reveal). |
