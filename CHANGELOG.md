@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-08 · v2.17.0
+
+- statur-creator-program 3.0.0: follows the Creator Program Playbook v2.0 (https://statur.co/creator-programs/). Seven recipes replace the six Wispr Flow steps: catalyst check, payment incl. per 1,000 views with a cap, watchlist sorted by engagement with a tracker template, 3 to 5 creators and the brief (inspire, hand over the recipe), daily animation as the core recipe, scaling from a breakout with a 10% referral, measurement with the Agentio spend threshold. Pitfall 3 covers creators who buy ads to inflate views. Cases moved to two statur.co articles (Wispr Flow, Grok Bot). Playbook card version 2.0.
+
 ## 2026-11-03 · v2.16.0
 
 - statur-format-library 3.0.0: The Format Library becomes a library of 150 format cards (one file per format in skills/statur-format-library/library/formats/), tagged on four dimensions (funnel, value, structure, setup) with a controlled taxonomy (references/taxonomy.json, 3 + 7 + 41 + 24 tags) and a naming rule. Modes: find, plan a starter deck, script, invent an original format, document a format, sort a collection of saved videos, hand over the results. New tool scripts/library.py (build, check, lint, find, suggest, similar, new, gaps) with --private for a private library of cards. New references: card-template.md, private-card-template.md (with observed results per format) and collection-import.md. The twelve formats of version 2.0.0 are kept as cards. 16 cards (F135 to F150) and the status of 13 cards come from real programs, anonymized. CI runs library.py check.
