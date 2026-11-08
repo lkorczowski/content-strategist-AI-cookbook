@@ -1,19 +1,19 @@
 ---
 name: statur-creator-program
-description: Design, run and audit a performance creator program where UGC creators are paid on what their videos do as ads (a share of ad spend for SaaS, a share of sales for e-commerce, with a smart retainer floor), using the six-step Wispr Flow playbook and its eight pitfalls. Use when a founder asks how to pay creators on performance, whether to start a UGC creator program now, how to recruit and coach creators, or which creators to keep or cut.
+description: Design, run and audit a creator program where a few creators are paid on what their videos do (share of sales, share of ad spend, or per 1,000 views, with a smart retainer floor), using the seven recipes of the Creator Program Playbook and its eight pitfalls. Use when a founder asks how to pay creators on results, whether to start a creator or UGC program now, how to find, brief, animate or scale creators, or which creators to keep or cut.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "3.0.0"
   playbook: https://statur.co/creator-programs/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
-# Performance creator program
+# Creator program
 
-Part of Performance creator programs: the Wispr Flow playbook (https://statur.co/creator-programs/). Read https://statur.co/creator-programs.md for the full method and its sources when you can open links.
+Part of the Creator Program Playbook (https://statur.co/creator-programs/). Cases: https://statur.co/blog/wispr-flow-creator-program/ and https://statur.co/blog/grok-bot-creator-campaign/. Read https://statur.co/creator-programs.md for the full method and its sources when you can open links.
 
-The job: decide whether a startup should run a creator program paid on ad performance, then design it, run it week by week and judge it on business numbers. The model multiplies a message that already converts and an ad account that already scales. It cannot find the message. The founder keeps the source of the ideas at every stage.
+The job: decide whether a startup should run a creator program paid on results, then design it, run it week by week and judge it on business numbers. The model multiplies a message that already converts and an ad account that already scales. It cannot find the message. The founder keeps the source of the ideas at every stage.
 
 ## What to ask for
 
@@ -31,48 +31,52 @@ Ask once, then work with what the user gives you.
 Place the startup on the stage ladder before designing anything.
 - Stage 0, no message yet: founder content first. Do not start a program.
 - Stage 1, the message converts: run organic winners as small ads.
-- Stage 2, ads scale: start 3 to 5 creators on a floor plus commission. Add a creator lead (briefs, coaching, weekly call) and a media buyer (leaderboard).
+- Stage 2, something sells: start 3 to 5 creators on a floor plus commission. Add a creator lead (briefs, coaching, weekly call) and a media buyer (leaderboard).
 - Stage 3, creative supply is the bottleneck: 10 to 50 creators with a creator operations team (coaches, referrals, payouts, compliance, clone checks).
 
 Compute the break-even with the user's own numbers: monthly spend needed per creator = floor divided by commission rate. Multiply by the number of creators on a floor. Below that spend, the program is a retainer with extra steps. Say so plainly. Prerequisites practitioners agree on: a clear audience, a working conversion path, and a product whose value shows on screen in seconds.
 
-## The six steps
+## The seven recipes
 
-1. Pick the payment model.
-   - SaaS pays a share of ad spend, because the sale often closes days or weeks after the click. E-commerce pays a share of attributed sales.
-   - Write the rate as a share of target CAC first, then as a percentage: high enough to motivate, low enough to keep the account profitable.
-   - Add a smart retainer for the first 2 to 3 months: a monthly floor tied to a video quota. If commissions fall short, the brand tops up. Once commissions pass the floor, the creator keeps the commission only.
-   - Pay weekly. Creators judge brands on payout speed.
-   - Public reference: Wispr Flow's head of content reports 7% of ad spend and a monthly floor for a 25-video quota (self-reported, https://x.com/hectorserrranoo/status/2108260769603486100).
-2. Start with 4 or 5 creators, each chosen for a gap.
-   - List the gaps in the ad library first: a new format, a new ICP, a new country.
-   - Recruit off-platform at first: Instagram keyword search ("UGC", "tech", "SaaS"), then the following lists of the good ones, then 100 to 200 personal DMs over a week.
-   - Many creators who do not care about the product produce the same talking-head video, and very similar ads compete with each other. Meta asks for creative diversity and publishes no threshold (https://www.marketingbrew.com/stories/meta-ad-creative-diversification-best-practices-advertiser-approach).
-3. Run creators like a sales team.
-   - One weekly call where the media buyer shows what spent and why.
-   - One named person creators can book directly.
-   - Rewards for quality on top of cash (gear they use). Community is the benefit competing brands rarely offer, and it keeps the best creators.
-4. Scale by doubling, then close the door.
-   - 5 to 10, 10 to 20, 20 to 40. Double only when the culture of step 3 still holds.
-   - Pay a referral bonus and approve every referral yourself.
-   - Past 40 to 60 creators, only top performers get in. Publish the bar: no beginners.
-5. Break the copy loop.
-   - Creators in a rut remake the top video. The copy is grouped with the original and rarely breaks out.
-   - Ask each creator for one new format per week.
-   - Show the leaderboard by format first, then by creator. Retire a format before it gets copied ten times.
-6. Measure what the ads did, then what the business did.
-   - Spend shows what the ad platform liked. Renewals and payback show what the brand paid for.
-   - Report spend, CAC and payback per creator every month.
-   - Add "how did you hear about us" to signup and to every sales call, and map UTMs to the CRM. Creator traffic often shows up as direct in SaaS.
-   - Keep the cost per 1,000 views below the revenue per 1,000 views, and score creators on renewals when attribution is murky (the rule Cal AI's growth team describes, https://www.revenuecat.com/blog/growth/jake-castillo-cal-ai-sub-club-podcast-2026.md).
-   - Cut creators on business metrics, after a fair number of videos.
+1. Check that something already sells (15 min, once).
+   - A catalyst first: sales, an ad that converted, a founder post that took off. Without one, recommend founder content and say a small program is still useful to build relationships.
+   - The proof becomes the brief.
+2. Pick how you pay (30 min, once).
+   - Share of sales (code or tracked link per creator, needs clean sales tracking). Share of ad spend (videos run as partnership ads, read the spend in the ad manager each week; Wispr Flow reports 7%, self-reported, https://x.com/hectorserrranoo/status/2108260769603486100). Price per 1,000 views (simplest start; count organic views only and cap the payout, because some creators buy ads to inflate views when that costs less than the rate).
+   - Write the rate as a share of what the business can pay for a customer, then as a percentage. Add a cap per video.
+   - Smart retainer for the first 2 to 3 months: a floor tied to a video quota, topped up when commissions fall short, dropped once commissions pass it.
+   - Ad usage rights are a priced line: Later reports 30 to 50% on top of a base rate (https://later.com/blog/influencer-pricing-benchmarks-the-complete-2026-guide/).
+3. Build a watchlist, then sort by engagement (1 hour, then 15 min a day).
+   - Save every promising creator video in a collection on each target network, in volume.
+   - Search adjacent niches too (running shoes: runners; a SaaS for lawyers: lawyers or people who explain the law).
+   - Sort by (likes + comments) / followers. A small engaged audience in the market beats a big account outside it.
+   - One tracker sheet connected to the user's AI: it reads emails and DMs, updates each row and flags replies. Template: the tracker linked in recipe 03 of https://statur.co/creator-programs/ (Google Sheet with dummy data).
+4. Start with 3 to 5 creators and brief them well (1 day, once).
+   - One gap each: a format, a type of customer, a country.
+   - Ship the product with a one-page brief: offer, 2 videos that already work, what to say and not say, disclosure, code.
+   - Inspire, do not script. If a recipe already converts (a lead magnet asking people to comment for a DM, a hook format), hand it over.
+5. Animate the creators every day (15 min a day). This recipe decides the program.
+   - Three creators who post every day and know the brand beat twenty who are not engaged.
+   - A daily channel (WhatsApp, Slack or Discord): share what worked and why, every day.
+   - A top-performers page, ranked by how videos do as ads, updated weekly.
+   - Pay fast, weekly: even a small payout motivates sooner.
+   - One person creators can reach directly. The best creator sets the pace for the others.
+6. Scale from a breakout, with referrals (2 hours, when a creator breaks out).
+   - The breakout video becomes a template the others adapt, never a script to copy.
+   - Recruit up to about 10 creators with that proof.
+   - Referral: the referrer earns an extra 10% of what the newcomer earns. Approve every newcomer.
+7. Measure, then break the copy loop (30 min a week).
+   - Judge creators on cost per sale and renewals, with UTMs and a "how did you hear about us" field.
+   - Give an ad enough spend before judging it: in one vendor dataset of 65,000 creator ads, almost half of eventual winners looked like losers under $100 of spend, and a winner lived about 36 days before its cost per sale rose 1.8 times (Agentio via https://martechvibe.com/article/creator-ads-deliver-19-higher-ctr-on-meta-partnership-ads, vendor data).
+   - Tired creators remake the top video. Ask for one new format per creator per week.
+   - Cut on business numbers, after a fair number of videos.
 
 ## The eight pitfalls
 
 Check each one in every audit.
 1. Commissions follow spend. Keep a human who owns profit between creators and budget.
 2. The message gets outsourced. The founder and the head of content keep the source of the ideas.
-3. Pay per view buys bots. Verify views before paying and judge cost per verified signup.
+3. Pay per view buys inflated views (bots, or creators buying ads when that costs less than the rate). Count organic views, cap the payout and judge cost per verified signup.
 4. Near-identical videos may count as one ad. Brief for formats and audiences, and check the library for clones every week.
 5. Undisclosed means illegal. The brand answers for its creators' disclosures under the FTC Endorsement Guides (https://www.arnoldporter.com/en/perspectives/advisories/2023/07/ftc-endorsement-guides). Buying fake views is banned under the FTC 2024 rule on reviews and testimonials (https://dwt.com/insights/2024/08/ftc-finalizes-rule-banning-fake-consumer-reviews). In France, law 2023-451 requires "publicité" or "collaboration commerciale" (https://www.economie.gouv.fr/node/3222759).
 6. Ad permissions can disappear. Creators can revoke partnership ads and TikTok Spark codes expire. Put whitelisting duration and file rights in the first contract.
@@ -86,10 +90,11 @@ CREATOR PROGRAM · <startup> · <date>
 Stage: <0, 1, 2 or 3> because <evidence>
 Break-even: floor <user figure> / rate <user figure> = <spend per creator per month> x <creators> = <total>
 Decision: start now | start later, do <founder content or small ads> first
-Payment model: <share of spend or sales> | rate as share of CAC: <x> | floor and quota: <x>, months <n> | payout: weekly
-First creators: <gap | profile | where to find them | recruiting DM draft>
-Weekly rhythm: <media buyer call | bookable person | feedback format | rewards>
-Scaling rules: <doubling trigger | referral bonus | public bar>
+Payment model: <share of sales, share of spend or per 1,000 views> | cap: <x> | rate as share of CAC: <x> | floor and quota: <x>, months <n> | payout: weekly
+Watchlist: <adjacent niches | keywords | engagement ratio per profile>
+First creators (3 to 5): <gap | profile | brief draft | recipe handed over>
+Daily animation: <channel | daily message format | top-performers page | payout rhythm | who sets the pace>
+Breakout plan: <template | recruiting message | referral 10% of the newcomer's earnings>
 Leaderboard reading: <creator | format | copying the top video? | new format to test>
 Business reading: <creator | spend | CAC | renewals | payback | keep, coach or cut>
 Pitfall check: <1 to 8 | ok or risk | fix>
