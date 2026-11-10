@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-10 · v2.19.0
+
+- New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.0.0: objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill.
+
 ## 2026-11-08 · v2.18.0
 
 - New skill statur-vork-3d 0.1.0: short 3D explainers and 3D plates from presets written as code, with two renderers on one timeline: vork (headless 3D and VFX engine for agents, github.com/voyager-so/vork) on Apple Silicon with macOS 26 or NVIDIA RTX, and the statur-motion-3d CPU engine anywhere. make_short.py (engine auto-pick, parts, plate mode, city, scenario override), vork_scene.py (vork scene JSON v2 of the preset, validated against vork's editor schema; first GPU render pending), the "voice to world" preset (41 s, real coastlines from global-land-mask, mapped on the six types of the personal brand scale), vork notes with a fact check of the launch claims, pitfalls from the first render.
