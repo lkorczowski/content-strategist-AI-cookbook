@@ -15,7 +15,7 @@ Usage:
   --plate     no overlay and no sound: a picture to insert in an edit (statur-video-editor-pro, motion3d inserts)
   --from/--to a range of the preset timeline, in seconds (default: the whole scenario)
   --scenario  a scenario.json that replaces the preset texts (captions, HUD, end card, music, sfx)
-  --city      the speaker's city for the globe (default Grenoble 45.19,5.72)
+  --city      the speaker's city for the globe (default: Paris 48.86,2.35)
 """
 import argparse, json, os, shutil, subprocess, sys
 
