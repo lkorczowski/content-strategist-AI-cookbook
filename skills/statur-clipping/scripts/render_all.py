@@ -49,6 +49,7 @@ def main():
     ap.add_argument("--audio-preroll", default=None, help="passed to clip_render.py (see its help)")
     ap.add_argument("--tmp", default="/tmp/clips"); ap.add_argument("--budget", type=float, default=0)
     ap.add_argument("--watermark", default=None, help="default watermark text for every clip (a spec's own text wins)")
+    ap.add_argument("--tokens", "--style", dest="tokens", default=os.environ.get("BRAND_TOKENS"), help="brand tokens JSON passed to clip_render.py (default: BRAND_TOKENS)")
     ap.add_argument("--keep-temp", action="store_true", help="keep the rendered pieces (faster re-renders, more disk)")
     ap.add_argument("--keep-old", action="store_true", help="leave older versions at the root of EXPORTS (default: move them to EXPORTS/archives/)")
     ap.add_argument("--no-upload-copy", action="store_true", help="do not write TRAVAIL <code>/upload/<code>-<id>-v<version>.mp4")
@@ -80,7 +81,7 @@ def main():
                 raise SystemExit(f"{sp}: give --source and --words, or list the recordings in the spec's \"sources\"")
             used = [w for w in words_of(a.words) if any(float(g["s"]) - 1 <= w["s"] <= float(g["e"]) + 1 for g in spec["segments"])]
         sha = hashlib.sha1(open(sp, "rb").read() + json.dumps(used, sort_keys=True).encode()
-                           + str(a.watermark).encode() + open(os.path.join(HERE, "clip_render.py"), "rb").read()).hexdigest()[:12]
+                           + str(a.watermark).encode() + (open(a.tokens, "rb").read() if a.tokens else b"") + open(os.path.join(HERE, "clip_render.py"), "rb").read()).hexdigest()[:12]
         cid, v = spec.get("id", "clip"), spec.get("version", 1)
         slug = spec.get("slug", "clip")
         out = os.path.join(work, f"{cid}_v{v}")
@@ -100,6 +101,8 @@ def main():
             cmd += ["--audio", a.audio]
         if a.watermark:
             cmd += ["--watermark", a.watermark]
+        if a.tokens:
+            cmd += ["--tokens", a.tokens]
         if a.audio_preroll is not None:
             cmd += ["--audio-preroll", str(a.audio_preroll)]
         if a.keep_temp:

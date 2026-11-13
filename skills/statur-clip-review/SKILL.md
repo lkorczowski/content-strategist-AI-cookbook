@@ -4,7 +4,7 @@ description: Run the review loop of edited clips with a human. Publishes light r
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.1.0"
+  version: "2.2.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -22,7 +22,7 @@ Part of the clipping playbook (https://statur.co/clipping/). The page template i
 | Frame.io | paid seats | yes, through its MCP server (public beta) or comment webhooks | the team or the client already reviews there |
 | Google Drive comments | included | no reliable way | a quick look, weak for a loop |
 
-The page: a 9:16 player with frame stepping and speed control, notes stamped at the player's time (or a range with I and O), tags (cut, pace, captions, hook, audio, image, other), a verdict per clip version (ready to post, needs changes, drop it), the clip brief (hook, goal, format, scores, caption, hashtags, pinned comment, what to check), the passages used in the source, and the whole clip plan with a vote per candidate. French and English interface.
+The page: a 9:16 player with frame stepping and speed control, notes stamped at the player's time (or a range with I and O), tags (cut, pace, captions, hook, audio, image, other), a verdict per clip version (ready to post, needs changes, drop it), the clip brief (hook, goal, format, scores, caption, hashtags, pinned comment, what to check), the passages used in the source, and the whole clip plan with a vote per candidate. French and English interface. The page ships in a neutral look and loads no remote font; `build_review.py ... --tokens brand.json` (or `BRAND_TOKENS`) writes a brand's colors and fonts into it (docs/BRAND-TOKENS.md).
 
 ## Build the page
 
