@@ -76,7 +76,7 @@ A private instance (a company's own knowledge base and skills) extends these ski
 - playbooks/: short cards that link each page, its markdown version, its essay and its skills. The page on statur.co is the source of truth for the text.
 - blueprint/: how to build a private AI content OS, with templates.
 - scripts/: checks run before every change (skill format, private data scan) and the zip builder for releases.
-- docs/: [architecture and responsibilities](docs/ARCHITECTURE.md) (section 8: which skill does what), [roadmap](docs/ROADMAP.md).
+- docs/: [architecture and responsibilities](docs/ARCHITECTURE.md) (section 8: which skill does what), [roadmap](docs/ROADMAP.md), [brand tokens](docs/BRAND-TOKENS.md) (one JSON file gives your brand to every video skill; [example](docs/brand-tokens.example.json)).
 
 ## Author
 
