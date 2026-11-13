@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-13 · v2.19.0
+
+- New skill statur-codex-diagram 0.1.0: hand-drawn notebook diagrams as plain SVG, without an illustrator. Engine scripts/codex.mjs (Node or browser, no DOM; strokes by rough.js, MIT): shapes with a diffuse two-level shadow, contour hatching on the shadow side, stipple shading, rays, ripples, highlighter stroke, handwritten and mirror labels, stippled medallion from level 0 to 5. scripts/render.mjs renders a spec module to SVG files and a contact sheet (--seed, --style, --paper, --embed-fonts with OFL fonts). examples/handbook-figures.mjs draws one figure per statur.co playbook. Pitfalls from the first build in references/pitfalls.md.
+
 ## 2026-11-08 · v2.18.0
 
 - New skill statur-vork-3d 0.1.0: short 3D explainers and 3D plates from presets written as code, with two renderers on one timeline: vork (headless 3D and VFX engine for agents, github.com/voyager-so/vork) on Apple Silicon with macOS 26 or NVIDIA RTX, and the statur-motion-3d CPU engine anywhere. make_short.py (engine auto-pick, parts, plate mode, city, scenario override), vork_scene.py (vork scene JSON v2 of the preset, validated against vork's editor schema; first GPU render pending), the "voice to world" preset (41 s, real coastlines from global-land-mask, mapped on the six types of the personal brand scale), vork notes with a fact check of the launch claims, pitfalls from the first render.
