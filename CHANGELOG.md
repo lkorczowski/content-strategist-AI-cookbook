@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-13 · v2.19.0
+
+- New skill statur-meta-creative-targeting 1.0.0 for the Meta creative targeting dossier (https://statur.co/meta-creative-targeting/): concept audit the way Meta groups look-alike ads, hard limits only, buyers by reasons matrix, three-second openings, two of four axes, weekly batch sized to the budget, reach read, fatigue. New plugin statur-meta-creative-targeting; added to statur-creative-strategist. Playbook card meta-creative-targeting.
+
 ## 2026-11-08 · v2.18.0
 
 - New skill statur-vork-3d 0.1.0: short 3D explainers and 3D plates from presets written as code, with two renderers on one timeline: vork (headless 3D and VFX engine for agents, github.com/voyager-so/vork) on Apple Silicon with macOS 26 or NVIDIA RTX, and the statur-motion-3d CPU engine anywhere. make_short.py (engine auto-pick, parts, plate mode, city, scenario override), vork_scene.py (vork scene JSON v2 of the preset, validated against vork's editor schema; first GPU render pending), the "voice to world" preset (41 s, real coastlines from global-land-mask, mapped on the six types of the personal brand scale), vork notes with a fact check of the launch claims, pitfalls from the first render.

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.18.0"
+    "version": "2.19.0"
   },
   "plugins": [
     {
@@ -190,9 +190,20 @@
       "source": "./",
       "strict": false,
       "skills": [
+        "./skills/statur-meta-creative-targeting",
         "./skills/statur-meta-ads-scaling",
         "./skills/statur-organic-to-paid",
         "./skills/statur-creator-program"
+      ]
+    },
+    {
+      "name": "statur-meta-creative-targeting",
+      "description": "Target Meta ads with the creative: concept audit the way Meta groups look-alike ads, hard limits only, a buyers by reasons matrix, openings that call each buyer, two of four axes, weekly batch, reach read and fatigue.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-meta-creative-targeting",
+        "./skills/statur-meta-ads-scaling"
       ]
     },
     {
