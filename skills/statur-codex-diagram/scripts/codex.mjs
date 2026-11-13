@@ -10,7 +10,7 @@
 //   s.label(320, 330, 'one idea', { accent: true, anchor: 'middle' });
 //   const svg = s.toSVG();
 
-import roughDefault from 'roughjs/bundled/rough.esm.js';
+import roughDefault from 'roughjs';
 
 export const DEFAULT_STYLE = {
   ink: '#2A1F17',          // iron-gall ink, brown-black
