@@ -9,17 +9,31 @@
  "h": 1920,
  "tail": 2.0,
  "tokens": {
-  "ink": "#0E0E0C",
-  "paper": "#F2EFE8",
-  "accent": "#E8501C",
-  "muted": "#8A8780",
-  "line": "rgba(242,239,232,.18)",
-  "font_display": "Archivo",
-  "weight_display": 900,
-  "font_body": "Archivo",
-  "font_mono": "JetBrains Mono",
-  "font_serif": "Cormorant",
-  "radius": 0
+  "name": "neutral",
+  "surface": "paper",
+  "colors": {
+   "paper": "#F6F3EC",
+   "panel": "#ECE8DE",
+   "ink": "#20262E",
+   "ink_drawing": "#33415C",
+   "secondary": "#6F747B",
+   "accent": "#1F6F5C",
+   "highlighter": "#F4D35E",
+   "highlighter_pale": "#FBF0C4"
+  },
+  "fonts": {
+   "display": "Atkinson Hyperlegible",
+   "text": "Atkinson Hyperlegible",
+   "inscription": "IBM Plex Mono",
+   "hand": "Caveat",
+   "logo": "Atkinson Hyperlegible"
+  },
+  "limits": {
+   "accent_gestures_per_screen": 1,
+   "highlighter_gestures_per_screen": 1,
+   "display_weight": 700,
+   "radius": 0
+  }
  },
  "keyed": [
   [
@@ -91,7 +105,7 @@
    "props": {
     "y": 300,
     "size": 280,
-    "color": "#F2EFE8",
+    "color": "#20262E",
     "text": "0M+",
     "counter": {
      "from": 0,
@@ -113,7 +127,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#0E0E0C",
+    "color": "#20262E",
     "text": "IDEA"
    }
   },
@@ -127,7 +141,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#0E0E0C",
+    "color": "#20262E",
     "text": "VISION"
    }
   },
@@ -141,7 +155,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#E8501C",
+    "color": "#1F6F5C",
     "text": "UNIQUE"
    }
   },
@@ -155,7 +169,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#0E0E0C",
+    "color": "#20262E",
     "text": "PACKAGED"
    }
   },
@@ -169,7 +183,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#E8501C",
+    "color": "#1F6F5C",
     "text": "VIRAL"
    }
   },
@@ -183,7 +197,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#0E0E0C",
+    "color": "#20262E",
     "text": "PROBLEM"
    }
   },
@@ -197,7 +211,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#0E0E0C",
+    "color": "#20262E",
     "text": "VISION"
    }
   },
@@ -211,7 +225,7 @@
    "props": {
     "y": 250,
     "size": 210,
-    "color": "#E8501C",
+    "color": "#1F6F5C",
     "text": "ISSUES"
    }
   }

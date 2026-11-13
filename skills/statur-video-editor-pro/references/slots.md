@@ -23,7 +23,7 @@ Each row is a craft with a default that runs on a CPU without an account, its li
 
 ```
 python3 -m pip install onnxruntime opencv-python-headless numpy scipy soundfile playwright
-npm i --prefix ../statur-motion-design/fonts @fontsource/archivo @fontsource/jetbrains-mono @fontsource/cormorant
+npm i --prefix ../statur-motion-design/fonts @fontsource/atkinson-hyperlegible @fontsource/ibm-plex-mono @fontsource/caveat   # or the families of your tokens file
 curl -LO https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx
 curl -LO https://raw.githubusercontent.com/GregorR/rnnoise-models/master/somnolent-hogwash-2018-09-01/sh.rnnn
 ```
