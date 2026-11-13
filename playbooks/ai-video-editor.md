@@ -5,7 +5,7 @@ Turn a talking-head recording or a planned clip into an edit at the production l
 - Page (human version, source of truth): https://statur.co/ai-video-editor/
 - Markdown for AI assistants: https://statur.co/ai-video-editor.md
 - The essay behind it (louis-korczowski.org): the future of the video editor, coming soon
-- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.1.0, statur-motion-design 1.0.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0, statur-vork-3d 0.1.0
+- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.2.0, statur-motion-design 1.1.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0, statur-vork-3d 0.1.0
 
 ## Summary
 
@@ -18,7 +18,7 @@ Built from a real run on 2026-10-28: a 97-second iPhone selfie in HDR, recorded 
 | Skill | Use it for |
 |---|---|
 | [statur-video-editor-pro](../skills/statur-video-editor-pro/) | The dial, the intake (level, reference videos, assets, music), the edit plan, the render command, the compositor, the quality gate and delivery. Works on a clip from statur-clipping or on any single recording. |
-| [statur-motion-design](../skills/statur-motion-design/) | Graphics, captions, cards, diagrams, backgrounds and end cards as deterministic HTML templates, rendered with alpha in the brand's tokens. |
+| [statur-motion-design](../skills/statur-motion-design/) | Graphics, captions, cards, diagrams, backgrounds and end cards as deterministic HTML templates, rendered with alpha in the brand's tokens ([docs/BRAND-TOKENS.md](../docs/BRAND-TOKENS.md)); no brand is written in the skill. |
 | [statur-sound-design](../skills/statur-sound-design/) | Voice cleanup, effects on visual events, a music bed ducked under the voice, loudness, with a generated library. |
 | [statur-color-grade](../skills/statur-color-grade/) | HDR to SDR plate, the grade as a readable LUT, skin and level measures. |
 | [statur-vork-3d](../skills/statur-vork-3d/) | Short 3D inserts and explainers from presets written as code (motion3d inserts), rendered with vork on a GPU machine or with the statur-motion-3d CPU engine. |
@@ -28,4 +28,4 @@ The cut always comes from [statur-clip-edit](../skills/statur-clip-edit/) (`--pl
 
 ## Credit
 
-Rendering: ffmpeg, Playwright with Chromium, OpenCV and numpy. Person matte: Robust Video Matting (Lin et al., GPL-3.0, run as a separate tool). Voice denoise: RNNoise models for ffmpeg. Transcription: NVIDIA Parakeet TDT 0.6B v3 through sherpa-onnx. Fonts: Archivo, JetBrains Mono and Cormorant (SIL Open Font License).
+Rendering: ffmpeg, Playwright with Chromium, OpenCV and numpy. Person matte: Robust Video Matting (Lin et al., GPL-3.0, run as a separate tool). Voice denoise: RNNoise models for ffmpeg. Transcription: NVIDIA Parakeet TDT 0.6B v3 through sherpa-onnx. Fonts: the ones named in your brand tokens file; neutral defaults Atkinson Hyperlegible, IBM Plex Mono and Caveat (SIL Open Font License).
