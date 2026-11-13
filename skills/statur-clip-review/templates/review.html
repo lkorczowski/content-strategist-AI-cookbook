@@ -192,7 +192,7 @@ ol.plan li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 4px
         <button class="tbtn" type="button" id="fwdF" title="→">+1 img</button>
         <button class="tbtn" type="button" id="fwd1" title="L">+1 s</button>
         <label class="mono" style="font-size:12px;display:inline-flex;gap:6px;align-items:center"><span id="speedLbl">Vitesse</span>
-          <select id="speed"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></label>
+          <select id="speed"><option value="0.5">0.5x</option><option value="1">1x</option><option value="1.5">1.5x</option><option value="2" selected>2x</option><option value="2.5">2.5x</option></select></label>
       </div>
       <div class="keys" id="keysHint"></div>
 
@@ -446,7 +446,11 @@ const DATA = window.__REVIEW_DATA__;
   $("playBtn").onclick = toggle;
   $("back1").onclick = () => seek(vid.currentTime - 1); $("fwd1").onclick = () => seek(vid.currentTime + 1);
   $("backF").onclick = () => { vid.pause(); seek(vid.currentTime - 1 / FPS); }; $("fwdF").onclick = () => { vid.pause(); seek(vid.currentTime + 1 / FPS); };
-  $("speed").onchange = (e) => { vid.playbackRate = parseFloat(e.target.value); };
+  const setRate = (r) => { vid.defaultPlaybackRate = r; vid.playbackRate = r; try { localStorage.setItem("review_rate", r); } catch (_) {} };
+  $("speed").value = (() => { try { return localStorage.getItem("review_rate") || "2"; } catch (_) { return "2"; } })();
+  setRate(parseFloat($("speed").value));
+  $("speed").onchange = (e) => setRate(parseFloat(e.target.value));
+  vid.addEventListener("loadedmetadata", () => { vid.playbackRate = parseFloat($("speed").value); });
   const scrub = $("scrub");
   const scrubTo = (ev) => { const r = scrub.getBoundingClientRect(); const f = Math.max(0, Math.min(1, (ev.clientX - r.left) / r.width)); seek(f * (vid.duration || (cur && cur.dur) || 0)); };
   scrub.addEventListener("pointerdown", (e) => { scrub.setPointerCapture(e.pointerId); scrubTo(e); });
