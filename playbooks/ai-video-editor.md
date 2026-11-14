@@ -5,7 +5,7 @@ Turn a talking-head recording or a planned clip into an edit at the production l
 - Page (human version, source of truth): https://statur.co/ai-video-editor/
 - Markdown for AI assistants: https://statur.co/ai-video-editor.md
 - The essay behind it (louis-korczowski.org): the future of the video editor, coming soon
-- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.2.0, statur-motion-design 1.1.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0, statur-vork-3d 0.1.0
+- Version 1.0, 2026-10-28 (page); skills statur-video-editor-pro 1.2.0, statur-motion-design 1.1.0, statur-sound-design 1.0.0, statur-color-grade 1.0.0, statur-broll-find 1.0.0, statur-vork-3d 0.1.1
 
 ## Summary
 

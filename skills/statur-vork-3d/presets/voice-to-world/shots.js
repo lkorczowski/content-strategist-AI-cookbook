@@ -6,7 +6,7 @@ export default async function (C) {
   const { THREE, scene, camera, ss, clamp, lerp } = C; const V = L.V; const R = L.rng(11);
   const D = await (await fetch(new URL('data.json', import.meta.url))).json();
   const RG = 3000, TOP = V(0, RG, 0);
-  const PAPER = new THREE.Color(0xf2efe8), TEAL = new THREE.Color(0x5fe3c8), SIG = new THREE.Color(0xe8501c);
+  const PAPER = new THREE.Color(0xf1eee7), TEAL = new THREE.Color(0x5fe3c8), SIG = new THREE.Color(0xc0392b);
   scene.background = new THREE.Color(0x050506); camera.fov = 48;
   const world = new THREE.Group(); scene.add(world);           // everything that spins with the Earth
   const NORTH = V(...D.north).normalize();
@@ -70,10 +70,10 @@ export default async function (C) {
   // the listeners: live people who turn to the speaker when the voice reaches them
   const LIST = [[8.3, V(2.2, 0, -3.2)], [10.8, V(-4.8, 0, -2.6)], [11.9, V(4.6, 0, 2.2)]];
   for (let i = 0; i < 14; i++) { const a = R() * Math.PI * 2, r = 6 + R() * 16; LIST.push([12.3 + i * .07, V(Math.cos(a) * r, 0, Math.sin(a) * r)]); }
-  const listeners = LIST.map(([t0, p]) => { const m = L.person(R, { phone: true }); m.position.copy(TOP).add(p); m.userData.t0 = t0; m.userData.face = Math.atan2(-p.x, -p.z); m.userData.away = R() * 6.28; const h = new THREE.Sprite(halo.material.clone()); h.material.color.set(0xf2efe8); world.add(h); m.userData.h = h; world.add(m); return m; });
+  const listeners = LIST.map(([t0, p]) => { const m = L.person(R, { phone: true }); m.position.copy(TOP).add(p); m.userData.t0 = t0; m.userData.face = Math.atan2(-p.x, -p.z); m.userData.away = R() * 6.28; const h = new THREE.Sprite(halo.material.clone()); h.material.color.set(0xf1eee7); world.add(h); m.userData.h = h; world.add(m); return m; });
   const listenLines = lines(LIST.map(([t0, p]) => ({ pts: [HEAD, TOP.clone().add(p).add(V(0, 1.75, 0))], t0: t0 - .25, t1: t0, c: PAPER }))); world.add(listenLines);
   // voice rings
-  const rings = []; for (let i = 0; i < 8; i++) { const m = new THREE.Mesh(new THREE.RingGeometry(.96, 1, 96).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0xf2efe8, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide })); world.add(m); rings.push(m); }
+  const rings = []; for (let i = 0; i < 8; i++) { const m = new THREE.Mesh(new THREE.RingGeometry(.96, 1, 96).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0xf1eee7, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide })); world.add(m); rings.push(m); }
 
   // ---------- network on the cap, land dots, global arcs ----------
   const NP = D.nodes.map(v => v * (RG + 1.5));
