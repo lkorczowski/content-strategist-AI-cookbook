@@ -3,7 +3,7 @@
 import json, math, sys, numpy as np
 from global_land_mask import globe
 rng = np.random.default_rng(7)
-LAT0 = math.radians(float(sys.argv[2]) if len(sys.argv) > 3 else 45.19); LON0 = math.radians(float(sys.argv[3]) if len(sys.argv) > 3 else 5.72)
+LAT0 = math.radians(float(sys.argv[2]) if len(sys.argv) > 3 else 48.86); LON0 = math.radians(float(sys.argv[3]) if len(sys.argv) > 3 else 2.35)
 def ll2v(lat, lon):  # earth frame: Y north, X lon 0, Z lon 90E? use right-handed with Z=-sin(lon)
     return np.stack([np.cos(lat)*np.cos(lon), np.sin(lat), -np.cos(lat)*np.sin(lon)], -1)
 g = ll2v(LAT0, LON0)

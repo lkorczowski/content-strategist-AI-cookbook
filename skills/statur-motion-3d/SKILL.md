@@ -4,7 +4,7 @@ description: Make full 3D motion-design short videos in code, with no AI video m
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.2.1"
+  version: "0.3.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -25,7 +25,7 @@ Part of the AI video editor playbook (https://statur.co/ai-video-editor/). Sibli
 2. Visual arc: which kit modes in which order. Default: the park-to-space arc of examples/kit-tour (day, event, wireframe, glow, white-out, Earth, Moon, point cloud, loop card).
 3. Voice: none (default, works muted and in any language), or a voice track the user supplies; then time captions to it.
 4. Format: 720x1280 at 30 fps (default, fastest on a CPU) or 1080x1920.
-5. Brand: default serif look (EB Garamond, Inter, JetBrains Mono). A private layer may swap the fonts and colors in index.html.
+5. Brand: none is written in this skill. Engine v2 reads a brand tokens file (docs/BRAND-TOKENS.md) and falls back to a neutral look; the first engine keeps its fixed serif look, and a private layer may swap the fonts and colors in its index.html.
 
 ## Default path
 
@@ -55,8 +55,9 @@ Measured on a 2 vCPU cloud machine (2026-10-30): 15 stills in under 10 s; 80 s a
 
 The first engine (engine/) reproduces a format. Engine v2 (engine2/) is for original videos that must look produced. Same principle (deterministic `renderAt(t)`, stills first), more craft:
 
-- Stage: `scenario.engine` is `3d` (Three.js with ACES tone mapping, UnrealBloom, optional soft shadows) or `2d` (a canvas the shots draw on). Workspace layout: one folder per video (`<workspace>/<video>/scenario.json` and `shots.js`), engine files at the workspace root. Setup: `bash scripts/setup_project2.sh <workspace>`.
+- Stage: `scenario.engine` is `3d` (Three.js with ACES tone mapping, UnrealBloom, optional soft shadows) or `2d` (a canvas the shots draw on). Workspace layout: one folder per video (`<workspace>/<video>/scenario.json` and `shots.js`), engine files at the workspace root. Setup: `bash scripts/setup_project2.sh <workspace> [tokens.json]` (tokens: the argument, else `BRAND_TOKENS`, else neutral). It writes `<workspace>/brand.json` and installs the token fonts (`fonts.display`, `fonts.inscription`, `fonts.hand`, as @fontsource packages) under three generic slots.
 - Kit (`engine2/lib3d.js`): articulated people with poses (walk, march with a sign, cheer, phone, type, shrug, look up, point), a host mascot (`host()`, `hostPose()`), robots, city blocks with lit windows, streets, cars, lamps, facade screens, signs with text, aircraft, star fields, camera paths with handheld shake.
+- Brand: colors come from `scenario.brand` (a tokens object), else from `brand.json`, else the neutral defaults (light paper, dark ink, one quiet accent). The tag is `scenario.tag` (default: the brand name and `sim_no`), the site is `scenario.site`, the end line is `end.brand`; all are empty for a neutral brand. Shots read `C.brand.colors` and `C.brand.fonts` (display, label, hand) instead of constants. The end card is a paper card: paper ground, ink text.
 - Overlay (`engine2/core2.js` + `index.html`): brand tag and site, title with a colored keyword (`*word*`), HUD readout (label, value, progress bar), punchy captions (scale-in, keyword in the signal color), a source line under any caption that carries a number, end card with a question, film grain and vignette. Light backgrounds: `"ui": "light"`; move the HUD with `"hud_top"`.
 - Sound (`scripts/sound2.py`): music bed by sections (pulse, drop, build, drive, wide, hold, end) in a mood (tense minor, bright or playful major), plus SFX on cuts (whoosh, blackout, thud, hit, pop, ding, crowd). Still no samples and no license to clear.
 - Render: `SUB=<video> node scripts/render2.js <workspace> stills 1,4,9 <out>` (`PAGE=plate.html` renders another page of the workspace, e.g. one without the overlay, as statur-vork-3d does for plates) then `SUB=<video> node scripts/render2.js <workspace> video <out.mp4>`; mux with ffmpeg. Measured 2026-10-31 on 2 vCPU at 720x1280 30 fps: 3D with bloom about 2.2 frames per second (52 s in 10 to 11 min), 2D about 6 frames per second (52 s in 4 min).
@@ -65,11 +66,37 @@ The first engine (engine/) reproduces a format. Engine v2 (engine2/) is for orig
 
 - No dead air: a caption on screen at all times after the title; gaps under 0.5 s; 2.5 to 3.5 s per caption; 45 to 60 s total.
 - Something moves in every frame: the camera (path plus light shake) and the characters (walk, react, cheer). A static crowd reads as a bug.
-- Cut every 1 or 2 captions to a new place or scale; each cut gets a whoosh and the HUD moves.
+- Cut every 1 or 2 captions to a new place or scale, with a hard cut. A sound on a cut only when the place or the scale changes; never the same whoosh on every cut.
 - One signature across every video: the same tag, HUD, caption style and end card, and, when the brand has one, the host mascot in the hook and the last beat.
 - Light the characters: at night add a soft fill light that follows the camera; keep bloom under the level that turns domes and skies into white blobs.
 - Every number on screen carries its source line; every story beat survives a "really?" in the comments.
 - Before the full render, a contact sheet of one still every 2 to 3 s; fix every shot where the subject is not readable at phone size.
+
+## Avoid the template look
+
+Viewers recognize the default output of AI design and editing tools at a glance, and trust the video less. Check the script, then every still, against this list. The tokens file may add the brand's own `banned_markers`.
+
+Avoid:
+- A near-black ground with one neon or amber accent.
+- Word-by-word bold captions with one colored keyword.
+- A zoom on every sentence.
+- A whoosh or a riser on every cut.
+- Fake terminal or desktop windows around text.
+- Hero numbers that count up.
+- The same spring on every element.
+- Background grids and particles.
+- Glows, glass cards, gradient text.
+- Emoji in captions.
+
+Prefer:
+- Sentence-case captions on a quiet band, with one underlined key word at most.
+- A title card that reads like paper: flat ground, ink text, no effect.
+- The annotated image: freeze the frame, draw a circle and an arrow by hand, add a short note, resume.
+- Hard cuts. Motion only where it explains something.
+- Real assets: the company's own pages, photos, screens and documents.
+- Long-form YouTube videos: no burned subtitles. Upload a caption file.
+
+In this skill that means: one `*keyword*` per caption at most, and none on most captions; a HUD clock only when the number is the story, not as decoration; bloom, glow mode, wireframe grids and point clouds only where the script needs them; day scenes and the paper end card by default; a sound on the cuts that change place, silence on the others.
 
 ## Format recipe (what to keep from viral what-if shorts)
 

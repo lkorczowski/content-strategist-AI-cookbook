@@ -208,7 +208,7 @@
       const r = rng(p.seed); const plan = []; let t = 0, last = -1;
       while (t < (e.end - e.start) + 1) { let k; do { k = Math.floor(r() * spots.length); } while (k === last); last = k; const d = p.min + r() * (p.max - p.min); plan.push({t, d, k, dx: (r() - .5) * 40, dy: (r() - .5) * 30}); t += d; }
       const n = el('div', 'fb', `position:absolute;font-weight:700;font-size:${p.size}px;color:${T.paper};white-space:nowrap;
-        paint-order:stroke fill;-webkit-text-stroke:3px rgba(14,14,12,.55)`, esc(p.text));
+        paint-order:stroke fill;-webkit-text-stroke:3px rgba(0,0,0,.55)`, esc(p.text));
       root.appendChild(n);
       return {update(lt) {
         const s = plan.filter(x => x.t <= lt).pop() || plan[0]; const q = (lt - s.t) / s.d;

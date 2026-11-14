@@ -13,6 +13,7 @@ Usage:
   build_layers.py SPEC.json --cutlist cutlist.json --words words_out.json --out WORKDIR [--tokens brand.json]
 """
 import argparse, json, os, re, sys
+import brand_tokens
 
 # sound effects added automatically when an element appears: (name, offset in s, gain dB)
 AUTO_SFX = {
@@ -55,7 +56,7 @@ def norm(w):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("spec"); ap.add_argument("--cutlist", required=True); ap.add_argument("--words", required=True)
-    ap.add_argument("--out", required=True); ap.add_argument("--tokens", default=None)
+    ap.add_argument("--out", required=True); ap.add_argument("--tokens", "--style", dest="tokens", default=None)
     a = ap.parse_args()
     spec = json.load(open(a.spec)); cut = json.load(open(a.cutlist)); words = json.load(open(a.words))
     base = os.path.dirname(os.path.abspath(a.spec))
@@ -63,7 +64,8 @@ def main():
     fps = spec.get("fps", 30); W, H = spec.get("w", 1080), spec.get("h", 1920)
     tail = float(spec.get("tail", 0.0))
     dur = round(cut["duration"] + tail, 4)
-    tokens = spec.get("tokens") or (json.load(open(a.tokens)) if a.tokens else {})
+    # brand tokens: the spec's own, then --tokens / --style, then BRAND_TOKENS, then neutral defaults (docs/BRAND-TOKENS.md)
+    tokens = brand_tokens.flat(brand_tokens.resolve(spec.get("tokens"), a.tokens))
     os.makedirs(os.path.join(a.out, "layers"), exist_ok=True)
 
     sfx = []

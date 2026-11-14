@@ -4,7 +4,7 @@ description: Render a planned clip from one or several long recordings with ffmp
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.3.0"
+  version: "2.4.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -17,7 +17,8 @@ Part of the clipping playbook (https://statur.co/clipping/). Scripts live in the
 
 - ffmpeg 4.4 or newer with libx264 and libass (`ffmpeg -filters | grep -E " ass | subtitles "`). Some default Homebrew builds lack libass: install a full build.
 - Python 3.10 or newer. The renderer uses the standard library only; the quality check uses the local transcription model (setup.sh of statur-clipping).
-- The caption font in a folder passed with `--fonts` (Archivo Black by default).
+- The caption font in a folder passed with `--fonts`. The family comes from the brand tokens (`fonts.text` for captions, labels and watermark, `fonts.display` for the hook); the neutral default is Atkinson Hyperlegible Bold, installed by setup.sh.
+- Optional: a brand tokens file (docs/BRAND-TOKENS.md) passed with `--tokens brand.json` (alias `--style`) or `BRAND_TOKENS`. It sets the default colors and fonts of captions, hook, labels, borders and layout backgrounds. A spec's own `tokens`, `captions`, `hook` and `labels` keys win. No brand is written in the scripts.
 - The sync map of the source (`sync.json` from sync_check.py) when the sync check reported an offset.
 
 ## Run
@@ -57,12 +58,38 @@ Outputs per clip: `C01_v1_master.mp4`, `captions.ass`, `captions.srt`, `words_ou
 - With `--audio audio16k.flac`, each cut-in moves back to the real speech onset found on the waveform: speech recognition often places a word's start 50 to 150 ms late.
 - Audio pieces are counted in samples to match the video frames exactly, so a clip of 40 pieces keeps lip sync on replays with jittery audio timestamps.
 - Every other piece gets a 1.10 punch-in toward the face point, so jump cuts read as intended. 12 ms audio fades on every cut.
-- Captions: 3 words or 18 characters per line, active word in the accent color, white text, dark outline, at 70 to 75% of the height, built only from the words kept in the edit.
+- Captions: 3 words or 18 characters per line, active word in the tokens' highlighter color, white text, ink outline, at 70 to 75% of the height, built only from the words kept in the edit.
 - Hook box: the first 3 seconds, top of the frame, one sentence on two lines at most.
 - Chapter labels from the spec's `screen` fields.
 - Watermark: the small moving text `statur.co/clipping`, a new spot every 3.5 to 6.5 seconds, seeded per clip. `--watermark "yourbrand.com"` changes it, `--watermark none` removes it.
 - Audio: high-pass 70 Hz, light compression, two-pass loudness normalization to -14 LUFS with a -1.5 dB true peak.
 - Master: H.264 CRF 17 at the spec's size and frame rate, any length, 4K when the source allows it. Render where the footage is: a master never travels through a chat tool.
+
+## Avoid the template look
+
+Viewers recognize the default output of AI design and editing tools at a glance, and trust the video less. Check the plan, then every still, against this list. The tokens file may add the brand's own `banned_markers`.
+
+Avoid:
+- A near-black ground with one neon or amber accent.
+- Word-by-word bold captions with one colored keyword.
+- A zoom on every sentence.
+- A whoosh or a riser on every cut.
+- Fake terminal or desktop windows around text.
+- Hero numbers that count up.
+- The same spring on every element.
+- Background grids and particles.
+- Glows, glass cards, gradient text.
+- Emoji in captions.
+
+Prefer:
+- Sentence-case captions on a quiet band, with one underlined key word at most.
+- A title card that reads like paper: flat ground, ink text, no effect.
+- The annotated image: freeze the frame, draw a circle and an arrow by hand, add a short note, resume.
+- Hard cuts. Motion only where it explains something.
+- Real assets: the company's own pages, photos, screens and documents.
+- Long-form YouTube videos: no burned subtitles. Upload a caption file.
+
+In a clip spec: set `captions.active` to the caption color and raise `max_words` and `max_chars` (for example 6 and 32) for quiet sentence captions; `"zoom": {"enabled": false}` when the cuts are few; `"captions": {"enabled": false}` for a long-form YouTube master; no emoji in `hook.text` or `fix`.
 
 ## Layouts for screen shares, camera bubbles and calls
 

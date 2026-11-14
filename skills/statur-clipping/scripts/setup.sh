@@ -25,7 +25,12 @@ fi
 [ -f silero_vad.onnx ] || curl -fsSL -o silero_vad.onnx https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx
 
 cd "$DIR/fonts"
-[ -f ArchivoBlack-Regular.ttf ] || curl -fsSL -o ArchivoBlack-Regular.ttf https://github.com/google/fonts/raw/main/ofl/archivoblack/ArchivoBlack-Regular.ttf
+# Caption font: the neutral default of the brand tokens (Atkinson Hyperlegible Bold, SIL Open Font License).
+# A brand uses its own: CAPTION_FONT_URL=<url of a .ttf or .otf the brand may use in video> bash setup.sh,
+# or drop the files in this folder, and name the family in the tokens file (fonts.text, fonts.display).
+FONT_URL="${CAPTION_FONT_URL:-https://github.com/google/fonts/raw/main/ofl/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf}"
+FONT_FILE="$(basename "${FONT_URL%%\?*}")"
+[ -f "$FONT_FILE" ] || curl -fsSL -o "$FONT_FILE" "$FONT_URL" || echo "WARNING: could not download $FONT_URL, captions will use a system font."
 
 echo "SETUP_DONE. Before running the scripts:"
 echo "export ASR_MODEL_DIR=\"$DIR/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8\" VAD_MODEL=\"$DIR/models/silero_vad.onnx\""

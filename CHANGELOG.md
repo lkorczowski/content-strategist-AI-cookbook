@@ -2,9 +2,23 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-08 · v2.19.0
+## 2026-11-14 · v2.21.0
 
 - New skill statur-trial-reels 0.1.0 (Content Testing Loop): test 2 to 4 hooks as Instagram trial reels, publish them from Claude through the STATUR connector (official Instagram API, MANUAL or SS_PERFORMANCE graduation, scheduling, client accounts by link), compare the versions on watch time ratio and shares per reach after 24 to 72 hours, write the lesson as a sentence about hooks.
+
+## 2026-11-13 · v2.19.0
+
+- Brand tokens: no brand is written in a public skill any more. One JSON shape (docs/BRAND-TOKENS.md, example docs/brand-tokens.example.json: colors paper, panel, ink, ink_drawing, secondary, accent, highlighter, highlighter_pale; fonts display, text, inscription, hand, logo; limits; banned_markers) reaches every drawing script through the spec, `--tokens FILE` (alias `--style`) or `BRAND_TOKENS`. Without it the scripts use a neutral look (light paper, dark ink, open-license fonts). The near-black look with one orange accent that was hard-coded before is gone. The loader `brand_tokens.py` is the same file in each Python skill below.
+- statur-motion-design 1.1.0: `motion_render.py --tokens`; shared tokens mapped to the template tokens (the older flat tokens still load); fonts found by package name, no font table; neutral defaults when a layer has no tokens; section "Avoid the template look".
+- statur-video-editor-pro 1.2.0: `build_layers.py` resolves the shared tokens (spec, `--tokens`, `BRAND_TOKENS`, defaults); the example spec carries neutral tokens; section "Avoid the template look".
+- statur-clipping 2.5.0, statur-clip-edit 2.4.0: `clip_render.py --tokens` and `render_all.py --tokens`; caption, hook, label, watermark, border and background defaults come from the tokens; setup.sh installs a neutral caption font or the one at `CAPTION_FONT_URL`; section "Avoid the template look".
+- statur-clip-review 2.2.0: neutral review page with no remote font; `build_review.py ... --tokens` writes a brand into it.
+- statur-motion-3d 0.3.0: engine v2 reads `scenario.brand` or `brand.json`; three generic font slots installed by `setup_project2.sh <workspace> [tokens.json]`; tag, site and end line come from the scenario; paper end card; kit and example colors neutral; section "Avoid the template look". Workspaces made before need the setup again.
+- statur-story-analysis 2.0.1: the preview palette no longer carries a brand color.
+
+## 2026-11-13 · v2.18.1
+
+- statur-vork-3d 0.1.1: the voice-to-world preset no longer defaults to the author's city (default globe center: Paris, `--city LAT,LON` for your own); two brand colors in the preset replaced by neutral ones.
 
 ## 2026-11-08 · v2.18.0
 
