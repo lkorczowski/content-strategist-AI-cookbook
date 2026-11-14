@@ -6,6 +6,10 @@ Newest first. One line per change: date, what changed, version.
 
 - New skill statur-trial-reels 0.1.0 (Content Testing Loop): test 2 to 4 hooks as Instagram trial reels, publish them from Claude through the STATUR connector (official Instagram API, MANUAL or SS_PERFORMANCE graduation, scheduling, client accounts by link), compare the versions on watch time ratio and shares per reach after 24 to 72 hours, write the lesson as a sentence about hooks.
 
+## 2026-11-14 · v2.20.0
+
+- New skill statur-codex-diagram 0.1.0: hand-drawn notebook diagrams as plain SVG, without an illustrator. Engine scripts/codex.mjs (Node or browser, no DOM; strokes by rough.js, MIT): shapes with a diffuse two-level shadow, contour hatching on the shadow side, stipple shading, rays, ripples, highlighter stroke, handwritten and mirror labels, stippled medallion from level 0 to 5. scripts/render.mjs renders a spec module to SVG files and a contact sheet (--seed, --style, --paper, --embed-fonts with OFL fonts). examples/handbook-figures.mjs draws one figure per statur.co playbook. Pitfalls from the first build in references/pitfalls.md.
+
 ## 2026-11-13 · v2.19.0
 
 - Brand tokens: no brand is written in a public skill any more. One JSON shape (docs/BRAND-TOKENS.md, example docs/brand-tokens.example.json: colors paper, panel, ink, ink_drawing, secondary, accent, highlighter, highlighter_pale; fonts display, text, inscription, hand, logo; limits; banned_markers) reaches every drawing script through the spec, `--tokens FILE` (alias `--style`) or `BRAND_TOKENS`. Without it the scripts use a neutral look (light paper, dark ink, open-license fonts). The near-black look with one orange accent that was hard-coded before is gone. The loader `brand_tokens.py` is the same file in each Python skill below.
