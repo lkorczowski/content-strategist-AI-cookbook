@@ -18,3 +18,4 @@ Each line: date, what broke, the fix.
 - 2026-10-31. A huge torus in the sky can sit outside the frame or blend into it; a half-torus arch rising from the horizon with a flat color reads at once.
 - 2026-10-31. Night scenes: characters vanish without a fill light; a point light parented to the camera fixes it cheaply.
 - 2026-10-31. A neural voice needs a model install; in a locked cloud session, ship without voice and say so.
+- 2026-11-13. Brand colors, fonts and the tag were constants in engine v2, so every video carried one brand's retired look. Fix: brand tokens (scenario.brand or brand.json), three generic font slots, neutral defaults. A workspace made before this date needs setup_project2.sh again, and its shots must read C.brand instead of the old font name.

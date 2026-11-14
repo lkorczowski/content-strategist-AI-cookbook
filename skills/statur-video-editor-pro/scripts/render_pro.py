@@ -52,7 +52,10 @@ def main():
     ap.add_argument("--grain", type=float, default=2.0, help="film grain in 8-bit levels, 0 to turn off")
     ap.add_argument("--out", default=None, help="master path (default WORK/master.mp4)")
     ap.add_argument("--engine3d", default="auto", choices=["auto", "cpu", "vork"], help="renderer of motion3d inserts (statur-vork-3d)")
+    ap.add_argument("--tokens", "--style", dest="tokens", default=None, help="brand tokens JSON for every step (docs/BRAND-TOKENS.md); same as setting BRAND_TOKENS")
     a = ap.parse_args()
+    if a.tokens:
+        os.environ["BRAND_TOKENS"] = os.path.abspath(a.tokens)   # read by build_layers.py, motion_render.py and clip_render.py
     W = os.path.abspath(a.work); os.makedirs(W, exist_ok=True)
     redo = set(x for x in a.redo.split(",") if x)
     need = lambda step, path: step in redo or not os.path.exists(path)

@@ -1,4 +1,4 @@
-// STATUR SIM core v2: 3D (Three.js + bloom) or 2D (canvas) stage, brand overlay (tag, title, HUD readout,
+// Motion 3D core v2: 3D (Three.js + bloom) or 2D (canvas) stage, brand overlay (tag, title, HUD readout,
 // punchy captions with keyword color and source line, end card), film grain and vignette.
 // Deterministic: window.renderAt(t). Project folder given by ?p=<folder> (scenario.json + shots.js inside).
 import * as THREE from 'three';
@@ -16,8 +16,21 @@ const ss = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 
 const lerp = (a, b, k) => a + (b - a) * k;
 const fmtHL = s => (s || '').replace(/\*(.+?)\*/g, '<o>$1</o>');
 
+// ---------- brand ----------
+// Tokens (docs/BRAND-TOKENS.md) come from scenario.brand, else from brand.json at the workspace root (written by
+// setup_project2.sh), else the neutral look of index.html. Texts: scenario.tag, scenario.site, end.brand.
+let B = S.brand || null;
+if (!B) { try { const r = await fetch('brand.json'); if (r.ok) B = await r.json(); } catch (e) { B = null; } }
+B = B || {};
+const BC = Object.assign({ paper: '#F6F3EC', panel: '#ECE8DE', ink: '#20262E', ink_drawing: '#33415C', secondary: '#6F747B', accent: '#1F6F5C', highlighter: '#F4D35E', highlighter_pale: '#FBF0C4' }, B.colors || {});
+{ const rs = document.documentElement.style; rs.setProperty('--ink', BC.ink); rs.setProperty('--paper', BC.paper); rs.setProperty('--sig', BC.accent); }
+const BNAME = B.name && B.name !== 'neutral' ? String(B.name) : '';
+const SITE = S.site ?? B.site ?? '';
+const TAG = S.tag ?? [BNAME.toUpperCase(), S.sim_no].filter(Boolean).join(' · ');
+const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
 // ---------- stage ----------
-const ctx = { THREE, S, W, H, ss, clamp, lerp, $ };
+const ctx = { THREE, S, W, H, ss, clamp, lerp, $, brand: { name: BNAME, site: SITE, colors: BC, fonts: { display: 'BrandDisplay', label: 'BrandLabel', hand: 'BrandHand' } } };
 let composer = null, bloom = null;
 if (S.engine === '2d') {
   $('gl').style.display = 'none'; const c = $('c2d'); c.style.display = 'block'; ctx.g = c.getContext('2d');
@@ -42,19 +55,22 @@ const grain = []; { let s = 1234; const r = () => (s = (s * 16807) % 2147483647)
     for (let i = 0; i < im.data.length; i += 4) { const v = r() * 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; } g.putImageData(im, 0, 0); grain.push(c); } }
 
 await document.fonts.ready;
-await Promise.all(['900 50px Archivo', '800 50px Archivo', '700 14px JBM', '400 14px JBM', 'italic 500 40px Corm'].map(f => document.fonts.load(f)));
-if (S.ui === 'light') { for (const id of ['tag', 'site']) { $(id).style.color = '#0E0E0C'; $(id).style.textShadow = 'none'; } }
+// a font file that is not installed falls back to the system stack of index.html instead of stopping the render
+await Promise.all(['900 50px BrandDisplay', '500 50px BrandDisplay', '700 14px BrandLabel', '400 14px BrandLabel', '500 40px BrandHand'].map(f => document.fonts.load(f).catch(() => [])));
+if (S.ui === 'light') { for (const id of ['tag', 'site']) { $(id).style.color = BC.ink; $(id).style.textShadow = 'none'; } }
+setH0($('site'), esc(SITE));
 if (S.hud_top) $('hud').style.top = S.hud_top + 'px';
 const mod = await import(`./${P}/shots.js`);
 const shots = await mod.default(ctx);
 
+function setH0(el, h) { el.innerHTML = h; }
 const setH = (el, h) => { if (el.__h !== h) { el.innerHTML = h; el.__h = h; } };
 window.renderAt = function (t) {
   fx.clearRect(0, 0, W, H); ctx.white(0); ctx.black(0); ctx.hud = true; ctx.grain = S.grain ?? .06; ctx.vig = S.vignette ?? .55;
   const shot = shots.find(s => t >= s.from && t < s.to) || shots[shots.length - 1];
   shot.run(t, clamp((t - shot.from) / (shot.to - shot.from)), t - shot.from);
   // tag + title
-  setH($('tag'), `<b>[•]</b> STATUR SIM · ${S.sim_no || '000'}`);
+  setH($('tag'), esc(TAG));
   const T = S.title; const ta = t < T.to ? 1 - ss(T.to - .35, T.to, t) : 0; $('title').style.opacity = ta;
   $('title').style.transform = `scale(${lerp(.9, 1, ss(0, .25, t))})`; setH($('title'), fmtHL(T.text));
   // HUD
@@ -67,7 +83,7 @@ window.renderAt = function (t) {
   setH($('cap'), fmtHL(cap)); $('cap').style.opacity = a; $('cap').style.transform = `scale(${k.toFixed(3)})`;
   setH($('src'), src ? 'SOURCE · ' + src : ''); $('src').style.opacity = a * .85;
   // end card
-  const E = S.end; if (E && t >= E.from) { $('end').style.display = 'block'; setH($('endt'), fmtHL(E.title)); setH($('endq'), E.question); $('hud').style.display = 'none'; ctx.vig = .3; }
+  const E = S.end; if (E && t >= E.from) { $('end').style.display = 'block'; setH($('endt'), fmtHL(E.title)); setH($('endq'), E.question); setH($('endb'), esc(E.brand ?? [BNAME.toUpperCase(), SITE].filter(Boolean).join(' · '))); $('hud').style.display = 'none'; ctx.vig = .3; }
   else $('end').style.display = 'none';
   // render
   if (composer) composer.render();

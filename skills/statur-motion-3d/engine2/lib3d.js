@@ -20,7 +20,7 @@ export function camPath(camera, t, a, b, p0, p1, l0, l1, shake = 0) {
 
 // ---------- characters ----------
 const SKIN = [0xf1c6a2, 0xd9a67e, 0xb07a54, 0x8a5a3c, 0x5e3c28];
-const CLOTH = [0x2a5bd7, 0xe8e2d6, 0xd4b13a, 0xc0392b, 0x2e8b57, 0x6b4fa0, 0x30343c, 0xe67e22, 0xf2efe8, 0x17808a];
+const CLOTH = [0x2a5bd7, 0xe8e2d6, 0xd4b13a, 0xc0392b, 0x2e8b57, 0x6b4fa0, 0x30343c, 0xe67e22, 0xf1eee7, 0x17808a];
 const HAIR = [0x1c1612, 0x3b2a1e, 0x6b4a2b, 0xc89b5c, 0x9a9a9a];
 export function person(R, o = {}) {
   const s = o.scale ?? 1, g = new THREE.Group();
@@ -61,10 +61,10 @@ export function pose(p, t, mode = 'idle', o = {}) {
 // Host character: curly hair, round glasses, lab coat, black tee with an accent dot. Chibi proportions. Recolor per brand.
 export function host(scale = 1) {
   const s = scale, g = new THREE.Group(); const R = rng(77);
-  const skin = lam(0xf0c9a8), coat = lam(0xf2efe8), tee = lam(0x0e0e0c), pants = lam(0x24262c), hairM = lam(0xb5642e), rim = new THREE.MeshBasicMaterial({ color: 0x111111 });
+  const skin = lam(0xf0c9a8), coat = lam(0xf1eee7), tee = lam(0x1c1e22), pants = lam(0x24262c), hairM = lam(0xb5642e), rim = new THREE.MeshBasicMaterial({ color: 0x111111 });
   const hips = new THREE.Group(); hips.position.y = .75 * s; g.add(hips);
   const torso = new THREE.Mesh(box(.5 * s, .58 * s, .3 * s), tee); torso.position.y = .3 * s; hips.add(torso);
-  const dot = new THREE.Mesh(new THREE.CircleGeometry(.05 * s, 16), new THREE.MeshBasicMaterial({ color: 0xe8501c })); dot.position.set(0, .38 * s, .152 * s); hips.add(dot);
+  const dot = new THREE.Mesh(new THREE.CircleGeometry(.05 * s, 16), new THREE.MeshBasicMaterial({ color: 0xc0392b })); dot.position.set(0, .38 * s, .152 * s); hips.add(dot);
   for (const sx of [-1, 1]) { const flap = new THREE.Mesh(box(.16 * s, .78 * s, .32 * s), coat); flap.position.set(sx * .2 * s, .22 * s, 0); hips.add(flap); }
   const head = new THREE.Group(); head.position.y = .9 * s; hips.add(head);
   const hm = new THREE.Mesh(new THREE.SphereGeometry(.3 * s, 20, 16), lam(0xf0c9a8, { flatShading: false })); hm.scale.set(1, 1.08, .95); head.add(hm);
@@ -116,20 +116,20 @@ export function robotPose(r, t, mode = 'work') {
 }
 
 // ---------- signs, screens ----------
-export function signTex(text, bg = '#f2efe8', fg = '#0e0e0c', w = 256, h = 160) {
+export function signTex(text, bg = '#f1eee7', fg = '#1c1e22', w = 256, h = 160) {
   return tex(w, h, (g) => { g.fillStyle = bg; g.fillRect(0, 0, w, h); g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle'; const lines = text.split('\n'); const fs = Math.min(64, (h * .8) / lines.length);
-    g.font = `900 ${fs}px Archivo`; lines.forEach((l, i) => g.fillText(l, w / 2, h / 2 + (i - (lines.length - 1) / 2) * fs * 1.05)); });
+    g.font = `900 ${fs}px BrandDisplay`; lines.forEach((l, i) => g.fillText(l, w / 2, h / 2 + (i - (lines.length - 1) / 2) * fs * 1.05)); });
 }
-export function signMesh(text, color = '#f2efe8') {
+export function signMesh(text, color = '#f1eee7') {
   const g = new THREE.Group(); const board = new THREE.Mesh(new THREE.PlaneGeometry(.75, .47), new THREE.MeshLambertMaterial({ map: signTex(text, color), side: THREE.DoubleSide })); board.position.y = .9; g.add(board);
   const stick = new THREE.Mesh(box(.035, 1.0, .035), lam(0x8a6a48)); stick.position.y = .35; g.add(stick); return g;
 }
 export function screenTex(kind, seed = 1) {
   const R = rng(seed);
   return tex(256, 160, (g, w, h) => {
-    const pal = [['#ff3d6e', '#ffd23d'], ['#3dd6ff', '#f2efe8'], ['#e8501c', '#f2efe8'], ['#9d5cff', '#3dffb5'], ['#ffd23d', '#0e0e0c']][Math.floor(R() * 5)];
+    const pal = [['#ff3d6e', '#ffd23d'], ['#3dd6ff', '#f1eee7'], ['#c0392b', '#f1eee7'], ['#9d5cff', '#3dffb5'], ['#ffd23d', '#1c1e22']][Math.floor(R() * 5)];
     g.fillStyle = pal[0]; g.fillRect(0, 0, w, h); g.fillStyle = pal[1];
-    if (kind === 'ad') { g.font = '900 52px Archivo'; g.textAlign = 'center'; g.fillText(['SALE', 'NEW', 'LIVE', 'BUY', 'NOW', '24/7', 'STREAM'][Math.floor(R() * 7)], w / 2, h / 2 + 18); }
+    if (kind === 'ad') { g.font = '900 52px BrandDisplay'; g.textAlign = 'center'; g.fillText(['SALE', 'NEW', 'LIVE', 'BUY', 'NOW', '24/7', 'STREAM'][Math.floor(R() * 7)], w / 2, h / 2 + 18); }
     else if (kind === 'chart') { g.lineWidth = 6; g.strokeStyle = pal[1]; g.beginPath(); let y = h * .7; for (let x = 0; x <= w; x += 16) { y = Math.max(20, Math.min(h - 20, y - (R() - .4) * 24)); x ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); }
     else { for (let i = 0; i < 6; i++) { g.globalAlpha = .6 + R() * .4; g.fillRect(16, 14 + i * 24, 60 + R() * 160, 14); } }
   });
@@ -158,7 +158,7 @@ export function cityBlock(R, o = {}) {
   return { group: g, list };
 }
 export function car(R, color) {
-  const g = new THREE.Group(); const c = color ?? [0xd23b2f, 0xf2efe8, 0x2a5bd7, 0x1c1c19, 0xd4b13a, 0x8a8780][Math.floor(R() * 6)];
+  const g = new THREE.Group(); const c = color ?? [0xd23b2f, 0xf1eee7, 0x2a5bd7, 0x25272b, 0xd4b13a, 0x8b8e94][Math.floor(R() * 6)];
   const b = new THREE.Mesh(box(1.8, .6, 4), lam(c)); b.position.y = .55; g.add(b); const cab = new THREE.Mesh(box(1.6, .5, 2.1), lam(0x1c2230)); cab.position.set(0, 1.05, -.2); g.add(cab);
   const hl = new THREE.MeshBasicMaterial({ color: 0xfff1c9 }), tl = new THREE.MeshBasicMaterial({ color: 0xff2a1a });
   for (const sx of [-.6, .6]) { const h = new THREE.Mesh(box(.35, .16, .05), hl); h.position.set(sx, .62, 2.01); g.add(h); const tt = new THREE.Mesh(box(.35, .14, .05), tl); tt.position.set(sx, .62, -2.01); g.add(tt); }
@@ -173,12 +173,12 @@ export function lamp(on = true) {
   g.userData = { bulb, cone }; return g;
 }
 export function setLamp(l, on) { l.userData.bulb.material.color.set(on ? 0xffd9a0 : 0x2a2a2a); l.userData.cone.visible = false; }
-export function aircraft(color = 0xf2efe8) {
+export function aircraft(color = 0xf1eee7) {
   const g = new THREE.Group(); const m = lam(color);
   const f = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 16, 14).rotateX(Math.PI / 2), m); f.position.y = 2.2; g.add(f);
   const nose = new THREE.Mesh(new THREE.SphereGeometry(1.2, 14, 10), m); nose.position.set(0, 2.2, 8); g.add(nose);
   const wing = new THREE.Mesh(box(18, .25, 3), m); wing.position.set(0, 1.8, 1); g.add(wing);
-  const tail = new THREE.Mesh(box(.25, 3, 2.2), lam(0xe8501c)); tail.position.set(0, 4.2, -7); g.add(tail);
+  const tail = new THREE.Mesh(box(.25, 3, 2.2), lam(0xc0392b)); tail.position.set(0, 4.2, -7); g.add(tail);
   const stab = new THREE.Mesh(box(6, .2, 1.6), m); stab.position.set(0, 2.6, -7); g.add(stab); return g;
 }
 export function stars(n = 2500, rad = 1500, seed = 9) {

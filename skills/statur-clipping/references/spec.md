@@ -8,6 +8,7 @@ One JSON file per clip version. statur-clip-plan writes it, statur-clip-edit ren
 |---|---|
 | `id`, `version`, `slug` | `C05`, `2`, `wolf-pack-funnel`. The master is named `<CODE>_<id>_v<version>_<slug>.mp4`. Bump `version` for every change the reviewer will see. |
 | `title` | Working title, for the review page. |
+| `tokens` | Optional brand tokens object (docs/BRAND-TOKENS.md). Wins over `--tokens FILE` and `BRAND_TOKENS`. Sets the defaults of `captions`, `hook`, `labels`, borders and backgrounds; each of those keys still overrides it. |
 | `hook` | `{"text": "...", "dur": 3.2, "size": 90}`. One natural sentence of ten words or fewer, in the speaker's voice, shown in a box at the top for `dur` seconds (a `dur` longer than the clip keeps it on screen the whole time, like a native text box). `|` forces a line break. Optional: `y` (0.15), `box`, `text_color`, `font`, `margin`, `pad`, `max_chars` (0 = wrap only on `|`). |
 | `segments` | Passages in play order: `{"s": 3612.5, "e": 3619.0, "label": "the claim", "screen": "Part 1/3"}`. Chronological or not: a cold open is a short segment placed first and removed from the later one with `cut`. `label` is for humans; `screen` shows a chapter label at the top (consecutive segments with the same `screen` share it; groups longer than 15 s show it for 4 s). |
 | `cut` | `[[s, e], ...]`: an exact time range, removed from the audio and the picture whatever the word timestamps say; words whose middle falls inside it leave the captions. |
@@ -24,8 +25,8 @@ One JSON file per clip version. statur-clip-plan writes it, statur-clip-edit ren
 | `frame.zoom` | 1.0 | Base zoom: a tighter crop around `crop_x`, `crop_y` for the whole clip. Use 1.1 to 1.2 when the face is small or low in a phone live. The punch-in still applies on top. |
 | `frame.norm` | none | `[w, h]`: scale every source frame to this size before the crop. Set it on live replays that switch resolution mid-stream (TikTok adaptive bitrate: 640x1280 and 960x1920 in the same file). |
 | `zoom` | `{"enabled": true, "factor": 1.10}` | Every other piece is punched in, so jump cuts read as intended. |
-| `captions` | font Archivo Black, size 78, 3 words or 18 characters per line, `y` 0.70, white, active word `#E8501C`, outline `#0E0E0C` | Word-by-word captions with the active word highlighted. Put `y` under the chin and above the platform's bottom text (0.70 to 0.75). `x` (default 0.5) moves the line's center left of the platform's button column, for example 0.42 with lines of 14 characters. `"enabled": false` for no captions. |
-| `labels` | size 58, white on `#E8501C`, `y` 0.155 | Style of the `screen` chapter labels. |
+| `captions` | font from the tokens (`fonts.text`), size 78, 3 words or 18 characters per line, `y` 0.70, white, active word in the tokens' `highlighter`, outline in the tokens' `ink` | Word-by-word captions with the active word highlighted. Put `y` under the chin and above the platform's bottom text (0.70 to 0.75). `x` (default 0.5) moves the line's center left of the platform's button column, for example 0.42 with lines of 14 characters. `"enabled": false` for no captions. |
+| `labels` | size 58, white on the tokens' `accent`, `y` 0.155 | Style of the `screen` chapter labels. |
 | `watermark` | `{"text": "statur.co/clipping", "size": 30, "opacity": 0.55, "min": 3.5, "max": 6.5, "enabled": true}` | Small moving watermark: a new spot every `min` to `max` seconds among seven safe spots, slight drift, seeded per clip. |
 | `silence` | `{"min_gap": 0.30, "pad_in": 0.06, "pad_out": 0.12, "max_keep_gap": 0.20, "bleed": 0.02}` | Pauses longer than `min_gap` are cut. Padding never reaches into a removed neighbor word beyond `bleed`. |
 | `audio` | `{"lufs": -14, "tp": -1.5, "lra": 11, "highpass": 70}` | Two-pass loudness normalization. |
@@ -64,11 +65,11 @@ The default layout is the 9:16 crop above. A composed layout places rectangles o
 | `to` | `[0, 0, 1, 1]` | Where the layer goes, in fractions of the output frame. A circle needs a square in pixels: on 1080x1920, `w` 0.4815 goes with `h` 0.2708. |
 | `fit` | `cover` | `cover` cuts the rectangle to the target's shape (centered, or `anchor_x` / `anchor_y` from 0 to 1); `stretch` squeezes it. |
 | `blur`, `dim` | none | Background treatment: blur strength (20 to 30 for a background), brightness factor (0.35 to 0.85). |
-| `mask`, `radius`, `border` | none | `circle` or `round` (rounded box, `radius` in px at 1080 wide); `border` `{"w": 6, "color": "#E8501C"}`. |
+| `mask`, `radius`, `border` | none | `circle` or `round` (rounded box, `radius` in px at 1080 wide); `border` `{"w": 6, "color": "#1F6F5C"}` (default color: the tokens' `accent`). |
 | `sharpen` | none | 0.4 to 0.8 for an enlarged call thumbnail. |
 | `punch` | false | This layer takes the alternating punch-in (`zoom`); put it on the face. |
 | layout `captions_y` | `captions.y` | Caption height for the pieces of this layout. |
-| layout `background` | `#0E0E0C` | Color behind the layers. |
+| layout `background` | the tokens' `ink` | Color behind the layers. |
 
 A layout without `layers` is a crop layout: it takes the 9:16 crop with its own `crop_x`, `crop_y`, `face_x`, `face_y` and `zoom` (the base zoom of `frame.zoom`), for example a second camera framed tighter, plus `captions_y`.
 

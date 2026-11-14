@@ -4,7 +4,7 @@ description: Map the storytelling of a long video (YouTube, TikTok, podcast) sen
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.0"
+  version: "2.0.1"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
