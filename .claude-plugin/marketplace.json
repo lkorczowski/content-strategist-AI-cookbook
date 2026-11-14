@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.19.0"
+    "version": "2.20.0"
   },
   "plugins": [
     {
@@ -235,6 +235,15 @@
       "skills": [
         "./skills/statur-motion-3d",
         "./skills/statur-vork-3d"
+      ]
+    },
+    {
+      "name": "statur-codex-diagram",
+      "description": "Hand-drawn notebook diagrams as SVG: trembling ink, diffuse shadow, contour hatching, stipple, handwritten labels, one accent. For playbook figures, covers and video plates.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-codex-diagram"
       ]
     }
   ]
