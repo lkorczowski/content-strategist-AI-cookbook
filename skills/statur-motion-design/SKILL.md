@@ -4,7 +4,7 @@ description: Motion design for short vertical videos with an AI agent and no Aft
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -20,20 +20,46 @@ A layer is a JSON list of elements, each with a template, a start, an end and pr
 Every template computes its look from the time it is given (no CSS animation, no transition), so frame 812 always renders the same picture, frames can render in any order and on several workers, and a change to one element re-renders only its frames.
 
 ```
-python3 scripts/motion_render.py layer.json OUTDIR [--workers 2] [--frames 30,90,150] [--duration 91.0]
+python3 scripts/motion_render.py layer.json OUTDIR [--tokens brand.json] [--workers 2] [--frames 30,90,150] [--duration 91.0]
 ```
 
-Install once: Playwright with Chromium, and the fonts as npm packages next to the scripts:
+Install once: Playwright with Chromium, and the fonts named in the tokens file as npm packages next to the scripts (the neutral defaults shown here):
 
 ```
-npm i --prefix fonts @fontsource/archivo @fontsource/jetbrains-mono @fontsource/cormorant
+npm i --prefix fonts @fontsource/atkinson-hyperlegible @fontsource/ibm-plex-mono @fontsource/caveat
 ```
 
 Speed on 2 vCPUs, 1080x1920: 12 to 14 frames per second with alpha, 7 for full backgrounds with many images.
 
 ## Brand tokens
 
-Colors, fonts and the brand's bans come from the company context file. Map them once to tokens (references/tokens.md): ink, paper, accent, muted, line, font_display, weight_display, font_body, font_mono, font_serif, radius. A brand that bans shadows and gradients gets flat panels and thin rules: the templates have no shadow by default.
+No brand is written in this skill. Colors, fonts, limits and bans come from one tokens file kept in the company's private repo (shape: docs/BRAND-TOKENS.md, example: docs/brand-tokens.example.json), built once from the company context file. Pass it with `--tokens brand.json` (alias `--style`), set `BRAND_TOKENS`, or write a `tokens` object in the layer. With none of them the templates render in a neutral look: light paper, dark ink, one quiet accent. How the tokens reach the templates, fonts and the older flat shape: references/tokens.md.
+
+## Avoid the template look
+
+Viewers recognize the default output of AI design and editing tools at a glance, and trust the video less. Check the plan, then every still, against this list. The tokens file may add the brand's own `banned_markers`.
+
+Avoid:
+- A near-black ground with one neon or amber accent.
+- Word-by-word bold captions with one colored keyword.
+- A zoom on every sentence.
+- A whoosh or a riser on every cut.
+- Fake terminal or desktop windows around text.
+- Hero numbers that count up.
+- The same spring on every element.
+- Background grids and particles.
+- Glows, glass cards, gradient text.
+- Emoji in captions.
+
+Prefer:
+- Sentence-case captions on a quiet band, with one underlined key word at most.
+- A title card that reads like paper: flat ground, ink text, no effect.
+- The annotated image: freeze the frame, draw a circle and an arrow by hand, add a short note, resume.
+- Hard cuts. Motion only where it explains something.
+- Real assets: the company's own pages, photos, screens and documents.
+- Long-form YouTube videos: no burned subtitles. Upload a caption file.
+
+In this skill that means: use `ink_grid`, the `counter` of `big_text`, `prompt_box` and the accent box of `captions` only when the brand asks for them, never by default. Vary entrances (a cut, a fade, one spring) instead of one helper everywhere. Count accent elements per still against `limits.accent_gestures_per_screen`.
 
 ## Templates
 

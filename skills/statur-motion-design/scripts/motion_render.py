@@ -8,37 +8,33 @@ skipped: the compositor treats a missing frame as transparent.
 
 Usage:
   motion_render.py LAYER.json OUTDIR [--fps 30] [--workers 2] [--format png|jpg] [--only 120-240]
-                   [--fonts-dir node_modules/@fontsource] [--poster T]
+                   [--fonts-dir node_modules/@fontsource] [--tokens brand.json]
 
 Layer file:
   {"w":1080,"h":1920,"fps":30,"opaque":false,"tokens":{...},"elements":[{"id","type","start","end","props"}]}
+  "tokens" is optional: the shared brand tokens (docs/BRAND-TOKENS.md) or the older flat tokens. Without it the
+  renderer reads --tokens FILE (alias --style), then the BRAND_TOKENS environment variable, then neutral defaults.
   Image paths in props (keys img, images, posters, src) may be relative to the layer file.
 
 Speed: about 14 frames per second for a 1080x1920 PNG with alpha on 2 vCPUs (measured 2026-10-28).
 """
-import argparse, json, os, pathlib, sys, time
+import argparse, json, os, pathlib, re, sys, time
+import brand_tokens
 from multiprocessing import Process, Queue
 
 HERE = pathlib.Path(__file__).resolve().parent
 
-FONT_FILES = {  # family -> fontsource package, weights, styles
-    "Archivo": ("archivo", [400, 600, 700, 800, 900], ["normal"]),
-    "JetBrains Mono": ("jetbrains-mono", [400, 500, 700], ["normal"]),
-    "Cormorant": ("cormorant", [500, 600], ["italic"]),
-    "Inter": ("inter", [400, 600, 700, 800, 900], ["normal"]),
-}
+FONT_PACKAGES = {}  # family -> fontsource package, only when the package name is not the family in lowercase with hyphens
 
 def font_list(tokens, fonts_dir):
-    out, fams = [], {tokens.get(k) for k in ("font_display", "font_body", "font_mono", "font_serif")} - {None}
-    for fam in fams:
-        if fam not in FONT_FILES:
-            continue
-        pkg, ws, sts = FONT_FILES[fam]
-        for w in ws:
-            for st in sts:
-                f = pathlib.Path(fonts_dir) / pkg / "files" / f"{pkg}-latin-{w}-{st}.woff2"
-                if f.exists():
-                    out.append({"family": fam, "weight": w, "style": st, "src": f.as_uri()})
+    """Every woff2 file found for the token fonts: <fonts_dir>/<package>/files/<package>-latin-<weight>-<style>.woff2."""
+    out, fams = [], {tokens.get(k) for k in ("font_display", "font_body", "font_mono", "font_serif", "font_logo")} - {None}
+    for fam in sorted(fams):
+        pkg = FONT_PACKAGES.get(fam, re.sub(r"[^a-z0-9]+", "-", fam.lower()).strip("-"))
+        for f in sorted((pathlib.Path(fonts_dir) / pkg / "files").glob(f"{pkg}-latin-*.woff2")):
+            m = re.fullmatch(rf"{re.escape(pkg)}-latin-(\d+)-(normal|italic)\.woff2", f.name)
+            if m:
+                out.append({"family": fam, "weight": int(m.group(1)), "style": m.group(2), "src": f.as_uri()})
     return out
 
 def resolve_paths(obj, base):
@@ -103,6 +99,7 @@ def main():
     ap.add_argument("--frames", default=None, help="comma-separated frame numbers (previews)")
     ap.add_argument("--allow-system-fonts", action="store_true", help="render even when a token font is missing (fallback font)")
     ap.add_argument("--fonts-dir", default=str(HERE.parent / "fonts" / "node_modules" / "@fontsource"))
+    ap.add_argument("--tokens", "--style", dest="tokens", default=None, help="brand tokens JSON (docs/BRAND-TOKENS.md); the layer's own tokens win")
     ap.add_argument("--duration", type=float, default=0, help="timeline length in seconds (default: last element end)")
     a = ap.parse_args()
     lp = pathlib.Path(a.layer).resolve()
@@ -110,13 +107,15 @@ def main():
     tl.setdefault("w", 1080); tl.setdefault("h", 1920)
     tl["fps"] = a.fps or tl.get("fps", 30)
     resolve_paths(tl["elements"], lp.parent)
-    tl["fonts"] = font_list(tl.get("tokens", {}), a.fonts_dir)
+    brand = brand_tokens.resolve(tl.get("tokens"), a.tokens)
+    tl["tokens"] = brand_tokens.flat(brand)
+    tl["fonts"] = font_list(tl["tokens"], a.fonts_dir)
     # a missing brand font never fails in the browser: it silently falls back to a system font. Stop here instead.
-    want = {tl.get("tokens", {}).get(k) for k in ("font_display", "font_body", "font_mono", "font_serif")} - {None}
-    missing = sorted(f for f in want if f not in {x["family"] for x in tl["fonts"]})
+    # Only fonts named in a tokens file are checked: the neutral defaults may fall back to system fonts.
+    missing = sorted(f for f in brand["_given_fonts"] if f not in {x["family"] for x in tl["fonts"]})
     if missing and not a.allow_system_fonts:
         sys.exit(f"fonts not found in {a.fonts_dir}: {', '.join(missing)}. Install them (npm i --prefix fonts @fontsource/<family>), "
-                 "point --fonts-dir to the @fontsource folder, or add the family to FONT_FILES. --allow-system-fonts renders anyway.")
+                 "point --fonts-dir to the @fontsource folder, or add the family to FONT_PACKAGES. --allow-system-fonts renders anyway.")
     fmt = a.format or ("jpg" if tl.get("opaque") else "png")
     dur = a.duration or max(e["end"] for e in tl["elements"])
     nfr = int(round(dur * tl["fps"]))

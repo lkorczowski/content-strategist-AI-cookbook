@@ -4,7 +4,7 @@ description: Make short 3D explainer videos and 3D plates for edits from presets
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.1.0"
+  version: "0.1.1"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -62,7 +62,7 @@ Files: presets/voice-to-world/ (scenario.json, shots.js for the CPU engine, gen_
 | 30.8 to 37 | The Earth spins faster and faster; the speaker's light goes out, the network stays | Years pass. Your ideas outlive you. | Type 5 |
 | 37 to 41 | End card | Which type are you today? | |
 
-The types follow the Korczowski scale of https://statur.co/personal-brand-levels/. The HUD shows the type, never a made-up audience number. The speaker's city sets the globe (default Grenoble); the coastlines come from global-land-mask (MIT), sampled on a Fibonacci sphere.
+The types follow the Korczowski scale of https://statur.co/personal-brand-levels/. The HUD shows the type, never a made-up audience number. The speaker's city sets the globe (default: Paris; pass `--city LAT,LON` for your own); the coastlines come from global-land-mask (MIT), sampled on a Fibonacci sphere.
 
 How the CPU engine draws it: the globe radius is 3000 units and the crowd stands on its top, so a single continuous camera curve goes from a close shot of the host to the whole planet; the camera near and far planes follow the distance. Network nodes, land dots and lines are custom shaders that switch on at their own time (attribute aT), so frame N is always the same picture. The static crowd is baked into one vertex-colored mesh (520 people, one draw call); the listeners are live characters.
 

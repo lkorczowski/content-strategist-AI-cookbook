@@ -4,7 +4,7 @@ description: Turn long recordings into ready-to-post vertical clips of 1 to 5 mi
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.4.0"
+  version: "2.5.0"
   playbook: https://statur.co/clipping/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -24,7 +24,7 @@ Look for a company context file (kb/01_BRAND.md from the blueprint, or .agents/p
 What the plan and the edit need from it, ask once for what is missing:
 - Buyers and positioning, the formats that already work, the voice (words to avoid included).
 - Numbers allowed in public, names that must never appear, the price policy.
-- Clip length floor (default 60 seconds), language of the captions, caption font and colors, watermark text.
+- Clip length floor (default 60 seconds), language of the captions, caption font and colors, watermark text. Colors and fonts live in one brand tokens file in the private repo (docs/BRAND-TOKENS.md); pass it with `BRAND_TOKENS=brand.json` or `--tokens brand.json`. No brand is written in the scripts: with no tokens the clips use a neutral look.
 
 ## 1. Setup: ask for everything in one message, before any work
 
@@ -50,7 +50,7 @@ bash scripts/setup.sh ~/Clips/_tools
 export ASR_MODEL_DIR=~/Clips/_tools/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8 VAD_MODEL=~/Clips/_tools/models/silero_vad.onnx
 ```
 
-Needs ffmpeg with libass and Python 3.10 or newer. Installs sherpa-onnx and numpy, NVIDIA Parakeet TDT 0.6B v3 (25 European languages, punctuation, word timestamps, runs on a CPU) and Silero VAD from the sherpa-onnx GitHub releases, and the Archivo Black caption font. No GPU, no API key, no account.
+Needs ffmpeg with libass and Python 3.10 or newer. Installs sherpa-onnx and numpy, NVIDIA Parakeet TDT 0.6B v3 (25 European languages, punctuation, word timestamps, runs on a CPU) and Silero VAD from the sherpa-onnx GitHub releases, and the neutral caption font (Atkinson Hyperlegible Bold, SIL Open Font License). A brand installs its own: `CAPTION_FONT_URL=<url> bash scripts/setup.sh`, or drop the files in the fonts folder, and name the family in the tokens file. No GPU, no API key, no account.
 
 ## 3. Sources
 
@@ -108,6 +108,32 @@ Video calls recorded from your own window are the hard case: you are a thumbnail
 4. Render the chosen clips, run the quality check, publish one review page per recording. Mark items `in_review`, then `delivered`.
 
 Process the newest recording first unless the user sets another order. Replays that expire soon go first.
+
+## Avoid the template look
+
+Viewers recognize the default output of AI design and editing tools at a glance, and trust the video less. Check the plan, then every still, against this list. The tokens file may add the brand's own `banned_markers`.
+
+Avoid:
+- A near-black ground with one neon or amber accent.
+- Word-by-word bold captions with one colored keyword.
+- A zoom on every sentence.
+- A whoosh or a riser on every cut.
+- Fake terminal or desktop windows around text.
+- Hero numbers that count up.
+- The same spring on every element.
+- Background grids and particles.
+- Glows, glass cards, gradient text.
+- Emoji in captions.
+
+Prefer:
+- Sentence-case captions on a quiet band, with one underlined key word at most.
+- A title card that reads like paper: flat ground, ink text, no effect.
+- The annotated image: freeze the frame, draw a circle and an arrow by hand, add a short note, resume.
+- Hard cuts. Motion only where it explains something.
+- Real assets: the company's own pages, photos, screens and documents.
+- Long-form YouTube videos: no burned subtitles. Upload a caption file.
+
+The knobs are in the spec (references/spec.md): `captions.active`, `max_words`, `max_chars`, `zoom.enabled`, `captions.enabled`. Details in statur-clip-edit.
 
 ## 7. Watermark
 

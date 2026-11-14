@@ -1,0 +1,39 @@
+{
+  "name": "neutral",
+  "surface": "paper",
+  "colors": {
+    "paper": "#F6F3EC",
+    "panel": "#ECE8DE",
+    "ink": "#20262E",
+    "ink_drawing": "#33415C",
+    "secondary": "#6F747B",
+    "accent": "#1F6F5C",
+    "highlighter": "#F4D35E",
+    "highlighter_pale": "#FBF0C4"
+  },
+  "fonts": {
+    "display": "Atkinson Hyperlegible",
+    "text": "Atkinson Hyperlegible",
+    "inscription": "IBM Plex Mono",
+    "hand": "Caveat",
+    "logo": "Atkinson Hyperlegible"
+  },
+  "limits": {
+    "accent_gestures_per_screen": 1,
+    "highlighter_gestures_per_screen": 1,
+    "display_weight": 700,
+    "radius": 0
+  },
+  "banned_markers": [
+    "near-black background with one neon accent",
+    "word-by-word bold captions with a colored keyword",
+    "zoom on every sentence",
+    "whoosh or riser on every cut",
+    "fake terminal or desktop window",
+    "hero number counter",
+    "same spring on every element",
+    "background grid or particles",
+    "glow, glass card, gradient text",
+    "emoji in captions"
+  ]
+}

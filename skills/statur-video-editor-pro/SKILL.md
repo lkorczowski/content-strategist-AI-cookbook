@@ -4,7 +4,7 @@ description: Raise the production value of a short vertical video with an AI age
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.1.0"
+  version: "1.2.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -17,7 +17,7 @@ The job: one talking-head recording or one planned clip in, one edit at the prod
 
 ## 0. Read the company context first
 
-Look for kb/01_BRAND.md (blueprint) or .agents/product-marketing.md. The edit needs from it: the visual system (colors, fonts, what the brand never does, e.g. no gradients), the voice, the numbers allowed in public with their source, the names that must never appear, the assets the company owns (site, docs, repos, past posts). Turn the visual system into motion tokens (statur-motion-design references/tokens.md). Ask once for what is missing.
+Look for kb/01_BRAND.md (blueprint) or .agents/product-marketing.md. The edit needs from it: the visual system (colors, fonts, what the brand never does, e.g. no gradients), the voice, the numbers allowed in public with their source, the names that must never appear, the assets the company owns (site, docs, repos, past posts). Turn the visual system into one brand tokens file (docs/BRAND-TOKENS.md: colors, fonts, limits, `banned_markers`), kept in the private repo. Pass it to every step with `BRAND_TOKENS=brand.json` or `--tokens brand.json`, or write it as `tokens` in the pro spec. No brand is written in this skill: with no tokens the edit renders in a neutral look (light paper, dark ink, one quiet accent). Ask once for what is missing.
 
 ## 1. The production dial
 
@@ -57,6 +57,32 @@ Planning rules (evidence and practice in references/levels.md):
 - Numbers on screen carry their source line. Names follow the company rules.
 - Keep the caption zone free on every card; keep text out of the platform UI zones (qa_pro.py checks).
 
+### Avoid the template look
+
+Viewers recognize the default output of AI design and editing tools at a glance, and trust the video less. Check the plan, then every still, against this list. The tokens file may add the brand's own `banned_markers`.
+
+Avoid:
+- A near-black ground with one neon or amber accent.
+- Word-by-word bold captions with one colored keyword.
+- A zoom on every sentence.
+- A whoosh or a riser on every cut.
+- Fake terminal or desktop windows around text.
+- Hero numbers that count up.
+- The same spring on every element.
+- Background grids and particles.
+- Glows, glass cards, gradient text.
+- Emoji in captions.
+
+Prefer:
+- Sentence-case captions on a quiet band, with one underlined key word at most.
+- A title card that reads like paper: flat ground, ink text, no effect.
+- The annotated image: freeze the frame, draw a circle and an arrow by hand, add a short note, resume.
+- Hard cuts. Motion only where it explains something.
+- Real assets: the company's own pages, photos, screens and documents.
+- Long-form YouTube videos: no burned subtitles. Upload a caption file.
+
+In the pro spec: no counter on a `big_text`, no `ink_grid` background and no sound cue on every cut unless the brand asks for it; a sound effect belongs to a visual event that explains something. The example spec (templates/pro-spec.example.json) records a real level 4 run and still shows a counter and a grid: read it for the format, not as a style to copy.
+
 ## 4. Assets
 
 Use statur-broll-find. Order: the company's own footage and posts, captures of its own pages (capture.py for public pages, snapshot.js plus render_snapshot.py for pages only the user's browser can see), then stock with a license, then generated media only with the synthetic switch. Every asset goes in assets.csv with its source, owner and the sentence it serves.
@@ -78,7 +104,7 @@ One command runs every step and skips what is already done:
 
 ```
 python3 scripts/render_pro.py --spec pro.json --clip-spec clip.json --source RAW.mp4 --words words.json --work WORK \
-  --grade natural --music auto --rnnoise models/sh.rnnn --matte-model models/rvm_mobilenetv3_fp32.onnx [--engine3d auto]
+  --grade natural --music auto --rnnoise models/sh.rnnn --matte-model models/rvm_mobilenetv3_fp32.onnx [--engine3d auto] [--tokens brand.json]
 ```
 
 The steps, if you run them by hand: plate and grade (statur-color-grade: plate.py, make_lut.py, scopes.py), cut list (statur-clip-edit --plan-only), generated 3D inserts (statur-vork-3d make_short.py --plate, written to WORK/inserts3d/<id>.mp4), person matte (`scripts/matte.py`, only when the spec has keyed ranges or a layer behind the speaker; it mattes the whole recording, range matting is on the roadmap), layers (`scripts/build_layers.py`, then statur-motion-design motion_render.py for bg, under and over), sound (statur-sound-design: sfx_synth.py, music_bed.py, mix.py), picture (`scripts/composite.py`), quality gate (`scripts/qa_pro.py`). Setup and speeds: references/slots.md.

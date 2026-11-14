@@ -1,38 +1,37 @@
 <title>Clip Review</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: an editing-room desk. Left, the 9:16 monitor with a timecoded transport and the note composer.
+/* Colors and fonts below are neutral defaults. build_review.py --tokens FILE (or BRAND_TOKENS) writes the brand's
+   own values at the brand marker that ends this style block (docs/BRAND-TOKENS.md). The page loads no remote font by default.
+   Layout: an editing-room desk. Left, the 9:16 monitor with a timecoded transport and the note composer.
    Right, the clip sheet: verdict, timecoded notes, brief, and where each passage sits in the live. */
 :root {
-  --paper: #F2EFE8;
-  --panel: #E8E4DA;
-  --ink: #0E0E0C;
-  --muted: #6B675E;
-  --rule: #CFC9BC;
-  --signal: #E8501C;
+  --paper: #F6F3EC;
+  --panel: #ECE8DE;
+  --ink: #20262E;
+  --muted: #6F747B;
+  --rule: #D3CEC2;
+  --signal: #1F6F5C;
   --signal-ink: #FFFFFF;
   --go: #2F6F4A;
   --hold: #9A6A12;
   --stop: #A8321E;
-  --screen: #0E0E0C;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --screen: #14171B;
+  --display: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+  --body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --r: 3px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0E0E0C; --panel: #1C1C19; --ink: #F2EFE8; --muted: #A39E93; --rule: #34322D;
-    --signal: #F0612F; --signal-ink: #0E0E0C; --go: #6FBF8E; --hold: #E0B054; --stop: #EF7A63; --screen: #000000;
+    --paper: #1B1F24; --panel: #262B31; --ink: #ECE9E1; --muted: #A3A7AD; --rule: #3A4048;
+    --signal: #6FC2AE; --signal-ink: #14171B; --go: #6FBF8E; --hold: #E0B054; --stop: #EF7A63; --screen: #000000;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0E0E0C; --panel: #1C1C19; --ink: #F2EFE8; --muted: #A39E93; --rule: #34322D;
-  --signal: #F0612F; --signal-ink: #0E0E0C; --go: #6FBF8E; --hold: #E0B054; --stop: #EF7A63; --screen: #000000;
+  --paper: #1B1F24; --panel: #262B31; --ink: #ECE9E1; --muted: #A3A7AD; --rule: #3A4048;
+  --signal: #6FC2AE; --signal-ink: #14171B; --go: #6FBF8E; --hold: #E0B054; --stop: #EF7A63; --screen: #000000;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -163,6 +162,7 @@ ol.plan li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 4px
 .pflag { font-size: 12px; color: var(--hold); }
 .checks { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+/*__BRAND__*/
 </style>
 
 <div class="wrap">
@@ -192,7 +192,7 @@ ol.plan li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 4px
         <button class="tbtn" type="button" id="fwdF" title="→">+1 img</button>
         <button class="tbtn" type="button" id="fwd1" title="L">+1 s</button>
         <label class="mono" style="font-size:12px;display:inline-flex;gap:6px;align-items:center"><span id="speedLbl">Vitesse</span>
-          <select id="speed"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></label>
+          <select id="speed"><option value="0.5">0.5x</option><option value="1">1x</option><option value="1.5">1.5x</option><option value="2" selected>2x</option><option value="2.5">2.5x</option></select></label>
       </div>
       <div class="keys" id="keysHint"></div>
 
@@ -446,7 +446,11 @@ const DATA = window.__REVIEW_DATA__;
   $("playBtn").onclick = toggle;
   $("back1").onclick = () => seek(vid.currentTime - 1); $("fwd1").onclick = () => seek(vid.currentTime + 1);
   $("backF").onclick = () => { vid.pause(); seek(vid.currentTime - 1 / FPS); }; $("fwdF").onclick = () => { vid.pause(); seek(vid.currentTime + 1 / FPS); };
-  $("speed").onchange = (e) => { vid.playbackRate = parseFloat(e.target.value); };
+  const setRate = (r) => { vid.defaultPlaybackRate = r; vid.playbackRate = r; try { localStorage.setItem("review_rate", r); } catch (_) {} };
+  $("speed").value = (() => { try { return localStorage.getItem("review_rate") || "2"; } catch (_) { return "2"; } })();
+  setRate(parseFloat($("speed").value));
+  $("speed").onchange = (e) => setRate(parseFloat(e.target.value));
+  vid.addEventListener("loadedmetadata", () => { vid.playbackRate = parseFloat($("speed").value); });
   const scrub = $("scrub");
   const scrubTo = (ev) => { const r = scrub.getBoundingClientRect(); const f = Math.max(0, Math.min(1, (ev.clientX - r.left) / r.width)); seek(f * (vid.duration || (cur && cur.dur) || 0)); };
   scrub.addEventListener("pointerdown", (e) => { scrub.setPointerCapture(e.pointerId); scrubTo(e); });
