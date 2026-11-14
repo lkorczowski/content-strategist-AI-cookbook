@@ -11,7 +11,7 @@ export const figures = {
     const names = ['no time', '300-view jail', 'pays in DMs', 'face of the industry', 'generational', 'legend'];
     for (let i = 0; i < 6; i++) { const cx = 58 + i * 105; codex.medallion(s, cx, 150, 46, i);
       s.label(cx, 226, 'Type ' + i, { size: 16, anchor: 'middle', font: 'serif', italic: true, color: s.st.ink });
-      s.label(cx, i % 2 ? 284 : 254, names[i], { size: 17, anchor: 'middle' }); }
+      if (i === 0 || i === 2 || i === 5) s.label(cx, 256, names[i], { size: 19, anchor: 'middle' }); }
     s.ellipse(268, 196, 124, 200, { accent: true, width: 2.2, roughness: 1.8, shadow: false });
     s.label(268, 336, 'the climb that changes a company', { size: 20, anchor: 'middle', accent: true });
     return s; },
