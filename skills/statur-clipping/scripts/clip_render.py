@@ -22,6 +22,9 @@ Usage:
 Works with ffmpeg 4.4 or newer (libx264, libass). No other dependency.
 """
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, math, time
+import brand_tokens
+
+BRAND = brand_tokens.resolve()   # main() resolves it again from the spec, --tokens or BRAND_TOKENS
 
 PREROLL = 5.0   # seconds decoded before each cut point (covers a 2-4 s keyframe interval)
 
@@ -292,19 +295,21 @@ def clean_word(w, keep_punct="?!"):
 WM_SPOTS = [(0.05, 0.095), (0.58, 0.095), (0.05, 0.35), (0.55, 0.35), (0.05, 0.53), (0.30, 0.45), (0.05, 0.62)]
 
 def build_ass(words_out, spec, W, H, total, mapping=None):
-    cap = {"font": "Archivo Black", "size": 78, "max_words": 3, "max_chars": 18,
-           "y": 0.70, "color": "#FFFFFF", "active": "#E8501C", "outline": "#0E0E0C",
+    # colors and fonts come from the brand tokens (docs/BRAND-TOKENS.md); the spec overrides any of them
+    bc, bf = BRAND["colors"], BRAND["fonts"]
+    cap = {"font": bf["text"], "size": 78, "max_words": 3, "max_chars": 18,
+           "y": 0.70, "color": "#FFFFFF", "active": bc["highlighter"], "outline": bc["ink"],
            "outline_w": 6, "uppercase": False, "enabled": True}
     cap.update(spec.get("captions", {}))
     hook = spec.get("hook") or {}
-    hk = {"font": "Archivo Black", "size": 100, "text_color": "#0E0E0C", "box": "#F2EFE8",
+    hk = {"font": bf["display"], "size": 100, "text_color": bc["ink"], "box": bc["paper"],
           "y": 0.15, "dur": 3.0, "max_chars": 0, "margin": 80, "pad": 22}
     hk.update({k: v for k, v in hook.items() if k != "text"})
-    lb = {"font": "Archivo Black", "size": 58, "text_color": "#FFFFFF", "box": "#E8501C", "y": 0.155, "pad": 12,
+    lb = {"font": bf["text"], "size": 58, "text_color": "#FFFFFF", "box": bc["accent"], "y": 0.155, "pad": 12,
           "max_group": 15.0, "short": 4.0}
     lb.update(spec.get("labels", {}))
     # default watermark: the playbook this pipeline comes from (change it with --watermark or the spec)
-    wm = {"text": "statur.co/clipping", "font": "Archivo Black", "size": 30, "color": "#FFFFFF", "opacity": 0.55,
+    wm = {"text": "statur.co/clipping", "font": bf["text"], "size": 30, "color": "#FFFFFF", "opacity": 0.55,
           "min": 3.5, "max": 6.5, "enabled": True}
     wm.update(spec.get("watermark", {}))
     wm_alpha = f"{int(round((1 - float(wm['opacity'])) * 255)):02X}"
@@ -317,7 +322,7 @@ def build_ass(words_out, spec, W, H, total, mapping=None):
         f"Style: Cap,{cap['font']},{int(cap['size']*scale)},{hexcol(cap['color'])},{hexcol(cap['color'])},{hexcol(cap['outline'])},&H00000000,0,0,0,0,100,100,0,0,1,{cap['outline_w']*scale:.1f},0,5,40,40,0,1",
         f"Style: Label,{lb['font']},{int(lb['size']*scale)},{hexcol(lb['text_color'])},{hexcol(lb['text_color'])},{hexcol(lb['box'])},{hexcol(lb['box'])},0,0,0,0,100,100,2,0,3,{lb['pad']*scale:.1f},0,8,80,80,{int(lb['y']*H)},1",
         f"Style: Hook,{hk['font']},{int(hk['size']*scale)},{hexcol(hk['text_color'])},{hexcol(hk['text_color'])},{hexcol(hk['box'])},{hexcol(hk['box'])},0,0,0,0,100,100,0,0,3,{hk['pad']*scale:.1f},0,8,{int(hk['margin']*scale)},{int(hk['margin']*scale)},{int(hk['y']*H)},1",
-        f"Style: WM,{wm['font']},{int(wm['size']*scale)},{hexcol(wm['color'], wm_alpha)},{hexcol(wm['color'], wm_alpha)},{hexcol('#0E0E0C', wm_alpha)},&H00000000,0,0,0,0,100,100,1,0,1,{1.6*scale:.1f},0,7,0,0,0,1",
+        f"Style: WM,{wm['font']},{int(wm['size']*scale)},{hexcol(wm['color'], wm_alpha)},{hexcol(wm['color'], wm_alpha)},{hexcol(bc['ink'], wm_alpha)},&H00000000,0,0,0,0,100,100,1,0,1,{1.6*scale:.1f},0,7,0,0,0,1",
         "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
     # hook: wrap to lines of max_chars
@@ -506,7 +511,7 @@ def compose_filter(L, info, W, H, FPS, nfr, sp, zoom, pre=""):
     n = len(layers)
     s = W / 1080.0
     g = [f"[0:v]{pre}fps={FPS:g},trim=start_pts={sp}:end_pts={sp + nfr},setpts=PTS-STARTPTS,split={n}" + "".join(f"[s{i}]" for i in range(n)),
-         f"color=c={ffcol(L.get('background', '#0E0E0C'))}:s={W}x{H}:r={FPS:g},trim=end_frame={nfr},setpts=PTS-STARTPTS[base]"]
+         f"color=c={ffcol(L.get('background', BRAND['colors']['ink']))}:s={W}x{H}:r={FPS:g},trim=end_frame={nfr},setpts=PTS-STARTPTS[base]"]
     cur = "base"
     for i, ly in enumerate(layers):
         tx, ty, tw, th = [float(v) for v in ly.get("to", [0, 0, 1, 1])]
@@ -534,7 +539,7 @@ def compose_filter(L, info, W, H, FPS, nfr, sp, zoom, pre=""):
             bd = ly.get("border")
             if bd:
                 bw = max(2, even(float(bd.get("w", 6)) * s))
-                g.append(f"color=c={ffcol(bd.get('color', '#E8501C'))}:s={TW + 2 * bw}x{TH + 2 * bw}:r={FPS:g},"
+                g.append(f"color=c={ffcol(bd.get('color', BRAND['colors']['accent']))}:s={TW + 2 * bw}x{TH + 2 * bw}:r={FPS:g},"
                          f"trim=end_frame={nfr},setpts=PTS-STARTPTS,format=yuva420p[bc{i}]")
                 g.append(mask_src(mask, TW + 2 * bw, TH + 2 * bw, radius + bw, nfr, FPS) + f"[bm{i}]")
                 g.append(f"[bc{i}][bm{i}]alphamerge[b{i}]")
@@ -565,6 +570,7 @@ def main():
     ap.add_argument("--spec", required=True); ap.add_argument("--out", required=True)
     ap.add_argument("--root", default=None, help="project folder: relative paths in the spec's \"sources\" are read from it (default: the spec's folder)")
     ap.add_argument("--fonts", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "fonts"))
+    ap.add_argument("--tokens", "--style", dest="tokens", default=None, help="brand tokens JSON (docs/BRAND-TOKENS.md): default colors and fonts of captions, hook, labels, borders; the spec's own \"tokens\" and style keys win; BRAND_TOKENS is read when the flag is absent")
     ap.add_argument("--review", action="store_true", help="also write a light MP4 review copy and a poster")
     ap.add_argument("--hls", action="store_true", help="also write an HLS proxy (very long clips)")
     ap.add_argument("--keep-temp", action="store_true")
@@ -583,6 +589,8 @@ def main():
         return a.budget > 0 and (time.time() - t_start + need) > a.budget
 
     spec = json.load(open(a.spec))
+    global BRAND
+    BRAND = brand_tokens.resolve(spec.get("tokens"), a.tokens)
     base = os.path.abspath(a.root or os.path.dirname(os.path.abspath(a.spec)))
     sources, default = load_sources(spec, a, base)
     if a.watermark and not (spec.get("watermark") or {}).get("text"):
@@ -626,7 +634,8 @@ def main():
                     info_by_src[sid]["w"], info_by_src[sid]["h"], info_by_src[sid]["pre"]] for sid in used}
     fp = hashlib.sha1(json.dumps([[iv[:2] + [iv[3]] for iv in ivs], fr, zm, PREROLL, a.audio_preroll, fp_src,
                                   spec.get("layouts", {}), spec.get("layout"),
-                                  [[s.get("src"), s.get("layout")] for s in spec["segments"]], 5], sort_keys=True).encode()).hexdigest()[:10]
+                                  [[s.get("src"), s.get("layout")] for s in spec["segments"]], 5]
+                                 + ([BRAND["colors"]["ink"], BRAND["colors"]["accent"]] if spec.get("layouts") else []), sort_keys=True).encode()).hexdigest()[:10]
     tmp = os.path.join(a.tmp or os.path.join(a.out, "_tmp"), f"{spec.get('id', 'clip')}_v{spec.get('version', 1)}_{fp}")
     if a.force:
         shutil.rmtree(tmp, ignore_errors=True)

@@ -10,7 +10,7 @@ One JSON file per edit version, next to the clip spec of statur-clip-plan. The c
 | `level` | 1 to 4 (section 1 of SKILL.md). |
 | `fps`, `w`, `h` | Output frame. Default 30, 1080, 1920. |
 | `tail` | Seconds added after the last word (end card, music ring-out). |
-| `tokens` | Brand tokens for motion design (statur-motion-design references/tokens.md). |
+| `tokens` | Brand tokens (docs/BRAND-TOKENS.md; the older flat motion tokens still load). Optional: without it build_layers.py reads `--tokens FILE` (alias `--style`), then `BRAND_TOKENS`, then the neutral defaults. |
 | `keyed` | Source ranges where the background is replaced (needs the person matte). |
 | `bg`, `under`, `over` | Motion layers. `bg`: opaque backgrounds for keyed ranges. `under`: drawn behind the speaker (text behind the subject). `over`: on top (cards, chips, end card). Each element: `{"id", "type", "src": [s, e] or "out": [s, e], "z", "props", "sfx": true}`. Types and props: statur-motion-design references/templates.md. |
 | `captions` | `props` (y, size, max_width, max_chars, lines), `emph_src` (source windows whose words get the accent box) or `emph_words`, optional `y_keys` to move or restyle captions for a while: `{"src": [s, e], "y": 1185, "lines": 1, "max_chars": 18}` (any caption prop). Use them when the speaker is scaled down or a speaker card takes the lower third. Words come from words_out.json. |
