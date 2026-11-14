@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-13 · v2.18.1
+
+- statur-vork-3d 0.1.1: the voice-to-world preset no longer defaults to the author's city (default globe center: Paris, `--city LAT,LON` for your own); two brand colors in the preset replaced by neutral ones.
+
 ## 2026-11-08 · v2.18.0
 
 - New skill statur-vork-3d 0.1.0: short 3D explainers and 3D plates from presets written as code, with two renderers on one timeline: vork (headless 3D and VFX engine for agents, github.com/voyager-so/vork) on Apple Silicon with macOS 26 or NVIDIA RTX, and the statur-motion-3d CPU engine anywhere. make_short.py (engine auto-pick, parts, plate mode, city, scenario override), vork_scene.py (vork scene JSON v2 of the preset, validated against vork's editor schema; first GPU render pending), the "voice to world" preset (41 s, real coastlines from global-land-mask, mapped on the six types of the personal brand scale), vork notes with a fact check of the launch claims, pitfalls from the first render.
