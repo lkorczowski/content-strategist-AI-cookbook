@@ -1,0 +1,2 @@
+name,email,phone,company,q1_qualify,q2_pitch,q3_play,owner,status,next_step,notes,created,first_call,source,organic,campaign,ad_set,ad,consent,platform_lead_id
+TEST Jane Doe,(test email),(test phone),Example Co,Team of 2 to 10,Time on quotes,Answer B,You,new,Call today,,2026-11-10 09:12,,facebook,false,Leads US Nov,Founders 25-54,Video hook A,"Form Leads US v1, 2026-11-10, consent box: I agree to be contacted by phone and email",(platform lead ID)

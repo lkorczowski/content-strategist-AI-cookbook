@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.20.0"
+    "version": "2.22.0"
   },
   "plugins": [
     {
@@ -192,7 +192,8 @@
       "skills": [
         "./skills/statur-meta-ads-scaling",
         "./skills/statur-organic-to-paid",
-        "./skills/statur-creator-program"
+        "./skills/statur-creator-program",
+        "./skills/statur-lead-gen-ads"
       ]
     },
     {
@@ -244,6 +245,16 @@
       "strict": false,
       "skills": [
         "./skills/statur-codex-diagram"
+      ]
+    },
+    {
+      "name": "statur-lead-generation-ads",
+      "description": "Lead generation ads on Meta and TikTok: instant form or landing page per buyer profile, a form that qualifies, a Google Sheet router with row numbers (Make template), the follow-up sequence, the five-minute call and quality feedback to the platform.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-lead-gen-ads",
+        "./skills/statur-meta-ads-scaling"
       ]
     }
   ]

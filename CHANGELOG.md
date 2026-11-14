@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-14 · v2.22.0
+
+- New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.0.0: objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill.
+
 ## 2026-11-14 · v2.20.0
 
 - New skill statur-codex-diagram 0.1.0: hand-drawn notebook diagrams as plain SVG, without an illustrator. Engine scripts/codex.mjs (Node or browser, no DOM; strokes by rough.js, MIT): shapes with a diffuse two-level shadow, contour hatching on the shadow side, stipple shading, rays, ripples, highlighter stroke, handwritten and mirror labels, stippled medallion from level 0 to 5. scripts/render.mjs renders a spec module to SVG files and a contact sheet (--seed, --style, --paper, --embed-fonts with OFL fonts). examples/handbook-figures.mjs draws one figure per statur.co playbook. Pitfalls from the first build in references/pitfalls.md.
