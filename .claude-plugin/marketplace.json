@@ -239,6 +239,15 @@
       ]
     },
     {
+      "name": "statur-codex-diagram",
+      "description": "Hand-drawn notebook diagrams as SVG: trembling ink, diffuse shadow, contour hatching, stipple, handwritten labels, one accent. For playbook figures, covers and video plates.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-codex-diagram"
+      ]
+    },
+    {
       "name": "statur-lead-generation-ads",
       "description": "Lead generation ads on Meta and TikTok: instant form or landing page per buyer profile, a form that qualifies, a Google Sheet router with row numbers (Make template), the follow-up sequence, the five-minute call and quality feedback to the platform.",
       "source": "./",
