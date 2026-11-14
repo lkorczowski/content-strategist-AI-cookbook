@@ -4,7 +4,7 @@ Usage: python3 -I preview.py <case_dir> <out_dir>   (needs: pip install cairosvg
 import re, sys, os, glob
 import cairosvg
 V = {'--ink': '#1d1b16', '--muted': '#7a7468', '--grid': '#ddd6c8', '--band': '#f3efe6', '--card': '#ffffff',
-     '--line': '#8a8478', '--accent': '#e8501c', '--accent2': '#2a6f97', '--s': '#e8501c', '--l': '#2a6f97',
+     '--line': '#8a8478', '--accent': '#c0392b', '--accent2': '#2a6f97', '--s': '#c0392b', '--l': '#2a6f97',
      '--a': '#5b8c3a', '--h': '#9b5de5', '--x': '#888888', '--bg': '#fbf8f2'}
 case, out = sys.argv[1], sys.argv[2]
 os.makedirs(out, exist_ok=True)

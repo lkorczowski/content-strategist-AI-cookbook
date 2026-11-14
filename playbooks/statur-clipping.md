@@ -6,7 +6,7 @@ Turn a live, a webinar, a long video or a folder of recordings into ready-to-pos
 - Markdown for AI assistants: https://statur.co/clipping.md
 - The story behind it (essay on louis-korczowski.org): coming soon
 - Demo (34 s, no sound): [docs/media/statur-clipping-demo.mp4](../docs/media/statur-clipping-demo.mp4), second run on a 77-minute live in French, six clips with English captions
-- Version 1.4, 2026-11-03 (page); skills statur-clipping 2.4.0, statur-clip-plan 2.2.0, statur-clip-edit 2.3.0, statur-clip-review 2.1.0 (2026-11-03)
+- Version 1.4, 2026-11-03 (page); skills statur-clipping 2.5.0, statur-clip-plan 2.2.0, statur-clip-edit 2.4.0, statur-clip-review 2.2.0 (2026-11-13)
 
 ## Summary
 
@@ -27,4 +27,4 @@ Built from a real run on a 1:40 TikTok live of October 24, 2026: 17 clip candida
 
 ## Credit
 
-Speech recognition: NVIDIA Parakeet TDT 0.6B v3 and Silero VAD, run through sherpa-onnx (k2-fsa). Rendering: ffmpeg and libass. Caption font: Archivo Black (Google Fonts, SIL Open Font License).
+Speech recognition: NVIDIA Parakeet TDT 0.6B v3 and Silero VAD, run through sherpa-onnx (k2-fsa). Rendering: ffmpeg and libass. Caption font: the one named in your brand tokens file ([docs/BRAND-TOKENS.md](../docs/BRAND-TOKENS.md)); neutral default Atkinson Hyperlegible (Braille Institute, SIL Open Font License).
