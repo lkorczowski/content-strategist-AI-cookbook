@@ -5,7 +5,7 @@ Make every short video teach the next one, with an AI assistant reading your ana
 - Page (human version, source of truth): https://statur.co/content-testing-loop/
 - Markdown for AI assistants: https://statur.co/content-testing-loop.md
 - Theory (essay): https://louis-korczowski.org/david-ogilvy-tiktok-analytics-ai-content-testing
-- Version 1.0, 2026-10-24 (page); skills statur-video-post-mortem 1.0.2, statur-format-review 1.0.1, statur-content-learning 1.0.2
+- Version 1.0, 2026-10-24 (page); skills statur-video-post-mortem 1.0.2, statur-format-review 1.0.1, statur-content-learning 1.0.2, statur-trial-reels 0.1.0
 
 ## Summary
 
@@ -18,6 +18,7 @@ Log every video in one table and read it on day 7. Mature data only: before 7 da
 | [statur-video-post-mortem](../skills/statur-video-post-mortem/) | One video against your comparable videos, KEEP / CHANGE / CUT edit plan, test plan. Templates: video log and retention curve CSV. |
 | [statur-format-review](../skills/statur-format-review/) | Weekly or monthly format review: median, range, keep, change one variable, drop, next production day. |
 | [statur-content-learning](../skills/statur-content-learning/) | Monthly learning session, lessons ledger CSV, next three tests, coaching brief. |
+| [statur-trial-reels](../skills/statur-trial-reels/) | Test 2 to 4 hooks as Instagram trial reels (non-followers first), publish them from Claude with the STATUR connector, read the winner after 24 to 72 hours. |
 
 The numbers come from [statur-social-analytics](../skills/statur-social-analytics/) when the workspace has an analytics base: the three skills read its video log instead of asking for a table.
 
