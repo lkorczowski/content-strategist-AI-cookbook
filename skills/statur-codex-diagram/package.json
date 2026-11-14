@@ -1,0 +1,12 @@
+{
+  "name": "statur-codex-diagram",
+  "private": true,
+  "type": "module",
+  "description": "Hand-drawn codex-style SVG diagrams (skill statur-codex-diagram)",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/newsreader": "^5.3.0",
+    "@fontsource/reenie-beanie": "^5.3.0",
+    "roughjs": "4.6.6"
+  }
+}

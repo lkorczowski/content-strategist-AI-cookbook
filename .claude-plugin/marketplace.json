@@ -247,6 +247,15 @@
         "./skills/statur-motion-3d",
         "./skills/statur-vork-3d"
       ]
+    },
+    {
+      "name": "statur-codex-diagram",
+      "description": "Hand-drawn notebook diagrams as SVG: trembling ink, diffuse shadow, contour hatching, stipple, handwritten labels, one accent. For playbook figures, covers and video plates.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-codex-diagram"
+      ]
     }
   ]
 }
