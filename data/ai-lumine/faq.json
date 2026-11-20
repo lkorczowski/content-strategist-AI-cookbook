@@ -1,0 +1,73 @@
+{
+ "maj": "2026-11-20",
+ "items": [
+  {
+   "q": "Claude demande « Autoriser une fois » à chaque action",
+   "r": "Trois réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) En bas de la zone de saisie, choisis le mode Auto. 3) Sur un site, choisis « Toujours autoriser pour ce site ». L’envoi d’un email, d’un devis ou d’une facture te demandera toujours ton accord : c’est voulu."
+  },
+  {
+   "q": "Mon assistant s’arrête dès qu’il bloque",
+   "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
+  },
+  {
+   "q": "Mon logiciel de devis (Tolteck, Obat…) n’accepte pas l’IA",
+   "r": "Ton assistant prend la main sur Chrome et saisit comme toi : il clique, vérifie par capture d’écran, passe à la ligne suivante. C’est plus lent, mais tu n’as pas besoin d’être devant. Le brouillon lui-même prend une à deux minutes."
+  },
+  {
+   "q": "Je n’ai pas le temps d’écrire mes demandes",
+   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
+  },
+  {
+   "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
+   "r": "Vérifie que ton dossier Téléchargements est relié au projet Everest (en plus du dossier Claude). Avec Chrome, c’est ce qui débloque le plus de choses."
+  },
+  {
+   "q": "Mon ordinateur portable n’est pas toujours allumé",
+   "r": "L’assistant travaille sur l’ordinateur : s’il est éteint ou en veille, rien ne part. Laisse-le allumé et branché quand tu veux qu’il travaille, ou garde un ordinateur fixe toujours allumé au bureau."
+  },
+  {
+   "q": "Ma boîte Outlook ou Microsoft 365 est gérée par un informaticien",
+   "r": "Demande-lui l’accès propriétaire (administrateur) de ta boîte, puis connecte Microsoft 365 dans Personnaliser, Connecteurs. Ton assistant peut ensuite lire et trier tes emails."
+  },
+  {
+   "q": "Claude prend le contrôle de mon écran ou ouvre GitHub Desktop",
+   "r": "Il lui manque un terminal. Dis à ton assistant « vérifie mon installation » : il passe par l’onglet Code de l’appli Claude, ou te demande un seul clic droit sur le script de sauvegarde. Ensuite, au quotidien, ton assistant écrit dans ton dossier et la sauvegarde part toute seule. Tu peux désinstaller GitHub Desktop."
+  },
+  {
+   "q": "La sauvegarde semble arrêtée",
+   "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
+  },
+  {
+   "q": "Où est la mémoire de mon assistant ?",
+   "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Une petite fenêtre qui s’ouvre de temps en temps, c’est normal. Si tu perds ton ordinateur, rien n’est perdu."
+  },
+  {
+   "q": "Qui voit ce que je mets dans mon Everest ?",
+   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
+  },
+  {
+   "q": "Une alerte orange « Vérifier l’état du dépôt » sur l’écran GitHub",
+   "r": "Ignore-la. Elle concerne seulement le cloud ; ta sauvegarde est locale."
+  },
+  {
+   "q": "Quels connecteurs installer ?",
+   "r": "Gmail, ou Microsoft 365 si tu es sur Outlook. Google Drive. Google Agenda. GitHub. Un par un, dans Personnaliser, Connecteurs. Une coche verte veut dire que c’est connecté."
+  },
+  {
+   "q": "Je peux lui parler depuis mon téléphone ?",
+   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel."
+  },
+  {
+   "q": "Est-ce que Claude envoie des emails sans moi ?",
+   "r": "Non. Il prépare des brouillons. Tu relis et tu envoies."
+  },
+  {
+   "q": "Je change d’ordinateur",
+   "r": "Réinstalle l’appli Claude, Git et la synchro (onglet Code). Ta mémoire est intacte sur GitHub."
+  },
+  {
+   "q": "Je suis bloqué",
+   "r": "Pose ta question dans le groupe WhatsApp des Illuminés : la réponse sert à tout le monde. Ton assistant peut aussi noter le problème dans pilotage/demandes.md, Louis le lit et répond à distance. Bloqué plus d’une journée : prends rendez-vous avec Louis."
+  }
+ ]
+}
