@@ -10,6 +10,14 @@
    "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
   },
   {
+   "q": "Comment Louis voit mes réussites ?",
+   "r": "Dis-les à ton Everest : il les écrit dans ton dossier, et la synchro les envoie. Louis voit si tes devoirs sont faits, pas leur contenu. Une réussite que ton assistant n’a pas notée ne compte pas."
+  },
+  {
+   "q": "Quand a lieu l’appel de groupe ?",
+   "r": "Chaque vendredi à 12 h 05, 20 à 25 minutes, en visio. Tu ne peux pas venir : préviens avant dans le groupe WhatsApp des Illuminés. Tes questions de la semaine, pose-les dans le groupe sans attendre l’appel."
+  },
+  {
    "q": "Mon logiciel de devis (Tolteck, Obat…) n’accepte pas l’IA",
    "r": "Ton assistant prend la main sur Chrome et saisit comme toi : il clique, vérifie par capture d’écran, passe à la ligne suivante. C’est plus lent, mais tu n’as pas besoin d’être devant. Le brouillon lui-même prend une à deux minutes."
   },
@@ -36,6 +44,18 @@
   {
    "q": "La sauvegarde semble arrêtée",
    "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
+  },
+  {
+   "q": "Claude me dit que GitHub n’est pas connecté",
+   "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Si ça bloque encore, ton assistant note le problème dans pilotage/demandes.md pour Louis."
+  },
+  {
+   "q": "Ma synchro a effacé des lignes que mon assistant avait écrites",
+   "r": "Dis à ton assistant : « compare avec GitHub et remets les lignes perdues ». Il note aussi le problème dans pilotage/demandes.md. Louis corrige la synchro pour qu’elle fusionne au lieu d’écraser."
+  },
+  {
+   "q": "Le logo de ma signature disparaît des emails préparés par Claude",
+   "r": "C’est une limite connue des brouillons Gmail créés par Claude. En attendant, demande à ton assistant une signature en texte : nom, métier, téléphone, site. Louis cherche une solution."
   },
   {
    "q": "Où est la mémoire de mon assistant ?",
