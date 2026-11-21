@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-20",
+ "maj": "2026-11-21",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -14,6 +14,14 @@
    "r": "Dis-les à ton Everest : il les écrit dans ton dossier, et la synchro les envoie. Louis voit si tes devoirs sont faits, pas leur contenu. Une réussite que ton assistant n’a pas notée ne compte pas."
   },
   {
+   "q": "Mon assistant me dit que des tâches sont en retard",
+   "r": "Ouvre tes tâches avec lui. Coche ce qui est fait, donne une nouvelle date au reste, ou passe-le en priorité B. C’est à toi de trancher, pas à Louis."
+  },
+  {
+   "q": "J’ai fini mes devoirs, et maintenant ?",
+   "r": "Bravo. Dis-le dans le groupe WhatsApp ou à Louis : les devoirs suivants tombent à l’appel du vendredi. En attendant, demande à ton assistant ce qu'il pourrait faire à ta place chaque semaine."
+  },
+  {
    "q": "Quand a lieu l’appel de groupe ?",
    "r": "Chaque vendredi à 12 h 05, 20 à 25 minutes, en visio. Tu ne peux pas venir : préviens avant dans le groupe WhatsApp des Illuminés. Tes questions de la semaine, pose-les dans le groupe sans attendre l’appel."
   },
@@ -23,7 +31,7 @@
   },
   {
    "q": "Je n’ai pas le temps d’écrire mes demandes",
-   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
+   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies. Le mode vocal (conversation à voix haute) ne voit pas ton dossier : ce que tu y décides, redis-le ensuite par écrit pour que ton assistant l’enregistre."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
