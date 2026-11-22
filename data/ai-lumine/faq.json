@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-21",
+ "maj": "2026-11-22",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -54,6 +54,10 @@
    "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
   },
   {
+   "q": "Ma tâche planifiée tourne, mais elle ne fait rien",
+   "r": "Demande à ton assistant de la recréer en une seule version, de supprimer les doublons, puis de la lancer une fois devant toi. Vérifie qu’elle a bien écrit dans ton dossier. Si elle ne fait toujours rien, il note le message exact dans pilotage/demandes.md pour Louis."
+  },
+  {
    "q": "Claude me dit que GitHub n’est pas connecté",
    "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Si ça bloque encore, ton assistant note le problème dans pilotage/demandes.md pour Louis."
   },
@@ -63,7 +67,7 @@
   },
   {
    "q": "Le logo de ma signature disparaît des emails préparés par Claude",
-   "r": "C’est une limite connue des brouillons Gmail créés par Claude. En attendant, demande à ton assistant une signature en texte : nom, métier, téléphone, site. Louis cherche une solution."
+   "r": "C’est une limite connue : le logo saute dans les brouillons et les réponses écrits par Claude dans Gmail. En attendant, demande à ton assistant une signature en texte : nom, métier, téléphone, site. Louis cherche une solution."
   },
   {
    "q": "Où est la mémoire de mon assistant ?",
