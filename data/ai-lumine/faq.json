@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-22",
+ "maj": "2026-11-23",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -19,11 +19,11 @@
   },
   {
    "q": "J’ai fini mes devoirs, et maintenant ?",
-   "r": "Bravo. Dis-le dans le groupe WhatsApp ou à Louis : les devoirs suivants tombent à l’appel du vendredi. En attendant, demande à ton assistant ce qu'il pourrait faire à ta place chaque semaine."
+   "r": "Bravo. Dis-le dans le groupe WhatsApp ou à Louis : il t’envoie les devoirs suivants. En attendant, demande à ton assistant ce qu’il pourrait faire à ta place chaque semaine."
   },
   {
    "q": "Quand a lieu l’appel de groupe ?",
-   "r": "Chaque vendredi à 12 h 05, 20 à 25 minutes, en visio. Tu ne peux pas venir : préviens avant dans le groupe WhatsApp des Illuminés. Tes questions de la semaine, pose-les dans le groupe sans attendre l’appel."
+   "r": "Chaque vendredi à 12 h 05, 20 à 25 minutes, en visio. Tu ne peux pas venir : préviens avant dans le groupe WhatsApp des Illuminés. Besoin de parler à Louis avant ? Prends un créneau avec Louis quand tu en as besoin : le lien est dans le groupe WhatsApp."
   },
   {
    "q": "Mon logiciel de devis (Tolteck, Obat…) n’accepte pas l’IA",
@@ -31,7 +31,11 @@
   },
   {
    "q": "Je n’ai pas le temps d’écrire mes demandes",
-   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies. Le mode vocal (conversation à voix haute) ne voit pas ton dossier : ce que tu y décides, redis-le ensuite par écrit pour que ton assistant l’enregistre."
+   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
+  },
+  {
+   "q": "En vocal, mon assistant oublie ce que je dis ou ne voit pas mon agenda pro",
+   "r": "Le mode vocal ne lit pas ton dossier. Demande-lui de finir chaque conversation vocale par un brouillon Gmail « à faire à l’écrit » : une tâche planifiée le reprend et l’enregistre. Pour l’agenda pro, partage-le avec ton compte Google perso (« Voir tous les détails »), puis accepte-le dans ce compte."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
@@ -59,7 +63,7 @@
   },
   {
    "q": "Claude me dit que GitHub n’est pas connecté",
-   "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Si ça bloque encore, ton assistant note le problème dans pilotage/demandes.md pour Louis."
+   "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Une alerte orange « Vérifier l’état du dépôt » : ignore-la. Si ça bloque encore, ton assistant le note dans pilotage/demandes.md pour Louis."
   },
   {
    "q": "Ma synchro a effacé des lignes que mon assistant avait écrites",
@@ -67,7 +71,7 @@
   },
   {
    "q": "Le logo de ma signature disparaît des emails préparés par Claude",
-   "r": "C’est une limite connue : le logo saute dans les brouillons et les réponses écrits par Claude dans Gmail. En attendant, demande à ton assistant une signature en texte : nom, métier, téléphone, site. Louis cherche une solution."
+   "r": "Demande à ton assistant de joindre le logo comme image intégrée dans chaque brouillon, pas comme un lien, puis de te faire un brouillon test. Quand elle te plaît, colle-la toi-même dans Gmail (Paramètres, Signature) et dans ton logiciel de devis : Claude n’a pas accès à ces réglages."
   },
   {
    "q": "Où est la mémoire de mon assistant ?",
@@ -76,10 +80,6 @@
   {
    "q": "Qui voit ce que je mets dans mon Everest ?",
    "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
-  },
-  {
-   "q": "Une alerte orange « Vérifier l’état du dépôt » sur l’écran GitHub",
-   "r": "Ignore-la. Elle concerne seulement le cloud ; ta sauvegarde est locale."
   },
   {
    "q": "Quels connecteurs installer ?",
@@ -99,7 +99,7 @@
   },
   {
    "q": "Je suis bloqué",
-   "r": "Pose ta question dans le groupe WhatsApp des Illuminés : la réponse sert à tout le monde. Ton assistant peut aussi noter le problème dans pilotage/demandes.md, Louis le lit et répond à distance. Bloqué plus d’une journée : prends rendez-vous avec Louis."
+   "r": "Pose ta question dans le groupe WhatsApp des Illuminés : la réponse sert à tout le monde. Ton assistant peut aussi noter le problème dans pilotage/demandes.md, Louis le lit et répond à distance. Bloqué plus d’une journée : prends un créneau avec Louis (lien dans le groupe WhatsApp)."
   }
  ]
 }
