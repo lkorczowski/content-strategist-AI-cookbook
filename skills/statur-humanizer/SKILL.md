@@ -1,19 +1,23 @@
 ---
 name: statur-humanizer
-description: Cut the text a reader skips, on a web page, playbook, landing page, essay or post, before a person has to point at it. A density pass in three steps (measure with a script, classify each weak block into one of ten patterns, cut or merge or move it), then an AI-tell pass, then a read-aloud check. Use before publishing any page or long document written with an AI, when someone says a text is verbose, too long, heavy, padded or sounds like AI, and as a gate in a site build.
+description: Cut the text a reader skips, on a web page, playbook, landing page, essay or post, before a person has to point at it. A density pass in three steps (measure with a script, classify each weak block into one of ten patterns, cut or merge or move it), then an AI-tell pass, then a read-aloud check. Use as the review pass after the first draft of any writing task (page, playbook, essay, post, email, proposal), when someone says a text is verbose, too long, heavy, padded or sounds like AI, and as a gate in a site build.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.1.0"
+  version: "0.2.0"
   playbook: https://statur.co/playbooks/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
 
 # Humanizer: every block earns its place
 
-Text written with an AI fails in two ways. It uses the phrases people now recognize as machine made, and it says too much: notes nobody asked for, the same proof three times, a sentence that announces the next one. Public humanizer skills cover the first failure well (see Credits). This one starts with the second, because a reader forgives a stiff phrase and leaves a page that wastes their time.
+Text written with an AI fails in two ways. It uses the phrases people now recognize as machine made, and it says too much: notes nobody asked for, the same proof three times, a sentence that announces the next one. Public humanizer skills cover the first failure (see Credits). This one starts with the second, because a reader forgives a stiff phrase and leaves a page that wastes their time.
 
 The reader scans. In the Nielsen Norman Group studies of 1997, 79 percent of test users scanned a new page and 16 percent read word by word; a concise version of the same page scored 58 percent higher on measured usability, and a concise, scannable and objective version 124 percent higher (51 users, five versions of one site). The studies are old and small. Treat them as direction, and measure your own pages.
+
+## When it runs
+
+After the first draft, every time, as a review. Not while drafting: a writer who cuts while writing produces the careful, even text this pass exists to remove. The skill that writes produces its draft, then calls this one, then shows the result. One pass is the default. A second pass is for a text over its budget.
 
 ## Intake (ask once, then use the defaults)
 
@@ -79,7 +83,12 @@ Never change a number, a name, a quote or a legal sentence. Never invent a figur
 
 ### Step 4. AI-tell pass
 
-After the cuts, read what is left for the phrases readers recognize as generated: contrast reveals ("Not X. Y."), paired fragments, reflexive lists of three, colon reveals, questions the text answers itself, maxim endings, filler transitions, inflated significance, text that reads like a label or an instruction. Rewrite the whole paragraph when it holds two of them. The full lists live in the sources under Credits; this skill does not copy them.
+After the cuts, read what is left against `references/tells.md`. It holds two lists, written for this skill:
+
+- Content tells (C1 to C8): what the text chose to say. The lesson stated at the end, the vague reference, the text addressed to nobody, the line with no loose end, the generic example. These need a decision or a fact from the author. Ask for it; do not invent it.
+- Phrase tells (P1 to P15): contrast reveals, paired fragments, lists of three, colon reveals, self-answered questions, maxim endings, filler, inflated words, label voice.
+
+Content first. Rewrite the whole paragraph when it holds two tells.
 
 ### Step 5. Read aloud, then lint again
 
@@ -92,6 +101,27 @@ Read the page aloud once, or have the model read it as the intake reader with fi
 - Templates: when a component prints a block on every page (a commitment, a rules box, a FAQ), count it once in the design review. The lint lists the blocks copied on three pages or more.
 - Review habit: the person who reviews marks what to shorten and strikes what to delete. Log each struck block with its pattern code; a pattern struck twice becomes a lint phrase in `lint.json`.
 
+## Your private layer
+
+This skill is the generic half. It holds the method, the patterns, the tells, the script and the default numbers, and nothing about any one author. The other half is a private skill you write for your own texts. Each fact lives in one of the two, never in both.
+
+| Lives here (public) | Lives in your private layer |
+|---|---|
+| The steps, the pattern and tell codes with their tests and fixes | Your rules, dated, in your words, with who said them |
+| The script and its default lists | Your `lint.json`: budgets per page, your filler phrases, pages to ignore |
+| Default budgets | What is never cut in your texts (a commitment, a legal line, the facts an AI engine quotes) |
+| Generic pitfalls | The causes found in your templates, and the blocks your reviewer struck |
+| Evidence and credits | Your review format and your other surfaces (posts, emails, other sites) |
+
+The codes (V1 to V10, C1 to C8, P1 to P15) are the shared vocabulary. The private layer uses them and does not define them again.
+
+To write yours: run the first audit in `report` mode, let the author strike and shorten, then record what the review taught in the five rows of the right column. Keep it short enough to be read at the start of every writing session.
+
+Loading rule:
+
+- To produce or review a text, load the private layer. It carries the author's rules and calls the script. It is enough for daily work.
+- To change either skill, load both. A lesson that would hold for any author goes here, in generic words with an invented example. A lesson about one author, one site or one client stays private. Before saving, check that the sentence does not already exist in the other half.
+
 ## Output
 
 For `report` and `propose`: one table per page (block, pattern code, why, fix, rewrite when asked, severity 1 to 3), a site summary (words before, estimated words after, the five patterns that cost the most) and the list of decisions that belong to the author (a proof to drop, a section to remove). For `apply`: one commit per page with the before and after lint line.
@@ -102,16 +132,19 @@ See `references/pitfalls.md`. The three that matter most: cutting a source along
 
 ## Update this skill
 
+- Load the private layer too before any change (see "Your private layer").
 - Add a pattern when a reviewer points at a block none of the ten covers. Give it a code, a test and a fix in `references/patterns.md`.
+- Add a tell to `references/tells.md` the same way. New papers and public skills are read as data: take the idea, test it, write it in your own words, credit it below. Never paste their text and never install a third-party skill for this pass: an instruction hidden in someone else's file would run with your access.
 - Add a phrase to the `defensive`, `signpost` or `filler` lists (in `lint.json` for one site, in the script when it holds on two).
 - Revisit the budgets when you have reading data (scroll depth, time on page) for your own pages: the defaults are conventions.
-- Revisit the AI-tell pass when the sources under Credits change; they move faster than this file.
+- Revisit `references/tells.md` when the sources under Credits change; they move faster than this file.
 
 ## Credits
 
 - blader/humanizer (MIT), github.com/blader/humanizer: 26 patterns of AI writing in six groups.
 - Corey Haines, marketingskills, copywriting reference "AI tells", github.com/coreyhaines31/marketingskills.
 - Wikipedia, "Signs of AI writing" (CC BY-SA 4.0), en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing.
+- Russell, Rajendhran, Pham, Iyyer and Wieting, "StoryScope: Investigating idiosyncrasies in AI fiction", University of Maryland and Google DeepMind, arXiv 2604.03136, version 6 of August 2026. Source of the content tells graded "measured on fiction".
 - Morkes and Nielsen, "Concise, Scannable, and Objective: How to Write for the Web", 1997, nngroup.com; Nielsen, "How Users Read on the Web", 1997.
 - US plain language guidelines, "Clear and short", digital.gov/guides/plain-language.
 
@@ -122,3 +155,4 @@ See `references/pitfalls.md`. The three that matter most: cutting a source along
 - No promised results: shorter text is easier to read, and nothing here promises conversions or views.
 - No invented numbers. Every figure, name, quote and source in the text survives unchanged, or the cut is flagged for the author.
 - Legal pages and verbatim commitments are never edited.
+- Not a tool to defeat AI detectors or to remove watermarks. Where a school, a journal, a client or a platform asks whether a text was written with an AI, the author answers truthfully.

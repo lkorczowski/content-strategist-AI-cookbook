@@ -4,6 +4,7 @@ Newest first. One line per change: date, what changed, version.
 
 ## 2026-11-24 · v2.21.0
 
+- statur-humanizer 0.2.0: runs as the review pass after the first draft of any writing task. New references/tells.md, written in our own words: eight content tells (the stated lesson, the vague reference, the text addressed to nobody, the tidy line) graded against the StoryScope study of 61,608 stories, and fifteen phrase tells. New section "Your private layer": what lives in the public skill, what lives in a private one, and the loading rule (private to produce, both to change). The skill states that it is not a tool to defeat detectors or remove watermarks, and that third-party skills are read as data, never installed.
 - New skill statur-humanizer 0.1.0: cut the text a reader skips. scripts/density_lint.py (Python standard library) reads built HTML pages, Markdown or text and counts, per page, words against a budget, over-long paragraphs and sentences, repeated blocks and repeated numbers, defensive notes, signposting, filler, labeled micro-lines and blocks copied on three pages or more (--config, --json, --strict as a build gate). references/patterns.md names ten density patterns with a test and a fix; references/pitfalls.md holds the lessons of the first audit (41 pages, 73,000 words). The AI-tell pass credits blader/humanizer, Corey Haines and Wikipedia without copying them.
 
 ## 2026-11-14 · v2.20.0
