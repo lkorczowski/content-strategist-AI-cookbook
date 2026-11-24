@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-24 · v2.21.0
+
+- New skills: statur-trades-site 1.0 (Astro website, step by step, free hosting, own domain without breaking email) and statur-art-direction 1.0 (art direction from reference images, refused AI tells, tokens, specimen).
+
 ## 2026-11-14 · v2.20.0
 
 - New skill statur-codex-diagram 0.1.0: hand-drawn notebook diagrams as plain SVG, without an illustrator. Engine scripts/codex.mjs (Node or browser, no DOM; strokes by rough.js, MIT): shapes with a diffuse two-level shadow, contour hatching on the shadow side, stipple shading, rays, ripples, highlighter stroke, handwritten and mirror labels, stippled medallion from level 0 to 5. scripts/render.mjs renders a spec module to SVG files and a contact sheet (--seed, --style, --paper, --embed-fonts with OFL fonts). examples/handbook-figures.mjs draws one figure per statur.co playbook. Pitfalls from the first build in references/pitfalls.md.
