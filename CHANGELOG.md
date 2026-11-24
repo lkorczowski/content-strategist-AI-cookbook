@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-24 · v2.21.0
+
+- New skill statur-humanizer 0.1.0: cut the text a reader skips. scripts/density_lint.py (Python standard library) reads built HTML pages, Markdown or text and counts, per page, words against a budget, over-long paragraphs and sentences, repeated blocks and repeated numbers, defensive notes, signposting, filler, labeled micro-lines and blocks copied on three pages or more (--config, --json, --strict as a build gate). references/patterns.md names ten density patterns with a test and a fix; references/pitfalls.md holds the lessons of the first audit (41 pages, 73,000 words). The AI-tell pass credits blader/humanizer, Corey Haines and Wikipedia without copying them.
+
 ## 2026-11-14 · v2.20.0
 
 - New skill statur-codex-diagram 0.1.0: hand-drawn notebook diagrams as plain SVG, without an illustrator. Engine scripts/codex.mjs (Node or browser, no DOM; strokes by rough.js, MIT): shapes with a diffuse two-level shadow, contour hatching on the shadow side, stipple shading, rays, ripples, highlighter stroke, handwritten and mirror labels, stippled medallion from level 0 to 5. scripts/render.mjs renders a spec module to SVG files and a contact sheet (--seed, --style, --paper, --embed-fonts with OFL fonts). examples/handbook-figures.mjs draws one figure per statur.co playbook. Pitfalls from the first build in references/pitfalls.md.
