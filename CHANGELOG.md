@@ -2,7 +2,7 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-24 · v2.21.0
+## 2026-11-24 · v2.24.0
 
 - New skills: statur-trades-site 1.0 (Astro website, step by step, free hosting, own domain without breaking email) and statur-art-direction 1.0 (art direction from reference images, refused AI tells, tokens, specimen).
 
