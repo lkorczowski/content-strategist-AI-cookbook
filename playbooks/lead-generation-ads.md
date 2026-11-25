@@ -4,7 +4,7 @@ From the ad objective to a call in five minutes: a VIP list, an instant form or 
 
 - Page (human version, source of truth): https://statur.co/lead-generation-ads/
 - Markdown for AI assistants: https://statur.co/lead-generation-ads.md
-- Version 1.0, 2026-11-10; skill statur-lead-gen-ads 1.0.0
+- Version 1.1, 2026-11-25; skill statur-lead-gen-ads 1.1.0
 
 ## Summary
 
@@ -14,7 +14,7 @@ Ask the platform for leads: it optimizes the event you buy. Build a VIP list wit
 
 | Skill | Use it for |
 |---|---|
-| [statur-lead-gen-ads](../skills/statur-lead-gen-ads/) | The twelve recipes: objective, VIP list, route, form, landing pages, AI setup, router (templates), sequence, five-minute call, playful forms, quality feedback, hygiene. |
+| [statur-lead-gen-ads](../skills/statur-lead-gen-ads/) | The ten recipes: objective, VIP list, route, form (with the AI setup and playful questions), landing pages, router (templates), sequence, five-minute call, quality feedback, hygiene. |
 | [statur-meta-ads-scaling](../skills/statur-meta-ads-scaling/) | The creative and the weekly read of the Meta account that feeds the campaign. |
 
 ## Templates

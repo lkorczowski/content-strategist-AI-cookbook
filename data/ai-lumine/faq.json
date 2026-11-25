@@ -1,0 +1,105 @@
+{
+ "maj": "2026-11-24",
+ "items": [
+  {
+   "q": "Claude demande « Autoriser une fois » à chaque action",
+   "r": "Trois réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) En bas de la zone de saisie, choisis le mode Auto. 3) Sur un site, choisis « Toujours autoriser pour ce site ». L’envoi d’un email, d’un devis ou d’une facture te demandera toujours ton accord : c’est voulu."
+  },
+  {
+   "q": "Mon assistant s’arrête dès qu’il bloque",
+   "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
+  },
+  {
+   "q": "Comment Louis voit mes réussites ?",
+   "r": "Dis-les à ton Everest : il les écrit dans ton dossier, et la synchro les envoie. Louis voit si tes devoirs sont faits, pas leur contenu. Une réussite que ton assistant n’a pas notée ne compte pas."
+  },
+  {
+   "q": "Mon assistant me dit que des tâches sont en retard",
+   "r": "Ouvre tes tâches avec lui. Coche ce qui est fait, donne une nouvelle date au reste, ou passe-le en priorité B. C’est à toi de trancher, pas à Louis."
+  },
+  {
+   "q": "J’ai fini mes devoirs, et maintenant ?",
+   "r": "Bravo. Dis-le dans le groupe WhatsApp ou à Louis : il t’envoie les devoirs suivants. En attendant, demande à ton assistant ce qu’il pourrait faire à ta place chaque semaine."
+  },
+  {
+   "q": "Quand a lieu l’appel de groupe ?",
+   "r": "Chaque vendredi à 12 h 05, 20 à 25 minutes, en visio. Tu ne peux pas venir : préviens avant dans le groupe WhatsApp des Illuminés. Besoin de parler à Louis avant ? Prends un créneau avec Louis quand tu en as besoin : le lien est dans le groupe WhatsApp."
+  },
+  {
+   "q": "Mon logiciel de devis (Tolteck, Obat…) n’accepte pas l’IA",
+   "r": "Ton assistant prend la main sur Chrome et saisit comme toi : il clique, vérifie par capture d’écran, passe à la ligne suivante. C’est plus lent, mais tu n’as pas besoin d’être devant. Le brouillon lui-même prend une à deux minutes."
+  },
+  {
+   "q": "Un ami m’a donné un outil GitHub pour gérer mon Instagram, je l’installe ?",
+   "r": "Pas sans l’avis de Louis. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis : il existe souvent une compétence (skill) Everest qui fait la même chose sans risque."
+  },
+  {
+   "q": "Je n’ai pas le temps d’écrire mes demandes",
+   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
+  },
+  {
+   "q": "En vocal, mon assistant oublie ce que je dis, ne voit pas mon agenda pro ou dit qu’il ne peut pas ouvrir mes emails",
+   "r": "Le mode vocal ne lit pas ton dossier : demande-lui de finir chaque conversation par un brouillon Gmail « à faire à l’écrit », qu’une tâche planifiée reprend. S’il dit qu’il ne peut pas ouvrir un email, demande-lui de réessayer : les outils Gmail se chargent parfois au deuxième essai. Pour l’agenda pro, partage-le avec ton compte Google perso, puis coche-le dans les agendas de ton téléphone."
+  },
+  {
+   "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
+   "r": "Vérifie que ton dossier Téléchargements est relié au projet Everest (en plus du dossier Claude). Avec Chrome, c’est ce qui débloque le plus de choses."
+  },
+  {
+   "q": "Mon ordinateur portable n’est pas toujours allumé",
+   "r": "L’assistant travaille sur l’ordinateur : s’il est éteint ou en veille, rien ne part. Laisse-le allumé et branché quand tu veux qu’il travaille, ou garde un ordinateur fixe toujours allumé au bureau."
+  },
+  {
+   "q": "Ma boîte Outlook ou Microsoft 365 est gérée par un informaticien",
+   "r": "Demande-lui l’accès propriétaire (administrateur) de ta boîte, puis connecte Microsoft 365 dans Personnaliser, Connecteurs. Ton assistant peut ensuite lire et trier tes emails."
+  },
+  {
+   "q": "Claude prend le contrôle de mon écran ou ouvre GitHub Desktop",
+   "r": "Il lui manque un terminal. Dis à ton assistant « vérifie mon installation » : il passe par l’onglet Code de l’appli Claude, ou te demande un seul clic droit sur le script de sauvegarde. Ensuite, au quotidien, ton assistant écrit dans ton dossier et la sauvegarde part toute seule. Tu peux désinstaller GitHub Desktop."
+  },
+  {
+   "q": "La sauvegarde semble arrêtée",
+   "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
+  },
+  {
+   "q": "Ma tâche planifiée tourne, mais elle ne fait rien ou n’enregistre rien",
+   "r": "Demande à ton assistant de la recréer depuis une conversation où ton dossier est bien relié, en une seule version, puis de la lancer une fois devant toi. Vérifie qu’elle a écrit dans ton dossier. Si elle ne fait toujours rien, il note le message exact dans pilotage/demandes.md pour Louis."
+  },
+  {
+   "q": "Claude me dit que GitHub n’est pas connecté",
+   "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Une alerte orange « Vérifier l’état du dépôt » : ignore-la. Si ça bloque encore, ton assistant le note dans pilotage/demandes.md pour Louis."
+  },
+  {
+   "q": "Ma synchro a effacé des lignes que mon assistant avait écrites",
+   "r": "Dis à ton assistant : « compare avec GitHub et remets les lignes perdues ». Il note aussi le problème dans pilotage/demandes.md. Louis corrige la synchro pour qu’elle fusionne au lieu d’écraser."
+  },
+  {
+   "q": "Le logo de ma signature disparaît des emails préparés par Claude",
+   "r": "Demande à ton assistant de joindre le logo comme image intégrée dans chaque brouillon, pas comme un lien, puis de te faire un brouillon test. Quand elle te plaît, colle-la toi-même dans Gmail (Paramètres, Signature) et dans ton logiciel de devis : Claude n’a pas accès à ces réglages."
+  },
+  {
+   "q": "Où est la mémoire de mon assistant ?",
+   "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Une petite fenêtre qui s’ouvre de temps en temps, c’est normal. Si tu perds ton ordinateur, rien n’est perdu."
+  },
+  {
+   "q": "Qui voit ce que je mets dans mon Everest ?",
+   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
+  },
+  {
+   "q": "Quels connecteurs installer ?",
+   "r": "Gmail, ou Microsoft 365 si tu es sur Outlook. Google Drive. Google Agenda. GitHub. Un par un, dans Personnaliser, Connecteurs. Une coche verte veut dire que c’est connecté."
+  },
+  {
+   "q": "Je peux lui parler depuis mon téléphone ?",
+   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel."
+  },
+  {
+   "q": "Est-ce que Claude envoie des emails sans moi ?",
+   "r": "Non. Il prépare des brouillons. Tu relis et tu envoies."
+  },
+  {
+   "q": "Je suis bloqué",
+   "r": "Pose ta question dans le groupe WhatsApp des Illuminés : la réponse sert à tout le monde. Ton assistant peut aussi noter le problème dans pilotage/demandes.md, Louis le lit et répond à distance. Bloqué plus d’une journée : prends un créneau avec Louis (lien dans le groupe WhatsApp)."
+  }
+ ]
+}

@@ -4,7 +4,7 @@ description: Ghostwrite a founder's X posts, replies, quote posts and X Articles
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/x-ghostwriter/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -33,6 +33,8 @@ If the brand DNA or the formula file is missing, say so, run with what exists, a
 ## 0. Read the context first
 
 Read the company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md): refusal list, voice mix, pillars, one reader, one outcome, proof bank, banned names. Read the hook formula file. Read references/x-ranker.md. Ask once for what is missing: the X handle, the follower count, the offer and its link, the last 30 days of posts if no analytics base exists.
+
+Then read `kb/context/statur-x-viral-post-ghostwriter.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: where its brand DNA, formula file, audit and drafts live, its goal and reply targets, and how drafts flow into its posting week. statur-brand-dna-audit and statur-hook-forensics use that same file through this one. No such file: use the defaults here, and say so in one line. A company does not write a second, private skill for this job.
 
 ## 1. Pick the mode
 

@@ -1,6 +1,6 @@
 # Templates for statur-lead-gen-ads
 
-Part of Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), recipe 07.
+Part of Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), recipe 06.
 
 ## lead-sheet-template.csv
 
@@ -20,4 +20,4 @@ A Make scenario for Facebook Lead Ads (swap the trigger for TikTok Lead Forms "W
 
 Import: in Make, create a scenario, open the three-dot menu, Import Blueprint, pick the file. Then reconnect each module to your own accounts, replace YOUR_SPREADSHEET_ID and YOUR_ALERT_EMAIL, and map the MAP_* placeholders to your form questions. Test with Meta's Lead Ads Testing Tool before spending. Lessons from real runs: a Google Sheets search with no result still returns a bundle, so test `first(map(array; "row"))` with exist / notexist; always pass `organization {name}` to Google Contacts; run the scenario in non-sequential mode so one failed run does not block the next leads.
 
-The welcome email and the follow-up sequence are better in your email tool or CRM; the skill drafts them (recipe 08).
+The welcome email and the follow-up sequence are better in your email tool or CRM; the skill drafts them (recipe 07).
