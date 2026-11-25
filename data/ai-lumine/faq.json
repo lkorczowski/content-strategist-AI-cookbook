@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23",
+ "maj": "2026-11-24",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -30,12 +30,16 @@
    "r": "Ton assistant prend la main sur Chrome et saisit comme toi : il clique, vérifie par capture d’écran, passe à la ligne suivante. C’est plus lent, mais tu n’as pas besoin d’être devant. Le brouillon lui-même prend une à deux minutes."
   },
   {
+   "q": "Un ami m’a donné un outil GitHub pour gérer mon Instagram, je l’installe ?",
+   "r": "Pas sans l’avis de Louis. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis : il existe souvent une compétence (skill) Everest qui fait la même chose sans risque."
+  },
+  {
    "q": "Je n’ai pas le temps d’écrire mes demandes",
    "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
   },
   {
-   "q": "En vocal, mon assistant oublie ce que je dis ou ne voit pas mon agenda pro",
-   "r": "Le mode vocal ne lit pas ton dossier. Demande-lui de finir chaque conversation vocale par un brouillon Gmail « à faire à l’écrit » : une tâche planifiée le reprend et l’enregistre. Pour l’agenda pro, partage-le avec ton compte Google perso (« Voir tous les détails »), puis accepte-le dans ce compte."
+   "q": "En vocal, mon assistant oublie ce que je dis, ne voit pas mon agenda pro ou dit qu’il ne peut pas ouvrir mes emails",
+   "r": "Le mode vocal ne lit pas ton dossier : demande-lui de finir chaque conversation par un brouillon Gmail « à faire à l’écrit », qu’une tâche planifiée reprend. S’il dit qu’il ne peut pas ouvrir un email, demande-lui de réessayer : les outils Gmail se chargent parfois au deuxième essai. Pour l’agenda pro, partage-le avec ton compte Google perso, puis coche-le dans les agendas de ton téléphone."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
@@ -58,8 +62,8 @@
    "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
   },
   {
-   "q": "Ma tâche planifiée tourne, mais elle ne fait rien",
-   "r": "Demande à ton assistant de la recréer en une seule version, de supprimer les doublons, puis de la lancer une fois devant toi. Vérifie qu’elle a bien écrit dans ton dossier. Si elle ne fait toujours rien, il note le message exact dans pilotage/demandes.md pour Louis."
+   "q": "Ma tâche planifiée tourne, mais elle ne fait rien ou n’enregistre rien",
+   "r": "Demande à ton assistant de la recréer depuis une conversation où ton dossier est bien relié, en une seule version, puis de la lancer une fois devant toi. Vérifie qu’elle a écrit dans ton dossier. Si elle ne fait toujours rien, il note le message exact dans pilotage/demandes.md pour Louis."
   },
   {
    "q": "Claude me dit que GitHub n’est pas connecté",
@@ -92,10 +96,6 @@
   {
    "q": "Est-ce que Claude envoie des emails sans moi ?",
    "r": "Non. Il prépare des brouillons. Tu relis et tu envoies."
-  },
-  {
-   "q": "Je change d’ordinateur",
-   "r": "Réinstalle l’appli Claude, Git et la synchro (onglet Code). Ta mémoire est intacte sur GitHub."
   },
   {
    "q": "Je suis bloqué",

@@ -1,0 +1,51 @@
+{
+ "maj": "2026-11-24",
+ "items": [
+  {
+   "t": "Créer ton site internet (Astro, gratuit)",
+   "i": "Un site rapide, à ton nom, hébergé gratuitement chez Cloudflare. Ton assistant écrit et met à jour le site, toi tu relis et tu dis « go ». Compte 1 à 2 h en tout, en 2 ou 3 fois.",
+   "p": "Lis systeme/skills/statur-trades-site/SKILL.md et lance la création de mon site, étape par étape. Note l'avancement dans kb/06_SITE.md.",
+   "s": [
+    "Prérequis (toi, 30 min) : un nom de domaine à ton nom, une adresse email pro dessus, un compte GitHub et un compte Cloudflare gratuits avec cette adresse.",
+    "Direction artistique : ton assistant lance d'abord le tuto « Créer ta direction artistique » (juste en dessous). Pas de site au look par défaut.",
+    "Le site : ton assistant crée le projet, écrit les pages (accueil, une page par service, réalisations, contact, mentions légales) avec tes vrais mots et tes vraies photos. Rien d'inventé : ce qui manque est écrit « à confirmer ».",
+    "Tests : il vérifie le site sur ordinateur et sur téléphone, les liens, le formulaire et le bouton d'appel.",
+    "En ligne : tu cliques 3 fois dans Cloudflare, il te guide. Le site s'ouvre sur une adresse .pages.dev.",
+    "Ton domaine : à faire en appel avec Louis si tu as un doute, une erreur ici coupe tes emails.",
+    "Ensuite : chaque changement passe par un lien d'aperçu, tu regardes sur ton téléphone et tu dis « go »."
+   ]
+  },
+  {
+   "t": "Créer ta direction artistique (un look qui ne ressemble pas à l'IA)",
+   "i": "Les sites faits par IA se ressemblent tous. On part d'images que tu aimes (tatouages, affiches, vieilles gravures, étiquettes, photos) et de tes photos de chantier pour trouver ton style.",
+   "p": "Lis systeme/skills/statur-art-direction/SKILL.md et crée ma direction artistique. Je t'envoie mes images.",
+   "s": [
+    "Envoie 5 à 15 images qui te font t'arrêter, pas forcément de ton métier, et 5 à 10 de tes photos de chantier.",
+    "Ton assistant décrit ce qu'elles ont en commun. Tu corriges : c'est ton goût qui compte.",
+    "Il écrit la liste de ce qu'on refuse (les signes du look IA) et choisit couleurs, polices gratuites et un seul geste signature.",
+    "Il te montre une page d'exemple. Tu dis ce que tu reconnais et ce que tu enlèves. Une fois validée, le site peut commencer.",
+    "Les images d'artistes servent d'inspiration seulement : jamais copiées sur ton site."
+   ]
+  },
+  {
+   "t": "Parler à ton assistant en vocal sans rien perdre",
+   "i": "En vocal, l'appli Claude ne lit pas ton dossier. Astuce trouvée par un Illuminé : à la fin de chaque session vocale, l'assistant te crée un brouillon d'email que la tâche du matin traite à l'écrit.",
+   "p": "À la fin de chaque conversation vocale, crée un brouillon Gmail « [Vocal] À faire à l'écrit » avec ce qu'on a décidé, et ajoute à ma tâche du matin le traitement de ces brouillons.",
+   "s": [
+    "Dans le projet Everest, lance une conversation vocale (dans le camion par exemple).",
+    "Avant de raccrocher, dis : « fais le brouillon de fin de session ».",
+    "Le lendemain, ton assistant lit le brouillon, met à jour tes tâches et ta mémoire."
+   ]
+  },
+  {
+   "t": "Relancer les impayés chaque lundi",
+   "i": "Une tâche planifiée liste les factures non payées depuis plus de 30 jours et prépare les relances en brouillon. Tu relis, tu envoies.",
+   "p": "Crée une tâche planifiée chaque lundi à 7 h : liste mes factures non payées depuis plus de 30 jours et prépare une relance polie en brouillon pour chacune. Suis systeme/ADMIN.md, section Devis et factures.",
+   "s": [
+    "Ton assistant doit voir tes factures (ton logiciel dans Chrome, ou tes emails).",
+    "Il teste la tâche une fois devant toi.",
+    "Chaque lundi : tu relis les brouillons et tu envoies."
+   ]
+  }
+ ]
+}
