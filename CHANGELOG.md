@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-25 · v2.26.0
+
+- statur-social-analytics 2.2.0: reads the company's context file `kb/context/statur-social-analytics.md` when it exists, and lists the files it loads and when. A private instance names its own collectors there in place of a second skill.
+
 ## 2026-11-25 · v2.25.0
 
 - statur-humanizer 0.3.0: one skill, plus a context file. The "private layer" section and its loading rule are replaced by "Context": a table of the files the skill loads and when, and the five headings of the author's context file (`kb/context/statur-humanizer.md`). AGENTS.md: one skill per task, private material in a context file. density_lint.py: skips YAML front matter, reads each list item as its own block, new `--as` option to give a draft the budget of its future page.

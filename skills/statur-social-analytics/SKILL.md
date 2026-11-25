@@ -4,7 +4,7 @@ description: Build and run your own short-form analytics base in plain files tha
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.1.0"
+  version: "2.2.0"
   playbook: https://statur.co/blog/own-your-social-media-analytics/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -18,6 +18,16 @@ This skill has one job: measure and store. It never decides what to post. It han
 ## 0. Read the context first
 
 Look for a company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md). Read which accounts are owned, which are clients, which names may appear in public, and which numbers are allowed in public. Ask once for what is missing.
+
+Then read `kb/context/statur-social-analytics.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: the routes tested on its accounts, where its own collectors and scripts live, the account registry and working windows, the token budget, the rules per client, the pitfalls met. No such file: use this skill as written, and say so in one line.
+
+| File | Read it |
+|---|---|
+| Company context file | At the start |
+| `kb/context/statur-social-analytics.md` | At the start, when it exists |
+| `references/schema.md` | At setup (section 1) and before changing a table |
+| `references/routes.md` | Before a collect (section 2) |
+| `references/queries.md` | Before answering a question (section 4) |
 
 ## 1. Set up the base (once, 15 minutes)
 
@@ -63,7 +73,7 @@ This skill measures. Each decision belongs to one other skill, which reads this 
 | Which organic winners go into ads? | statur-organic-to-paid | the winners list with saves and shares |
 | What do I post on X this week, and did last month move the business? | statur-x-viral-post-ghostwriter | `post_log`: posts with pillar, intent and formula, profile visits, link clicks, follows |
 
-Install the others from the same repository. A private instance may add its own collectors in a separately named private skill that extends this one; it never forks it.
+Install the others from the same repository. A private instance keeps its own collectors and scripts in its repository and names them in `kb/context/statur-social-analytics.md`. It does not write a second skill for this job, and it never forks this one.
 
 ## 6. Weekly routine (optional)
 
