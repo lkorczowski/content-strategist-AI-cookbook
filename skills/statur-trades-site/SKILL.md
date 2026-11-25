@@ -13,7 +13,7 @@ metadata:
 
 Part of The One-Hour Video Handbook for Tradespeople (https://statur.co/tradespeople-video-handbook/). The videos feed the site; the site turns searches into calls.
 
-The job: a fast, simple, honest site that the owner owns (domain, code, hosting account in their name), costs nothing to host, and that the assistant can update from a sentence. Proven on a real electrician's site in November 2026: from no site on Monday to the site live on its own domain on Thursday, with signed emails.
+The job: a fast, simple, honest site that the owner owns (domain, code, hosting account in their name), costs nothing to host, and that the assistant can update from a sentence.
 
 Who does what: the assistant does everything it can in the terminal and in the browser. The owner does only what is theirs: create accounts, pay, type passwords, change DNS, say "go". Mark each owner step "OWNER" and prepare it so it takes one click.
 
