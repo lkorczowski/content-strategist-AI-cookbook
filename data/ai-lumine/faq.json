@@ -1,9 +1,9 @@
 {
- "maj": "2026-11-24",
+ "maj": "2026-11-25",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
-   "r": "Trois réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) En bas de la zone de saisie, choisis le mode Auto. 3) Sur un site, choisis « Toujours autoriser pour ce site ». L’envoi d’un email, d’un devis ou d’une facture te demandera toujours ton accord : c’est voulu."
+   "r": "Quatre réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) Dans les paramètres du projet Everest, vérifie que le mode par défaut est Auto, pas manuel. 3) Sur un site, choisis « Toujours autoriser pour ce site ». 4) Pour un email, dis-lui clairement ce que tu veux : « envoie-le sans validation de ma part », ou « écris-le et crée un brouillon ». Pour les brouillons, demande-lui de te prévenir par un événement dans ton agenda qui liste tout ce que tu dois valider. Si un réglage ne tient pas d’une conversation à l’autre, demande à ton assistant d’écrire une issue sur GitHub avec le problème et le contexte."
   },
   {
    "q": "Mon assistant s’arrête dès qu’il bloque",
@@ -38,8 +38,8 @@
    "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
   },
   {
-   "q": "En vocal, mon assistant oublie ce que je dis, ne voit pas mon agenda pro ou dit qu’il ne peut pas ouvrir mes emails",
-   "r": "Le mode vocal ne lit pas ton dossier : demande-lui de finir chaque conversation par un brouillon Gmail « à faire à l’écrit », qu’une tâche planifiée reprend. S’il dit qu’il ne peut pas ouvrir un email, demande-lui de réessayer : les outils Gmail se chargent parfois au deuxième essai. Pour l’agenda pro, partage-le avec ton compte Google perso, puis coche-le dans les agendas de ton téléphone."
+   "q": "En vocal, mon assistant oublie ce que je dis, n’ouvre pas mon navigateur ou ne voit pas mon agenda pro",
+   "r": "En appel vocal, Claude a tes connecteurs (Gmail, Agenda, Drive) mais pas ton dossier ni le navigateur : il ne peut pas ouvrir ton logiciel de devis ou Outlook en ligne. Deux solutions. 1) Devant l’ordinateur, utilise la dictée (le micro de la zone de saisie) dans Everest : tu parles, et il garde tous ses outils. 2) En voiture : demande-lui de finir chaque appel par un brouillon Gmail avec le compte rendu et les choses à faire, et une tâche planifiée qui lit les nouveaux brouillons toutes les heures et agit. Demande à ton assistant de l’installer. S’il dit qu’il ne peut pas ouvrir un email, demande-lui de réessayer : les outils Gmail se chargent parfois au deuxième essai. Pour l’agenda pro, partage-le avec ton compte Google perso, puis coche-le dans les agendas de ton téléphone."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
