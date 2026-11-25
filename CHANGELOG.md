@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-25 · v2.30.0
+
+- New skill statur-meta-creative-targeting 1.0.0 for the Meta creative targeting dossier (https://statur.co/meta-creative-targeting/): concept audit the way Meta groups look-alike ads, hard limits only, buyers by reasons matrix, three-second openings, two of four axes, weekly batch sized to the budget, reach read, fatigue. New plugin statur-meta-creative-targeting; added to statur-creative-strategist. Playbook card meta-creative-targeting.
+
 ## 2026-11-25 · v2.28.0
 
 - statur-codex-diagram 0.2.0, statur-x-viral-post-ghostwriter 1.1.0, statur-story-analysis 2.1.0, statur-motion-3d 0.4.0: each reads the company's context file `kb/context/<skill-name>.md` when it exists; the skills of the same family use it through the main one. One skill per task, no private skill on top.
