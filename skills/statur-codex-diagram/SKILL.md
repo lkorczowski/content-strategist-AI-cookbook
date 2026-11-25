@@ -4,7 +4,7 @@ description: Draw hand-made looking diagrams in the style of a Renaissance noteb
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.1.0"
+  version: "0.2.0"
   playbook: https://statur.co/playbooks/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -19,6 +19,8 @@ A diagram in this style reads as drawn by a person in a notebook, so it escapes 
 2. Which element is the thing to remember? It gets the accent color, and only it.
 3. Where will it live: a page with its own paper background (default, transparent SVG), a standalone image or video plate (`--paper --embed-fonts`), a dark video frame (pass a light ink in `--style`).
 4. Brand tokens: ink, accent, highlighter, shadow tint, handwriting and serif fonts. Read them from the company context file (kb/01_BRAND.md or .agents/product-marketing.md); otherwise the defaults below apply.
+
+Then read `kb/context/statur-codex-diagram.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: how its brand tokens map to the style options, where its figures go, and the lessons of its own builds. No such file: use the defaults here, and say so in one line. A company does not write a second, private skill for this job.
 
 ## Default path
 

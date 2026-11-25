@@ -2,6 +2,14 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-25 · v2.28.0
+
+- statur-codex-diagram 0.2.0, statur-x-viral-post-ghostwriter 1.1.0, statur-story-analysis 2.1.0, statur-motion-3d 0.4.0: each reads the company's context file `kb/context/<skill-name>.md` when it exists; the skills of the same family use it through the main one. One skill per task, no private skill on top.
+
+## 2026-11-25 · v2.27.0
+
+- statur-video-editor-pro 1.3.0: reads the company's context file `kb/context/statur-video-editor-pro.md` when it exists; the four sub-skills use it through the main skill. Replaces the advice to write a private skill on top.
+
 ## 2026-11-25 · v2.26.0
 
 - statur-social-analytics 2.2.0: reads the company's context file `kb/context/statur-social-analytics.md` when it exists, and lists the files it loads and when. A private instance names its own collectors there in place of a second skill.
