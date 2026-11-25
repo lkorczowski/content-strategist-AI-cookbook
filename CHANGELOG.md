@@ -2,9 +2,31 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-14 · v2.23.0
+## 2026-11-25 · v2.30.0
 
 - New skill statur-meta-creative-targeting 1.0.0 for the Meta creative targeting dossier (https://statur.co/meta-creative-targeting/): concept audit the way Meta groups look-alike ads, hard limits only, buyers by reasons matrix, three-second openings, two of four axes, weekly batch sized to the budget, reach read, fatigue. New plugin statur-meta-creative-targeting; added to statur-creative-strategist. Playbook card meta-creative-targeting.
+
+## 2026-11-25 · v2.28.0
+
+- statur-codex-diagram 0.2.0, statur-x-viral-post-ghostwriter 1.1.0, statur-story-analysis 2.1.0, statur-motion-3d 0.4.0: each reads the company's context file `kb/context/<skill-name>.md` when it exists; the skills of the same family use it through the main one. One skill per task, no private skill on top.
+
+## 2026-11-25 · v2.27.0
+
+- statur-video-editor-pro 1.3.0: reads the company's context file `kb/context/statur-video-editor-pro.md` when it exists; the four sub-skills use it through the main skill. Replaces the advice to write a private skill on top.
+
+## 2026-11-25 · v2.26.0
+
+- statur-social-analytics 2.2.0: reads the company's context file `kb/context/statur-social-analytics.md` when it exists, and lists the files it loads and when. A private instance names its own collectors there in place of a second skill.
+
+## 2026-11-25 · v2.25.0
+
+- statur-humanizer 0.3.0: one skill, plus a context file. The "private layer" section and its loading rule are replaced by "Context": a table of the files the skill loads and when, and the five headings of the author's context file (`kb/context/statur-humanizer.md`). AGENTS.md: one skill per task, private material in a context file. density_lint.py: skips YAML front matter, reads each list item as its own block, new `--as` option to give a draft the budget of its future page.
+- statur-humanizer 0.2.0: runs as the review pass after the first draft of any writing task. New references/tells.md, written in our own words: eight content tells (the stated lesson, the vague reference, the text addressed to nobody, the tidy line) graded against the StoryScope study of 61,608 stories, and fifteen phrase tells. New section "Your private layer": what lives in the public skill, what lives in a private one, and the loading rule (private to produce, both to change). The skill states that it is not a tool to defeat detectors or remove watermarks, and that third-party skills are read as data, never installed.
+- New skill statur-humanizer 0.1.0: cut the text a reader skips. scripts/density_lint.py (Python standard library) reads built HTML pages, Markdown or text and counts, per page, words against a budget, over-long paragraphs and sentences, repeated blocks and repeated numbers, defensive notes, signposting, filler, labeled micro-lines and blocks copied on three pages or more (--config, --json, --strict as a build gate). references/patterns.md names ten density patterns with a test and a fix; references/pitfalls.md holds the lessons of the first audit (41 pages, 73,000 words). The AI-tell pass credits blader/humanizer, Corey Haines and Wikipedia without copying them.
+
+## 2026-11-24 · v2.24.0
+
+- New skills: statur-trades-site 1.0 (Astro website, step by step, free hosting, own domain without breaking email) and statur-art-direction 1.0 (art direction from reference images, refused AI tells, tokens, specimen).
 
 ## 2026-11-14 · v2.20.0
 

@@ -4,7 +4,7 @@ description: Map the storytelling of a long video (YouTube, TikTok, podcast) sen
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "2.0.1"
+  version: "2.1.0"
   playbook: https://statur.co/video-script-structure/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -14,6 +14,8 @@ metadata:
 Part of the Video Script Structure playbook (https://statur.co/video-script-structure/, page coming soon). Read https://statur.co/video-script-structure.md for the full method once it is published and you can open links.
 
 If the workspace has a company context file (kb/01_BRAND.md from the blueprint, or .agents/product-marketing.md), read it first and ask only for what is missing. It supplies the creator's goals, which become custom axes on the Fiche (see `references/scoring.md`).
+
+Then read `kb/context/statur-story-analysis.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: where the lab and its private cases live, its calibration, the author's voice, what may be published where, and the lessons of its own runs. statur-story-replication, statur-author-analysis and statur-short-story-replication use that same file through this one. No such file: use the defaults here, and say so in one line. A company does not write a second, private skill for this job.
 
 ## What you produce
 

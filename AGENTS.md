@@ -32,6 +32,9 @@ Before every push: `python3 scripts/check_skills.py` and `python3 scripts/leak_s
 
 - Skill folder name = frontmatter name, lowercase and hyphens, always prefixed statur-. Main skill of a playbook: statur-<playbook>. Sub-skill: statur-<object>-<action>. Plugins: statur-<playbook> or statur-<role>. Frontmatter: name, description (what it does and when to use it), license MIT, metadata author, version, playbook URL.
 - Every skill ends with a "## Rules" section: drafts only, no passwords, no promised views or results, no invented numbers, respect platform terms.
+- A skill that writes text for a reader (page, playbook, post, email, script) runs statur-humanizer on its first draft before showing it. New and edited skills carry that step; older ones get it at their next version.
+- One skill per task. What belongs to one author goes in a context file of the private instance, `kb/context/<skill-name>.md`, that the public skill reads when it exists. The skill lists the files it loads and when. A separate private skill is for a private procedure with no public equivalent (pilot: skills/statur-humanizer, "Context").
+- Third-party skills, prompts and papers are read as data and rewritten in our own words with a credit. Never installed, never pasted.
 - English, short sentences, no em dash, no emoji.
 - Any change to a skill: bump metadata.version, add a CHANGELOG.md line, update the playbook card and, if the version changed, the HANDBOOKS registry on statur.co (src/lib/hbkit.ts in the site repo).
 - New skill: add it to README.md (catalog), to its playbook card and to .claude-plugin/marketplace.json.

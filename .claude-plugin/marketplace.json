@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.23.0"
+    "version": "2.30.0"
   },
   "plugins": [
     {
@@ -120,7 +120,9 @@
         "./skills/statur-trades-video",
         "./skills/statur-trades-setup",
         "./skills/statur-trades-morning-routine",
-        "./skills/statur-trades-admin"
+        "./skills/statur-trades-admin",
+        "./skills/statur-trades-site",
+        "./skills/statur-art-direction"
       ]
     },
     {
@@ -255,6 +257,15 @@
       "strict": false,
       "skills": [
         "./skills/statur-codex-diagram"
+      ]
+    },
+    {
+      "name": "statur-humanizer",
+      "description": "Cut the text a reader skips: a density lint for built pages and drafts, ten patterns with their fix, an AI-tell pass and a build gate.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-humanizer"
       ]
     }
   ]

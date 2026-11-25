@@ -4,7 +4,7 @@ description: Raise the production value of a short vertical video with an AI age
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.2.0"
+  version: "1.3.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -18,6 +18,8 @@ The job: one talking-head recording or one planned clip in, one edit at the prod
 ## 0. Read the company context first
 
 Look for kb/01_BRAND.md (blueprint) or .agents/product-marketing.md. The edit needs from it: the visual system (colors, fonts, what the brand never does, e.g. no gradients), the voice, the numbers allowed in public with their source, the names that must never appear, the assets the company owns (site, docs, repos, past posts). Turn the visual system into one brand tokens file (docs/BRAND-TOKENS.md: colors, fonts, limits, `banned_markers`), kept in the private repo. Pass it to every step with `BRAND_TOKENS=brand.json` or `--tokens brand.json`, or write it as `tokens` in the pro spec. No brand is written in this skill: with no tokens the edit renders in a neutral look (light paper, dark ink, one quiet accent). Ask once for what is missing.
+
+Then read `kb/context/statur-video-editor-pro.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: the level it picks by default, how its tokens map to the engine keys, the assets an edit may show, folders and file names, where it renders, how it posts, and the lessons of its own runs. The sub-skills (statur-motion-design, statur-sound-design, statur-color-grade, statur-broll-find) use that same file through this one. No such file: use the defaults here, and say so in one line. A company does not write a second, private skill for this job.
 
 ## 1. The production dial
 
