@@ -4,7 +4,7 @@ description: Make full 3D motion-design short videos in code, with no AI video m
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "0.3.0"
+  version: "0.4.0"
   playbook: https://statur.co/ai-video-editor/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -26,6 +26,8 @@ Part of the AI video editor playbook (https://statur.co/ai-video-editor/). Sibli
 3. Voice: none (default, works muted and in any language), or a voice track the user supplies; then time captions to it.
 4. Format: 720x1280 at 30 fps (default, fastest on a CPU) or 1080x1920.
 5. Brand: none is written in this skill. Engine v2 reads a brand tokens file (docs/BRAND-TOKENS.md) and falls back to a neutral look; the first engine keeps its fixed serif look, and a private layer may swap the fonts and colors in its index.html.
+
+Then read `kb/context/statur-motion-3d.md` in the same private repository, when it exists. It holds what belongs to this company and nothing of the method: its formats and look, its scenario pipeline, where projects live, how it delivers and posts, and the lessons of its own runs. No such file: use the defaults here, and say so in one line. A company does not write a second, private skill for this job.
 
 ## Default path
 
