@@ -10,6 +10,7 @@ Usage:
   python3 density_lint.py dist/                      every index.html under dist/
   python3 density_lint.py page.html draft.md         single files
   python3 density_lint.py dist/ --config lint.json   budgets and extra phrases
+  python3 density_lint.py draft.md --as /blog/x/ --config lint.json   a draft, with the budget of its future page
   python3 density_lint.py dist/ --json report.json   machine-readable report
   python3 density_lint.py dist/ --strict             exit 1 when a page is over budget
   python3 density_lint.py dist/ --page /pricing/ -v  list every hit of one page
@@ -92,7 +93,9 @@ def read_blocks(path, ignore):
     text = open(path, encoding="utf-8", errors="replace").read()
     if path.endswith((".html", ".htm")):
         p = Blocks(ignore); p.feed(text); p.flush(); return p.out
+    text = re.sub(r"\A---\n.*?\n---\n", "", text, flags=re.S)          # YAML front matter is not read by anyone
     text = re.sub(r"```.*?```", "", text, flags=re.S) if "pre" in ignore else text
+    text = re.sub(r"\n(?=[ \t]*(?:[-*+]|\d+\.)[ \t])", "\n\n", text)   # one block per list item
     out = []
     for para in re.split(r"\n\s*\n", text):
         t = re.sub(r"\s+", " ", re.sub(r"[#>*_`|]+", " ", para)).strip()
@@ -147,7 +150,7 @@ def budget_for(url, budgets):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("paths", nargs="+"); ap.add_argument("--config"); ap.add_argument("--json")
-    ap.add_argument("--strict", action="store_true"); ap.add_argument("--page"); ap.add_argument("-v", "--verbose", action="store_true")
+    ap.add_argument("--strict", action="store_true"); ap.add_argument("--page"); ap.add_argument("--as", dest="as_url", help="page path a single draft will be published at, to pick its budget, e.g. /blog/my-post/"); ap.add_argument("-v", "--verbose", action="store_true")
     a = ap.parse_args()
     cfg = dict(DEFAULTS)
     if a.config: cfg.update(json.load(open(a.config, encoding="utf-8")))
@@ -156,7 +159,7 @@ def main():
         if os.path.isdir(p):
             for f in sorted(glob.glob(os.path.join(p, "**", "index.html"), recursive=True)):
                 rel = os.path.relpath(os.path.dirname(f), p); files.append(("/" if rel == "." else "/" + rel + "/", f))
-        else: files.append((p, p))
+        else: files.append((a.as_url if a.as_url and len(a.paths) == 1 else p, p))
     files = [(u, f) for u, f in files if not any(fnmatch.fnmatch(u, i) for i in cfg["ignore_pages"])]
     pages = {u: read_blocks(f, cfg["ignore_selectors"]) for u, f in files}
     cross = collections.defaultdict(set)

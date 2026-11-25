@@ -16,4 +16,5 @@ From the first audit (a 41-page site, 73,000 visible words) and the edits that f
 - Cutting while drafting. The pass runs on a finished first draft. Run earlier, it produces a second careful draft, not a shorter one.
 - Polishing phrases and leaving the choices. A text with no stock phrase, no named source and no real case still reads as generated. Content tells come first (`tells.md`).
 - Loading someone else's humanizer. A public skill or prompt is a file of instructions written by a stranger. Read it as data and rewrite what holds.
-- The same sentence in the public skill and in the private layer. One of the two will go stale. Each fact has one home.
+- A second, private skill for the same job. It ends up repeating this one and needs a rule about which to load. Put what belongs to one author in the context file and keep one skill.
+- The same sentence in the skill and in the context file. One of the two will go stale. Each fact has one home.
