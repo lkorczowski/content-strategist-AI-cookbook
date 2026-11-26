@@ -41,7 +41,7 @@ PRIVATE instance   your company repo: knowledge base, routines, data, skills   (
 
 Specification (goal, principles, architecture, features, edge cases, platform constraints, acceptance tests): [SPEC.md](SPEC.md).
 
-Templates for every file above are in templates/, plus templates/PROJECT-INSTRUCTIONS.md for the assistant's project instructions. The shared memory between routine runs is described in [annotation-loop.md](annotation-loop.md).
+Templates for every file above are in templates/, plus templates/PROJECT-INSTRUCTIONS.md for the assistant's project instructions. The shared memory between routine runs is described in [annotation-loop.md](annotation-loop.md). Browser and office methods that work for an assistant (full Sheet reads, writes without a write connector, long transcripts, Docs typing, file hand-off to a browser tab): [references/tool-methods.md](references/tool-methods.md).
 
 ## Seven rules that keep the system healthy
 

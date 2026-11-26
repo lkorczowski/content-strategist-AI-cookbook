@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-26 · v2.30.0
+
+- Blueprint: references/tool-methods.md 1.0, the browser and office methods tested in a private instance (full Google Sheet read as CSV, Sheet writes through the Name Box, long transcripts read from page state, Google Docs typing in blocks, file hand-off from the agent to a browser tab, iframe editors), written generic.
+
 ## 2026-11-26 · v2.29.0
 
 - New playbook card tiktok-slideshow-app-marketing (https://statur.co/tiktok-slideshow-app-marketing/) with two skills: statur-account-networks 2.0.0 (fit, format scouting, two-account 40-post test, conversion without planted comments, scaling with labelled people, vendor audit) and statur-slideshow-maker 2.0.0 (Python renderer for TikTok and Instagram slideshows and LinkedIn PDF carousels, CSV template). Written on 2026-10-24 as account-network-coach and slideshow-maker 1.0, independently fact-checked, renamed and renumbered at merge; both run statur-humanizer on their first draft. Credit to the public video by Miles Feldstein (X, 2026-10-23) in the card.
