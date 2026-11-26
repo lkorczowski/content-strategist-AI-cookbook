@@ -4,7 +4,7 @@ Start with 3 to 5 creators, pay them on results (share of sales, share of ad spe
 
 - Page (source of truth): https://statur.co/creator-programs/
 - Markdown for AI assistants: https://statur.co/creator-programs.md
-- Version 2.0, 2026-11-08
+- Version 2.1, 2026-11-26 (creator scoring, coach, concept squeeze, posting waves, UGC farm and B2B ambassador models)
 
 ## Skills
 
