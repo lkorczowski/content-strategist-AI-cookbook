@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-25",
+ "maj": "2026-11-26",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -8,10 +8,6 @@
   {
    "q": "Mon assistant s’arrête dès qu’il bloque",
    "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
-  },
-  {
-   "q": "Comment Louis voit mes réussites ?",
-   "r": "Dis-les à ton Everest : il les écrit dans ton dossier, et la synchro les envoie. Louis voit si tes devoirs sont faits, pas leur contenu. Une réussite que ton assistant n’a pas notée ne compte pas."
   },
   {
    "q": "Mon assistant me dit que des tâches sont en retard",
@@ -31,7 +27,7 @@
   },
   {
    "q": "Un ami m’a donné un outil GitHub pour gérer mon Instagram, je l’installe ?",
-   "r": "Pas sans l’avis de Louis. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis : il existe souvent une compétence (skill) Everest qui fait la même chose sans risque."
+   "r": "Pas sans l’avis de Louis. Souvent, l’outil fait déjà ce que ta routine du matin et tes compétences (skills) Everest font. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis, il regarde."
   },
   {
    "q": "Je n’ai pas le temps d’écrire mes demandes",
@@ -39,11 +35,15 @@
   },
   {
    "q": "En vocal, mon assistant n’ouvre pas mon navigateur (logiciel de devis, Outlook en ligne), oublie ce que je dis ou ne voit pas mon agenda pro",
-   "r": "L’appel vocal utilise tes connecteurs (Gmail, Agenda, Drive), mais pas le navigateur : c’est une limite de Claude. Pour garder tous ses outils, utilise plutôt la dictée (le micro dans la zone où tu écris) dans ta conversation Everest. En voiture, garde l’appel vocal pour réfléchir et finis par « fais un brouillon Gmail avec le compte rendu » : une tâche planifiée (toutes les heures par exemple) lit ces brouillons et agit. Pour l’agenda pro, partage-le avec ton compte Google, puis coche-le dans les agendas du téléphone."
+   "r": "L’appel vocal utilise tes connecteurs (Gmail, Agenda, Drive), mais pas le navigateur : c’est une limite de Claude. Pour garder tous ses outils, utilise plutôt la dictée (le micro dans la zone où tu écris) dans ta conversation Everest. En voiture, garde l’appel vocal pour réfléchir et finis par « fais un brouillon Gmail avec le compte rendu » : une tâche planifiée (toutes les heures par exemple) lit ces brouillons et agit. Pour l’agenda pro, partage-le avec ton compte Google, puis coche-le dans les agendas du téléphone. Un tuto pour se faire un assistant à la voix (type Jarvis) est partagé dans le groupe WhatsApp des Illuminés."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
    "r": "Vérifie que ton dossier Téléchargements est relié au projet Everest (en plus du dossier Claude). Avec Chrome, c’est ce qui débloque le plus de choses."
+  },
+  {
+   "q": "Ma fiche Google (pour les avis) est créée mais « non visible publiquement »",
+   "r": "Google doit d’abord la valider, ce qui peut prendre plusieurs jours (jusqu’à 5 jours d’après Google). En attendant, complète la fiche (activité, zone, horaires, photos) et ne la recrée pas. Toujours rien après une semaine : dis-le dans le groupe ou à Louis."
   },
   {
    "q": "Mon ordinateur portable n’est pas toujours allumé",
@@ -82,8 +82,8 @@
    "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Une petite fenêtre qui s’ouvre de temps en temps, c’est normal. Si tu perds ton ordinateur, rien n’est perdu."
   },
   {
-   "q": "Qui voit ce que je mets dans mon Everest ?",
-   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
+   "q": "Qui voit ce que je mets dans mon Everest ? Comment Louis voit mes réussites ?",
+   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu : dis tes réussites à ton Everest, il les note dans ton dossier et la synchro les envoie. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
   },
   {
    "q": "Quels connecteurs installer ?",
@@ -91,7 +91,7 @@
   },
   {
    "q": "Je peux lui parler depuis mon téléphone ?",
-   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel."
+   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel. S’il demande l’accès à un dossier, choisis le dossier Claude qui contient ton dossier everest (souvent dans Documents), pas un autre."
   },
   {
    "q": "Est-ce que Claude envoie des emails sans moi ?",
