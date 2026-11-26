@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-26 · v2.29.0
+
+- New playbook card tiktok-slideshow-app-marketing (https://statur.co/tiktok-slideshow-app-marketing/) with two skills: statur-account-networks 2.0.0 (fit, format scouting, two-account 40-post test, conversion without planted comments, scaling with labelled people, vendor audit) and statur-slideshow-maker 2.0.0 (Python renderer for TikTok and Instagram slideshows and LinkedIn PDF carousels, CSV template). Written on 2026-10-24 as account-network-coach and slideshow-maker 1.0, independently fact-checked, renamed and renumbered at merge; both run statur-humanizer on their first draft. Credit to the public video by Miles Feldstein (X, 2026-10-23) in the card.
+- statur-trades-morning-routine 2.1.0: the carousel step points to statur-slideshow-maker. Cards of creator programs, comment section strategy, the Content Testing Loop and the X launch playbook: a Related line to the new playbook. Tradespeople card: statur-slideshow-maker as companion skill.
+- Plugin statur-tiktok-slideshow-app-marketing; statur-content-strategist gains the two skills. Marketplace 2.29.0.
+
 ## 2026-11-25 · v2.28.0
 
 - statur-codex-diagram 0.2.0, statur-x-viral-post-ghostwriter 1.1.0, statur-story-analysis 2.1.0, statur-motion-3d 0.4.0: each reads the company's context file `kb/context/<skill-name>.md` when it exists; the skills of the same family use it through the main one. One skill per task, no private skill on top.
