@@ -24,3 +24,7 @@ The numbers come from [statur-social-analytics](../skills/statur-social-analytic
 ## Credit
 
 Triggered by a public workflow shared by Angus Sewell (Angus the Nontechnical, TikTok, 2026-10-22): https://www.tiktok.com/@angusthenontechnical/video/7699512206605421838. The structure of the post-mortem and learning skills comes from his system: the early-data rule, the worst reliable passage, KEEP, CHANGE and CUT with speculative changes labelled as tests, the trial-reel A/B test, and a learning session that re-tests saved lessons first, keeps REFUTED lines and ends with a coaching brief. The skills and prompts here are written from scratch, in our own words, and add the format review of the dice system (statur-format-review).
+
+## Related
+
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): the testing loop at volume, with 40 posts per format on two accounts, read inside each account.

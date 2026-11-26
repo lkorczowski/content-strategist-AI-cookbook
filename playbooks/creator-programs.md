@@ -11,3 +11,7 @@ Start with 3 to 5 creators, pay them on results (share of sales, share of ad spe
 | Skill | Use it for |
 |---|---|
 | [statur-creator-program](../skills/statur-creator-program/) | Design, run and audit a creator program paid on results, recipe by recipe, with the eight pitfalls. |
+
+## Related
+
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): the same logic applied to people who post brand content from accounts the brand pays for, with disclosure.

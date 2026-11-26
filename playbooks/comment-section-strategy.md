@@ -10,3 +10,7 @@ Five comment traps that spread an idea faster than the video, the line between a
 | Skill | Use it for |
 |---|---|
 | [statur-comment-section](../skills/statur-comment-section/) | Plan the comment trap of a video, the pinned comment and replies, read a live comment section, draft disclosed founder comments. |
+
+## Related
+
+- [TikTok slideshow app marketing](tiktok-slideshow-app-marketing.md): why planted "what app is this?" comments are the first step to drop in an account network, and the demo trick that replaces them.
