@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.30.0"
+    "version": "2.31.0"
   },
   "plugins": [
     {
@@ -195,7 +195,10 @@
         "./skills/statur-color-grade",
         "./skills/statur-broll-find",
         "./skills/statur-account-networks",
-        "./skills/statur-slideshow-maker"
+        "./skills/statur-slideshow-maker",
+        "./skills/statur-hook-stacking",
+        "./skills/statur-video-to-essay",
+        "./skills/statur-newsletter-essay"
       ]
     },
     {
@@ -267,6 +270,19 @@
       "strict": false,
       "skills": [
         "./skills/statur-humanizer"
+      ]
+    },
+    {
+      "name": "statur-writing-kit",
+      "description": "Titles that stack hooks, video-to-essay and newsletter essays, landing page audits and handbook pages with an AI layer.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-hook-stacking",
+        "./skills/statur-video-to-essay",
+        "./skills/statur-newsletter-essay",
+        "./skills/statur-landing-page-audit",
+        "./skills/statur-handbook"
       ]
     }
   ]

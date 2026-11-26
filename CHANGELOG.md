@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-26 · v2.31.0
+
+- Five new skills, generic versions of methods tested in a private instance (each reads the company's context file `kb/context/<skill-name>.md` when it exists): statur-hook-stacking 1.0.0 (titles and hooks, three hooks or more, desire hook credited to Kallaway), statur-landing-page-audit 1.0.0 (awareness, hero, conversion, navigation, search, AI copy, visual system, proof), statur-newsletter-essay 1.0.0 (full essay, coverage table, research rule adapted from Adam Mastroianni, independent review), statur-video-to-essay 1.0.0 (twelve-step pipeline from a short video to a standalone sourced essay, WordPress block draft), statur-handbook 1.0.0 (handbook and dossier pages with the AI layer and companion skills). All run statur-humanizer on their first draft. Plugin statur-writing-kit; statur-content-strategist gains three of them. Marketplace 2.31.0.
+
 ## 2026-11-26 · v2.30.0
 
 - Blueprint: references/tool-methods.md 1.0, the browser and office methods tested in a private instance (full Google Sheet read as CSV, Sheet writes through the Name Box, long transcripts read from page state, Google Docs typing in blocks, file hand-off from the agent to a browser tab, iframe editors), written generic.
