@@ -4,7 +4,7 @@ description: Design, run and audit a creator program where a few creators are pa
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "3.0.0"
+  version: "3.1.0"
   playbook: https://statur.co/creator-programs/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -46,28 +46,38 @@ Compute the break-even with the user's own numbers: monthly spend needed per cre
    - Write the rate as a share of what the business can pay for a customer, then as a percentage. Add a cap per video.
    - Smart retainer for the first 2 to 3 months: a floor tied to a video quota, topped up when commissions fall short, dropped once commissions pass it.
    - Ad usage rights are a priced line: Later reports 30 to 50% on top of a base rate (https://later.com/blog/influencer-pricing-benchmarks-the-complete-2026-guide/).
+   - Rates move fast. One growth advisor for AI apps reports short-form CPMs around $50 and YouTube CPMs of $350 to $500 in late 2026, about ten times his January 2025 rates (Jeddi Mees on the Bulldozer podcast, https://www.youtube.com/watch?v=-IaKVoO7ua8, practitioner figures, self-reported). One more reason to pay on results.
+   - Two more models: a UGC farm (people good on camera, no audience, a monthly fee of about $500 to $1,000 for 2 videos a day over 30 days plus bonuses at view milestones, practitioner estimate; every post discloses the partnership and platforms act against inauthentic account networks) and a B2B monthly ambassador (flat monthly fee for 1 to 2 LinkedIn posts a week, an affiliate link, posts run as ads, sales follows up on likes and comments).
 3. Build a watchlist, then sort by engagement (1 hour, then 15 min a day).
    - Save every promising creator video in a collection on each target network, in volume.
    - Search adjacent niches too (running shoes: runners; a SaaS for lawyers: lawyers or people who explain the law).
+   - Add the creators competitors and adjacent brands already sponsor (a creator one brand rehired many times probably performs for it), and keyword searches on YouTube.
+   - Write the brand's red-flag list first: topics and tones the brand will not stand next to.
    - Sort by (likes + comments) / followers. A small engaged audience in the market beats a big account outside it.
+   - Then score on four signals: average views, outlier rate (share of videos above twice their average views), quality of the first 100 comments, and posting regularity. Keep about 20% of the decision for judgment and review every creator before signing (Jeddi Mees on the Bulldozer podcast, https://www.youtube.com/watch?v=-IaKVoO7ua8, practitioner figures, self-reported).
    - One tracker sheet connected to the user's AI: it reads emails and DMs, updates each row and flags replies. Template: the tracker linked in recipe 03 of https://statur.co/creator-programs/ (Google Sheet with dummy data).
 4. Start with 3 to 5 creators and brief them well (1 day, once).
    - One gap each: a format, a type of customer, a country.
    - Ship the product with a one-page brief: offer, 2 videos that already work, what to say and not say, disclosure, code.
    - Inspire, do not script. If a recipe already converts (a lead magnet asking people to comment for a DM, a hook format), hand it over.
+   - Brief with concepts rather than scripts: one or two ideas for everyone at the start, each cut into shots, with a dozen hooks to test.
 5. Animate the creators every day (15 min a day). This recipe decides the program.
    - Three creators who post every day and know the brand beat twenty who are not engaged.
    - A daily channel (WhatsApp, Slack or Discord): share what worked and why, every day.
    - A top-performers page, ranked by how videos do as ads, updated weekly.
    - Pay fast, weekly: even a small payout motivates sooner.
    - One person creators can reach directly. The best creator sets the pace for the others.
+   - Past about ten creators, name a coach (often the best creator): review each video that beat the average without breaking out and ask for a remake with a new hook or new light. One practitioner reports the share of breakout videos going from about 5% to 10% after hiring one (Jeddi Mees on the Bulldozer podcast, https://www.youtube.com/watch?v=-IaKVoO7ua8, practitioner figures, self-reported).
 6. Scale from a breakout, with referrals (2 hours, when a creator breaks out).
    - The breakout video becomes a template the others adapt, never a script to copy.
    - Recruit up to about 10 creators with that proof.
    - Referral: the referrer earns an extra 10% of what the newcomer earns. Approve every newcomer.
+   - Squeeze the concept: the next week, the whole team adapts it in their own voice until it wears out, while two or three creators keep testing new formats.
 7. Measure, then break the copy loop (30 min a week).
    - Judge creators on cost per sale and renewals, with UTMs and a "how did you hear about us" field.
    - Give an ad enough spend before judging it: in one vendor dataset of 65,000 creator ads, almost half of eventual winners looked like losers under $100 of spend, and a winner lived about 36 days before its cost per sale rose 1.8 times (Agentio via https://martechvibe.com/article/creator-ads-deliver-19-higher-ctr-on-meta-partnership-ads, vendor data).
+   - On Instagram and TikTok, link-in-bio clicks stay under 1% by one practitioner's count, so one-to-one attribution will not hold. Publish in waves: most creators who share an audience or a region post the same day, then read the spike in visits and signups.
+   - Count the ad value in a creator's return: a creator video that becomes a winning ad lowers cost per sale for weeks.
    - Tired creators remake the top video. Ask for one new format per creator per week.
    - Cut on business numbers, after a fair number of videos.
 
@@ -91,12 +101,13 @@ Stage: <0, 1, 2 or 3> because <evidence>
 Break-even: floor <user figure> / rate <user figure> = <spend per creator per month> x <creators> = <total>
 Decision: start now | start later, do <founder content or small ads> first
 Payment model: <share of sales, share of spend or per 1,000 views> | cap: <x> | rate as share of CAC: <x> | floor and quota: <x>, months <n> | payout: weekly
-Watchlist: <adjacent niches | keywords | engagement ratio per profile>
+Watchlist: <adjacent niches | competitors' sponsored creators | keywords | engagement ratio | outlier rate | comment quality | regularity | red flags>
 First creators (3 to 5): <gap | profile | brief draft | recipe handed over>
-Daily animation: <channel | daily message format | top-performers page | payout rhythm | who sets the pace>
-Breakout plan: <template | recruiting message | referral 10% of the newcomer's earnings>
+Daily animation: <channel | daily message format | top-performers page | payout rhythm | who sets the pace | coach past ten creators>
+Breakout plan: <template | concept squeeze week | explorers | recruiting message | referral 10% of the newcomer's earnings>
 Leaderboard reading: <creator | format | copying the top video? | new format to test>
-Business reading: <creator | spend | CAC | renewals | payback | keep, coach or cut>
+Posting waves: <audience or region | day | spike read>
+Business reading: <creator | spend | CAC | renewals | payback | ad value | keep, coach or cut>
 Pitfall check: <1 to 8 | ok or risk | fix>
 Contract checklist: disclosure duty, whitelisting duration, file rights, view verification
 ```

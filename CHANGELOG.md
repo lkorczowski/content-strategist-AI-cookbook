@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-26 · v2.32.0
+
+- statur-creator-program 3.1.0, aligned with the Creator Program Playbook v2.1 (https://statur.co/creator-programs/): creator scoring (competitors' sponsored creators, red-flag list, outlier rate, comment quality, regularity, 20% judgment), concepts instead of scripts, a coach past ten creators, squeezing a winning concept, posting waves to read attribution, ad value in creator returns, rate inflation, UGC farm and B2B ambassador models. New source: Jeddi Mees on the Bulldozer podcast (practitioner, self-reported). Playbook card at 2.1. Marketplace 2.32.0.
+
 ## 2026-11-26 · v2.31.0
 
 - Five new skills, generic versions of methods tested in a private instance (each reads the company's context file `kb/context/<skill-name>.md` when it exists): statur-hook-stacking 1.0.0 (titles and hooks, three hooks or more, desire hook credited to Kallaway), statur-landing-page-audit 1.0.0 (awareness, hero, conversion, navigation, search, AI copy, visual system, proof), statur-newsletter-essay 1.0.0 (full essay, coverage table, research rule adapted from Adam Mastroianni, independent review), statur-video-to-essay 1.0.0 (twelve-step pipeline from a short video to a standalone sourced essay, WordPress block draft), statur-handbook 1.0.0 (handbook and dossier pages with the AI layer and companion skills). All run statur-humanizer on their first draft. Plugin statur-writing-kit; statur-content-strategist gains three of them. Marketplace 2.31.0.
