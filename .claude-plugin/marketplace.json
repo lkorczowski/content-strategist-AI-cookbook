@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Open-source skills for founder-led short-form content, one plugin per playbook published on statur.co.",
-    "version": "2.29.0"
+    "version": "2.33.0"
   },
   "plugins": [
     {
@@ -18,6 +18,16 @@
         "./skills/statur-video-post-mortem",
         "./skills/statur-format-review",
         "./skills/statur-content-learning"
+      ]
+    },
+    {
+      "name": "statur-tiktok-slideshow-app-marketing",
+      "description": "Plan, test and audit a multi-account TikTok and Instagram system without fake personas, and render slideshows at volume.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-account-networks",
+        "./skills/statur-slideshow-maker"
       ]
     },
     {
@@ -183,7 +193,12 @@
         "./skills/statur-motion-design",
         "./skills/statur-sound-design",
         "./skills/statur-color-grade",
-        "./skills/statur-broll-find"
+        "./skills/statur-broll-find",
+        "./skills/statur-account-networks",
+        "./skills/statur-slideshow-maker",
+        "./skills/statur-hook-stacking",
+        "./skills/statur-video-to-essay",
+        "./skills/statur-newsletter-essay"
       ]
     },
     {
@@ -266,6 +281,19 @@
       "strict": false,
       "skills": [
         "./skills/statur-humanizer"
+      ]
+    },
+    {
+      "name": "statur-writing-kit",
+      "description": "Titles that stack hooks, video-to-essay and newsletter essays, landing page audits and handbook pages with an AI layer.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/statur-hook-stacking",
+        "./skills/statur-video-to-essay",
+        "./skills/statur-newsletter-essay",
+        "./skills/statur-landing-page-audit",
+        "./skills/statur-handbook"
       ]
     }
   ]

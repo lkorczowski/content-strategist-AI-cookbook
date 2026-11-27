@@ -2,9 +2,27 @@
 
 Newest first. One line per change: date, what changed, version.
 
-## 2026-11-25 · v2.29.0
+## 2026-11-27 · v2.33.0
 
-- New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.1.0 (ten recipes, matching the page after its V4.1 port): objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill.
+- New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.1.0 (ten recipes, matching the page after its V4.1 port): objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill. Marketplace 2.33.0.
+
+## 2026-11-26 · v2.32.0
+
+- statur-creator-program 3.1.0, aligned with the Creator Program Playbook v2.1 (https://statur.co/creator-programs/): creator scoring (competitors' sponsored creators, red-flag list, outlier rate, comment quality, regularity, 20% judgment), concepts instead of scripts, a coach past ten creators, squeezing a winning concept, posting waves to read attribution, ad value in creator returns, rate inflation, UGC farm and B2B ambassador models. New source: Jeddi Mees on the Bulldozer podcast (practitioner, self-reported). Playbook card at 2.1. Marketplace 2.32.0.
+
+## 2026-11-26 · v2.31.0
+
+- Five new skills, generic versions of methods tested in a private instance (each reads the company's context file `kb/context/<skill-name>.md` when it exists): statur-hook-stacking 1.0.0 (titles and hooks, three hooks or more, desire hook credited to Kallaway), statur-landing-page-audit 1.0.0 (awareness, hero, conversion, navigation, search, AI copy, visual system, proof), statur-newsletter-essay 1.0.0 (full essay, coverage table, research rule adapted from Adam Mastroianni, independent review), statur-video-to-essay 1.0.0 (twelve-step pipeline from a short video to a standalone sourced essay, WordPress block draft), statur-handbook 1.0.0 (handbook and dossier pages with the AI layer and companion skills). All run statur-humanizer on their first draft. Plugin statur-writing-kit; statur-content-strategist gains three of them. Marketplace 2.31.0.
+
+## 2026-11-26 · v2.30.0
+
+- Blueprint: references/tool-methods.md 1.0, the browser and office methods tested in a private instance (full Google Sheet read as CSV, Sheet writes through the Name Box, long transcripts read from page state, Google Docs typing in blocks, file hand-off from the agent to a browser tab, iframe editors), written generic.
+
+## 2026-11-26 · v2.29.0
+
+- New playbook card tiktok-slideshow-app-marketing (https://statur.co/tiktok-slideshow-app-marketing/) with two skills: statur-account-networks 2.0.0 (fit, format scouting, two-account 40-post test, conversion without planted comments, scaling with labelled people, vendor audit) and statur-slideshow-maker 2.0.0 (Python renderer for TikTok and Instagram slideshows and LinkedIn PDF carousels, CSV template). Written on 2026-10-24 as account-network-coach and slideshow-maker 1.0, independently fact-checked, renamed and renumbered at merge; both run statur-humanizer on their first draft. Credit to the public video by Miles Feldstein (X, 2026-10-23) in the card.
+- statur-trades-morning-routine 2.1.0: the carousel step points to statur-slideshow-maker. Cards of creator programs, comment section strategy, the Content Testing Loop and the X launch playbook: a Related line to the new playbook. Tradespeople card: statur-slideshow-maker as companion skill.
+- Plugin statur-tiktok-slideshow-app-marketing; statur-content-strategist gains the two skills. Marketplace 2.29.0.
 
 ## 2026-11-25 · v2.28.0
 

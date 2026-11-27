@@ -1,17 +1,13 @@
 {
- "maj": "2026-11-24",
+ "maj": "2026-11-26",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
-   "r": "Trois réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) En bas de la zone de saisie, choisis le mode Auto. 3) Sur un site, choisis « Toujours autoriser pour ce site ». L’envoi d’un email, d’un devis ou d’une facture te demandera toujours ton accord : c’est voulu."
+   "r": "Trois réglages. 1) Menu en bas à gauche, Personnaliser, Connecteurs, clique sur chaque connecteur (Gmail, Outlook…) : dans « Autorisations des outils », mets chaque groupe sur « Toujours autoriser ». 2) Dans les paramètres du projet Everest et en bas de la zone de saisie, choisis le mode Auto. 3) Sur un site, choisis « Toujours autoriser les actions sur ce site ». Si le réglage ne tient pas d’une conversation à l’autre, demande à ton assistant d’écrire une issue GitHub avec le contexte."
   },
   {
    "q": "Mon assistant s’arrête dès qu’il bloque",
    "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
-  },
-  {
-   "q": "Comment Louis voit mes réussites ?",
-   "r": "Dis-les à ton Everest : il les écrit dans ton dossier, et la synchro les envoie. Louis voit si tes devoirs sont faits, pas leur contenu. Une réussite que ton assistant n’a pas notée ne compte pas."
   },
   {
    "q": "Mon assistant me dit que des tâches sont en retard",
@@ -31,23 +27,27 @@
   },
   {
    "q": "Un ami m’a donné un outil GitHub pour gérer mon Instagram, je l’installe ?",
-   "r": "Pas sans l’avis de Louis. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis : il existe souvent une compétence (skill) Everest qui fait la même chose sans risque."
+   "r": "Pas sans l’avis de Louis. Souvent, l’outil fait déjà ce que ta routine du matin et tes compétences (skills) Everest font. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis, il regarde."
   },
   {
    "q": "Je n’ai pas le temps d’écrire mes demandes",
    "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
   },
   {
-   "q": "En vocal, mon assistant oublie ce que je dis, ne voit pas mon agenda pro ou dit qu’il ne peut pas ouvrir mes emails",
-   "r": "Le mode vocal ne lit pas ton dossier : demande-lui de finir chaque conversation par un brouillon Gmail « à faire à l’écrit », qu’une tâche planifiée reprend. S’il dit qu’il ne peut pas ouvrir un email, demande-lui de réessayer : les outils Gmail se chargent parfois au deuxième essai. Pour l’agenda pro, partage-le avec ton compte Google perso, puis coche-le dans les agendas de ton téléphone."
+   "q": "En vocal, mon assistant n’ouvre pas mon navigateur (logiciel de devis, Outlook en ligne), oublie ce que je dis ou ne voit pas mon agenda pro",
+   "r": "L’appel vocal utilise tes connecteurs (Gmail, Agenda, Drive), mais pas le navigateur : c’est une limite de Claude. Pour garder tous ses outils, utilise plutôt la dictée (le micro dans la zone où tu écris) dans ta conversation Everest. En voiture, garde l’appel vocal pour réfléchir et finis par « fais un brouillon Gmail avec le compte rendu » : une tâche planifiée (toutes les heures par exemple) lit ces brouillons et agit. Pour l’agenda pro, partage-le avec ton compte Google, puis coche-le dans les agendas du téléphone. Un tuto pour se faire un assistant à la voix (type Jarvis) est partagé dans le groupe WhatsApp des Illuminés."
   },
   {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
    "r": "Vérifie que ton dossier Téléchargements est relié au projet Everest (en plus du dossier Claude). Avec Chrome, c’est ce qui débloque le plus de choses."
   },
   {
+   "q": "Ma fiche Google (pour les avis) est créée mais « non visible publiquement »",
+   "r": "Google doit d’abord la valider, ce qui peut prendre plusieurs jours (jusqu’à 5 jours d’après Google). En attendant, complète la fiche (activité, zone, horaires, photos) et ne la recrée pas. Toujours rien après une semaine : dis-le dans le groupe ou à Louis."
+  },
+  {
    "q": "Mon ordinateur portable n’est pas toujours allumé",
-   "r": "L’assistant travaille sur l’ordinateur : s’il est éteint ou en veille, rien ne part. Laisse-le allumé et branché quand tu veux qu’il travaille, ou garde un ordinateur fixe toujours allumé au bureau."
+   "r": "L’assistant travaille sur l’ordinateur : s’il est éteint ou en veille, rien ne part et ses tâches planifiées attendent. Laisse-le allumé et branché. Demande à ton assistant, depuis l’onglet Code, de régler l’ordinateur pour qu’il ne se mette plus en veille sur secteur, même capot fermé."
   },
   {
    "q": "Ma boîte Outlook ou Microsoft 365 est gérée par un informaticien",
@@ -82,8 +82,8 @@
    "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Une petite fenêtre qui s’ouvre de temps en temps, c’est normal. Si tu perds ton ordinateur, rien n’est perdu."
   },
   {
-   "q": "Qui voit ce que je mets dans mon Everest ?",
-   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
+   "q": "Qui voit ce que je mets dans mon Everest ? Comment Louis voit mes réussites ?",
+   "r": "Toi. Louis regarde seulement si tes devoirs sont faits, pas leur contenu : dis tes réussites à ton Everest, il les note dans ton dossier et la synchro les envoie. Ton dépôt t’appartient : le jour où tu es autonome, tu déconnectes Louis de GitHub et tu restes seul propriétaire."
   },
   {
    "q": "Quels connecteurs installer ?",
@@ -91,11 +91,11 @@
   },
   {
    "q": "Je peux lui parler depuis mon téléphone ?",
-   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel."
+   "r": "Oui, dans le projet Everest de l’appli. Garde l’ordinateur allumé : c’est lui qui travaille, par exemple pour saisir un devis dans ton logiciel. S’il demande l’accès à un dossier, choisis le dossier Claude qui contient ton dossier everest (souvent dans Documents), pas un autre."
   },
   {
    "q": "Est-ce que Claude envoie des emails sans moi ?",
-   "r": "Non. Il prépare des brouillons. Tu relis et tu envoies."
+   "r": "Par défaut, non : il prépare des brouillons, tu relis et tu envoies. Tu peux aussi lui dire « envoie-le sans validation de ma part ». Astuce : demande-lui de te prévenir quand des brouillons attendent, par exemple avec un rendez-vous dans ton agenda qui les liste."
   },
   {
    "q": "Je suis bloqué",
