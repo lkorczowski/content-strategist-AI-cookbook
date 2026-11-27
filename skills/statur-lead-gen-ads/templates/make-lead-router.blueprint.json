@@ -1,0 +1,432 @@
+{
+  "name": "Lead router template (statur-lead-gen-ads)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "facebook-lead-ads:NewLeadMultiple",
+      "version": 2,
+      "mapper": {},
+      "parameters": {
+        "v": "2",
+        "fields": [
+          "id",
+          "ad_name",
+          "adset_name",
+          "campaign_name",
+          "created_time",
+          "field_data",
+          "form_id",
+          "is_organic",
+          "platform"
+        ]
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "util:SetVariables",
+      "version": 1,
+      "mapper": {
+        "variables": [
+          {
+            "name": "name",
+            "value": "{{trim(1.data.full_name)}}"
+          },
+          {
+            "name": "email",
+            "value": "{{lower(trim(1.data.email))}}"
+          },
+          {
+            "name": "phone",
+            "value": "{{trim(1.data.phone_number)}}"
+          },
+          {
+            "name": "digits",
+            "value": "{{replace(replace(replace(replace(replace(replace(1.data.phone_number; \" \"; emptystring); \"+\"; emptystring); \".\"; emptystring); \"-\"; emptystring); \"(\"; emptystring); \")\"; emptystring)}}"
+          },
+          {
+            "name": "company",
+            "value": "{{trim(1.data.company_name)}}"
+          }
+        ]
+      },
+      "parameters": {},
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "module": "util:SetVariables",
+      "version": 1,
+      "mapper": {
+        "variables": [
+          {
+            "name": "emailKey",
+            "value": "{{ifempty(2.email; \"zz-no-email-zz\")}}"
+          },
+          {
+            "name": "phoneKey",
+            "value": "{{if(length(2.digits) >= 9; substring(2.digits; length(2.digits) - 9; length(2.digits)); \"zz-no-phone-zz\")}}"
+          },
+          {
+            "name": "today",
+            "value": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}"
+          }
+        ]
+      },
+      "parameters": {},
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "module": "google-sheets:filterRows",
+      "version": 2,
+      "mapper": {
+        "from": "drive",
+        "limit": 1,
+        "sheetId": "leads",
+        "spreadsheetId": "YOUR_SPREADSHEET_ID",
+        "includesHeaders": true,
+        "tableFirstRow": "A1:Z1",
+        "valueRenderOption": "FORMATTED_VALUE",
+        "dateTimeRenderOption": "FORMATTED_STRING",
+        "filter": [
+          [
+            {
+              "a": "B",
+              "b": "{{3.emailKey}}",
+              "o": "text:equal:ci"
+            }
+          ],
+          [
+            {
+              "a": "C",
+              "b": "{{3.phoneKey}}",
+              "o": "text:contain"
+            }
+          ]
+        ]
+      },
+      "parameters": {},
+      "metadata": {
+        "designer": {
+          "x": 900,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 5,
+      "module": "builtin:BasicAggregator",
+      "version": 1,
+      "mapper": {
+        "row": "{{4.`__ROW_NUMBER__`}}"
+      },
+      "parameters": {
+        "feeder": 4
+      },
+      "metadata": {
+        "designer": {
+          "x": 1200,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 6,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": {
+        "designer": {
+          "x": 1500,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 7,
+              "module": "google-sheets:addRow",
+              "version": 2,
+              "mapper": {
+                "mode": "fromAll",
+                "sheetId": "leads",
+                "spreadsheetId": "YOUR_SPREADSHEET_ID",
+                "includesHeaders": true,
+                "insertDataOption": "INSERT_ROWS",
+                "valueInputOption": "RAW",
+                "insertUnformatted": false,
+                "values": {
+                  "0": "{{2.name}}",
+                  "1": "{{2.email}}",
+                  "2": "{{2.phone}}",
+                  "3": "{{2.company}}",
+                  "4": "MAP_QUALIFYING_ANSWER",
+                  "5": "MAP_PITCH_ANSWER",
+                  "6": "MAP_PLAYFUL_ANSWER",
+                  "8": "new",
+                  "11": "{{1.dateCreated}}",
+                  "13": "{{1.platform}}",
+                  "14": "{{1.isOrganic}}",
+                  "15": "{{1.campaignName}}",
+                  "16": "{{1.adsetName}}",
+                  "17": "{{1.adName}}",
+                  "18": "FORM_NAME_AND_CONSENT_TEXT",
+                  "19": "{{1.leadgenId}}"
+                }
+              },
+              "parameters": {},
+              "metadata": {
+                "designer": {
+                  "x": 1800,
+                  "y": 0
+                }
+              },
+              "filter": {
+                "name": "New lead (absent from the sheet)",
+                "conditions": [
+                  [
+                    {
+                      "a": "{{first(map(5.array; \"row\"))}}",
+                      "o": "notexist"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 8,
+              "module": "google-sheets:filterRows",
+              "version": 2,
+              "mapper": {
+                "from": "drive",
+                "limit": 1,
+                "sheetId": "leads",
+                "spreadsheetId": "YOUR_SPREADSHEET_ID",
+                "includesHeaders": true,
+                "tableFirstRow": "A1:Z1",
+                "valueRenderOption": "FORMATTED_VALUE",
+                "dateTimeRenderOption": "FORMATTED_STRING",
+                "filter": [
+                  [
+                    {
+                      "a": "B",
+                      "b": "{{3.emailKey}}",
+                      "o": "text:equal:ci"
+                    }
+                  ],
+                  [
+                    {
+                      "a": "C",
+                      "b": "{{3.phoneKey}}",
+                      "o": "text:contain"
+                    }
+                  ]
+                ]
+              },
+              "parameters": {},
+              "metadata": {
+                "designer": {
+                  "x": 1800,
+                  "y": 0
+                }
+              }
+            },
+            {
+              "id": 9,
+              "module": "google-contacts:searchContacts",
+              "version": 4,
+              "mapper": {
+                "limit": 1,
+                "search": "{{ifempty(2.email; 2.phone)}}"
+              },
+              "parameters": {},
+              "metadata": {
+                "designer": {
+                  "x": 2100,
+                  "y": 0
+                }
+              }
+            },
+            {
+              "id": 10,
+              "module": "builtin:BasicAggregator",
+              "version": 1,
+              "mapper": {
+                "id": "{{9.id}}",
+                "givenName": "{{9.givenName}}"
+              },
+              "parameters": {
+                "feeder": 9
+              },
+              "metadata": {
+                "designer": {
+                  "x": 2400,
+                  "y": 0
+                }
+              }
+            },
+            {
+              "id": 11,
+              "module": "builtin:BasicRouter",
+              "version": 1,
+              "mapper": null,
+              "metadata": {
+                "designer": {
+                  "x": 2700,
+                  "y": 0
+                }
+              },
+              "routes": [
+                {
+                  "flow": [
+                    {
+                      "id": 12,
+                      "module": "google-contacts:createAContact",
+                      "version": 4,
+                      "mapper": {
+                        "givenName": "{{8.`__ROW_NUMBER__`}} {{2.name}}",
+                        "familyName": "(LEAD) - {{2.company}}",
+                        "organization": {
+                          "name": "{{2.company}}"
+                        },
+                        "phoneNumbers": [
+                          {
+                            "value": "{{2.phone}}"
+                          }
+                        ],
+                        "emailAddresses": [
+                          {
+                            "value": "{{2.email}}",
+                            "displayName": "{{2.name}}"
+                          }
+                        ],
+                        "note": "Lead added {{3.today}}, sheet row {{8.`__ROW_NUMBER__`}}, source {{1.platform}}, campaign {{1.campaignName}}"
+                      },
+                      "parameters": {},
+                      "metadata": {
+                        "designer": {
+                          "x": 3000,
+                          "y": 0
+                        }
+                      },
+                      "filter": {
+                        "name": "No Google contact yet",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{first(map(10.array; \"id\"))}}",
+                              "o": "notexist"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "flow": [
+                    {
+                      "id": 13,
+                      "module": "google-contacts:updateAContact",
+                      "version": 4,
+                      "mapper": {
+                        "contact": "{{first(map(10.array; \"id\"))}}",
+                        "givenName": "{{8.`__ROW_NUMBER__`}} {{2.name}}",
+                        "organization": {
+                          "name": "{{2.company}}"
+                        }
+                      },
+                      "parameters": {},
+                      "metadata": {
+                        "designer": {
+                          "x": 3000,
+                          "y": 0
+                        }
+                      },
+                      "filter": {
+                        "name": "Existing contact without a row number",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{first(map(10.array; \"id\"))}}",
+                              "o": "exist"
+                            },
+                            {
+                              "a": "{{first(map(10.array; \"givenName\"))}}",
+                              "b": "^[0-9]+ ",
+                              "o": "text:notpattern"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "flow": [
+                    {
+                      "id": 14,
+                      "module": "google-email:sendAnEmail",
+                      "version": 4,
+                      "mapper": {
+                        "to": [
+                          "YOUR_ALERT_EMAIL"
+                        ],
+                        "subject": "New lead #{{8.`__ROW_NUMBER__`}}: {{2.name}} ({{2.company}})",
+                        "bodyType": "rawHtml",
+                        "content": "<p><b>{{if(first(map(5.array; \"row\")); \"Already in the sheet\"; \"New lead\")}}</b>, row {{8.`__ROW_NUMBER__`}}, received {{3.today}}. Call within 5 minutes.</p><p>Name: {{2.name}}<br>Company: {{2.company}}<br>Email: {{2.email}}<br>Phone: <a href=\"tel:{{2.phone}}\">{{2.phone}}</a></p><p>Answers: MAP_ANSWERS</p><p>Source: {{1.platform}}, organic {{1.isOrganic}}, campaign {{1.campaignName}}, ad {{1.adName}}</p><p><a href=\"https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit#gid=0&range=A{{8.`__ROW_NUMBER__`}}\">Open the row</a></p>"
+                      },
+                      "parameters": {},
+                      "metadata": {
+                        "designer": {
+                          "x": 3000,
+                          "y": 0
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "dlq": true,
+      "dataloss": false,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "roundtrips": 1,
+      "sequential": false,
+      "confidential": false,
+      "freshVariables": false,
+      "autoCommitTriggerLast": true
+    }
+  }
+}

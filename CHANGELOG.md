@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-27 · v2.33.0
+
+- New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.1.0 (ten recipes, matching the page after its V4.1 port): objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill. Marketplace 2.33.0.
+
 ## 2026-11-26 · v2.32.0
 
 - statur-creator-program 3.1.0, aligned with the Creator Program Playbook v2.1 (https://statur.co/creator-programs/): creator scoring (competitors' sponsored creators, red-flag list, outlier rate, comment quality, regularity, 20% judgment), concepts instead of scripts, a coach past ten creators, squeezing a winning concept, posting waves to read attribution, ad value in creator returns, rate inflation, UGC farm and B2B ambassador models. New source: Jeddi Mees on the Bulldozer podcast (practitioner, self-reported). Playbook card at 2.1. Marketplace 2.32.0.
