@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-26",
+ "maj": "2026-11-27",
  "items": [
   {
    "q": "Claude demande « Autoriser une fois » à chaque action",
@@ -10,12 +10,20 @@
    "r": "C’est un stagiaire. Dis-lui : « trouve une solution toi-même, essaie autrement ». Quand il a réussi, demande-lui d’écrire une compétence (skill) avec la méthode : il ne refera pas les mêmes erreurs."
   },
   {
+   "q": "Dictée ou appel vocal : lequel utiliser ?",
+   "r": "La dictée (le micro dans la zone où tu écris) garde toute la puissance de ton Everest, navigateur et logiciel de devis compris, mais il ne te répond pas à voix haute. L’appel vocal permet de discuter, par exemple dans le camion, mais il n’ouvre pas ton navigateur et voit seulement tes connecteurs. Après un appel vocal, écris toujours un mot dans la conversation pour que ton Everest enregistre ce qui a été dit."
+  },
+  {
    "q": "Mon assistant me dit que des tâches sont en retard",
    "r": "Ouvre tes tâches avec lui. Coche ce qui est fait, donne une nouvelle date au reste, ou passe-le en priorité B. C’est à toi de trancher, pas à Louis."
   },
   {
    "q": "J’ai fini mes devoirs, et maintenant ?",
    "r": "Bravo. Dis-le dans le groupe WhatsApp ou à Louis : il t’envoie les devoirs suivants. En attendant, demande à ton assistant ce qu’il pourrait faire à ta place chaque semaine."
+  },
+  {
+   "q": "Mon assistant bloque ou s’arrête sur les PDF et les Google Docs",
+   "r": "Ce sont des formats lourds pour Claude et ils usent vite ta limite. Demande-lui de travailler dans un fichier texte de ton dossier Everest (.md), puis de créer le document final sur Drive seulement à la fin."
   },
   {
    "q": "Quand a lieu l’appel de groupe ?",
@@ -30,16 +38,12 @@
    "r": "Pas sans l’avis de Louis. Souvent, l’outil fait déjà ce que ta routine du matin et tes compétences (skills) Everest font. N’installe jamais un outil qui demande ton mot de passe ou les cookies de ton compte : Instagram peut le bloquer. Envoie le lien à Louis, il regarde."
   },
   {
-   "q": "Je n’ai pas le temps d’écrire mes demandes",
-   "r": "Dicte. Sur le téléphone, dans le projet Everest, appuie sur le micro et parle comme au téléphone : devis, facture, compte rendu de chantier. Le soir, tu relis et tu envoies."
-  },
-  {
-   "q": "En vocal, mon assistant n’ouvre pas mon navigateur (logiciel de devis, Outlook en ligne), oublie ce que je dis ou ne voit pas mon agenda pro",
-   "r": "L’appel vocal utilise tes connecteurs (Gmail, Agenda, Drive), mais pas le navigateur : c’est une limite de Claude. Pour garder tous ses outils, utilise plutôt la dictée (le micro dans la zone où tu écris) dans ta conversation Everest. En voiture, garde l’appel vocal pour réfléchir et finis par « fais un brouillon Gmail avec le compte rendu » : une tâche planifiée (toutes les heures par exemple) lit ces brouillons et agit. Pour l’agenda pro, partage-le avec ton compte Google, puis coche-le dans les agendas du téléphone. Un tuto pour se faire un assistant à la voix (type Jarvis) est partagé dans le groupe WhatsApp des Illuminés."
-  },
-  {
    "q": "Mon assistant ne peut pas télécharger ou envoyer de fichiers",
    "r": "Vérifie que ton dossier Téléchargements est relié au projet Everest (en plus du dossier Claude). Avec Chrome, c’est ce qui débloque le plus de choses."
+  },
+  {
+   "q": "Mon site a été fait par une agence, je le corrige avec Claude ?",
+   "r": "Avant d’y passer du temps, demande à ton Everest de te faire ton propre site : il connaît ton entreprise, c’est gratuit (Cloudflare Pages) et ça se fait en une soirée. Tu en es propriétaire. Demande les instructions à Louis si elles ne sont pas encore dans ton dossier."
   },
   {
    "q": "Ma fiche Google (pour les avis) est créée mais « non visible publiquement »",
@@ -50,24 +54,20 @@
    "r": "L’assistant travaille sur l’ordinateur : s’il est éteint ou en veille, rien ne part et ses tâches planifiées attendent. Laisse-le allumé et branché. Demande à ton assistant, depuis l’onglet Code, de régler l’ordinateur pour qu’il ne se mette plus en veille sur secteur, même capot fermé."
   },
   {
-   "q": "Ma boîte Outlook ou Microsoft 365 est gérée par un informaticien",
-   "r": "Demande-lui l’accès propriétaire (administrateur) de ta boîte, puis connecte Microsoft 365 dans Personnaliser, Connecteurs. Ton assistant peut ensuite lire et trier tes emails."
-  },
-  {
    "q": "Claude prend le contrôle de mon écran ou ouvre GitHub Desktop",
    "r": "Il lui manque un terminal. Dis à ton assistant « vérifie mon installation » : il passe par l’onglet Code de l’appli Claude, ou te demande un seul clic droit sur le script de sauvegarde. Ensuite, au quotidien, ton assistant écrit dans ton dossier et la sauvegarde part toute seule. Tu peux désinstaller GitHub Desktop."
   },
   {
-   "q": "La sauvegarde semble arrêtée",
-   "r": "Dis à ton assistant « vérifie mon installation et ma synchro ». Il regarde la dernière sauvegarde et la relance. S’il n’y arrive pas, il le note pour Louis, qui corrige à distance."
+   "q": "La sauvegarde semble arrêtée, ou Claude dit que GitHub n’est pas connecté",
+   "r": "Dis à ton assistant « vérifie mon installation et ma synchro » : il regarde la dernière sauvegarde et la relance. Le message « GitHub non connecté » vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs ; l’alerte orange « Vérifier l’état du dépôt » peut être ignorée. S’il n’y arrive pas, il le note dans pilotage/demandes.md pour Louis."
+  },
+  {
+   "q": "Une fenêtre s’ouvre toute seule toutes les 10 minutes sur mon PC",
+   "r": "C’est la sauvegarde automatique de ton dossier : elle marche. Sur Windows, la fenêtre s’affiche encore chez certains, Louis la rend invisible à distance. En attendant, laisse-la faire et dis-le dans le groupe si elle te gêne pour travailler."
   },
   {
    "q": "Ma tâche planifiée tourne, mais elle ne fait rien ou n’enregistre rien",
    "r": "Demande à ton assistant de la recréer depuis une conversation où ton dossier est bien relié, en une seule version, puis de la lancer une fois devant toi. Vérifie qu’elle a écrit dans ton dossier. Si elle ne fait toujours rien, il note le message exact dans pilotage/demandes.md pour Louis."
-  },
-  {
-   "q": "Claude me dit que GitHub n’est pas connecté",
-   "r": "Ta sauvegarde locale marche quand même : demande à ton assistant la date de ta dernière sauvegarde sur GitHub. Le message vient des sessions dans le cloud : relie GitHub dans Personnaliser, Connecteurs. Une alerte orange « Vérifier l’état du dépôt » : ignore-la. Si ça bloque encore, ton assistant le note dans pilotage/demandes.md pour Louis."
   },
   {
    "q": "Ma synchro a effacé des lignes que mon assistant avait écrites",
@@ -79,7 +79,7 @@
   },
   {
    "q": "Où est la mémoire de mon assistant ?",
-   "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Une petite fenêtre qui s’ouvre de temps en temps, c’est normal. Si tu perds ton ordinateur, rien n’est perdu."
+   "r": "Dans ton dossier Claude, sous-dossier everest-ton-dossier, copié sur GitHub. La synchro envoie et reçoit toutes les 10 minutes. Si tu perds ton ordinateur, rien n’est perdu."
   },
   {
    "q": "Qui voit ce que je mets dans mon Everest ? Comment Louis voit mes réussites ?",
