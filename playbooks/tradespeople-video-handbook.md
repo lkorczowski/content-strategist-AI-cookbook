@@ -14,7 +14,7 @@ Twelve recipes for electricians, plumbers, installers and builders: one video pe
 | [statur-trades-setup](../skills/statur-trades-setup/) | One-time install: channel and website audit, the 7am task, a first test. |
 | [statur-trades-morning-routine](../skills/statur-trades-morning-routine/) | Every morning: article draft, post texts and carousel left as drafts. |
 | [statur-trades-admin](../skills/statur-trades-admin/) | One-page processes for quotes, invoices and reminders, with your assistant. |
-| [statur-trades-site](../skills/statur-trades-site/) | Build and launch the website with Astro, GitHub and Cloudflare Pages, own domain without breaking email. |
+| [statur-trades-site](../skills/statur-trades-site/) | Build and launch the website with Astro, GitHub and Cloudflare Pages, own domain without breaking email, search for AI agents. |
 | [statur-art-direction](../skills/statur-art-direction/) | Art direction from images the owner loves, without the AI look. |
 
 Companion skill from another playbook: [statur-slideshow-maker](../skills/statur-slideshow-maker/) renders the carousel images of the morning routine from the slide texts and your own job photos.

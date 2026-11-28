@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, what changed, version.
 
+## 2026-11-28 · v2.34.0
+
+- Search for AI agents: statur-trades-site 1.1.0 adds section 9 bis and references/agent-search.md (Cloudflare Search for Agents toggle, launched 2026-11-25: `/.well-known/search` endpoint, agent:* meta tags, free limits and pricing, bot rules; routes per host; what is proven and what is not) and templates/agent-search-endpoint.php, a WordPress plugin with the same contract for sites not on Cloudflare. statur-landing-page-audit 1.1.0 checks the endpoint in section 5. Credit to the TikTok explainer by TJ Robertson (2026-11-28). Marketplace 2.34.0.
+
 ## 2026-11-27 · v2.33.0
 
 - New playbook: Lead generation ads: the Meta and TikTok playbook (https://statur.co/lead-generation-ads/), with the skill statur-lead-gen-ads 1.1.0 (ten recipes, matching the page after its V4.1 port): objective, VIP list, instant form or landing page per buyer profile, a form that qualifies, pitches and plays, AI setup, a lead router to a Google Sheet with the row number as ID (templates/lead-sheet-template.csv and templates/make-lead-router.blueprint.json, no private ID), follow-up sequence, five-minute call, playful forms within Meta's promotions policy, quality feedback (Meta Conversions API for CRM, TikTok CRM events), list hygiene. US rules, France and EU end note. New plugin statur-lead-generation-ads; statur-creative-strategist adds the skill. Marketplace 2.33.0.

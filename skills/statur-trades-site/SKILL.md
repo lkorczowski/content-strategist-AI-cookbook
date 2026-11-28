@@ -1,10 +1,10 @@
 ---
 name: statur-trades-site
-description: Build and launch a tradesperson's website with Astro, GitHub and Cloudflare Pages, step by step and as automatic as possible: prerequisites, content brief from the company file, art direction from images the owner loves (statur-art-direction), pages, contact form, tests, free hosting, own domain without breaking email, local SEO, then a daily upkeep task. Use when a tradesperson asks for a website, a client asks them "do you have a site?", or an existing site must be moved off an agency.
+description: Build and launch a tradesperson's website with Astro, GitHub and Cloudflare Pages, step by step and as automatic as possible: prerequisites, content brief from the company file, art direction from images the owner loves (statur-art-direction), pages, contact form, tests, free hosting, own domain without breaking email, local SEO, search for AI agents, then a daily upkeep task. Use when a tradesperson asks for a website, a client asks them "do you have a site?", or an existing site must be moved off an agency.
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/tradespeople-video-handbook/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -100,6 +100,14 @@ Do this step on a call or step by step: one mistake stops the emails.
 - Google Business Profile: link the site, same name, phone and address everywhere, 10 job photos, the services and the area.
 - Google Search Console: OWNER verifies the domain (a TXT record), the assistant submits the sitemap.
 - Ask five happy clients for a Google review (the assistant drafts the message, the owner sends it).
+
+## 9 bis. Search for AI agents (OWNER clicks, assistant checks)
+
+Let AI agents search the site at `/.well-known/search` instead of guessing from other sites. Full method, routes per host and checks: references/agent-search.md.
+
+- Site on Cloudflare (the default of this skill): OWNER turns on Search for Agents in the domain's Overview, Quick Actions, after reading the pricing notice. Free up to 1,000 searches a month.
+- WordPress not on Cloudflare: templates/agent-search-endpoint.php, same contract, no account.
+- Check: `/.well-known/search?q=<a buyer's question>` answers 200 in Markdown, the home page carries `agent:endpoint`. Read the passages: they are what agents will repeat.
 
 ## 10. Daily upkeep (scheduled task)
 
