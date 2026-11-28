@@ -4,7 +4,7 @@ description: Audit or rewrite a landing page or a small marketing site for a fou
 license: MIT
 metadata:
   author: Dr. Louis Korczowski
-  version: "1.0.0"
+  version: "1.1.0"
   playbook: https://statur.co/playbooks/
   repository: https://github.com/lkorczowski/content-strategist-AI-cookbook
 ---
@@ -62,6 +62,7 @@ Name the reader's awareness level (Eugene Schwartz, Breakthrough Advertising): u
 - Each page answers its own query with at least one unique section. Shared blocks live on one reference page.
 - Page-level title, meta, headings, schema and answer-first: use the site's own SEO gate when the context file names one.
 - Off-page: one identical entity fact sheet on every site and profile (Aleyda Solis); third-party mentions of the brand count more than backlinks for AI answers (Ahrefs). llms.txt costs nothing and brings little; it carries only facts the brand has validated.
+- Agent search: does `/.well-known/search?q=<buyer question>` answer, and does the home page carry the `agent:endpoint` meta tag? If not, give the route for the host (Cloudflare toggle, WordPress plugin, or nothing on hosted builders without a DNS move): statur-trades-site, references/agent-search.md. Low cost, unproven effect: rank it after the page fixes.
 
 ## 6. AI-sounding copy and density
 
@@ -92,7 +93,7 @@ Run statur-humanizer on the verdict and the rewrites before showing them.
 ## References
 
 - github.com/coreyhaines31/marketingskills (MIT): cro, copywriting, copy-editing, seo-audit, ai-seo, site-architecture, schema.
-- Google Search Central (duplicate URLs, helpful content), Ahrefs (llms.txt study, brand mentions and AI Overviews), Aggarwal et al. GEO paper (2024), Aleyda Solis AI search checklist, NN/g information scent, CXL value proposition, Julian Shapiro on landing pages, Harry Dry Marketing Examples.
+- Google Search Central (duplicate URLs, helpful content), Ahrefs (llms.txt study, brand mentions and AI Overviews), Aggarwal et al. GEO paper (2024), Aleyda Solis AI search checklist, NN/g information scent, CXL value proposition, Julian Shapiro on landing pages, Harry Dry Marketing Examples, Cloudflare Search for Agents docs (2026-11-25).
 
 ## Rules
 
